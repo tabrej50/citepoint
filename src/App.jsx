@@ -14,6 +14,7 @@ import ContactPage from './pages/ContactPage';
 import AuditPage from './pages/AuditPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import Modern3DBackground from './components/Modern3DBackground';
 import LiquidGlassFilter from './components/LiquidGlassFilter';
 
 // Distinct sliding transitions tailored to each page type
@@ -193,6 +194,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#010102] text-[#f7f8f8] font-sans selection:bg-[#5e6ad2]/30 selection:text-white relative">
+      {/* Modern 3D Cybernetic Terrain & Crystalline Geometry Background */}
+      <Modern3DBackground />
       <LiquidGlassFilter />
 
       {/* Sticky / Transparent Floating Header Navbar */}

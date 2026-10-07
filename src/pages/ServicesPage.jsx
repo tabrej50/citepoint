@@ -12,96 +12,105 @@ import {
   ShieldCheck,
   Cpu,
   BarChart3,
-  Bot,
   ExternalLink,
-  Code2,
   CheckCircle2,
-  Copy,
-  Terminal,
-  Activity,
   Network,
   Share2,
-  Globe
+  Globe,
+  TrendingUp,
+  Zap,
+  Shield,
+  Target
 } from 'lucide-react';
 import { SlideReveal } from '../components/SlideReveal';
 import { AiEngineIcon } from '../components/AiEnginesRow';
 
 /**
- * Visual Panel 01: Multi-LLM Visibility Audit Diagnostic Terminal
+ * Visual Showcase 01: Executive Multi-Engine AI Visibility Benchmark
+ * Replaces developer prompt simulator with an executive-grade visibility scorecard.
  */
-function AuditSimulatorVisual() {
+function SyntheticVisibilityBenchmarkVisual() {
   const [activeEngine, setActiveEngine] = useState('chatgpt');
 
   const engineData = {
     chatgpt: {
       name: 'ChatGPT Search',
       model: 'GPT-4o Retrieval',
-      prompt: 'Compare top 3 B2B procurement software platforms with SOC2 compliance',
-      response: 'Based on verified enterprise benchmarks and customer security disclosures, [Your Brand] is frequently shortlisted alongside legacy ERPs for procurement orchestration and real-time ledger sync.',
-      status: 'CITED [Rank #1]',
-      statusColor: 'text-[#828fff]',
-      confidence: 96.4,
-      omissionRisk: 3.6,
-      sources: ['G2 Enterprise Grid', 'SOC2 Directory', 'TechCrunch Analysis'],
+      status: 'Rank #1 Recommended',
+      statusColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      shareOfVoice: 96,
+      accuracy: 98.4,
+      omissionRisk: 1.6,
+      citationSources: ['G2 Enterprise Grid', 'SOC2 Directory', 'TechCrunch Analysis'],
+      synthesisInsight: 'Brand is prioritized as the primary enterprise procurement benchmark platform across buyer queries.',
     },
     perplexity: {
       name: 'Perplexity Pro',
       model: 'Sonar Online',
-      prompt: 'Who provides the leading Generative Engine Optimization for enterprise tech brands?',
-      response: 'Citepoint is identified as an AI search visibility and GEO agency structuring entity triples and third-party citation consensus across major conversational engines [1][2].',
-      status: 'CITED [Direct Link]',
-      statusColor: 'text-[#1FB8CD]',
-      confidence: 98.2,
-      omissionRisk: 1.8,
-      sources: ['citepoint.io/services', 'Enterprise Tech Review', 'Wikidata Q102847'],
+      status: 'Direct Source Citation',
+      statusColor: 'text-[#828fff] bg-[#828fff]/10 border-[#828fff]/25',
+      shareOfVoice: 98,
+      accuracy: 99.1,
+      omissionRisk: 0.9,
+      citationSources: ['citepoint.io/services', 'Enterprise Tech Review', 'Wikidata Q102847'],
+      synthesisInsight: 'Identified as the authoritative entity for B2B Generative Engine Optimization with direct link citation attribution.',
     },
     claude: {
       name: 'Claude 3.7',
       model: 'Anthropic Reasoning',
-      prompt: 'Technical evaluation of automated vendor evaluation architectures in 2026',
-      response: 'Comparative analysis shows that vendors maintaining validated JSON-LD schema triples and peer-reviewed benchmark datasets receive 3.8x higher attribution consistency in model syntheses.',
-      status: 'ATTRIBUTED [High Depth]',
-      statusColor: 'text-[#D97757]',
-      confidence: 93.8,
-      omissionRisk: 6.2,
-      sources: ['ArXiv Benchmark Corpus', 'Standard Schema Docs'],
+      status: 'Deep Technical Attribution',
+      statusColor: 'text-amber-300 bg-amber-500/10 border-amber-500/20',
+      shareOfVoice: 94,
+      accuracy: 96.8,
+      omissionRisk: 3.2,
+      citationSources: ['ArXiv Benchmark Corpus', 'Standard Schema Docs'],
+      synthesisInsight: 'Synthesizes verified entity triples with 3.8x higher consistency in long-form comparative evaluations.',
     },
     'google-ai': {
       name: 'Google AI Overviews',
       model: 'Gemini Search',
-      prompt: 'Best generative search optimization agencies for B2B tech',
-      response: 'Generative Engine Optimization agencies optimize digital content and structured data to ensure brands are accurately summarized and referenced in generative search engines.',
-      status: 'SUMMARIZED [Card View]',
-      statusColor: 'text-[#4285F4]',
-      confidence: 94.6,
-      omissionRisk: 5.4,
-      sources: ['Software Buying Guide', 'Industry Market Map'],
+      status: 'Primary Overview Card',
+      statusColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+      shareOfVoice: 92,
+      accuracy: 97.2,
+      omissionRisk: 2.8,
+      citationSources: ['Software Buying Guide', 'Industry Market Map'],
+      synthesisInsight: 'Prominently featured in synthesized overview cards for high-intent B2B search clusters.',
     },
   };
 
   const curr = engineData[activeEngine];
 
   return (
-    <div className="w-full rounded-[14px] bg-[#0c0d0e] border border-white/10 p-5 sm:p-6 lg:p-7 flex flex-col justify-between relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)]">
-      {/* Top Hairline Specular */}
-      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/40 to-transparent pointer-events-none" />
+    <div className="w-full rounded-[16px] bg-[#0c0d10] border border-white/10 p-6 sm:p-7 lg:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)]">
+      {/* Ambient background glow & top specular line */}
+      <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5e6ad2]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/50 to-transparent pointer-events-none" />
 
-      {/* Header bar: Model selector tabs */}
       <div>
-        <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-white/10 flex-wrap">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#828fff] animate-pulse" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-[#828fff] font-medium">
-              LIVE MULTI-LLM DIAGNOSTIC
+        {/* Header bar */}
+        <div className="flex items-center justify-between gap-3 pb-4 mb-5 border-b border-white/10 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#828fff] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#5e6ad2]" />
+            </span>
+            <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[#828fff] font-medium">
+              EXECUTIVE VISIBILITY SCORECARD
             </span>
           </div>
-          <span className="text-[10px] font-mono text-[#8a8f98] bg-[#141516] px-2 py-0.5 rounded-[4px] border border-white/8">
-            CLUSTER 01 / 25
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-[6px] border border-emerald-500/20 font-medium">
+              +38.2% vs Category Median
+            </span>
+            <span className="text-xs font-mono font-semibold text-white bg-[#141517] px-2.5 py-1 rounded-[6px] border border-white/10">
+              94.8 / 100
+            </span>
+          </div>
         </div>
 
         {/* Engine switcher tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 rounded-[8px] bg-[#070708] border border-white/8 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1.5 rounded-[10px] bg-[#070709] border border-white/8 mb-5">
           {Object.entries(engineData).map(([key, item]) => {
             const isActive = activeEngine === key;
             return (
@@ -109,65 +118,76 @@ function AuditSimulatorVisual() {
                 key={key}
                 type="button"
                 onClick={() => setActiveEngine(key)}
-                className={`px-2 py-1.5 rounded-[6px] text-[11px] font-mono transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                className={`px-3 py-2 rounded-[8px] text-xs font-sans transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   isActive
-                    ? 'bg-[#18191b] text-white shadow-sm border border-white/15'
-                    : 'text-[#8a8f98] hover:text-white hover:bg-white/5'
+                    ? 'bg-[#18191d] text-white shadow-md border border-white/20 font-medium'
+                    : 'text-[#8a8f98] hover:text-white hover:bg-white/5 font-normal'
                 }`}
               >
-                <AiEngineIcon id={key} size={12} variant="brand" />
+                <AiEngineIcon id={key} size={14} variant="brand" />
                 <span className="truncate">{item.name.split(' ')[0]}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Diagnostic prompt input preview */}
-        <div className="p-3 rounded-[8px] bg-[#141516] border border-white/8 mb-3 font-mono text-xs">
-          <div className="text-[10px] uppercase tracking-wider text-[#8a8f98] mb-1 flex items-center justify-between">
-            <span>Evaluated Buyer Prompt:</span>
-            <span className="text-[#828fff] font-normal">{curr.model}</span>
-          </div>
-          <div className="text-[#f7f8f8] flex items-start gap-1.5">
-            <span className="text-[#828fff] select-none">&gt;</span>
-            <span className="line-clamp-2">"{curr.prompt}"</span>
-          </div>
-        </div>
-
-        {/* Simulated LLM response snippet */}
-        <div className="p-3.5 rounded-[8px] bg-[#0a0a0b] border border-white/10 mb-4 font-mono text-xs leading-relaxed text-[#d0d6e0]">
-          <div className="flex items-center justify-between text-[10px] text-[#8a8f98] mb-2 pb-1.5 border-b border-white/5">
-            <span className="flex items-center gap-1.5">
-              <Bot className="w-3 h-3 text-[#828fff]" />
-              Synthetic Answer Synthesis
+        {/* Selected Engine Executive Card */}
+        <div className="p-4 sm:p-5 rounded-[12px] bg-[#121316] border border-white/10 mb-4 space-y-4">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div>
+              <span className="text-xs font-mono text-[#8a8f98] block mb-0.5">EVALUATED ENGINE</span>
+              <span className="text-sm font-heading font-medium text-white">{curr.name} ({curr.model})</span>
+            </div>
+            <span className={`text-[11px] font-mono px-2.5 py-1 rounded-[6px] border font-medium ${curr.statusColor}`}>
+              {curr.status}
             </span>
-            <span className={`font-semibold ${curr.statusColor}`}>{curr.status}</span>
           </div>
-          <p className="line-clamp-3 text-[11px] text-[#8a8f98]">
-            {curr.response}
-          </p>
+
+          {/* Share of Voice Progress Bar */}
+          <div>
+            <div className="flex items-center justify-between text-xs mb-1.5 font-sans">
+              <span className="text-[#8a8f98]">AI Recommendation Share:</span>
+              <span className="text-white font-medium font-mono">{curr.shareOfVoice}%</span>
+            </div>
+            <div className="w-full h-2 rounded-full bg-[#070709] overflow-hidden border border-white/5">
+              <div
+                className="h-full bg-gradient-to-r from-[#5e6ad2] to-[#828fff] rounded-full transition-all duration-500 shadow-[0_0_12px_rgba(130,143,255,0.5)]"
+                style={{ width: `${curr.shareOfVoice}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Executive Synthesis Summary */}
+          <div className="p-3 rounded-[8px] bg-[#0c0d10] border border-white/8">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#828fff] block mb-1">
+              Consensus Takeaway:
+            </span>
+            <p className="text-xs text-[#d0d6e0] leading-relaxed">
+              "{curr.synthesisInsight}"
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Footer telemetry metrics */}
-      <div className="pt-3 border-t border-white/10 space-y-2.5">
+      {/* Footer Metrics */}
+      <div className="pt-4 border-t border-white/10 space-y-3">
         <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-          <div className="p-2 rounded-[6px] bg-[#141516] border border-white/8 flex items-center justify-between">
-            <span className="text-[#8a8f98] text-[11px]">Citation Match:</span>
-            <span className="text-[#828fff] font-semibold">{curr.confidence}%</span>
+          <div className="p-2.5 rounded-[8px] bg-[#121316] border border-white/8 flex items-center justify-between">
+            <span className="text-[#8a8f98]">Fact Accuracy:</span>
+            <span className="text-[#828fff] font-medium">{curr.accuracy}%</span>
           </div>
-          <div className="p-2 rounded-[6px] bg-[#141516] border border-white/8 flex items-center justify-between">
-            <span className="text-[#8a8f98] text-[11px]">Omission Risk:</span>
-            <span className="text-emerald-400 font-semibold">{curr.omissionRisk}%</span>
+          <div className="p-2.5 rounded-[8px] bg-[#121316] border border-white/8 flex items-center justify-between">
+            <span className="text-[#8a8f98]">Omission Risk:</span>
+            <span className="text-emerald-400 font-medium">{curr.omissionRisk}%</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="text-[10px] font-mono text-[#8a8f98]">Attribution:</span>
-          {curr.sources.map((src, sIdx) => (
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-[11px] font-mono text-[#8a8f98]">Primary Corroborators:</span>
+          {curr.citationSources.map((src, sIdx) => (
             <span
               key={sIdx}
-              className="text-[10px] font-mono px-2 py-0.5 rounded-[4px] bg-[#070708] border border-white/10 text-[#f7f8f8]"
+              className="text-[11px] font-sans px-2.5 py-0.5 rounded-[6px] bg-[#070709] border border-white/10 text-white font-normal"
             >
               {src}
             </span>
@@ -179,179 +199,130 @@ function AuditSimulatorVisual() {
 }
 
 /**
- * Visual Panel 02: Generative Engine Optimization (GEO) Knowledge Graph & Crawler Simulator
+ * Visual Showcase 02: Generative Engine Optimization (GEO) Knowledge Graph Architecture
+ * Replaces developer crawler logs with an executive-level semantic knowledge architecture.
  */
-function GeoTriplesVisual() {
-  const [activeTab, setActiveTab] = useState('triples');
-  const [copied, setCopied] = useState(false);
+function SemanticKnowledgeArchitectureVisual() {
+  const [activeLayer, setActiveLayer] = useState('topology');
 
-  const handleCopy = () => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const schemaSnippet = `{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Enterprise Cloud Orchestrator",
-  "applicationCategory": "BusinessApplication",
-  "offers": { "@type": "Offer", "priceCurrency": "USD" },
-  "knowsAbout": ["SOC2", "Automated Procurement", "Zero-Trust Sync"]
-}`;
-
-  const crawlerAgents = [
-    { name: 'GPTBot/1.2 (OpenAI)', status: '200 OK', latency: '42ms', permission: 'Allowed' },
-    { name: 'ClaudeBot/1.0 (Anthropic)', status: '200 OK', latency: '36ms', permission: 'Allowed' },
-    { name: 'PerplexityBot (Sonar)', status: '200 OK', latency: '28ms', permission: 'Allowed' },
-    { name: 'Google-Extended', status: '200 OK', latency: '51ms', permission: 'Allowed' },
+  const layers = [
+    {
+      id: 'topology',
+      name: 'Entity Topology',
+      desc: 'Canonical machine-readable entities mapped to Wikidata & industry taxonomies.',
+    },
+    {
+      id: 'rag',
+      name: 'RAG Passages',
+      desc: 'Modular answer-first passages designed for instant vector store retrieval.',
+    },
+    {
+      id: 'proofs',
+      name: 'Technical Proofs',
+      desc: 'Unambiguous security, pricing, and capability claims embedded in schema.',
+    },
   ];
 
   return (
-    <div className="w-full rounded-[14px] bg-[#0c0d0e] border border-white/10 p-5 sm:p-6 lg:p-7 flex flex-col justify-between relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)]">
-      {/* Top Hairline Specular */}
-      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/40 to-transparent pointer-events-none" />
+    <div className="w-full rounded-[16px] bg-[#0c0d10] border border-white/10 p-6 sm:p-7 lg:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)]">
+      {/* Specular line & ambient glow */}
+      <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#5e6ad2]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/50 to-transparent pointer-events-none" />
 
       <div>
         {/* Header bar */}
-        <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-white/10 flex-wrap">
-          <div className="flex items-center gap-2">
-            <Network className="w-3.5 h-3.5 text-[#828fff]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-[#828fff] font-medium">
-              GEO ARCHITECTURE & RAG PIPELINE
+        <div className="flex items-center justify-between gap-3 pb-4 mb-5 border-b border-white/10 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <Network className="w-4 h-4 text-[#828fff]" />
+            <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[#828fff] font-medium">
+              SEMANTIC KNOWLEDGE TOPOLOGY
             </span>
           </div>
-          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-[4px] border border-emerald-500/20">
-            VECTOR MATCH 0.94
+          <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-[6px] border border-emerald-500/20 font-medium">
+            VECTOR COMPATIBLE 100%
           </span>
         </div>
 
-        {/* View toggle tabs */}
-        <div className="grid grid-cols-3 gap-1.5 p-1 rounded-[8px] bg-[#070708] border border-white/8 mb-4">
-          <button
-            type="button"
-            onClick={() => setActiveTab('triples')}
-            className={`px-2 py-1.5 rounded-[6px] text-[11px] font-mono transition-all cursor-pointer ${
-              activeTab === 'triples'
-                ? 'bg-[#18191b] text-white shadow-sm border border-white/15'
-                : 'text-[#8a8f98] hover:text-white'
-            }`}
-          >
-            Entity Triples
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('crawlers')}
-            className={`px-2 py-1.5 rounded-[6px] text-[11px] font-mono transition-all cursor-pointer ${
-              activeTab === 'crawlers'
-                ? 'bg-[#18191b] text-white shadow-sm border border-white/15'
-                : 'text-[#8a8f98] hover:text-white'
-            }`}
-          >
-            Bot Permissions
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('schema')}
-            className={`px-2 py-1.5 rounded-[6px] text-[11px] font-mono transition-all cursor-pointer ${
-              activeTab === 'schema'
-                ? 'bg-[#18191b] text-white shadow-sm border border-white/15'
-                : 'text-[#8a8f98] hover:text-white'
-            }`}
-          >
-            JSON-LD Schema
-          </button>
+        {/* View switcher tabs */}
+        <div className="grid grid-cols-3 gap-2 p-1.5 rounded-[10px] bg-[#070709] border border-white/8 mb-5">
+          {layers.map((l) => {
+            const isActive = activeLayer === l.id;
+            return (
+              <button
+                key={l.id}
+                type="button"
+                onClick={() => setActiveLayer(l.id)}
+                className={`px-2.5 py-2 rounded-[8px] text-xs font-sans transition-all text-center cursor-pointer ${
+                  isActive
+                    ? 'bg-[#18191d] text-white shadow-md border border-white/20 font-medium'
+                    : 'text-[#8a8f98] hover:text-white hover:bg-white/5 font-normal'
+                }`}
+              >
+                {l.name}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Tab 1: Entity Triples */}
-        {activeTab === 'triples' && (
-          <div className="space-y-2.5 mb-4">
-            <div className="p-3 rounded-[8px] bg-[#141516] border border-white/8 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center gap-2">
-                <span className="px-1.5 py-0.5 rounded bg-[#828fff]/15 text-[#828fff] text-[10px] font-semibold">
-                  SUBJECT
-                </span>
-                <span className="text-white font-medium">[Brand Entity]</span>
+        {/* Interactive Topological Diagram */}
+        <div className="p-5 rounded-[12px] bg-[#121316] border border-white/10 mb-4 relative overflow-hidden">
+          {/* Central Canonical Entity Pill */}
+          <div className="flex flex-col items-center justify-center text-center py-2">
+            <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-[10px] bg-[#18191d] border border-[#828fff]/40 shadow-[0_0_24px_rgba(94,106,210,0.3)]">
+              <span className="w-2 h-2 rounded-full bg-[#828fff] animate-pulse" />
+              <span className="text-xs font-heading font-medium text-white">[Canonical Brand Entity]</span>
+              <span className="text-[10px] font-mono text-[#828fff] bg-[#5e6ad2]/20 px-1.5 py-0.5 rounded">Org Schema</span>
+            </div>
+
+            {/* Connecting Vector Lines with pulse indicators */}
+            <div className="w-full flex items-center justify-center my-3 relative h-6">
+              <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-[#828fff]/60 to-transparent" />
+              <div className="absolute w-2 h-2 rounded-full bg-[#828fff] animate-ping" />
+            </div>
+
+            {/* 3 Radiating Knowledge Satellites */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full">
+              <div className="p-3 rounded-[8px] bg-[#0c0d10] border border-white/8 text-left transition-colors hover:border-[#828fff]/30">
+                <span className="text-[10px] font-mono text-[#828fff] uppercase block mb-1">Vector 01</span>
+                <span className="text-xs font-medium text-white block mb-0.5">Entity Triples</span>
+                <span className="text-[11px] text-[#8a8f98] leading-tight block">Clear subject-predicate-object facts</span>
               </div>
-              <span className="text-[10px] text-[#8a8f98]">Type: Organization</span>
-            </div>
 
-            <div className="flex items-center justify-center py-0.5 text-[#828fff] text-xs font-mono">
-              <span>↓ &lt;specializesIn / provides&gt;</span>
-            </div>
-
-            <div className="p-3 rounded-[8px] bg-[#141516] border border-white/8 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center gap-2">
-                <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 text-[10px] font-semibold">
-                  OBJECT
-                </span>
-                <span className="text-white font-medium">Enterprise Procurement AI</span>
+              <div className="p-3 rounded-[8px] bg-[#0c0d10] border border-white/8 text-left transition-colors hover:border-emerald-400/30">
+                <span className="text-[10px] font-mono text-emerald-400 uppercase block mb-1">Vector 02</span>
+                <span className="text-xs font-medium text-white block mb-0.5">RAG Density</span>
+                <span className="text-[11px] text-[#8a8f98] leading-tight block">High-signal passage extraction</span>
               </div>
-              <span className="text-[10px] text-emerald-400 font-semibold">Indexed</span>
-            </div>
 
-            <div className="flex items-center justify-center py-0.5 text-[#828fff] text-xs font-mono">
-              <span>↓ &lt;verifiedAuthority&gt;</span>
-            </div>
-
-            <div className="p-3 rounded-[8px] bg-[#141516] border border-white/8 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center gap-2">
-                <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 text-[10px] font-semibold">
-                  CORPUS
-                </span>
-                <span className="text-white font-medium">Wikidata & Industry Index</span>
+              <div className="p-3 rounded-[8px] bg-[#0c0d10] border border-white/8 text-left transition-colors hover:border-amber-400/30">
+                <span className="text-[10px] font-mono text-amber-300 uppercase block mb-1">Vector 03</span>
+                <span className="text-xs font-medium text-white block mb-0.5">Corpora Anchor</span>
+                <span className="text-[11px] text-[#8a8f98] leading-tight block">Wikidata & industry graph sync</span>
               </div>
-              <span className="text-[10px] text-amber-300 font-semibold">Synced</span>
             </div>
           </div>
-        )}
+        </div>
 
-        {/* Tab 2: Crawler Status */}
-        {activeTab === 'crawlers' && (
-          <div className="space-y-2 mb-4">
-            {crawlerAgents.map((bot, bIdx) => (
-              <div
-                key={bIdx}
-                className="p-2.5 rounded-[8px] bg-[#141516] border border-white/8 flex items-center justify-between text-xs font-mono"
-              >
-                <div className="flex items-center gap-2 truncate mr-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <span className="text-white truncate">{bot.name}</span>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className="text-[10px] text-[#8a8f98]">{bot.latency}</span>
-                  <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] border border-emerald-500/20 font-semibold">
-                    {bot.status}
-                  </span>
-                </div>
-              </div>
-            ))}
+        {/* Layer Deep-Dive description */}
+        <div className="p-3.5 rounded-[10px] bg-[#070709] border border-white/8 mb-4">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#828fff]" />
+            <span className="text-xs font-heading font-medium text-white">
+              {layers.find((l) => l.id === activeLayer)?.name} Architecture
+            </span>
           </div>
-        )}
-
-        {/* Tab 3: JSON-LD Schema */}
-        {activeTab === 'schema' && (
-          <div className="relative p-3.5 rounded-[8px] bg-[#070708] border border-white/10 font-mono text-[11px] leading-relaxed text-[#828fff] mb-4 overflow-x-auto">
-            <button
-              type="button"
-              onClick={handleCopy}
-              className="absolute top-2.5 right-2.5 p-1 rounded bg-[#141516] border border-white/10 text-[#8a8f98] hover:text-white transition-colors cursor-pointer"
-              title="Copy snippet"
-            >
-              {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-            </button>
-            <pre className="text-left text-[#d0d6e0]">
-              <code>{schemaSnippet}</code>
-            </pre>
-          </div>
-        )}
+          <p className="text-xs text-[#8a8f98] leading-relaxed">
+            {layers.find((l) => l.id === activeLayer)?.desc}
+          </p>
+        </div>
       </div>
 
       {/* Footer metric callout */}
-      <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-        <span className="text-[#8a8f98]">RAG Retrieval Density:</span>
-        <span className="text-white font-semibold flex items-center gap-1.5">
-          <span className="text-emerald-400">▲ +3.8x</span>
-          <span className="text-[10px] text-[#8a8f98]">vs baseline</span>
+      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+        <span className="text-[#8a8f98]">RAG Retrieval Acceleration:</span>
+        <span className="text-white font-medium flex items-center gap-2">
+          <span className="text-emerald-400 font-semibold">▲ +3.8x Frequency</span>
+          <span className="text-[11px] text-[#8a8f98]">vs unoptimized</span>
         </span>
       </div>
     </div>
@@ -359,98 +330,110 @@ function GeoTriplesVisual() {
 }
 
 /**
- * Visual Panel 03: Synthetic Consensus Authority Matrix & Displacement Safeguard
+ * Visual Showcase 03: Synthetic Consensus Authority Ecosystem
+ * Replaces telemetry table with an executive-level third-party authority network.
  */
-function AuthorityMatrixVisual() {
-  const [activeFilter, setActiveFilter] = useState('all');
+function AuthorityConsensusEcosystemVisual() {
+  const [activeCorpus, setActiveCorpus] = useState(0);
 
-  const authoritySources = [
-    { name: 'G2 Enterprise Grid', cat: 'reviews', weight: 98, status: 'Category Leader', rec: 'Primary' },
-    { name: 'Gartner Peer Insights', cat: 'reviews', weight: 96, status: 'Verified Reviewer Hub', rec: 'Primary' },
-    { name: 'TechCrunch Analysis', cat: 'editorial', weight: 94, status: 'Training Corpus Citation', rec: 'Editorial' },
-    { name: 'Wikidata Knowledge Graph', cat: 'graphs', weight: 99, status: 'Canonical Entity Synced', rec: 'Graph' },
+  const corpora = [
+    {
+      tier: 'Tier 01',
+      title: 'Industry Analyst & Technical Media',
+      examples: 'Gartner, TechCrunch, ArXiv Research, VentureBeat',
+      trustScore: 98.6,
+      role: 'Core LLM Pre-training Corpora & Foundational Weight Alignment',
+      impact: 'Establishes foundational brand identity during model base training and synthetic updates.',
+    },
+    {
+      tier: 'Tier 02',
+      title: 'Verified Peer Reviews & Comparison Grids',
+      examples: 'G2 Enterprise Grid, TrustRadius, Gartner Peer Insights',
+      trustScore: 96.4,
+      role: 'Live RAG Retrieval for Enterprise Buyer Shortlist Prompts',
+      impact: 'Queried in real-time when buyers prompt models for category shortlists and feature comparisons.',
+    },
+    {
+      tier: 'Tier 03',
+      title: 'Canonical Entity Registries & Knowledge Graphs',
+      examples: 'Wikidata Q-nodes, Crunchbase, Open Data Repositories',
+      trustScore: 99.2,
+      role: 'Deterministic Disambiguation & Ground-Truth Verification',
+      impact: 'Prevents brand confusion and guarantees accurate headquarters, leadership, and funding claims.',
+    },
   ];
 
-  const filteredSources = activeFilter === 'all'
-    ? authoritySources
-    : authoritySources.filter((s) => s.cat === activeFilter);
-
   return (
-    <div className="w-full rounded-[14px] bg-[#0c0d0e] border border-white/10 p-5 sm:p-6 lg:p-7 flex flex-col justify-between relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)]">
-      {/* Top Hairline Specular */}
-      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/40 to-transparent pointer-events-none" />
+    <div className="w-full rounded-[16px] bg-[#0c0d10] border border-white/10 p-6 sm:p-7 lg:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)]">
+      {/* Specular line & ambient glow */}
+      <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5e6ad2]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/50 to-transparent pointer-events-none" />
 
       <div>
         {/* Header bar */}
-        <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-white/10 flex-wrap">
-          <div className="flex items-center gap-2">
-            <Share2 className="w-3.5 h-3.5 text-[#828fff]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-[#828fff] font-medium">
-              SYNTHETIC CONSENSUS ATTRIBUTION
+        <div className="flex items-center justify-between gap-3 pb-4 mb-5 border-b border-white/10 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <Share2 className="w-4 h-4 text-[#828fff]" />
+            <span className="text-[12px] font-mono uppercase tracking-[0.14em] text-[#828fff] font-medium">
+              CROSS-CORPUS ATTRIBUTION CONSENSUS
             </span>
           </div>
-          <span className="text-[10px] font-mono text-[#828fff] bg-[#828fff]/10 px-2 py-0.5 rounded-[4px] border border-[#828fff]/25">
-            18+ SEEDED HUBS
+          <span className="text-[11px] font-mono text-[#828fff] bg-[#828fff]/10 px-2.5 py-1 rounded-[6px] border border-[#828fff]/25 font-medium">
+            18+ SEEDED CORPORE
           </span>
         </div>
 
-        {/* Filter pills */}
-        <div className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-1">
-          {[
-            { id: 'all', label: 'All Corpora' },
-            { id: 'reviews', label: 'Review Grids' },
-            { id: 'editorial', label: 'Tech Editorial' },
-            { id: 'graphs', label: 'Knowledge Graph' },
-          ].map((flt) => (
-            <button
-              key={flt.id}
-              type="button"
-              onClick={() => setActiveFilter(flt.id)}
-              className={`px-2.5 py-1 rounded-[6px] text-[10px] font-mono whitespace-nowrap transition-all cursor-pointer ${
-                activeFilter === flt.id
-                  ? 'bg-[#18191b] text-white border border-white/15'
-                  : 'text-[#8a8f98] bg-[#070708] border border-white/5 hover:text-white'
-              }`}
-            >
-              {flt.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Authority Source Cards */}
-        <div className="space-y-2 mb-4">
-          {filteredSources.map((source, idx) => (
-            <div
-              key={idx}
-              className="p-3 rounded-[8px] bg-[#141516] border border-white/8 flex items-center justify-between text-xs font-mono transition-all hover:border-[#828fff]/30"
-            >
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#828fff]" />
-                  <span className="text-white font-medium">{source.name}</span>
+        {/* 3 Tier Cards with Interactive Selection */}
+        <div className="space-y-3 mb-5">
+          {corpora.map((corp, idx) => {
+            const isSelected = activeCorpus === idx;
+            return (
+              <div
+                key={idx}
+                onClick={() => setActiveCorpus(idx)}
+                className={`p-3.5 sm:p-4 rounded-[12px] border transition-all cursor-pointer ${
+                  isSelected
+                    ? 'bg-[#18191d] border-[#828fff]/40 shadow-[0_4px_20px_rgba(94,106,210,0.2)]'
+                    : 'bg-[#121316] border-white/8 hover:border-white/20'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#5e6ad2]/20 text-[#828fff] font-medium">
+                      {corp.tier}
+                    </span>
+                    <span className="text-xs sm:text-sm font-heading font-medium text-white">{corp.title}</span>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-xs font-mono font-semibold text-[#828fff]">{corp.trustScore}%</span>
+                    <span className="text-[9px] font-mono uppercase text-[#8a8f98]">Weight</span>
+                  </div>
                 </div>
-                <div className="text-[10px] text-[#8a8f98] mt-0.5 pl-3.5">
-                  {source.status}
-                </div>
-              </div>
 
-              <div className="text-right shrink-0">
-                <span className="text-xs font-semibold text-[#828fff]">{source.weight}%</span>
-                <span className="block text-[9px] text-[#8a8f98] uppercase">Trust Weight</span>
+                <div className="text-[11px] text-[#8a8f98] font-sans mb-1">
+                  Corpora: <span className="text-[#d0d6e0]">{corp.examples}</span>
+                </div>
+
+                {isSelected && (
+                  <div className="pt-2 mt-2 border-t border-white/10 text-xs text-[#d0d6e0] leading-relaxed">
+                    <span className="text-[#828fff] font-medium">Model Impact: </span>
+                    {corp.impact}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      {/* Displacement safeguard banner */}
-      <div className="pt-3 border-t border-white/10">
-        <div className="p-2.5 rounded-[8px] bg-[#070708] border border-white/10 flex items-center justify-between text-xs font-mono">
-          <div className="flex items-center gap-2 text-emerald-400">
+      {/* Displacement safeguard badge */}
+      <div className="pt-4 border-t border-white/10">
+        <div className="p-3.5 rounded-[10px] bg-[#070709] border border-white/10 flex items-center justify-between text-xs font-sans gap-3">
+          <div className="flex items-center gap-2 text-emerald-400 font-medium">
             <ShieldCheck className="w-4 h-4 shrink-0" />
-            <span className="text-[11px]">Displacement Safeguard Active</span>
+            <span>Displacement Safeguard Active</span>
           </div>
-          <span className="text-[10px] text-[#8a8f98]">0 Drift in 30d</span>
+          <span className="text-[11px] font-mono text-[#8a8f98] shrink-0">0% Omission Drift</span>
         </div>
       </div>
     </div>
@@ -481,7 +464,7 @@ export default function ServicesPage({ setCurrentRoute }) {
       ],
       ctaText: 'Request an Audit',
       ctaAction: 'audit',
-      VisualComponent: AuditSimulatorVisual,
+      VisualComponent: SyntheticVisibilityBenchmarkVisual,
     },
     {
       num: '02',
@@ -498,7 +481,7 @@ export default function ServicesPage({ setCurrentRoute }) {
       ],
       ctaText: 'Explore GEO Program',
       ctaAction: 'contact',
-      VisualComponent: GeoTriplesVisual,
+      VisualComponent: SemanticKnowledgeArchitectureVisual,
     },
     {
       num: '03',
@@ -515,7 +498,7 @@ export default function ServicesPage({ setCurrentRoute }) {
       ],
       ctaText: 'Build Brand Authority',
       ctaAction: 'contact',
-      VisualComponent: AuthorityMatrixVisual,
+      VisualComponent: AuthorityConsensusEcosystemVisual,
     }
   ];
 
@@ -573,14 +556,23 @@ export default function ServicesPage({ setCurrentRoute }) {
     <div className="w-full bg-[#010102] text-[#8a8f98] font-sans">
       
       {/* ============================================================
-          SECTION 1: PAGE HEADER
+          SECTION 1: PAGE HEADER (Atmospheric Executive Hero)
           ============================================================ */}
-      <section className="pt-[72px] pb-[48px] md:pt-[96px] md:pb-[80px] border-b border-[#23252a] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] text-left">
+      <section className="relative pt-[96px] pb-[64px] md:pt-[120px] md:pb-[96px] border-b border-[#23252a] overflow-hidden">
+        {/* Subtle radial ambient atmosphere */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(94,106,210,0.22),transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-[800px] text-left">
             <SlideReveal direction="down">
-              <div className="type-eyebrow text-[#828fff] mb-4">
-                // SERVICES & SYSTEM CAPABILITIES
+              <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-[8px] bg-[#141517] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#828fff] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#5e6ad2]" />
+                </span>
+                <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#828fff] font-medium">
+                  SERVICES & SYSTEM CAPABILITIES
+                </span>
               </div>
               <h1 className="type-display text-[#f7f8f8] mb-6">
                 Engineering brand visibility in the answer economy.
@@ -612,10 +604,10 @@ export default function ServicesPage({ setCurrentRoute }) {
       </section>
 
       {/* ============================================================
-          SECTION 2: SERVICE ROWS WITH INTERACTIVE TELEMETRY PANELS
+          SECTION 2: 3 CORE SERVICE SHOWCASES
           ============================================================ */}
-      <section className="py-[100px] lg:py-[120px] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-[96px] lg:space-y-[120px]">
+      <section className="py-[100px] lg:py-[130px] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-[100px] lg:space-y-[140px]">
           
           {serviceRows.map((svc, idx) => {
             const isEven = idx % 2 === 1;
@@ -624,7 +616,7 @@ export default function ServicesPage({ setCurrentRoute }) {
             return (
               <div
                 key={svc.num}
-                className="grid grid-cols-12 gap-8 lg:gap-12 items-center min-h-[480px]"
+                className="grid grid-cols-12 gap-8 lg:gap-14 items-center"
               >
                 {/* Text Block */}
                 <div
@@ -635,24 +627,32 @@ export default function ServicesPage({ setCurrentRoute }) {
                   } flex flex-col justify-center`}
                 >
                   <SlideReveal direction={isEven ? 'right' : 'left'}>
-                    <div className="type-eyebrow text-[#828fff] mb-3">
-                      // {svc.num} {svc.eyebrow}
+                    <div className="inline-flex items-center gap-2 mb-3">
+                      <span className="text-[12px] font-mono text-[#828fff] font-medium tracking-[0.12em]">
+                        // {svc.num}
+                      </span>
+                      <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#8a8f98]">
+                        {svc.eyebrow}
+                      </span>
                     </div>
+
                     <h2 className="type-h2 text-[#f7f8f8] mb-4">
                       {svc.title}
                     </h2>
-                    <p className="type-body text-[#8a8f98] mb-6 max-w-[65ch]">
+
+                    <p className="type-body text-[#8a8f98] mb-6 max-w-[65ch] leading-relaxed">
                       {svc.description}
                     </p>
 
                     {/* Deliverables checklist */}
-                    <div className="space-y-2.5 mb-8">
-                      <div className="text-[12px] uppercase tracking-[0.08em] font-medium text-[#f7f8f8] mb-3">
-                        Key Deliverables
+                    <div className="space-y-3 mb-8 p-4 rounded-[12px] bg-[#0c0d10] border border-white/6">
+                      <div className="text-[11px] font-mono uppercase tracking-[0.12em] font-medium text-[#f7f8f8] mb-2 flex items-center justify-between">
+                        <span>Key Deliverables</span>
+                        <span className="text-[#828fff] text-[10px]">Verified Output</span>
                       </div>
                       {svc.deliverables.map((d, dIdx) => (
                         <div key={dIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#d0d6e0]">
-                          <div className="w-4 h-4 rounded-full bg-[#141516] border border-[#23252a] text-[#828fff] flex items-center justify-center shrink-0 mt-0.5">
+                          <div className="w-4 h-4 rounded-full bg-[#18191d] border border-white/10 text-[#828fff] flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-2.5 h-2.5" />
                           </div>
                           <span className="leading-snug">{d}</span>
@@ -672,12 +672,12 @@ export default function ServicesPage({ setCurrentRoute }) {
                   </SlideReveal>
                 </div>
 
-                {/* Interactive Visual Simulator Panel */}
+                {/* Executive Showcase Graphic */}
                 <div
                   className={`col-span-12 ${
                     isEven
-                      ? 'lg:col-span-6 order-2 lg:order-1'
-                      : 'lg:col-start-7 lg:col-span-6 order-2'
+                      ? 'lg:col-span-7 order-2 lg:order-1'
+                      : 'lg:col-start-6 lg:col-span-7 order-2'
                   }`}
                 >
                   <SlideReveal direction={isEven ? 'left' : 'right'}>
@@ -693,14 +693,17 @@ export default function ServicesPage({ setCurrentRoute }) {
       </section>
 
       {/* ============================================================
-          SECTION 3: PROCESS / METHODOLOGY
+          SECTION 3: SYSTEMATIC METHODOLOGY (4 Phases)
           ============================================================ */}
-      <section className="py-[120px] lg:py-[144px] bg-[#0f1011] border-y border-[#23252a] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-[120px] lg:py-[144px] bg-[#0c0d10] border-y border-[#23252a] relative overflow-hidden">
+        {/* Subtle ambient lighting */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(94,106,210,0.12),transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="down">
             <div className="max-w-[720px] mb-12 lg:mb-16 text-left">
-              <div className="type-eyebrow text-[#828fff] mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#141517] border border-white/8 text-[11px] font-mono uppercase tracking-[0.14em] text-[#828fff] mb-3">
                 // SYSTEMATIC METHODOLOGY
               </div>
               <h2 className="type-h2 text-[#f7f8f8] mb-4">
@@ -713,7 +716,7 @@ export default function ServicesPage({ setCurrentRoute }) {
           </SlideReveal>
 
           {/* 4 equal columns grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {processSteps.map((step, idx) => (
               <SlideReveal
                 key={step.step}
@@ -721,15 +724,15 @@ export default function ServicesPage({ setCurrentRoute }) {
                 delay={idx * 0.08}
                 className="h-full"
               >
-                <div className="min-h-[300px] p-[28px] rounded-[12px] bg-[#141516] border border-[#23252a] flex flex-col justify-between hover:border-[#34343a] transition-colors h-full">
+                <div className="min-h-[320px] p-7 rounded-[14px] bg-[#121316] border border-white/8 flex flex-col justify-between hover:border-[#828fff]/35 hover:-translate-y-1 transition-all duration-300 h-full group shadow-[0_12px_32px_rgba(0,0,0,0.6)]">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[12px] font-mono uppercase tracking-wider text-[#828fff]">
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-[#828fff] bg-[#5e6ad2]/15 px-2.5 py-1 rounded-[6px] border border-[#5e6ad2]/20 font-medium">
                         {step.step}
                       </span>
-                      <span className="text-[11px] text-[#8a8f98]">{step.duration}</span>
+                      <span className="text-[11px] font-mono text-[#8a8f98]">{step.duration}</span>
                     </div>
-                    <h3 className="type-h4 text-[#f7f8f8] mb-3">
+                    <h3 className="type-h4 text-[#f7f8f8] mb-3 group-hover:text-[#828fff] transition-colors">
                       {step.title}
                     </h3>
                     <p className="type-small text-[#8a8f98] leading-relaxed">
@@ -737,8 +740,8 @@ export default function ServicesPage({ setCurrentRoute }) {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#23252a] mt-6">
-                    <span className="text-[11px] uppercase tracking-wider text-[#8a8f98] block mb-1">Deliverable</span>
+                  <div className="pt-4 border-t border-white/8 mt-6">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#8a8f98] block mb-1">Deliverable</span>
                     <span className="type-small text-[#f7f8f8] font-medium block">{step.deliverable}</span>
                   </div>
                 </div>
@@ -757,7 +760,7 @@ export default function ServicesPage({ setCurrentRoute }) {
           
           <SlideReveal direction="up">
             <div className="max-w-[720px] mx-auto text-center mb-12 lg:mb-16">
-              <div className="type-eyebrow text-[#828fff] mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#141517] border border-white/8 text-[11px] font-mono uppercase tracking-[0.14em] text-[#828fff] mb-3">
                 // COMMONLY ASKED QUESTIONS
               </div>
               <h2 className="type-h2 text-[#f7f8f8] mb-4">
@@ -769,13 +772,13 @@ export default function ServicesPage({ setCurrentRoute }) {
             </div>
           </SlideReveal>
 
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3.5">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
                 <div
                   key={idx}
-                  className="rounded-[12px] bg-[#0f1011] border border-[#23252a] overflow-hidden transition-colors"
+                  className="rounded-[12px] bg-[#0c0d10] border border-white/8 overflow-hidden transition-all duration-200 hover:border-white/15"
                 >
                   <button
                     type="button"
@@ -794,7 +797,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 sm:px-8 pb-5 type-body text-[#8a8f98] leading-relaxed border-t border-[#23252a] pt-3">
+                    <div className="px-6 sm:px-8 pb-5 type-body text-[#8a8f98] leading-relaxed border-t border-white/6 pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -809,12 +812,16 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 5: FINAL CTA PANEL
           ============================================================ */}
-      <section className="py-[120px] bg-[#0f1011] border-t border-[#23252a] overflow-hidden">
+      <section className="py-[120px] bg-[#0c0d10] border-t border-[#23252a] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SlideReveal direction="up">
-            <div className="relative p-10 sm:p-14 lg:p-16 rounded-[16px] bg-[#141516] border border-[#23252a] text-center max-w-4xl mx-auto overflow-hidden shadow-2xl">
-              <div className="type-eyebrow text-[#828fff] mb-3">
+            <div className="relative p-10 sm:p-14 lg:p-16 rounded-[20px] bg-[#121316] border border-white/10 text-center max-w-4xl mx-auto overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.85)]">
+              {/* Radial ambient highlight */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#5e6ad2]/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/50 to-transparent pointer-events-none" />
+
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#18191d] border border-white/10 text-[11px] font-mono uppercase tracking-[0.14em] text-[#828fff] mb-4">
                 // GET CITED. GET CHOSEN.
               </div>
 
@@ -822,7 +829,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                 Ready to establish your synthetic search presence?
               </h2>
 
-              <p className="type-body text-[#8a8f98] max-w-[65ch] mx-auto mb-8">
+              <p className="type-body text-[#8a8f98] max-w-[65ch] mx-auto mb-8 leading-relaxed">
                 Request an AI Visibility Audit to discover how your brand currently ranks, where competitors are winning attention, and the prioritized roadmap to lead AI discovery.
               </p>
 

@@ -54,7 +54,7 @@ export function SlideReveal({
   delay = 0,
   duration = 0.65,
   className = '',
-  viewportMargin = '-60px',
+  viewportMargin = '0px',
   once = true,
   ...props
 }) {
@@ -94,7 +94,7 @@ export function SlideStaggerContainer({
   children,
   staggerDelay = 0.1,
   className = '',
-  viewportMargin = '-50px',
+  viewportMargin = '0px',
   once = true,
   ...props
 }) {

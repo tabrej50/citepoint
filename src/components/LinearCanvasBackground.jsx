@@ -5,7 +5,7 @@ import React from 'react';
  * 
  * Signature Linear technical dark canvas:
  * - Near-black surface (#010102)
- * - Faint top-center lavender illumination (#ff3131 at ~12% opacity)
+ * - Faint top-center lavender illumination (#828fff at ~12% opacity)
  * - Subtle technical hairline grid masked with a radial falloff
  * - Crisp, quiet, and distraction-free
  */

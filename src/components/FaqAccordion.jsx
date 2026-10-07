@@ -57,25 +57,25 @@ export default function FaqAccordion() {
             key={idx}
             className={`surface-card !p-0 overflow-hidden transition-all duration-300 group ${
               isOpen
-                ? '!border-[#ff5252]/50 !shadow-[inset_0_1px_0_0_rgba(203,255,252,0.35),0_16px_36px_-10px_rgba(0,0,0,0.68),0_0_24px_rgba(203,255,252,0.12)]'
+                ? '!border-[#828fff]/50 !shadow-[inset_0_1px_0_0_rgba(130,143,255,0.35),0_16px_36px_-10px_rgba(0,0,0,0.68),0_0_24px_rgba(130,143,255,0.12)]'
                 : 'hover:!border-white/25'
             }`}
           >
             <button
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
-              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5252] cursor-pointer"
+              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#828fff] cursor-pointer"
             >
-              <span className="font-sans font-medium text-base text-white flex items-center gap-2.5 transition-colors duration-200 group-hover:text-[#ff5252]">
+              <span className="font-heading font-medium text-base text-white flex items-center gap-2.5 transition-colors duration-200 group-hover:text-[#828fff]">
                 {faq.isGuarantee && (
-                  <ShieldCheck className="w-4 h-4 text-[#ff5252] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#828fff] shrink-0" />
                 )}
                 {faq.q}
               </span>
               <span
                 className={`w-8 h-8 rounded-[8px] border border-white/10 flex items-center justify-center transition-all duration-300 shrink-0 group-hover:scale-105 ${
                   isOpen
-                    ? 'bg-[#0f1011] text-[#ff5252] rotate-180 border-[#ff5252]/30 shadow-[0_0_10px_rgba(203,255,252,0.2)]'
+                    ? 'bg-[#0f1011] text-[#828fff] rotate-180 border-[#828fff]/30 shadow-[0_0_10px_rgba(130,143,255,0.2)]'
                     : 'bg-[#0f1011]/60 text-[#8a8f98]'
                 }`}
               >

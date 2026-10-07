@@ -151,7 +151,7 @@ export default function LiquidGlassNavbarSurface({ containerRef }) {
         ctx.lineTo(width, height);
         ctx.closePath();
         const waveGrad1 = ctx.createLinearGradient(0, waveY1 - 8, 0, height);
-        waveGrad1.addColorStop(0, 'rgba(203, 255, 252, 0.055)');
+        waveGrad1.addColorStop(0, 'rgba(130, 143, 255, 0.055)');
         waveGrad1.addColorStop(0.5, 'rgba(255, 255, 255, 0.03)');
         waveGrad1.addColorStop(1, 'rgba(255, 255, 255, 0)');
         ctx.fillStyle = waveGrad1;
@@ -203,7 +203,7 @@ export default function LiquidGlassNavbarSurface({ containerRef }) {
         // Secondary cyan refraction ring
         ctx.beginPath();
         ctx.arc(r.x, r.y, Math.max(1, r.radius - 2.5), 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(203, 255, 252, ${r.opacity * 0.30})`;
+        ctx.strokeStyle = `rgba(130, 143, 255, ${r.opacity * 0.30})`;
         ctx.lineWidth = 1.0;
         ctx.stroke();
         ctx.restore();
@@ -220,7 +220,7 @@ export default function LiquidGlassNavbarSurface({ containerRef }) {
           currentX, currentY, spotWidth
         );
         spotGrad.addColorStop(0, `rgba(255, 255, 255, ${0.15 * masterOpacity})`);
-        spotGrad.addColorStop(0.22, `rgba(203, 255, 252, ${0.08 * masterOpacity})`);
+        spotGrad.addColorStop(0.22, `rgba(130, 143, 255, ${0.08 * masterOpacity})`);
         spotGrad.addColorStop(0.55, `rgba(214, 168, 75, ${0.045 * masterOpacity})`);
         spotGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
@@ -241,7 +241,7 @@ export default function LiquidGlassNavbarSurface({ containerRef }) {
         if (mRight > mLeft) {
           const topMeniscus = ctx.createLinearGradient(mLeft, 0, mRight, 0);
           topMeniscus.addColorStop(0, 'rgba(255, 255, 255, 0)');
-          topMeniscus.addColorStop(0.25, `rgba(203, 255, 252, ${0.15 * masterOpacity})`);
+          topMeniscus.addColorStop(0.25, `rgba(130, 143, 255, ${0.15 * masterOpacity})`);
           topMeniscus.addColorStop(0.5, `rgba(255, 255, 255, ${0.42 * masterOpacity})`);
           topMeniscus.addColorStop(0.75, `rgba(214, 168, 75, ${0.15 * masterOpacity})`);
           topMeniscus.addColorStop(1, 'rgba(255, 255, 255, 0)');
@@ -251,9 +251,9 @@ export default function LiquidGlassNavbarSurface({ containerRef }) {
 
           // Bottom beveled rim refraction
           const btmMeniscus = ctx.createLinearGradient(mLeft, 0, mRight, 0);
-          btmMeniscus.addColorStop(0, 'rgba(203, 255, 252, 0)');
-          btmMeniscus.addColorStop(0.5, `rgba(203, 255, 252, ${0.20 * masterOpacity})`);
-          btmMeniscus.addColorStop(1, 'rgba(203, 255, 252, 0)');
+          btmMeniscus.addColorStop(0, 'rgba(130, 143, 255, 0)');
+          btmMeniscus.addColorStop(0.5, `rgba(130, 143, 255, ${0.20 * masterOpacity})`);
+          btmMeniscus.addColorStop(1, 'rgba(130, 143, 255, 0)');
 
           ctx.fillStyle = btmMeniscus;
           ctx.fillRect(mLeft, height - 1.6, mRight - mLeft, 1.6);

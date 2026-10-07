@@ -100,7 +100,7 @@ export default function InsightsPage({ setCurrentRoute }) {
           aria-hidden="true"
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at 50% 30%, rgba(203, 255, 252, 0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(circle at 50% 30%, rgba(130, 143, 255, 0.15) 0%, transparent 60%)',
           }}
         />
 
@@ -110,7 +110,7 @@ export default function InsightsPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
                 // RESEARCH & ANALYSIS
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.08] mb-6 [text-wrap:balance]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.08] mb-6 [text-wrap:balance]">
                 Insights into the answer economy.
               </h1>
               <p className="text-lg sm:text-xl text-[#8a8f98] leading-[1.4] mb-8">
@@ -137,10 +137,10 @@ export default function InsightsPage({ setCurrentRoute }) {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2.5 rounded-[8px] text-xs font-arial uppercase tracking-wider transition-all border cursor-pointer ${
+                  className={`px-5 py-2.5 rounded-[8px] text-xs font-heading uppercase tracking-wider transition-all border cursor-pointer ${
                     selectedCategory === cat
-                      ? 'bg-[#141516] text-[#ffffff] border-[#ff5252]/40'
-                      : 'bg-[#010102] text-[#8a8f98] border-[#23252a]/20 hover:border-[#ff5252]/30 hover:text-[#ffffff]'
+                      ? 'bg-[#141516] text-[#ffffff] border-[#828fff]/40'
+                      : 'bg-[#010102] text-[#8a8f98] border-[#23252a]/20 hover:border-[#828fff]/30 hover:text-[#ffffff]'
                   }`}
                 >
                   {cat}
@@ -159,7 +159,7 @@ export default function InsightsPage({ setCurrentRoute }) {
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-[#8a8f98] mb-4 pb-4 border-b border-[#23252a]/20">
-                    <span className="px-2.5 py-0.5 rounded-[8px] bg-[#0f1011] text-[#ff5252] border border-[#23252a]/30 font-mono uppercase tracking-wider text-[11px] transition-colors duration-200 group-hover:border-[#ff5252]/40">
+                    <span className="px-2.5 py-0.5 rounded-[8px] bg-[#0f1011] text-[#828fff] border border-[#23252a]/30 font-mono uppercase tracking-wider text-[11px] transition-colors duration-200 group-hover:border-[#828fff]/40">
                       {art.category}
                     </span>
                     <span className="font-mono">
@@ -169,7 +169,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-sans font-medium text-[#ffffff] mb-3 group-hover:text-[#ff5252] transition-colors leading-[1.0]">
+                  <h2 className="text-xl sm:text-2xl font-heading font-medium text-[#ffffff] mb-3 group-hover:text-[#828fff] transition-colors leading-[1.0]">
                     {art.title}
                   </h2>
 
@@ -177,7 +177,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                     {art.excerpt}
                   </p>
 
-                  <div className="p-4 rounded-[8px] bg-[#0f1011]/90 border border-white/10 text-xs text-[#f7f8f8] mb-6 font-mono leading-relaxed transition-all duration-300 group-hover:border-[#ff5252]/20">
+                  <div className="p-4 rounded-[8px] bg-[#0f1011]/90 border border-white/10 text-xs text-[#f7f8f8] mb-6 font-mono leading-relaxed transition-all duration-300 group-hover:border-[#828fff]/20">
                     {art.highlight}
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                   <span className="text-[#8a8f98]">Citepoint Research Desk</span>
                   <button
                     onClick={() => handleNav('audit')}
-                    className="text-[#ff5252] font-normal group-hover:underline inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
+                    className="text-[#828fff] font-normal group-hover:underline inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
                   >
                     <span>Read Analysis</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -204,7 +204,7 @@ export default function InsightsPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#0f1011] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-3">
                 TERMINOLOGY & CONCEPTS
               </div>
-              <h3 className="text-2xl sm:text-3xl font-sans font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-3">
+              <h3 className="text-2xl sm:text-3xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-3">
                 The B2B GEO Glossary
               </h3>
               <p className="text-sm text-[#8a8f98] leading-[1.4]">
@@ -219,10 +219,10 @@ export default function InsightsPage({ setCurrentRoute }) {
                   <button
                     key={idx}
                     onClick={() => setSelectedGlossaryTerm(idx)}
-                    className={`w-full text-left px-5 py-3.5 rounded-[8px] text-xs font-arial uppercase tracking-wider transition-all border cursor-pointer ${
+                    className={`w-full text-left px-5 py-3.5 rounded-[8px] text-xs font-heading uppercase tracking-wider transition-all border cursor-pointer ${
                       selectedGlossaryTerm === idx
-                        ? 'bg-[#0f1011] text-[#ffffff] border-[#ff5252]/40'
-                        : 'bg-[#141516] text-[#8a8f98] border-[#23252a]/20 hover:text-[#ffffff] hover:border-[#ff5252]/30'
+                        ? 'bg-[#0f1011] text-[#ffffff] border-[#828fff]/40'
+                        : 'bg-[#141516] text-[#8a8f98] border-[#23252a]/20 hover:text-[#ffffff] hover:border-[#828fff]/30'
                     }`}
                   >
                     {item.term}
@@ -233,10 +233,10 @@ export default function InsightsPage({ setCurrentRoute }) {
               {/* Term Definition Detail */}
               <div className="lg:col-span-7 bg-[#0f1011]/90 text-[#ffffff] rounded-[12px] p-6 lg:p-8 border border-white/10 flex flex-col justify-between min-h-[260px] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#ff5252] block mb-2">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#828fff] block mb-2">
                     DEFINITION // 0{selectedGlossaryTerm + 1}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-sans font-medium text-[#ffffff] leading-[1.0] mb-4">
+                  <h4 className="text-xl sm:text-2xl font-heading font-medium text-[#ffffff] leading-[1.0] mb-4">
                     {glossary[selectedGlossaryTerm].term}
                   </h4>
                   <p className="text-sm text-[#8a8f98] leading-[1.4]">
@@ -248,7 +248,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                   <span>Citepoint Knowledge Standard</span>
                   <button
                     onClick={() => handleNav('contact')}
-                    className="text-[#ff5252] hover:underline cursor-pointer"
+                    className="text-[#828fff] hover:underline cursor-pointer"
                   >
                     [ Ask Our Specialists ]
                   </button>
@@ -268,7 +268,7 @@ export default function InsightsPage({ setCurrentRoute }) {
           aria-hidden="true"
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(203, 255, 252, 0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(circle at 50% 50%, rgba(130, 143, 255, 0.15) 0%, transparent 60%)',
           }}
         />
 
@@ -277,7 +277,7 @@ export default function InsightsPage({ setCurrentRoute }) {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
               ALGORITHM INTELLIGENCE
             </div>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-5">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-5">
               Stay ahead of generative search algorithm updates.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] max-w-2xl mx-auto leading-[1.4] mb-8">
@@ -286,14 +286,14 @@ export default function InsightsPage({ setCurrentRoute }) {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() => handleNav('audit')}
-                className="btn-aurora text-white font-arial font-normal uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
+                className="btn-aurora text-white font-heading font-medium uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
               >
                 <span>Get Your AI Visibility Audit</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 onClick={() => handleNav('contact')}
-                className="btn-kelp text-[#ffffff] font-arial font-normal uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
+                className="btn-kelp text-[#ffffff] font-heading font-medium uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
               >
                 <span>Schedule a Consultation</span>
               </button>

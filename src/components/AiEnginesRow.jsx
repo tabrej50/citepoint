@@ -195,7 +195,7 @@ export default function AiEnginesRow({
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-[8px] border border-[#23252a]/20 bg-[#141516] hover:border-[#ff5252]/40 text-[#ffffff] transition-all duration-200 group ${
+          className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-[8px] border border-[#23252a]/20 bg-[#141516] hover:border-[#828fff]/40 text-[#ffffff] transition-all duration-200 group ${
             interactive ? 'hover:-translate-y-0.5 cursor-default' : ''
           }`}
         >
@@ -238,7 +238,7 @@ export function AiEnginesGrid({ className = '' }) {
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className="p-5 rounded-[12px] border border-[#23252a]/20 bg-[#141516] hover:border-[#ff5252]/40 text-[#ffffff] transition-all duration-200 flex flex-col justify-between group"
+          className="p-5 rounded-[12px] border border-[#23252a]/20 bg-[#141516] hover:border-[#828fff]/40 text-[#ffffff] transition-all duration-200 flex flex-col justify-between group"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -258,7 +258,7 @@ export function AiEnginesGrid({ className = '' }) {
               </span>
             </div>
 
-            <h4 className="text-base font-sans font-medium mb-1 text-[#ffffff] group-hover:text-[#ff5252] transition-colors leading-[1.0]">
+            <h4 className="text-base font-heading font-medium mb-1 text-[#ffffff] group-hover:text-[#828fff] transition-colors leading-[1.0]">
               {engine.name}
             </h4>
 
@@ -268,9 +268,9 @@ export function AiEnginesGrid({ className = '' }) {
           </div>
 
           <div
-            className="pt-3 border-t border-[#23252a]/20 text-[11px] font-mono flex items-center gap-1.5 text-[#ff5252]"
+            className="pt-3 border-t border-[#23252a]/20 text-[11px] font-mono flex items-center gap-1.5 text-[#828fff]"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff5252]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#828fff]" />
             <span>Audited & Optimized</span>
           </div>
         </div>

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
  * CITEPOINT 3D SPIRAL GALAXY & COSMIC ATMOSPHERE
  * Sitewide deep-space canvas animation:
  * - 4-Arm Logarithmic Spiral Galaxy with central supermassive core
- * - Bioluminescent cyan (#ff5252, #ff3131), starlight diamond (#ffffff), stellar gold (#d4a555), and lavender nebula (#ff5252)
+ * - Bioluminescent lavender phosphor (#828fff, #5e6ad2), starlight diamond (#ffffff), stellar gold (#d4a555)
  * - Deep interstellar starfield with twinkling distant stars
  * - Occasional subtle shooting stars / meteors streaking across the void
  * - Oblique 3D tilt perspective responding smoothly to cursor and page scroll
@@ -166,7 +166,7 @@ export default function CitepointIntelligenceField() {
         const z = r * Math.sin(theta) * Math.cos(phi);
 
         const rand = Math.random();
-        const color = rand < 0.45 ? '#ffffff' : rand < 0.75 ? '#d4a555' : '#ff5252';
+        const color = rand < 0.45 ? '#ffffff' : rand < 0.75 ? '#d4a555' : '#828fff';
         const coreObj = {
           x,
           y,
@@ -189,7 +189,7 @@ export default function CitepointIntelligenceField() {
           y: (Math.random() - 0.5) * height * 1.6,
           size: 0.6 + Math.random() * 1.2,
           alpha: 0.2 + Math.random() * 0.6,
-          color: Math.random() < 0.65 ? '#ffffff' : Math.random() < 0.85 ? '#ff5252' : '#d4a555',
+          color: Math.random() < 0.65 ? '#ffffff' : Math.random() < 0.85 ? '#828fff' : '#d4a555',
           twinkleSpeed: 0.015 + Math.random() * 0.035,
           twinklePhase: Math.random() * Math.PI * 2,
         });
@@ -233,7 +233,7 @@ export default function CitepointIntelligenceField() {
           length,
           life: 1.0,
           decay: 0.018 + Math.random() * 0.012,
-          color: Math.random() < 0.6 ? '#ff5252' : '#ffffff',
+          color: Math.random() < 0.6 ? '#828fff' : '#ffffff',
         });
       }
     };
@@ -325,7 +325,7 @@ export default function CitepointIntelligenceField() {
         centerY,
         Math.min(width, height) * 0.42
       );
-      coreGlow.addColorStop(0, 'rgba(203, 255, 252, 0.28)'); // Luminous cyan core
+      coreGlow.addColorStop(0, 'rgba(130, 143, 255, 0.28)'); // Luminous cyan core
       coreGlow.addColorStop(0.25, 'rgba(0, 130, 124, 0.20)'); // Teal dust
       coreGlow.addColorStop(0.55, 'rgba(212, 165, 85, 0.09)'); // Warm stellar gold ring
       coreGlow.addColorStop(0.75, 'rgba(253, 233, 255, 0.05)'); // Lavender envelope
@@ -405,7 +405,7 @@ export default function CitepointIntelligenceField() {
 
         const grad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
         grad.addColorStop(0, `rgba(255, 255, 255, ${m.life})`);
-        grad.addColorStop(0.3, `rgba(203, 255, 252, ${m.life * 0.7})`);
+        grad.addColorStop(0.3, `rgba(130, 143, 255, ${m.life * 0.7})`);
         grad.addColorStop(1, 'transparent');
 
         ctx.globalAlpha = m.life;

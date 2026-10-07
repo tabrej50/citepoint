@@ -17,7 +17,7 @@ export default function TermsPage({ setCurrentRoute }) {
           aria-hidden="true"
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at 50% 30%, rgba(203, 255, 252, 0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(circle at 50% 30%, rgba(130, 143, 255, 0.15) 0%, transparent 60%)',
           }}
         />
 
@@ -25,7 +25,7 @@ export default function TermsPage({ setCurrentRoute }) {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
             // TERMS OF ENGAGEMENT
           </div>
-          <h1 className="text-4xl sm:text-5xl font-sans font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-4">
             Terms of Service
           </h1>
           <p className="text-sm text-[#8a8f98] font-mono">
@@ -42,16 +42,16 @@ export default function TermsPage({ setCurrentRoute }) {
           <div className="surface-card-static p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.4] text-[#8a8f98]">
             
             <div>
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 01. Acceptance of Terms
               </h2>
               <p>
-                By accessing this website (<code className="text-[#ff5252] font-mono">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-[#ffffff]">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
+                By accessing this website (<code className="text-[#828fff] font-mono">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-[#ffffff]">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 02. Scope of Services & Independent Advisory
               </h2>
               <p>
@@ -60,20 +60,20 @@ export default function TermsPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 03. Disclaimer Regarding Third-Party AI Models
               </h2>
               <p className="mb-4">
                 Third-party generative AI models (including ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews) are operated by autonomous third parties. Their model weights, training corpora, retrieval algorithms, and output filters evolve unpredictably.
               </p>
               <div className="p-5 rounded-[12px] bg-[#0f1011] border border-[#23252a]/20 text-xs text-[#8a8f98] font-mono leading-relaxed">
-                <strong className="text-[#ff5252] block mb-1">Explicit Agency Disclaimer:</strong>
+                <strong className="text-[#828fff] block mb-1">Explicit Agency Disclaimer:</strong>
                 Citepoint does not warrant or guarantee fixed rankings, guaranteed #1 recommendations, or permanent inclusion in any third-party synthetic response. All services focus on controllable variables: data integrity, citation authority, structured schemas, and empirical measurement.
               </div>
             </div>
 
             <div>
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 04. Intellectual Property
               </h2>
               <p>
@@ -82,7 +82,7 @@ export default function TermsPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 05. Limitation of Liability
               </h2>
               <p>
@@ -91,7 +91,7 @@ export default function TermsPage({ setCurrentRoute }) {
             </div>
 
             <div className="pt-6 border-t border-[#23252a]/20">
-              <h2 className="text-xl font-sans font-medium text-[#ffffff] mb-3 leading-[1.0]">
+              <h2 className="text-xl font-heading font-medium text-[#ffffff] mb-3 leading-[1.0]">
                 06. Governing Law & Arbitration
               </h2>
               <p>

@@ -658,7 +658,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#828fff] transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_12px_rgba(203,255,252,0.2)]">
+                        <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#828fff] transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_12px_rgba(130,143,255,0.2)]">
                           <Icon className="w-4 h-4" />
                         </div>
                         <span className="font-sans text-xs text-[#f7f8f8] font-medium tracking-[0.12em] transition-colors duration-200 group-hover:text-[#828fff]">
@@ -765,7 +765,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   <div className="surface-card p-6 flex flex-col justify-between h-full group cursor-default">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="w-7 h-7 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center font-sans text-xs font-medium text-[#828fff] transition-all duration-300 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_10px_rgba(203,255,252,0.2)]">
+                        <span className="w-7 h-7 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center font-sans text-xs font-medium text-[#828fff] transition-all duration-300 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_10px_rgba(130,143,255,0.2)]">
                           {item.step}
                         </span>
                         <span className="w-2 h-2 rounded-full bg-[#828fff] transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_8px_#828fff]" />
@@ -847,7 +847,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     onClick={() => setActiveStep(idx)}
                     className={`surface-card p-6 lg:p-8 cursor-pointer flex flex-col justify-between h-full group ${
                       isActive
-                        ? '!border-[#828fff] !shadow-[inset_0_1px_0_0_rgba(203,255,252,0.4),0_0_30px_rgba(203,255,252,0.18),0_20px_45px_-10px_rgba(0,0,0,0.7)] -translate-y-1'
+                        ? '!border-[#828fff] !shadow-[inset_0_1px_0_0_rgba(130,143,255,0.4),0_0_30px_rgba(130,143,255,0.18),0_20px_45px_-10px_rgba(0,0,0,0.7)] -translate-y-1'
                         : ''
                     }`}
                   >

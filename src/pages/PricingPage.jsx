@@ -257,7 +257,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.firstName}
                           onChange={handleInputChange}
                           placeholder="Jane"
-                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
@@ -271,7 +271,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.lastName}
                           onChange={handleInputChange}
                           placeholder="Doe"
-                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -287,7 +287,7 @@ export default function PricingPage({ setCurrentRoute }) {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="jane@company.com"
-                        className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none transition-colors"
+                        className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -303,7 +303,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.company}
                           onChange={handleInputChange}
                           placeholder="Acme Corp"
-                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
@@ -317,7 +317,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.website}
                           onChange={handleInputChange}
                           placeholder="https://acme.com"
-                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] px-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -333,7 +333,7 @@ export default function PricingPage({ setCurrentRoute }) {
                         value={formData.notes}
                         onChange={handleInputChange}
                         placeholder="Which competitors dominate buyer prompts in your category? Any specific prompt queries to benchmark?"
-                        className="h-[160px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] p-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#e02020] focus:outline-none resize-none transition-colors"
+                        className="h-[160px] w-full rounded-[8px] bg-[#0f1011] border border-[#23252a] p-4 text-[#f7f8f8] placeholder-[#62666d] focus:border-[#828fff] focus:outline-none resize-none transition-colors"
                       />
                     </div>
 

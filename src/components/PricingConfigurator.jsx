@@ -179,16 +179,16 @@ export default function PricingConfigurator({ setCurrentRoute }) {
             <div
               className={`w-7 h-7 rounded-[8px] flex items-center justify-center font-mono text-xs transition-colors ${
                 currentStep === 1
-                  ? 'bg-[#141516] border border-[#ff5252] text-[#ff5252] shadow-[0_0_12px_rgba(203,255,252,0.25)]'
+                  ? 'bg-[#141516] border border-[#828fff] text-[#828fff] shadow-[0_0_12px_rgba(130,143,255,0.25)]'
                   : currentStep > 1
-                  ? 'bg-[#141516] border border-[#ff5252]/50 text-[#ff5252]'
-                  : 'bg-[#002826] border border-white/10 text-[#8a8f98]'
+                  ? 'bg-[#141516] border border-[#828fff]/50 text-[#828fff]'
+                  : 'bg-[#141516] border border-white/10 text-[#8a8f98]'
               }`}
             >
-              {currentStep > 1 ? <Check className="w-3.5 h-3.5 text-[#ff5252]" /> : '01'}
+              {currentStep > 1 ? <Check className="w-3.5 h-3.5 text-[#828fff]" /> : '01'}
             </div>
             <div>
-              <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-[#ff5252] block leading-none">
+              <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-[#828fff] block leading-none">
                 STEP 1
               </span>
               <span className="text-xs sm:text-sm font-medium tracking-tight">
@@ -201,7 +201,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
           <div className="flex-1 mx-4 sm:mx-6 flex items-center justify-center">
             <div className="w-full border-t border-dashed border-white/15 relative">
               <div
-                className={`absolute top-[-1px] left-0 h-[1px] bg-gradient-to-r from-[#ff5252] to-[#F0CF85] transition-all duration-500 ${
+                className={`absolute top-[-1px] left-0 h-[1px] bg-gradient-to-r from-[#828fff] to-[#5e6ad2] transition-all duration-500 ${
                   currentStep === 2 ? 'w-full' : 'w-0'
                 }`}
               />
@@ -226,13 +226,13 @@ export default function PricingConfigurator({ setCurrentRoute }) {
             <div
               className={`w-7 h-7 rounded-[8px] flex items-center justify-center font-mono text-xs transition-colors ${
                 currentStep === 2
-                  ? 'bg-[#141516] border border-[#ff5252] text-[#ff5252] shadow-[0_0_12px_rgba(203,255,252,0.25)]'
+                  ? 'bg-[#141516] border border-[#828fff] text-[#828fff] shadow-[0_0_12px_rgba(130,143,255,0.25)]'
                   : formSubmitted
-                  ? 'bg-[#141516] border border-[#ff5252]/50 text-[#ff5252]'
-                  : 'bg-[#002826] border border-white/10 text-[#8a8f98]'
+                  ? 'bg-[#141516] border border-[#828fff]/50 text-[#828fff]'
+                  : 'bg-[#141516] border border-white/10 text-[#8a8f98]'
               }`}
             >
-              {formSubmitted ? <Check className="w-3.5 h-3.5 text-[#ff5252]" /> : '02'}
+              {formSubmitted ? <Check className="w-3.5 h-3.5 text-[#828fff]" /> : '02'}
             </div>
             <div>
               <span className="text-[10px] font-mono tracking-[0.14em] uppercase text-[#8a8f98]/60 block leading-none">
@@ -263,7 +263,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
           {currentStep === 1 && (
             <div className="space-y-4 sm:space-y-5">
               <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/8">
-                <span className="text-xs font-mono uppercase tracking-[0.12em] text-[#ff5252]">
+                <span className="text-xs font-mono uppercase tracking-[0.12em] text-[#828fff]">
                   // 01 SELECT AN ENGAGEMENT SCOPE
                 </span>
                 <span className="text-xs font-sans text-[#8a8f98]">
@@ -286,14 +286,14 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                     >
                       {/* Top Specular Line on Selected & Hover */}
                       <div
-                        className={`absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#ff5252] to-transparent pointer-events-none transition-opacity duration-300 ${
+                        className={`absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff] to-transparent pointer-events-none transition-opacity duration-300 ${
                           isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'
                         }`}
                       />
 
                       {/* Ambient Glow Aura */}
                       <div
-                        className={`pointer-events-none absolute -top-24 -right-24 w-52 h-52 rounded-full bg-[#ff5252] blur-3xl transition-opacity duration-500 ${
+                        className={`pointer-events-none absolute -top-24 -right-24 w-52 h-52 rounded-full bg-[#828fff] blur-3xl transition-opacity duration-500 ${
                           isSelected ? 'opacity-15' : 'opacity-0 group-hover:opacity-8'
                         }`}
                       />
@@ -301,11 +301,11 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                       {/* Top Badges */}
                       <div className="flex items-center justify-between mb-3 gap-2 flex-wrap relative z-10">
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#ff5252] font-medium">
+                          <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#828fff] font-medium">
                             // {plan.num} {plan.label}
                           </span>
                           {plan.badge && (
-                            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#ff5252] text-[#010102] font-arial text-[10px] font-semibold uppercase tracking-wider shadow-[0_0_10px_rgba(203,255,252,0.3)]">
+                            <span className="px-2.5 py-0.5 rounded-[4px] bg-[#828fff] text-[#010102] font-arial text-[10px] font-semibold uppercase tracking-wider shadow-[0_0_10px_rgba(130,143,255,0.3)]">
                               {plan.badge}
                             </span>
                           )}
@@ -314,12 +314,12 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                         {/* Selected Radio Indicator */}
                         <div className="flex items-center gap-2 shrink-0">
                           {isSelected ? (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[8px] bg-[#ff5252]/15 border border-[#ff5252] text-[#ff5252] text-[11px] font-mono shadow-[0_0_12px_rgba(203,255,252,0.3)] transition-all duration-300">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#ff5252] shadow-[0_0_6px_#ff5252] animate-pulse" />
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[8px] bg-[#828fff]/15 border border-[#828fff] text-[#828fff] text-[11px] font-mono shadow-[0_0_12px_rgba(130,143,255,0.3)] transition-all duration-300">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#828fff] shadow-[0_0_6px_#828fff] animate-pulse" />
                               SELECTED
                             </span>
                           ) : (
-                            <span className="inline-flex items-center px-3 py-1 rounded-[8px] bg-white/5 border border-white/10 text-[#8a8f98]/70 group-hover:text-white group-hover:border-[#ff5252]/40 group-hover:bg-[#ff5252]/10 text-[11px] font-mono transition-all duration-300">
+                            <span className="inline-flex items-center px-3 py-1 rounded-[8px] bg-white/5 border border-white/10 text-[#8a8f98]/70 group-hover:text-white group-hover:border-[#828fff]/40 group-hover:bg-[#828fff]/10 text-[11px] font-mono transition-all duration-300">
                               SELECT
                             </span>
                           )}
@@ -329,7 +329,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                       {/* Title & Desc */}
                       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4 pb-4 border-b border-white/8 relative z-10">
                         <div>
-                          <h3 className="text-xl sm:text-2xl font-sans font-medium text-white mb-1 group-hover:text-[#ff5252] transition-colors duration-200">
+                          <h3 className="text-xl sm:text-2xl font-heading font-medium text-white mb-1 group-hover:text-[#828fff] transition-colors duration-200">
                             {plan.title}
                           </h3>
                           <p className="text-xs sm:text-sm text-[#8a8f98] leading-[1.4] max-w-lg">
@@ -340,10 +340,10 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                         {/* Price Display */}
                         <div className="text-left sm:text-right shrink-0 mt-2 sm:mt-0">
                           <div className="flex items-baseline sm:justify-end gap-1.5">
-                            <span className="text-2xl sm:text-3xl font-sans font-medium text-white tracking-tight group-hover:drop-shadow-[0_0_12px_rgba(203,255,252,0.25)] transition-all">
+                            <span className="text-2xl sm:text-3xl font-heading font-medium text-white tracking-tight group-hover:drop-shadow-[0_0_12px_rgba(130,143,255,0.25)] transition-all">
                               {plan.price}
                             </span>
-                            <span className="font-mono tracking-wider text-xs uppercase text-[#ff5252]">
+                            <span className="font-mono tracking-wider text-xs uppercase text-[#828fff]">
                               {plan.pricePeriod}
                             </span>
                           </div>
@@ -365,14 +365,14 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                               className={`flex items-start gap-2 transition-colors duration-150 ${
                                 feat.included
                                   ? 'text-[#f7f8f8] group-hover:text-white'
-                                  : 'text-[#23252a] opacity-40'
+                                  : 'text-[#62666d] opacity-40'
                               }`}
                             >
                               <span className="font-mono text-xs shrink-0 select-none mt-0.5 transition-transform duration-200 group-hover:scale-105">
                                 {feat.included ? (
-                                  <span className="text-[#ff5252] font-semibold">[x]</span>
+                                  <span className="text-[#828fff] font-semibold">[x]</span>
                                 ) : (
-                                  <span className="text-[#23252a]">[ ]</span>
+                                  <span className="text-[#62666d]">[ ]</span>
                                 )}
                               </span>
                               <span className={feat.included ? 'leading-tight' : 'leading-tight line-through decoration-white/20'}>
@@ -394,18 +394,18 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               STEP 2: CONTACT DETAILS FORM
               -------------------------------------------------------- */}
           {currentStep === 2 && !formSubmitted && (
-            <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden shadow-[inset_0_1px_0_0_rgba(203,255,252,0.18),0_20px_50px_-15px_rgba(0,0,0,0.65)]">
+            <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden shadow-[inset_0_1px_0_0_rgba(130,143,255,0.18),0_20px_50px_-15px_rgba(0,0,0,0.65)]">
               {/* Top Specular Line */}
-              <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#ff5252]/40 to-transparent pointer-events-none" />
-              <div className="pointer-events-none absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#ff5252]/8 blur-3xl" />
+              <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/40 to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#828fff]/8 blur-3xl" />
               
               {/* Plan Selected Summary Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-white/8 relative z-10">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.12em] text-[#ff5252] block mb-1">
+                  <span className="text-xs font-mono uppercase tracking-[0.12em] text-[#828fff] block mb-1">
                     // 02 CONTACT DETAILS
                   </span>
-                  <h3 className="text-2xl font-sans font-medium text-white">
+                  <h3 className="text-2xl font-heading font-medium text-white">
                     Tell us about your brand.
                   </h3>
                   <p className="text-xs text-[#8a8f98] mt-1">
@@ -417,7 +417,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                 <button
                   type="button"
                   onClick={() => setCurrentStep(1)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs font-mono text-[#ff5252] hover:border-[#ff5252]/40 transition-colors cursor-pointer self-start sm:self-auto"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs font-mono text-[#828fff] hover:border-[#828fff]/40 transition-colors cursor-pointer self-start sm:self-auto"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>Change Plan</span>
@@ -431,7 +431,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                   {/* Full Name */}
                   <div>
                     <label className="block text-xs uppercase tracking-wider font-sans text-[#8a8f98] mb-2 font-medium">
-                      Full Name <span className="text-[#ff5252]">*</span>
+                      Full Name <span className="text-[#828fff]">*</span>
                     </label>
                     <div className="relative">
                       <input
@@ -440,7 +440,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="Sarah Jenkins"
-                        className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#23252a] focus:outline-none focus:border-[#ff5252] transition-colors ${
+                        className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#62666d] focus:outline-none focus:border-[#828fff] transition-colors ${
                           formErrors.fullName ? 'border-red-400' : 'border-white/10'
                         }`}
                       />
@@ -453,7 +453,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                   {/* Work Email */}
                   <div>
                     <label className="block text-xs uppercase tracking-wider font-sans text-[#8a8f98] mb-2 font-medium">
-                      Work Email <span className="text-[#ff5252]">*</span>
+                      Work Email <span className="text-[#828fff]">*</span>
                     </label>
                     <input
                       type="email"
@@ -461,7 +461,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                       value={formData.workEmail}
                       onChange={handleInputChange}
                       placeholder="s.jenkins@company.com"
-                      className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#23252a] focus:outline-none focus:border-[#ff5252] transition-colors ${
+                      className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#62666d] focus:outline-none focus:border-[#828fff] transition-colors ${
                         formErrors.workEmail ? 'border-red-400' : 'border-white/10'
                       }`}
                     />
@@ -473,7 +473,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                   {/* Company Name */}
                   <div>
                     <label className="block text-xs uppercase tracking-wider font-sans text-[#8a8f98] mb-2 font-medium">
-                      Company Name <span className="text-[#ff5252]">*</span>
+                      Company Name <span className="text-[#828fff]">*</span>
                     </label>
                     <input
                       type="text"
@@ -481,7 +481,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Acme Analytics"
-                      className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#23252a] focus:outline-none focus:border-[#ff5252] transition-colors ${
+                      className={`w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border text-xs sm:text-sm text-white placeholder-[#62666d] focus:outline-none focus:border-[#828fff] transition-colors ${
                         formErrors.company ? 'border-red-400' : 'border-white/10'
                       }`}
                     />
@@ -499,9 +499,9 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                       name="arrBand"
                       value={formData.arrBand}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#ff5252] transition-colors cursor-pointer"
+                      className="w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#828fff] transition-colors cursor-pointer"
                     >
-                      <option value="" className="bg-[#0f1011] text-[#23252a]">Select annual revenue or scale</option>
+                      <option value="" className="bg-[#0f1011] text-[#62666d]">Select annual revenue or scale</option>
                       <option value="early" className="bg-[#0f1011] text-white">&lt; $1M ARR (Early Growth / Seed)</option>
                       <option value="growth" className="bg-[#0f1011] text-white">$1M – $10M ARR (Scale-up)</option>
                       <option value="mid-market" className="bg-[#0f1011] text-white">$10M – $50M ARR (Mid-Market)</option>
@@ -522,7 +522,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="E.g., We are a B2B SaaS in supply chain management. When buyers ask ChatGPT or Perplexity for the top supply chain visibility vendors, our competitors appear but we do not..."
-                    className="w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs sm:text-sm text-white placeholder-[#23252a] focus:outline-none focus:border-[#ff5252] transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-[8px] bg-[#0f1011] border border-white/10 text-xs sm:text-sm text-white placeholder-[#62666d] focus:outline-none focus:border-[#828fff] transition-colors resize-none"
                   />
                 </div>
 
@@ -548,17 +548,17 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               CONFIRMATION STATE (IN-PLACE, NO REDIRECT)
               -------------------------------------------------------- */}
           {formSubmitted && (
-            <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden border border-[#ff5252]/40 shadow-[inset_0_1px_0_0_rgba(203,255,252,0.3),0_20px_50px_-10px_rgba(0,0,0,0.7),0_0_35px_rgba(203,255,252,0.15)]">
+            <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden border border-[#828fff]/40 shadow-[inset_0_1px_0_0_rgba(130,143,255,0.3),0_20px_50px_-10px_rgba(0,0,0,0.7),0_0_35px_rgba(130,143,255,0.15)]">
               {/* Top Specular Line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff5252] to-transparent pointer-events-none" />
-              <div className="pointer-events-none absolute -top-24 -right-24 w-52 h-52 rounded-full bg-[#ff5252]/12 blur-3xl" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#828fff] to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute -top-24 -right-24 w-52 h-52 rounded-full bg-[#828fff]/12 blur-3xl" />
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#ff5252]/10 border border-[#ff5252]/30 text-xs font-mono text-[#ff5252] mb-6 relative z-10">
-                <CheckCircle2 className="w-4 h-4 text-[#ff5252]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#828fff]/10 border border-[#828fff]/30 text-xs font-mono text-[#828fff] mb-6 relative z-10">
+                <CheckCircle2 className="w-4 h-4 text-[#828fff]" />
                 <span>// REQUEST RECEIVED & CONFIRMED</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-sans font-medium text-white mb-3 leading-tight relative z-10">
+              <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white mb-3 leading-tight relative z-10">
                 Thank you, {formData.fullName || 'there'}!
               </h3>
 
@@ -569,7 +569,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               <div className="p-5 rounded-[10px] bg-[#0f1011]/90 border border-white/10 mb-8 space-y-3 relative z-10 shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)]">
                 <div className="flex items-center justify-between text-xs border-b border-white/8 pb-2">
                   <span className="text-[#8a8f98]">Commitment:</span>
-                  <span className="text-[#ff5252] font-mono">{selectedPlan.minTerm}</span>
+                  <span className="text-[#828fff] font-mono">{selectedPlan.minTerm}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs border-b border-white/8 pb-2">
                   <span className="text-[#8a8f98]">Next Step:</span>
@@ -593,7 +593,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                   <button
                     type="button"
                     onClick={() => setCurrentRoute('contact')}
-                    className="text-xs text-[#ff5252] hover:underline font-mono"
+                    className="text-xs text-[#828fff] hover:underline font-mono"
                   >
                     // Have urgent questions? Talk directly to team →
                   </button>
@@ -608,17 +608,17 @@ export default function PricingConfigurator({ setCurrentRoute }) {
             RIGHT COLUMN (4 COLS): STICKY QUOTE SUMMARY
             ========================================================== */}
         <div className="lg:col-span-4 relative lg:sticky lg:top-28">
-          <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden transition-all duration-300 shadow-[inset_0_1px_0_0_rgba(203,255,252,0.18),0_20px_50px_-15px_rgba(0,0,0,0.65)]">
+          <div className="surface-card p-6 lg:p-8 text-left relative overflow-hidden transition-all duration-300 shadow-[inset_0_1px_0_0_rgba(130,143,255,0.18),0_20px_50px_-15px_rgba(0,0,0,0.65)]">
             {/* Top Specular Line */}
-            <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#ff5252]/40 to-transparent pointer-events-none" />
-            <div className="pointer-events-none absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#ff5252]/8 blur-3xl" />
+            <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#828fff]/40 to-transparent pointer-events-none" />
+            <div className="pointer-events-none absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#828fff]/8 blur-3xl" />
             
             {/* Header */}
             <div className="pb-4 mb-5 border-b border-white/8 relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#ff5252] block mb-1">
+              <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#828fff] block mb-1">
                 // YOUR QUOTE SUMMARY
               </span>
-              <h4 className="text-xl font-sans font-medium text-white">
+              <h4 className="text-xl font-heading font-medium text-white">
                 {selectedPlan.title}
               </h4>
               <p className="text-xs text-[#8a8f98] mt-0.5">
@@ -631,10 +631,10 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               <div className="flex items-baseline justify-between mb-1">
                 <span className="text-xs text-[#8a8f98]">Selected Tier:</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl sm:text-3xl font-sans font-medium text-white">
+                  <span className="text-2xl sm:text-3xl font-heading font-medium text-white">
                     {selectedPlan.price}
                   </span>
-                  <span className="font-mono text-xs uppercase text-[#ff5252]">
+                  <span className="font-mono text-xs uppercase text-[#828fff]">
                     {selectedPlan.pricePeriod}
                   </span>
                 </div>
@@ -643,7 +643,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               {/* Minimum Term prominently directly under price */}
               <div className="pt-2 mt-2 border-t border-white/8 flex items-center justify-between text-xs">
                 <span className="text-[#8a8f98]">Minimum Term:</span>
-                <span className="text-[#ff5252] font-mono font-medium">
+                <span className="text-[#828fff] font-mono font-medium">
                   {selectedPlan.minTerm}
                 </span>
               </div>
@@ -657,15 +657,15 @@ export default function PricingConfigurator({ setCurrentRoute }) {
               </div>
               <div className="flex justify-between">
                 <span>Estimated Tax (GST)</span>
-                <span className="text-[#ff5252] font-mono">$0.00</span>
+                <span className="text-[#828fff] font-mono">$0.00</span>
               </div>
-              <p className="text-[10px] text-[#23252a] leading-relaxed pt-1">
+              <p className="text-[10px] text-[#62666d] leading-relaxed pt-1">
                 * Zero-rated export of services under LUT for international invoices (USD).
               </p>
               <div className="pt-3 mt-2 border-t border-white/8 flex justify-between items-baseline text-sm font-medium text-white">
                 <span>Total Investment</span>
                 <span className="text-lg font-sans text-white">
-                  {selectedPlan.price} <span className="text-xs font-mono text-[#ff5252]">{selectedPlan.pricePeriod}</span>
+                  {selectedPlan.price} <span className="text-xs font-mono text-[#828fff]">{selectedPlan.pricePeriod}</span>
                 </span>
               </div>
             </div>
@@ -676,7 +676,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                 <button
                   type="button"
                   onClick={() => setCurrentStep(2)}
-                  className="btn-aurora w-full py-3.5 text-xs font-medium uppercase tracking-wider cursor-pointer transition-all duration-300 hover:shadow-[0_0_24px_rgba(203,255,252,0.4)] hover:scale-[1.01] active:scale-[0.99]"
+                  className="btn-aurora w-full py-3.5 text-xs font-medium uppercase tracking-wider cursor-pointer transition-all duration-300 hover:shadow-[0_0_24px_rgba(130,143,255,0.4)] hover:scale-[1.01] active:scale-[0.99]"
                 >
                   <span>Continue to contact details</span>
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
@@ -706,7 +706,7 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                     if (setCurrentRoute) setCurrentRoute('contact');
                     else window.location.hash = '#/contact';
                   }}
-                  className="text-xs text-[#ff5252] hover:text-white font-sans transition-colors underline underline-offset-4 cursor-pointer"
+                  className="text-xs text-[#828fff] hover:text-white font-sans transition-colors underline underline-offset-4 cursor-pointer"
                 >
                   Or talk to us directly →
                 </button>
@@ -719,19 +719,19 @@ export default function PricingConfigurator({ setCurrentRoute }) {
                 // WHAT TO EXPECT:
               </span>
               <div className="flex items-center gap-2 text-xs text-[#f7f8f8]">
-                <Check className="w-3.5 h-3.5 text-[#ff5252] shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#828fff] shrink-0" />
                 <span className="whitespace-nowrap">5-day turnaround on audits</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-[#f7f8f8]">
-                <Check className="w-3.5 h-3.5 text-[#ff5252] shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#828fff] shrink-0" />
                 <span className="whitespace-nowrap">Transparent monthly reporting</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-[#f7f8f8]">
-                <Check className="w-3.5 h-3.5 text-[#ff5252] shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#828fff] shrink-0" />
                 <span className="whitespace-nowrap">Dedicated point of contact</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-[#f7f8f8]">
-                <Check className="w-3.5 h-3.5 text-[#ff5252] shrink-0" />
+                <Check className="w-3.5 h-3.5 text-[#828fff] shrink-0" />
                 <span className="leading-tight">Case-study rights in exchange for launch pricing</span>
               </div>
             </div>

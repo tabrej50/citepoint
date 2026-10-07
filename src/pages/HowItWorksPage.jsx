@@ -150,7 +150,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
                 // METHODOLOGY & ARCHITECTURE
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
                 A practical system for a changing search landscape.
               </h1>
             </SlideReveal>
@@ -189,7 +189,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] mb-3">
                 SIGNATURE CITATION FLOW
               </div>
-              <h2 className="text-3xl sm:text-4xl font-sans font-medium text-white tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
                 How generative engines formulate answers
               </h2>
               <p className="text-base text-[#8a8f98] leading-[1.4]">
@@ -210,20 +210,20 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="font-sans text-xs font-medium text-[#ff5252] transition-colors duration-200 group-hover:text-white">
+                      <span className="font-sans text-xs font-medium text-[#828fff] transition-colors duration-200 group-hover:text-white">
                         // {step.num}
                       </span>
-                      <div className="w-8 h-8 rounded-[8px] bg-[#0f1011] border border-white/10 text-[#ff5252] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-[#ff5252]/40 group-hover:shadow-[0_0_10px_rgba(203,255,252,0.2)]">
+                      <div className="w-8 h-8 rounded-[8px] bg-[#0f1011] border border-white/10 text-[#828fff] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_10px_rgba(130,143,255,0.2)]">
                         <IconC className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="text-base font-sans font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#ff5252]">
+                    <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
                       {step.title}
                     </h3>
                     <p className="text-xs text-[#8a8f98] leading-[1.4] mb-3">
                       {step.desc}
                     </p>
-                    <p className="text-[11px] text-[#23252a] font-sans leading-[1.4] border-t border-white/8 pt-2">
+                    <p className="text-[11px] text-[#8a8f98] font-sans leading-[1.4] border-t border-white/8 pt-2">
                       {step.detail}
                     </p>
                   </div>
@@ -254,7 +254,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] mb-3">
                 THE 4-STEP FRAMEWORK
               </div>
-              <h2 className="text-3xl sm:text-4xl font-sans font-medium text-white tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
                 Disciplined, measurable execution
               </h2>
               <p className="text-base text-[#8a8f98] leading-[1.4]">
@@ -281,7 +281,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     className="lg:col-span-5 space-y-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-9 h-9 rounded-[8px] bg-[#0f1011] text-[#ff5252] font-sans text-xs font-medium flex items-center justify-center border border-white/10 transition-transform duration-300 group-hover:scale-105 group-hover:border-[#ff5252]/40">
+                      <span className="w-9 h-9 rounded-[8px] bg-[#0f1011] text-[#828fff] font-sans text-xs font-medium flex items-center justify-center border border-white/10 transition-transform duration-300 group-hover:scale-105 group-hover:border-[#828fff]/40">
                         {phase.step}
                       </span>
                       <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#8a8f98] transition-colors duration-200 group-hover:text-white">
@@ -292,11 +292,11 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-sans font-medium text-white transition-colors duration-200 group-hover:text-[#ff5252]">
+                    <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#828fff]">
                       {phase.title}
                     </h3>
 
-                    <p className="text-xs uppercase tracking-[0.12em] font-sans font-medium text-[#ff5252]">
+                    <p className="text-xs uppercase tracking-[0.12em] font-sans font-medium text-[#828fff]">
                       // {phase.subtitle}
                     </p>
 
@@ -318,13 +318,13 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     delay={0.1}
                     className="lg:col-span-7 rounded-[12px] bg-[#0f1011]/90 border border-white/10 p-6 lg:p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                   >
-                    <h4 className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#ff5252] mb-4">
+                    <h4 className="text-xs font-heading font-medium uppercase tracking-[0.12em] text-[#828fff] mb-4">
                       // CORE PHASE DELIVERABLES
                     </h4>
                     <ul className="space-y-3.5">
                       {phase.deliverables.map((item, dIdx) => (
                         <li key={dIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#f7f8f8]">
-                          <div className="w-4 h-4 rounded-full bg-[#141516] text-[#ff5252] flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
+                          <div className="w-4 h-4 rounded-full bg-[#141516] text-[#828fff] flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
                             <Check className="w-2.5 h-2.5" />
                           </div>
                           <span className="leading-snug">{item}</span>
@@ -332,9 +332,9 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                       ))}
                     </ul>
 
-                    <div className="mt-6 pt-5 border-t border-white/8 flex items-center justify-between text-xs text-[#23252a] font-sans">
+                    <div className="mt-6 pt-5 border-t border-white/8 flex items-center justify-between text-xs text-[#8a8f98] font-sans">
                       <span>Verifiable milestone audit</span>
-                      <span className="text-[#ff5252] font-medium">Documented & Delivered</span>
+                      <span className="text-[#828fff] font-medium">Documented & Delivered</span>
                     </div>
                   </SlideReveal>
                 </div>
@@ -356,7 +356,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] mb-3">
                 CLIENT COLLABORATION MODEL
               </div>
-              <h2 className="text-3xl sm:text-4xl font-sans font-medium text-white tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
                 How we work alongside your team
               </h2>
               <p className="text-base text-[#8a8f98] leading-[1.4]">
@@ -368,10 +368,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#ff5252] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#ff5252]/40 group-hover:shadow-[0_0_12px_rgba(203,255,252,0.2)]">
+                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#828fff] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_12px_rgba(130,143,255,0.2)]">
                   <Users className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#ff5252]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
                   Executive & Marketing Alignment
                 </h3>
                 <p className="text-xs sm:text-sm text-[#8a8f98] leading-[1.4]">
@@ -382,10 +382,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
 
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#ff5252] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#ff5252]/40 group-hover:shadow-[0_0_12px_rgba(203,255,252,0.2)]">
+                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#828fff] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_12px_rgba(130,143,255,0.2)]">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#ff5252]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
                   Asynchronous Sprint Rhythm
                 </h3>
                 <p className="text-xs sm:text-sm text-[#8a8f98] leading-[1.4]">
@@ -396,10 +396,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
 
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#ff5252] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#ff5252]/40 group-hover:shadow-[0_0_12px_rgba(203,255,252,0.2)]">
+                <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 flex items-center justify-center text-[#828fff] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#828fff]/40 group-hover:shadow-[0_0_12px_rgba(130,143,255,0.2)]">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#ff5252]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
                   Strict NDA & Governance
                 </h3>
                 <p className="text-xs sm:text-sm text-[#8a8f98] leading-[1.4]">
@@ -421,7 +421,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8]">
               PHASE 01 DISCOVERY
             </div>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white tracking-tightest leading-none mt-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white tracking-tightest leading-none mt-4">
               Discover how your brand currently fares in Phase 01.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] max-w-2xl mx-auto leading-[1.4] mt-4">

@@ -61,7 +61,7 @@ export default function AuditPage({ setCurrentRoute }) {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-[#141516] border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
               // DIAGNOSTIC ASSESSMENT
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
               Get Your AI Visibility Audit
             </h1>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -95,7 +95,7 @@ export default function AuditPage({ setCurrentRoute }) {
               <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
                 // AUDIT SPECIFICATIONS
               </span>
-              <h2 className="text-3xl sm:text-4xl font-sans font-medium text-white tracking-tight mb-3">
+              <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-3">
                 What your diagnostic audit includes
               </h2>
               <p className="text-sm sm:text-base text-[#8a8f98] leading-[1.4]">
@@ -114,10 +114,10 @@ export default function AuditPage({ setCurrentRoute }) {
                   className="p-6 lg:p-8 rounded-[12px] bg-[#141516] border border-white/8 flex flex-col justify-between h-full"
                 >
                   <div>
-                    <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 text-[#ff5252] flex items-center justify-center mb-4">
+                    <div className="w-9 h-9 rounded-[8px] bg-[#0f1011] border border-white/10 text-[#828fff] flex items-center justify-center mb-4">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <h3 className="text-base font-sans font-medium text-white mb-2">
+                    <h3 className="text-base font-heading font-medium text-white mb-2">
                       {item.title}
                     </h3>
                     <p className="text-xs text-[#8a8f98] leading-[1.4]">

@@ -108,12 +108,12 @@ export default {
         DEFAULT: '8px',
       },
       fontFamily: {
-        sans: ['"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
-        matter: ['"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
-        heading: ['"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
-        display: ['"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
-        arial: ['"Inter"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', '"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        sans: ['"Inter Tight"', '"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
+        matter: ['"Inter Tight"', '"Inter"', 'SF Pro Display', '-apple-system', 'system-ui', 'sans-serif'],
+        heading: ['"Bricolage Grotesque"', '"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', '"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        arial: ['"Inter Tight"', '"Inter"', 'system-ui', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
         eyebrow: '0.4px',

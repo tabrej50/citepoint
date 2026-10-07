@@ -154,7 +154,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <button
               type="button"
               onClick={() => handleNavClick('home')}
-              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5e69d1] rounded-[8px] transition-opacity duration-150 hover:opacity-90"
+              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5e69d1] rounded-[8px] transition-opacity duration-150 hover:opacity-90 min-h-[44px] py-1"
               aria-label="Citepoint Home"
             >
               <img
@@ -169,7 +169,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             {/* Desktop Navigation Links */}
             <nav
               ref={navContainerRef}
-              className="hidden md:flex items-center gap-1 relative"
+              className="hidden lg:flex items-center gap-1 relative"
               aria-label="Main Navigation"
               onMouseLeave={() => {
                 setHoveredRoute(null);
@@ -214,7 +214,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                           handleNavClick(link.route);
                           setServicesDropdownOpen(!servicesDropdownOpen);
                         }}
-                        className={`relative z-10 inline-flex items-center gap-1 px-3 py-1.5 rounded-[8px] text-[13px] font-sans transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
+                        className={`relative z-10 inline-flex items-center gap-1 px-3 py-1.5 rounded-[8px] text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                           isHighlighted
                             ? 'text-[#f7f8f8] font-medium'
                             : 'text-[#8a8f98] hover:text-[#f7f8f8] font-normal'
@@ -265,7 +265,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                     }}
                     onClick={() => handleNavClick(link.route)}
                     onMouseEnter={() => setHoveredRoute(link.route)}
-                    className={`relative z-10 px-3 py-1.5 rounded-[8px] text-[13px] font-sans transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
+                    className={`relative z-10 px-3 py-1.5 rounded-[8px] text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
                         ? 'text-[#f7f8f8] font-medium'
                         : 'text-[#8a8f98] hover:text-[#f7f8f8] font-normal'
@@ -278,33 +278,33 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             </nav>
 
             {/* Right Action: Linear Lavender Button */}
-            <div className="hidden md:flex items-center gap-3 shrink-0">
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
-                className="btn-primary inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[8px] font-sans font-medium text-[13px] cursor-pointer"
+                className="btn-primary inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[8px] font-sans font-medium text-[13px] whitespace-nowrap cursor-pointer"
               >
                 <span>Get AI Visibility Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="flex md:hidden items-center gap-2 shrink-0">
+            {/* Mobile / Tablet Menu Button */}
+            <div className="flex lg:hidden items-center gap-2 shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-[#8a8f98] hover:text-[#f7f8f8] rounded-[8px] bg-[#141516] border border-[#23252a] focus:outline-none cursor-pointer"
+                className="w-11 h-11 flex items-center justify-center text-[#8a8f98] hover:text-[#f7f8f8] rounded-[8px] bg-[#141516] border border-[#23252a] focus:outline-none cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
-                {mobileMenuOpen ? <X className="w-4 h-4 text-white" /> : <Menu className="w-4 h-4" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
 
           </div>
         </header>
 
-        {/* Mobile Navigation Drawer with Linear Dark Styling */}
+        {/* Mobile / Tablet Navigation Drawer with Linear Dark Styling */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-2 p-4 rounded-[12px] bg-[#0f1011] border border-[#23252a] shadow-2xl animate-fadeIn pointer-events-auto">
+          <div className="lg:hidden mt-2 p-4 rounded-[12px] bg-[#0f1011] border border-[#23252a] shadow-2xl animate-fadeIn pointer-events-auto">
             <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#23252a] text-[12px] text-[#8a8f98]">
               <span className="uppercase tracking-wider font-medium text-[#f7f8f8]">Navigation</span>
               <span className="uppercase tracking-wider text-[11px] font-mono">Citepoint</span>

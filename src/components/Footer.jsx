@@ -40,7 +40,7 @@ export default function Footer({ setCurrentRoute }) {
           <div>
             <button
               onClick={() => handleNav('home')}
-              className="inline-block text-left mb-3 group focus:outline-none cursor-pointer"
+              className="inline-flex items-center text-left mb-3 group focus:outline-none cursor-pointer min-h-[44px] py-1"
               aria-label="Citepoint Home"
             >
               <img

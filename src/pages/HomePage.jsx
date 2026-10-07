@@ -316,8 +316,11 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             
             {/* Eyebrow / Kicker */}
             <SlideReveal direction="down" delay={0.08}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[8px] bg-[#141516] border border-white/10 mx-auto">
-                <span className="w-2 h-2 rounded-full bg-[#828fff] animate-pulse" />
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-[8px] bg-[#141516] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] mx-auto">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#828fff] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#5e6ad2]"></span>
+                </span>
                 <span className="text-[12px] font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8]">
                   AI SEARCH VISIBILITY / GEO / AEO
                 </span>
@@ -494,7 +497,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // THE SEARCH SHIFT
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Your buyers are no longer searching in one place.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -511,7 +514,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#828fff] font-medium block mb-4">
                     // CORE REALITY
                   </span>
-                  <blockquote className="text-2xl sm:text-3xl font-sans font-medium text-white leading-tight">
+                  <blockquote className="text-2xl sm:text-3xl font-heading font-medium text-white leading-tight">
                     “If AI cannot find, understand, or trust your brand, it cannot recommend you.”
                   </blockquote>
                   <p className="text-sm text-[#8a8f98] mt-4 leading-[1.4]">
@@ -547,7 +550,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#f7f8f8] font-medium">
                           RISK 01
                         </span>
-                        <h3 className="text-lg font-sans font-medium text-white transition-colors duration-200 group-hover:text-[#828fff]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#828fff]">
                           Invisible
                         </h3>
                       </div>
@@ -571,7 +574,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-rose-300 font-medium">
                           RISK 02
                         </span>
-                        <h3 className="text-lg font-sans font-medium text-white transition-colors duration-200 group-hover:text-rose-200">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-rose-200">
                           Misrepresented
                         </h3>
                       </div>
@@ -595,7 +598,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#828fff] font-medium">
                           RISK 03
                         </span>
-                        <h3 className="text-lg font-sans font-medium text-white transition-colors duration-200 group-hover:text-[#828fff]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#828fff]">
                           Outranked
                         </h3>
                       </div>
@@ -627,7 +630,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               We turn brand authority into AI visibility.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -663,7 +666,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-sans font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
                         {s.title}
                       </h3>
 
@@ -705,20 +708,16 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-white/8 flex items-center justify-between">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handleNav('services'); }}
-                        className="text-xs font-sans uppercase tracking-[0.12em] text-[#828fff] hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 flex items-center gap-1.5"
-                      >
-                        <span>Explore service</span>
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handleNav('services'); }}
-                        className="arrow-icon-btn transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-[#5e6ad2] group-hover:shadow-[0_0_12px_rgba(203,255,252,0.25)]"
-                        aria-label={`Explore ${s.title}`}
+                    <div className="mt-8 pt-4 border-t border-white/8 flex items-center justify-between min-h-[44px]">
+                      <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#828fff] group-hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                        Explore service
+                      </span>
+                      <div
+                        className="arrow-icon-btn transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-[#5e6ad2] group-hover:text-white group-hover:border-[#828fff]/50 group-hover:shadow-[0_0_12px_rgba(94,106,210,0.35)]"
+                        aria-hidden="true"
                       >
                         <ArrowUpRight className="w-4 h-4" />
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </SlideReveal>
@@ -742,7 +741,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // METHODOLOGY IN ACTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               From question to citation.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4] max-w-2xl mx-auto">
@@ -776,7 +775,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <Icon className="w-4 h-4" />
                       </div>
 
-                      <h3 className="text-base font-sans font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
+                      <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#828fff]">
                         {item.label}
                       </h3>
 
@@ -831,7 +830,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // IMPLEMENTATION ROADMAP
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               A practical system for a changing search landscape.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -864,7 +863,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         />
                       </div>
 
-                      <h3 className={`text-xl font-sans font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-[#828fff]' : 'text-white group-hover:text-[#828fff]'}`}>
+                      <h3 className={`text-xl font-heading font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-[#828fff]' : 'text-white group-hover:text-[#828fff]'}`}>
                         {step.title}
                       </h3>
 
@@ -898,7 +897,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Visibility should lead somewhere.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -992,7 +991,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-sans font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
                         {cs.title}
                       </h3>
 
@@ -1029,7 +1028,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // DIFFERENTIATION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Not another content agency.
             </h2>
             <p className="text-base sm:text-lg text-[#8a8f98] leading-[1.4]">
@@ -1053,7 +1052,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         // {d.num}
                       </span>
 
-                      <h3 className="text-2xl font-sans font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
+                      <h3 className="text-2xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#828fff]">
                         {d.title}
                       </h3>
 
@@ -1090,7 +1089,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="text-xs font-sans font-medium uppercase tracking-[0.12em] text-[#f7f8f8] block mb-2">
               // FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-medium text-white leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Clear answers on AI search visibility.
             </h2>
             <p className="text-base text-[#8a8f98] leading-[1.4]">
@@ -1117,7 +1116,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             GET CITED. GET CHOSEN.
           </span>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-medium text-white tracking-tightest leading-none">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-medium text-white tracking-tightest leading-none">
             Make your brand part of the answer.
           </h2>
 

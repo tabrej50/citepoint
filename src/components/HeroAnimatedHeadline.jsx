@@ -244,7 +244,7 @@ export default function HeroAnimatedHeadline() {
       />
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-sans font-semibold text-[#f7f8f8] leading-[1.12] sm:leading-[1.08] tracking-[-0.04em] whitespace-normal lg:whitespace-nowrap">
+      <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-[#f7f8f8] leading-[1.12] sm:leading-[1.08] tracking-[-0.04em] whitespace-normal lg:whitespace-nowrap">
         {/* Prefix: "Be the brand AI" with natural word spacing */}
         {PREFIX_WORDS.map((word, idx) => (
           <motion.span

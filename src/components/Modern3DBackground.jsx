@@ -4,15 +4,14 @@ import * as THREE from 'three';
 /**
  * Modern3DBackground
  *
- * Ultra-Modern 3D Cybernetic Space for Citepoint (GEO / AI Search Optimization):
- * - Floating 3D Crystalline Polyhedra (Icosahedron, Octahedron, Dodecahedron)
- *   with dual-pass glowing wireframe, translucent inner core, and orbital citation rings
- * - Smooth 3D Multi-Harmonic Wave Ribbons flowing across the lower horizon (no vertical stripes)
- * - Volumetric 3D Deep Space Particle Field with real stereoscopic depth of field
- * - Interactive 3D Gyroscopic Camera: pans and tilts with mouse momentum
- * - Scroll-driven 3D flight: camera glides through the space as user navigates
- * - Atmospheric exponential depth fog (#010102) ensuring foreground text has 100% contrast
- * - High performance: DPR capped at 2, auto-pauses on background tab, respects prefers-reduced-motion
+ * Endless Ultra-Modern 3D Cybernetic Space for Citepoint:
+ * - Truly ENDLESS Infinite Deep-Space Particle Flight (continuous forward warp stream with seamless Z-wrapping)
+ * - Endless Constellation of Floating 3D Crystalline Polyhedra (Icosahedra, Octahedra, Dodecahedra, Tetrahedra)
+ *   with dual-pass wireframe, glowing inner cores, spinning orbital citation rings, and seamless depth recycling
+ * - Infinite Undulating Cybernetic Horizon Waves with multi-harmonic frequency propagation
+ * - Kinetic Camera & Gyroscopic Mouse Interaction with gentle ambient breathing flight
+ * - Deep space exponential fog (#010102) ensuring foreground content maintains 100% contrast & legibility
+ * - Bulletproof lifecycle: zero memory leaks, graceful tab visibility resumption, capped DPR at 2
  */
 
 export default function Modern3DBackground() {
@@ -31,12 +30,14 @@ export default function Modern3DBackground() {
     // 1. Scene & Depth Fog
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x010102);
-    scene.fog = new THREE.FogExp2(0x010102, 0.020);
+    // Exponential fog keeps center text calm and deep horizon mysterious
+    scene.fog = new THREE.FogExp2(0x010102, 0.016);
 
     // 2. Perspective Camera
-    const camera = new THREE.PerspectiveCamera(52, width / height, 0.1, 200);
-    camera.position.set(0, 2, 28);
-    camera.lookAt(0, 0, -10);
+    const camera = new THREE.PerspectiveCamera(54, width / height, 0.1, 220);
+    const CAM_BASE_Z = 26;
+    camera.position.set(0, 2, CAM_BASE_Z);
+    camera.lookAt(0, 0, -15);
 
     // 3. WebGL Renderer
     let renderer;
@@ -83,32 +84,35 @@ export default function Modern3DBackground() {
     scene.add(ambientLight);
 
     // Primary Lavender Key Light
-    const primaryLight = new THREE.PointLight(0x828fff, 4.2, 85);
+    const primaryLight = new THREE.PointLight(0x828fff, 4.0, 95);
     primaryLight.position.set(16, 14, 12);
     scene.add(primaryLight);
 
     // Secondary Indigo Fill Light
-    const secondaryLight = new THREE.PointLight(0x5e6ad2, 3.2, 70);
-    secondaryLight.position.set(-18, 8, -6);
+    const secondaryLight = new THREE.PointLight(0x5e6ad2, 3.2, 80);
+    secondaryLight.position.set(-18, 8, -10);
     scene.add(secondaryLight);
 
-    // Top Luminescence
-    const topLight = new THREE.DirectionalLight(0xc4cbff, 0.6);
+    // Top Soft Luminescence
+    const topLight = new THREE.DirectionalLight(0xc4cbff, 0.55);
     topLight.position.set(0, 30, 10);
     scene.add(topLight);
 
     // ============================================================
-    // 6. FLOATING 3D CRYSTALLINE KNOWLEDGE POLYHEDRA
+    // 6. ENDLESS FLOATING 3D CRYSTALLINE POLYHEDRA
+    // A corridor of diverse polyhedra recycling infinitely through depth
     // ============================================================
     const polyhedra = [];
+    const Z_FAR_BOUND = -130;
+    const Z_NEAR_BOUND = 32;
 
-    const createCrystallineSolid = (geometry, pos, scale, rotSpeed, ringColor = 0x828fff) => {
+    const createCrystallineSolid = (geometry, initialPos, scale, rotSpeed, ringColor = 0x828fff) => {
       const group = new THREE.Group();
-      group.position.copy(pos);
+      group.position.copy(initialPos);
 
       // Outer Wireframe Geometry
       const wireMat = new THREE.MeshStandardMaterial({
-        color: 0x828fff,
+        color: ringColor,
         wireframe: true,
         roughness: 0.15,
         metalness: 0.85,
@@ -147,7 +151,7 @@ export default function Modern3DBackground() {
       group.add(ringMesh);
 
       // Orbiting Citation Sparks
-      const dustCount = 16;
+      const dustCount = 14;
       const dustGeo = new THREE.BufferGeometry();
       const dustPositions = new Float32Array(dustCount * 3);
       for (let d = 0; d < dustCount; d++) {
@@ -162,7 +166,7 @@ export default function Modern3DBackground() {
       const dustMat = new THREE.PointsMaterial({
         map: particleTexture,
         color: ringColor,
-        size: 0.38,
+        size: 0.36,
         transparent: true,
         opacity: 0.75,
         blending: THREE.AdditiveBlending,
@@ -178,63 +182,61 @@ export default function Modern3DBackground() {
         wireMesh,
         ringMesh,
         dustPoints,
-        baseY: pos.y,
-        baseX: pos.x,
+        baseY: initialPos.y,
+        baseX: initialPos.x,
         scale,
         rotSpeed,
         phase: Math.random() * Math.PI * 2,
+        // Individual speed multiplier for parallax drift
+        driftSpeedMultiplier: 0.8 + Math.random() * 0.4,
       });
     };
 
-    // 1. Primary Icosahedron (Right Flank)
-    createCrystallineSolid(
-      new THREE.IcosahedronGeometry(1, 0),
-      new THREE.Vector3(17, 4, -8),
-      3.0,
-      { x: 0.005, y: 0.007, z: 0.003 },
-      0x828fff
-    );
+    // Geometries library
+    const icoGeo = new THREE.IcosahedronGeometry(1, 0);
+    const octGeo = new THREE.OctahedronGeometry(1, 0);
+    const dodGeo = new THREE.DodecahedronGeometry(1, 0);
+    const tetGeo = new THREE.TetrahedronGeometry(1, 0);
 
-    // 2. Secondary Octahedron (Left Flank)
-    createCrystallineSolid(
-      new THREE.OctahedronGeometry(1, 0),
-      new THREE.Vector3(-17, 3, -11),
-      2.5,
-      { x: -0.006, y: 0.006, z: -0.004 },
-      0x5e6ad2
-    );
+    // Initial population distributed along depth corridor (-120 to +10)
+    // Placed in left and right peripheral corridors to keep center text legible
+    const polySpecs = [
+      { geo: icoGeo, pos: new THREE.Vector3(18, 4, -8), scale: 2.8, color: 0x828fff },
+      { geo: octGeo, pos: new THREE.Vector3(-18, 3, -16), scale: 2.4, color: 0x5e6ad2 },
+      { geo: dodGeo, pos: new THREE.Vector3(14, 11, -35), scale: 2.5, color: 0xc4cbff },
+      { geo: tetGeo, pos: new THREE.Vector3(-15, -6, -24), scale: 1.8, color: 0x828fff },
+      { geo: icoGeo, pos: new THREE.Vector3(-19, 9, -52), scale: 3.0, color: 0x828fff },
+      { geo: octGeo, pos: new THREE.Vector3(16, -4, -68), scale: 2.2, color: 0x5e6ad2 },
+      { geo: dodGeo, pos: new THREE.Vector3(-14, 12, -88), scale: 2.6, color: 0xc4cbff },
+      { geo: icoGeo, pos: new THREE.Vector3(19, 5, -105), scale: 2.9, color: 0x828fff },
+      { geo: tetGeo, pos: new THREE.Vector3(-17, -5, -120), scale: 2.0, color: 0x5e6ad2 },
+    ];
 
-    // 3. High Dodecahedron (Upper Right Distance)
-    createCrystallineSolid(
-      new THREE.DodecahedronGeometry(1, 0),
-      new THREE.Vector3(11, 12, -24),
-      2.2,
-      { x: 0.004, y: -0.005, z: 0.004 },
-      0xc4cbff
-    );
-
-    // 4. Low Foreground Tetrahedron (Far Left)
-    if (width > 768) {
+    polySpecs.forEach((spec, idx) => {
       createCrystallineSolid(
-        new THREE.TetrahedronGeometry(1, 0),
-        new THREE.Vector3(-14, -6, 0),
-        1.6,
-        { x: 0.008, y: 0.009, z: 0.006 },
-        0x828fff
+        spec.geo,
+        spec.pos,
+        spec.scale,
+        {
+          x: (idx % 2 === 0 ? 0.005 : -0.005),
+          y: (idx % 3 === 0 ? 0.007 : -0.006),
+          z: 0.003,
+        },
+        spec.color
       );
-    }
+    });
 
     // ============================================================
-    // 7. SMOOTH 3D HORIZONTAL WAVE RIBBONS (NO VERTICAL STRIPES)
+    // 7. ENDLESS 3D HORIZONTAL CYBERNETIC WAVE RIBBONS
     // Undulating sine waves sweeping across the lower horizon
     // ============================================================
-    const ribbonCount = 7;
-    const ribbonPoints = width < 768 ? 64 : 100;
-    const ribbonWidth = 130;
+    const ribbonCount = 8;
+    const ribbonPoints = width < 768 ? 64 : 110;
+    const ribbonWidth = 140;
     const ribbons = [];
 
     const ribbonGroup = new THREE.Group();
-    ribbonGroup.position.set(0, -11, -16);
+    ribbonGroup.position.set(0, -11, -20);
     scene.add(ribbonGroup);
 
     for (let r = 0; r < ribbonCount; r++) {
@@ -242,8 +244,8 @@ export default function Modern3DBackground() {
       const posArray = new Float32Array(ribbonPoints * 3);
       const colArray = new Float32Array(ribbonPoints * 3);
 
-      const zOffset = r * 4.5 - (ribbonCount * 2);
-      const baseAlpha = 0.15 + (r / ribbonCount) * 0.25;
+      const zOffset = r * 5.0 - (ribbonCount * 2.5);
+      const baseAlpha = 0.14 + (r / ribbonCount) * 0.28;
 
       for (let p = 0; p < ribbonPoints; p++) {
         const x = ((p / (ribbonPoints - 1)) - 0.5) * ribbonWidth;
@@ -281,19 +283,19 @@ export default function Modern3DBackground() {
         line,
         geo,
         posArray,
-        zOffset,
-        speed: 0.4 + r * 0.08,
-        freq: 0.065 + r * 0.008,
-        amp: 2.2 + r * 0.35,
-        phase: r * 0.85,
+        baseZOffset: zOffset,
+        speed: 0.35 + r * 0.07,
+        freq: 0.06 + r * 0.007,
+        amp: 2.0 + r * 0.32,
+        phase: r * 0.8,
       });
     }
 
     // ============================================================
-    // 8. VOLUMETRIC 3D STELLAR PARTICLE FIELD
-    // Soft glowing starlight points at varying depths
+    // 8. ENDLESS VOLUMETRIC 3D STELLAR PARTICLE FIELD
+    // Flying forward continuously with seamless depth wrap-around
     // ============================================================
-    const starCount = width < 768 ? 240 : 480;
+    const starCount = width < 768 ? 320 : 640;
     const starGeo = new THREE.BufferGeometry();
     const starPositions = new Float32Array(starCount * 3);
     const starColors = new Float32Array(starCount * 3);
@@ -302,13 +304,15 @@ export default function Modern3DBackground() {
     const c2 = new THREE.Color(0x5e6ad2);
     const c3 = new THREE.Color(0xffffff);
 
+    // Scatter uniformly across a 3D tunnel [ -140 to 30 ]
     for (let s = 0; s < starCount; s++) {
-      starPositions[s * 3] = (Math.random() - 0.5) * 160;
-      starPositions[s * 3 + 1] = Math.random() * 55 - 12;
-      starPositions[s * 3 + 2] = (Math.random() - 0.5) * 120 - 15;
+      starPositions[s * 3] = (Math.random() - 0.5) * 170;
+      starPositions[s * 3 + 1] = Math.random() * 65 - 18;
+      // Z depth distributed continuously
+      starPositions[s * 3 + 2] = -140 + Math.random() * 170;
 
       const pick = Math.random();
-      const sColor = pick > 0.65 ? c1 : pick > 0.35 ? c2 : c3;
+      const sColor = pick > 0.6 ? c1 : pick > 0.3 ? c2 : c3;
       starColors[s * 3] = sColor.r;
       starColors[s * 3 + 1] = sColor.g;
       starColors[s * 3 + 2] = sColor.b;
@@ -319,10 +323,10 @@ export default function Modern3DBackground() {
 
     const starMat = new THREE.PointsMaterial({
       map: particleTexture,
-      size: width < 768 ? 0.38 : 0.48,
+      size: width < 768 ? 0.42 : 0.52,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.72,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     });
@@ -339,8 +343,9 @@ export default function Modern3DBackground() {
       targetY: 0,
     };
 
-    let scrollProgress = 0;
-    let targetScrollProgress = 0;
+    let scrollY = window.scrollY || 0;
+    let lastScrollY = scrollY;
+    let scrollVelocity = 0;
 
     const onMouseMove = (e) => {
       mouse.targetX = (e.clientX / width) * 2 - 1;
@@ -348,8 +353,7 @@ export default function Modern3DBackground() {
     };
 
     const onScroll = () => {
-      const maxScroll = (document.documentElement.scrollHeight - window.innerHeight) || 3000;
-      targetScrollProgress = Math.min(Math.max((window.scrollY || window.pageYOffset || 0) / maxScroll, 0), 1);
+      scrollY = window.scrollY || window.pageYOffset || 0;
     };
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
@@ -367,80 +371,129 @@ export default function Modern3DBackground() {
     window.addEventListener('resize', onResize, { passive: true });
 
     // ============================================================
-    // 10. ANIMATION & 3D PHYSICS LOOP
+    // 10. ANIMATION & ENDLESS STREAMING LOOP
     // ============================================================
     let rafId = null;
     let clock = new THREE.Clock();
     let isVisible = true;
+    let accumulatedTime = 0;
 
     const animate = () => {
       if (!isVisible) return;
 
-      const elapsed = clock.getElapsedTime();
+      const delta = Math.min(clock.getDelta(), 0.1);
+      accumulatedTime += delta;
+
+      // Scroll velocity decay
+      const scrollDiff = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+      scrollVelocity += (scrollDiff * 0.06 - scrollVelocity) * 0.1;
 
       // Smooth mouse lerp
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
-      // Smooth scroll lerp
-      scrollProgress += (targetScrollProgress - scrollProgress) * 0.05;
+      // --- ENDLESS FORWARD STREAM VELOCITY ---
+      // Base serene forward drift + dynamic scroll acceleration
+      const forwardDrift = (2.2 + Math.abs(scrollVelocity) * 2.8) * delta;
 
-      // 3D Camera flight & gyroscopic tilt
-      const camY = 2 - scrollProgress * 5.0 + mouse.y * 2.2;
-      const camZ = 28 - scrollProgress * 14.0;
-      const camX = mouse.x * 4.5;
+      // 3D Camera ambient flight sway & gyroscopic tilt
+      const camSwayX = Math.sin(accumulatedTime * 0.35) * 0.7;
+      const camSwayY = Math.cos(accumulatedTime * 0.28) * 0.45;
+      const camX = mouse.x * 4.2 + camSwayX;
+      const camY = 2 + mouse.y * 2.2 + camSwayY;
+      const camZ = CAM_BASE_Z;
 
       camera.position.set(camX, camY, camZ);
-      camera.lookAt(mouse.x * 1.5, -1 + mouse.y * 0.8, -12);
+      camera.lookAt(mouse.x * 1.5, -0.8 + mouse.y * 0.8, -15);
 
       // Light drift follows cursor softly
       primaryLight.position.x = 16 + mouse.x * 8;
       primaryLight.position.y = 14 + mouse.y * 5;
 
-      // --- ANIMATE 3D WAVE RIBBONS ---
-      for (let r = 0; r < ribbons.length; r++) {
-        const rib = ribbons[r];
-        const arr = rib.posArray;
-        const time = elapsed * rib.speed;
+      // ==========================================================
+      // --- ENDLESS STELLAR PARTICLE FORWARD STREAM ---
+      // Particles continuously fly forward past the camera & wrap
+      // ==========================================================
+      const starPos = starGeo.attributes.position.array;
+      const starSpeed = 3.6 + Math.abs(scrollVelocity) * 3.2;
 
-        for (let p = 0; p < ribbonPoints; p++) {
-          const x = arr[p * 3];
-          // Harmonic wave equation
-          const w1 = Math.sin(x * rib.freq + time + rib.phase) * rib.amp;
-          const w2 = Math.cos(x * rib.freq * 0.6 - time * 0.8) * (rib.amp * 0.45);
-          arr[p * 3 + 1] = w1 + w2;
+      for (let s = 0; s < starCount; s++) {
+        // Move forward along Z
+        starPos[s * 3 + 2] += starSpeed * delta;
+
+        // If particle passes beyond the camera, wrap seamlessly back to far distance
+        if (starPos[s * 3 + 2] > Z_NEAR_BOUND) {
+          starPos[s * 3 + 2] = Z_FAR_BOUND + (starPos[s * 3 + 2] - Z_NEAR_BOUND);
+          // Scatter slightly on new entry to prevent pattern repetition
+          starPos[s * 3] = (Math.random() - 0.5) * 170;
+          starPos[s * 3 + 1] = Math.random() * 65 - 18;
         }
-
-        rib.geo.attributes.position.needsUpdate = true;
       }
+      starGeo.attributes.position.needsUpdate = true;
+      // Gentle overall swirl
+      starPoints.rotation.y = accumulatedTime * 0.008;
 
-      // --- ANIMATE 3D CRYSTALLINE POLYHEDRA ---
+      // ==========================================================
+      // --- ENDLESS RECYCLING 3D CRYSTALLINE POLYHEDRA ---
+      // Shards drift forward through depth & wrap seamlessly to far Z
+      // ==========================================================
       for (let p = 0; p < polyhedra.length; p++) {
         const poly = polyhedra[p];
         const grp = poly.group;
 
+        // Advance forward along Z with individual drift speed
+        grp.position.z += forwardDrift * poly.driftSpeedMultiplier;
+
+        // Seamless wrap: when it passes behind the camera, reset to far horizon
+        if (grp.position.z > Z_NEAR_BOUND) {
+          grp.position.z = Z_FAR_BOUND + (grp.position.z - Z_NEAR_BOUND);
+          // Re-randomize peripheral X to keep variation fresh
+          const side = Math.random() > 0.5 ? 1 : -1;
+          poly.baseX = side * (14 + Math.random() * 10);
+          poly.baseY = Math.random() * 20 - 6;
+        }
+
+        // Continual rotation on all 3 axes
         grp.rotation.x += poly.rotSpeed.x;
         grp.rotation.y += poly.rotSpeed.y;
         grp.rotation.z += poly.rotSpeed.z;
 
-        // Levitation
-        grp.position.y = poly.baseY + Math.sin(elapsed * 1.1 + poly.phase) * 0.75;
-        // Subtle drift away from mouse
-        grp.position.x = poly.baseX + mouse.x * 0.8;
+        // Gentle organic levitation oscillation
+        grp.position.y = poly.baseY + Math.sin(accumulatedTime * 1.1 + poly.phase) * 0.8;
+        // Subtle peripheral push away from cursor
+        grp.position.x = poly.baseX + mouse.x * 0.75;
 
-        // Spin ring
+        // Spin orbital rings
         if (poly.ringMesh) {
-          poly.ringMesh.rotation.z += 0.008;
+          poly.ringMesh.rotation.z += 0.009;
         }
 
-        // Orbiting dust
+        // Swirl citation dust
         if (poly.dustPoints) {
           poly.dustPoints.rotation.y -= poly.rotSpeed.y * 1.6;
         }
       }
 
-      // --- STELLAR STARS ROTATION ---
-      starPoints.rotation.y = elapsed * 0.012;
+      // ==========================================================
+      // --- ENDLESS CYBERNETIC WAVE RIBBONS ---
+      // Continuous harmonic waves undulating infinitely
+      // ==========================================================
+      for (let r = 0; r < ribbons.length; r++) {
+        const rib = ribbons[r];
+        const arr = rib.posArray;
+        const time = accumulatedTime * rib.speed;
+
+        for (let p = 0; p < ribbonPoints; p++) {
+          const x = arr[p * 3];
+          // Harmonic wave equation propagating across space & time
+          const w1 = Math.sin(x * rib.freq + time + rib.phase) * rib.amp;
+          const w2 = Math.cos(x * rib.freq * 0.65 - time * 0.85 + rib.baseZOffset * 0.08) * (rib.amp * 0.48);
+          arr[p * 3 + 1] = w1 + w2;
+        }
+
+        rib.geo.attributes.position.needsUpdate = true;
+      }
 
       renderer.render(scene, camera);
 
@@ -452,7 +505,6 @@ export default function Modern3DBackground() {
     const onVisibilityChange = () => {
       isVisible = !document.hidden;
       if (isVisible && !isReducedMotion) {
-        lastTime = performance.now();
         clock.start();
         animate();
       } else if (rafId) {
@@ -462,12 +514,10 @@ export default function Modern3DBackground() {
     };
 
     document.addEventListener('visibilitychange', onVisibilityChange);
+    window.addEventListener('focus', onVisibilityChange);
 
-    if (isReducedMotion) {
-      animate();
-    } else {
-      animate();
-    }
+    // Initial trigger
+    animate();
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
@@ -475,10 +525,16 @@ export default function Modern3DBackground() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
       document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('focus', onVisibilityChange);
 
       particleTexture.dispose();
       starGeo.dispose();
       starMat.dispose();
+
+      icoGeo.dispose();
+      octGeo.dispose();
+      dodGeo.dispose();
+      tetGeo.dispose();
 
       ribbons.forEach((r) => {
         r.geo.dispose();

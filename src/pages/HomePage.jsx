@@ -380,28 +380,6 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               </div>
             </SlideReveal>
 
-            {/* AI Engines Bar (Centered) */}
-            <div className="pt-6 border-t border-white/10 w-full max-w-3xl mx-auto flex flex-col items-center">
-              <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#e60023] block mb-3 text-center font-semibold">
-                // AUDITING & OPTIMIZING ACROSS LEADING AI DISCOVERY ENGINES
-              </span>
-              <ul
-                aria-label="Auditing across 5 major AI discovery engines"
-                className="flex flex-wrap items-center justify-center gap-2 list-none p-0 m-0"
-              >
-                {AI_ENGINES.map((engine) => (
-                  <li
-                    key={engine.id}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111113] border border-white/15 text-white text-xs font-sans font-medium shadow-sm hover:border-[#e60023] transition-colors"
-                  >
-                    <AiEngineIcon id={engine.id} size={16} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
-                    <span className="text-white">
-                      {engine.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Scroll Indicator */}
             <div

@@ -302,12 +302,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
   ];
 
   return (
-    <div className="relative overflow-hidden font-sans bg-transparent text-[#4B4F58]">
+    <div className="relative overflow-hidden font-sans bg-transparent text-[#fff0f0]">
 
       {/* ============================================================
-          HERO SECTION (CHAMPAGNE GOLD & ALABASTER VIEW)
+          HERO SECTION (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section ref={heroRef} className="relative pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 text-[#0F1012] overflow-hidden bg-[#FAF8F5]">
+      <section ref={heroRef} className="relative pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 text-white overflow-hidden bg-[#000000]">
         {/* Cinematic Ambient Hero Video Background */}
         <HeroVideoBackground />
 
@@ -316,37 +316,37 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             
             {/* Eyebrow / Kicker */}
             <SlideReveal direction="down" delay={0.08}>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-[8px] bg-white border border-[#EADBBE] shadow-sm mx-auto">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-sm mx-auto backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#DFB76C]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e60023] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e60023]"></span>
                 </span>
-                <span className="text-[12px] font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28]">
+                <span className="text-[12px] font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023]">
                   AI SEARCH VISIBILITY / GEO / AEO
                 </span>
               </div>
             </SlideReveal>
 
-            {/* Main Animated Headline with Champagne Gold Glow & 3D Verb Morph */}
+            {/* Main Animated Headline with Formium Crimson Glow & 3D Verb Morph */}
             <HeroAnimatedHeadline />
 
             {/* Supporting Paragraph (Centered, clean line-height) */}
             <SlideReveal direction="up" delay={0.16}>
-              <p className="animate-hero-paragraph text-base sm:text-lg text-[#4B4F58] max-w-3xl mx-auto font-normal leading-[1.5]">
+              <p className="animate-hero-paragraph text-base sm:text-lg text-[#a1a1aa] max-w-3xl mx-auto font-normal leading-[1.6]">
                 Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across{' '}
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="chatgpt" size={15} /> ChatGPT
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="gemini" size={15} /> Gemini
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="perplexity" size={15} /> Perplexity
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="claude" size={15} /> Claude
                 </span>, and{' '}
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="google-ai-overviews" size={15} variant="multicolor" /> Google AI Overviews
                 </span>.
               </p>
@@ -357,15 +357,15 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 mx-auto w-full sm:w-auto">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-aurora w-full sm:w-auto shadow-[0_4px_16px_rgba(197,160,89,0.32)]"
+                  className="btn-aurora w-full sm:w-auto rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-[#0F1012]" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
 
                 <button
                   onClick={() => handleNav('#how-it-works')}
-                  className="btn-kelp w-full sm:w-auto"
+                  className="btn-kelp w-full sm:w-auto rounded-full px-7 py-3.5"
                 >
                   <span>Explore Our Method</span>
                 </button>
@@ -374,15 +374,15 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Trust Line (Centered) */}
             <SlideReveal direction="up" delay={0.3}>
-              <div className="pt-1 flex items-center justify-center gap-2.5 text-xs text-[#636773] font-sans mx-auto">
-                <ShieldCheck className="w-4 h-4 text-[#C5A059] shrink-0" />
+              <div className="pt-1 flex items-center justify-center gap-2.5 text-xs text-[#a1a1aa] font-sans mx-auto">
+                <ShieldCheck className="w-4 h-4 text-[#e60023] shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>
 
             {/* AI Engines Bar (Centered) */}
-            <div className="pt-6 border-t border-[#EADBBE] w-full max-w-3xl mx-auto flex flex-col items-center">
-              <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#A67D28] block mb-3 text-center font-medium">
+            <div className="pt-6 border-t border-white/10 w-full max-w-3xl mx-auto flex flex-col items-center">
+              <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#e60023] block mb-3 text-center font-semibold">
                 // AUDITING & OPTIMIZING ACROSS LEADING AI DISCOVERY ENGINES
               </span>
               <ul
@@ -392,10 +392,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 {AI_ENGINES.map((engine) => (
                   <li
                     key={engine.id}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-white border border-[#EADBBE] text-[#0F1012] text-xs font-sans font-medium shadow-sm"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111113] border border-white/15 text-white text-xs font-sans font-medium shadow-sm hover:border-[#e60023] transition-colors"
                   >
                     <AiEngineIcon id={engine.id} size={16} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
-                    <span className="text-[#0F1012]">
+                    <span className="text-white">
                       {engine.name}
                     </span>
                   </li>
@@ -408,10 +408,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               onClick={() => handleNav('#shift-to-synthesis')}
               className="pt-6 flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity cursor-pointer select-none group"
             >
-              <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#636773] mb-1 group-hover:text-[#0F1012] transition-colors">
+              <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#a1a1aa] mb-1 group-hover:text-white transition-colors">
                 // SCROLL TO EXPLORE
               </span>
-              <ChevronDown className="w-4 h-4 text-[#C5A059] animate-bounce" />
+              <ChevronDown className="w-4 h-4 text-[#e60023] animate-bounce" />
             </div>
 
           </div>
@@ -421,7 +421,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           RECESSED STRIP: CONTINUOUS SINGLE-LINE TICKER (AI ENGINES & TARGET SECTORS)
           ============================================================ */}
-      <section className="py-4 bg-white/85 backdrop-blur-md border-y border-[#EADBBE] text-[#0F1012] relative z-20 overflow-hidden shadow-sm">
+      <section className="py-4 bg-[#09090b]/90 backdrop-blur-md border-y border-white/10 text-white relative z-20 overflow-hidden shadow-sm">
         <div className="w-full overflow-hidden ticker-fade-mask select-none">
           <div className="animate-ticker-marquee flex items-center whitespace-nowrap">
             {[0, 1, 2, 3].map((setIndex) => (
@@ -429,8 +429,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 {/* AI Platform Logos */}
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="flex items-center gap-1.5 shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse" />
-                    <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#0F1012] font-semibold shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#e60023] animate-pulse" />
+                    <span className="text-xs font-sans uppercase tracking-[0.14em] text-white font-semibold shrink-0">
                       AI Engines Audited:
                     </span>
                   </div>
@@ -438,10 +438,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     {AI_ENGINES.map((engine) => (
                       <div
                         key={`set-${setIndex}-${engine.id}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] text-xs font-sans font-medium text-[#0F1012] shrink-0 hover:border-[#C5A059] hover:bg-white transition-all cursor-default"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-xs font-sans font-medium text-white shrink-0 hover:border-[#e60023] hover:bg-white/5 transition-all cursor-default"
                       >
                         <AiEngineIcon id={engine.id} size={14} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
-                        <span className="text-[#0F1012]">{engine.name}</span>
+                        <span className="text-white">{engine.name}</span>
                       </div>
                     ))}
                   </div>
@@ -449,21 +449,21 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#C5A059]" />
-                  <div className="w-6 h-[1px] bg-[#EADBBE]" />
-                  <div className="w-1 h-1 rounded-full bg-[#C5A059]" />
+                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-6 h-[1px] bg-white/20" />
+                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
                 </div>
 
                 {/* Target B2B Sectors */}
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#A67D28] font-semibold shrink-0">
+                  <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#e60023] font-semibold shrink-0">
                     Target Sectors:
                   </span>
                   <div className="flex items-center gap-2 shrink-0">
                     {trustBadges.map((badge, bIdx) => (
                       <span
                         key={`set-${setIndex}-badge-${bIdx}`}
-                        className="px-3 py-1 rounded-[8px] text-xs font-sans uppercase tracking-[0.08em] bg-[#FAF8F5] border border-[#EADBBE] text-[#0F1012] font-medium shrink-0 hover:border-[#C5A059] hover:bg-white transition-all cursor-default"
+                        className="px-3 py-1 rounded-full text-xs font-sans uppercase tracking-[0.08em] bg-[#111113] border border-white/15 text-[#d4d4d8] font-medium shrink-0 hover:border-[#e60023] hover:bg-white/5 transition-all cursor-default"
                       >
                         {badge}
                       </span>
@@ -473,9 +473,9 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator between loops */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#C5A059]" />
-                  <div className="w-6 h-[1px] bg-[#EADBBE]" />
-                  <div className="w-1 h-1 rounded-full bg-[#C5A059]" />
+                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-6 h-[1px] bg-white/20" />
+                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
                 </div>
               </div>
             ))}
@@ -487,20 +487,20 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           PROBLEM SECTION: THE SEARCH SHIFT
           ============================================================ */}
-      <section id="problem" ref={problemRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#4B4F58] relative overflow-hidden">
+      <section id="problem" ref={problemRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#a1a1aa] relative overflow-hidden">
         {/* Parallax Dual Opposing Orbs & Floating Citation Points */}
         <ProblemParallaxBackdrop sectionRef={problemRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // THE SEARCH SHIFT
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Your buyers are no longer searching in one place.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4]">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6]">
               Before they visit a website, buyers increasingly ask AI tools to compare vendors, explain categories, shortlist providers, and recommend the next step. If your brand is absent from those answers, you lose consideration before your sales team ever gets involved.
             </p>
           </SlideReveal>
@@ -511,24 +511,24 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <SlideReveal direction="left" delay={0.12} className="lg:col-span-5 flex flex-col">
               <div className="surface-card p-6 lg:p-8 flex flex-col justify-between space-y-6 group h-full">
                 <div>
-                  <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#A67D28] font-semibold block mb-4">
+                  <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold block mb-4">
                     // CORE REALITY
                   </span>
-                  <blockquote className="text-2xl sm:text-3xl font-heading font-medium text-[#0F1012] leading-tight">
+                  <blockquote className="text-2xl sm:text-3xl font-heading font-medium text-white leading-tight">
                     “If AI cannot find, understand, or trust your brand, it cannot recommend you.”
                   </blockquote>
-                  <p className="text-sm text-[#4B4F58] mt-4 leading-[1.4]">
+                  <p className="text-sm text-[#a1a1aa] mt-4 leading-[1.6]">
                     Traditional search indexed pages; generative engines synthesize consensus. When an LLM generates a response, it references authoritative citation hubs to formulate recommendations.
                   </p>
                 </div>
                 
-                <div className="p-4 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] space-y-2 group-hover:border-[#C5A059]/40 transition-all duration-300">
-                  <div className="flex items-center gap-2 text-xs font-sans text-[#636773]">
-                    <HelpCircle className="w-3.5 h-3.5 text-[#C5A059]" />
+                <div className="p-4 rounded-[16px] bg-[#09090b] border border-white/10 space-y-2 group-hover:border-[#e60023]/40 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-xs font-sans text-[#a1a1aa]">
+                    <HelpCircle className="w-3.5 h-3.5 text-[#e60023]" />
                     <span>Buyer Prompt: "Top enterprise platforms for..."</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-sans text-[#0F1012] font-semibold pl-5 border-l-2 border-[#C5A059]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <div className="flex items-center gap-2 text-xs font-sans text-white font-semibold pl-5 border-l-2 border-[#e60023]">
+                    <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
                     <span>AI Synthesis: Highlights Citepoint-verified brands</span>
                   </div>
                 </div>
@@ -543,20 +543,20 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] text-[#C5A059] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C5A059]/60">
+                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
                         <Eye className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#A67D28] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
                           RISK 01
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-[#0F1012] transition-colors duration-200 group-hover:text-[#A67D28]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
                           Invisible
                         </h3>
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#4B4F58] leading-[1.4]">
+                  <p className="text-sm text-[#a1a1aa] leading-[1.6]">
                     Your brand does not appear for the questions your buyers ask. Competitors dominate the synthesized answer while your company is completely omitted.
                   </p>
                 </div>
@@ -567,20 +567,20 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[8px] bg-[#FFF5F5] border border-[#FED7D7] text-[#C53030] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#FEB2B2]">
+                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
                         <AlertTriangle className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#9B2C2C] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
                           RISK 02
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-[#0F1012] transition-colors duration-200 group-hover:text-[#9B2C2C]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
                           Misrepresented
                         </h3>
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#4B4F58] leading-[1.4]">
+                  <p className="text-sm text-[#a1a1aa] leading-[1.6]">
                     AI describes your offer using incomplete or outdated information. Sunset pricing, retired features, or inaccurate comparisons misinform high-intent buyers.
                   </p>
                 </div>
@@ -591,20 +591,20 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] text-[#C5A059] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#C5A059]/60">
+                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
                         <TrendingUp className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#A67D28] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
                           RISK 03
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-[#0F1012] transition-colors duration-200 group-hover:text-[#A67D28]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
                           Outranked
                         </h3>
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#4B4F58] leading-[1.4]">
+                  <p className="text-sm text-[#a1a1aa] leading-[1.6]">
                     Competitors are cited by the sources AI trusts most. They proactively seed the structured review platforms and reference datasets that LLMs query.
                   </p>
                 </div>
@@ -618,22 +618,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          6 BENTO GRID SERVICE CARDS (CHAMPAGNE GOLD & ALABASTER)
+          6 BENTO GRID SERVICE CARDS (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section id="services" ref={servicesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#0F1012] relative overflow-hidden">
+      <section id="services" ref={servicesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-white relative overflow-hidden">
         {/* Parallax Far Dot Grid & Dual Opposing Liquid Radial Glows */}
         <ServicesParallaxBackdrop sectionRef={servicesRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="down" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               We turn brand authority into AI visibility.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4]">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6]">
               Citepoint combines research, content architecture, technical optimization, third-party authority building, and continuous monitoring to help your brand earn recommendations in AI answers.
             </p>
           </SlideReveal>
@@ -658,38 +658,38 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-9 h-9 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] flex items-center justify-center text-[#C5A059] transition-all duration-300 group-hover:scale-110 group-hover:border-[#C5A059] group-hover:shadow-[0_0_12px_rgba(197,160,89,0.25)]">
+                        <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:bg-[#e60023] group-hover:text-white group-hover:shadow-[0_0_16px_rgba(230,0,35,0.4)]">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <span className="font-sans text-xs text-[#A67D28] font-semibold tracking-[0.12em] transition-colors duration-200 group-hover:text-[#0F1012]">
+                        <span className="font-sans text-xs text-[#e60023] font-semibold tracking-[0.12em] transition-colors duration-200 group-hover:text-white">
                           // {s.num}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-heading font-medium text-[#0F1012] mb-3 transition-colors duration-200 group-hover:text-[#A67D28]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
                         {s.title}
                       </h3>
 
-                      <p className="text-sm text-[#4B4F58] leading-[1.4] mb-6">
+                      <p className="text-sm text-[#a1a1aa] leading-[1.6] mb-6">
                         {s.desc}
                       </p>
 
-                      <div className="space-y-2 pt-4 border-t border-[#EADBBE]">
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#A67D28] block font-semibold">
+                      <div className="space-y-2 pt-4 border-t border-white/10">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] block font-semibold">
                           DELIVERABLES:
                         </span>
-                        <ul className="text-xs text-[#363940] space-y-1.5 font-sans">
+                        <ul className="text-xs text-[#d4d4d8] space-y-1.5 font-sans">
                           {s.deliverables.map((item, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#e60023] shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
 
                         {s.num === '01' && (
-                          <div className="pt-3 border-t border-[#EADBBE] mt-3">
-                            <span className="text-[10px] font-sans text-[#A67D28] block mb-1.5 uppercase tracking-[0.12em] font-medium">
+                          <div className="pt-3 border-t border-white/10 mt-3">
+                            <span className="text-[10px] font-sans text-[#e60023] block mb-1.5 uppercase tracking-[0.12em] font-medium">
                               Engines Audited:
                             </span>
                             <div className="flex items-center gap-1.5">
@@ -697,7 +697,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                                 <div
                                  key={e.id}
                                  title={e.name}
-                                 className="w-6 h-6 rounded-[4px] bg-[#FAF8F5] border border-[#EADBBE] flex items-center justify-center shadow-xs"
+                                 className="w-6 h-6 rounded-[6px] bg-[#09090b] border border-white/10 flex items-center justify-center shadow-xs"
                                >
                                  <AiEngineIcon id={e.id} size={13} variant={e.isGoogleMulti ? 'multicolor' : 'brand'} />
                                </div>
@@ -708,12 +708,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-[#EADBBE] flex items-center justify-between min-h-[44px]">
-                      <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#A67D28] group-hover:text-[#0F1012] transition-colors flex items-center gap-1.5 font-semibold">
+                    <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between min-h-[44px]">
+                      <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#e60023] group-hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
                         Explore service
                       </span>
                       <div
-                        className="arrow-icon-btn transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:bg-[#C5A059] group-hover:text-[#0F1012] group-hover:border-[#C5A059] group-hover:shadow-[0_0_12px_rgba(197,160,89,0.35)]"
+                        className="arrow-icon-btn transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                         aria-hidden="true"
                       >
                         <ArrowUpRight className="w-4 h-4" />
@@ -729,22 +729,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          SIGNATURE FLOW BAND (CHAMPAGNE GOLD & ALABASTER WELL)
+          SIGNATURE FLOW BAND (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section ref={methodRef} className="py-48 lg:py-64 bg-transparent text-[#0F1012] relative overflow-hidden">
+      <section ref={methodRef} className="py-48 lg:py-64 bg-transparent text-white relative overflow-hidden">
         {/* Parallax Connection Vector Line & Pulse Nodes */}
         <MethodParallaxBackdrop sectionRef={methodRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // METHODOLOGY IN ACTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               From question to citation.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4] max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6] max-w-2xl mx-auto">
               We identify the questions that influence buying decisions, the sources AI trusts, and the actions required to make your brand visible in that journey.
             </p>
           </SlideReveal>
@@ -765,31 +765,31 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   <div className="surface-card p-6 flex flex-col justify-between h-full group cursor-default">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="w-7 h-7 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] flex items-center justify-center font-sans text-xs font-semibold text-[#A67D28] transition-all duration-300 group-hover:border-[#C5A059] group-hover:shadow-[0_0_10px_rgba(197,160,89,0.25)]">
+                        <span className="w-7 h-7 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center font-sans text-xs font-semibold text-[#e60023] transition-all duration-300 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.3)]">
                           {item.step}
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-[#C5A059] transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_8px_#C5A059]" />
+                        <span className="w-2 h-2 rounded-full bg-[#e60023] transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_8px_#e60023]" />
                       </div>
 
-                      <div className="w-9 h-9 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] flex items-center justify-center mb-4 text-[#C5A059] transition-transform duration-300 group-hover:scale-110 group-hover:text-[#A67D28] group-hover:border-[#C5A059]">
+                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center mb-4 text-[#e60023] transition-transform duration-300 group-hover:scale-110 group-hover:text-white group-hover:bg-[#e60023] group-hover:border-[#e60023]">
                         <Icon className="w-4 h-4" />
                       </div>
 
-                      <h3 className="text-base font-heading font-medium text-[#0F1012] mb-2 transition-colors duration-200 group-hover:text-[#A67D28]">
+                      <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
                         {item.label}
                       </h3>
 
-                      <p className="text-xs text-[#4B4F58] leading-[1.4]">
+                      <p className="text-xs text-[#a1a1aa] leading-[1.6]">
                         {item.desc}
                       </p>
 
                       {item.step === '02' && (
-                        <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-[#EADBBE]">
+                        <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-white/10">
                           {AI_ENGINES.map((e) => (
                             <div
                               key={e.id}
                               title={e.name}
-                              className="w-5 h-5 rounded-[4px] bg-[#FAF8F5] border border-[#EADBBE] flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-xs"
+                              className="w-5 h-5 rounded-[4px] bg-[#09090b] border border-white/10 flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-xs"
                             >
                               <AiEngineIcon id={e.id} size={11} variant={e.isGoogleMulti ? 'multicolor' : 'brand'} />
                             </div>
@@ -798,7 +798,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       )}
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-[#EADBBE] text-[10px] font-sans uppercase tracking-[0.12em] text-[#A67D28] font-semibold">
+                    <div className="mt-4 pt-3 border-t border-white/10 text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
                       Stage {item.step}
                     </div>
                   </div>
@@ -810,10 +810,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           <SlideReveal direction="up" delay={0.2} className="text-center">
             <button
               onClick={() => handleNav('audit')}
-              className="btn-aurora"
+              className="btn-aurora rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
             >
               <span>Request Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-[#0F1012]" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </button>
           </SlideReveal>
 
@@ -821,19 +821,19 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          PROCESS SECTION: 4-STEP TIMELINE (CHAMPAGNE GOLD & ALABASTER)
+          PROCESS SECTION: 4-STEP TIMELINE (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section id="how-it-works" className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#0F1012] relative">
+      <section id="how-it-works" className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // IMPLEMENTATION ROADMAP
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               A practical system for a changing search landscape.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4]">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6]">
               We guide enterprise teams through an organized workflow from initial baseline diagnosis to sustained recommendation authority.
             </p>
           </SlideReveal>
@@ -847,32 +847,32 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     onClick={() => setActiveStep(idx)}
                     className={`surface-card p-6 lg:p-8 cursor-pointer flex flex-col justify-between h-full group ${
                       isActive
-                        ? '!border-[#C5A059] !shadow-[0_8px_30px_rgba(197,160,89,0.2)] -translate-y-1'
+                        ? '!border-[#e60023] !shadow-[0_8px_32px_rgba(230,0,35,0.25)] -translate-y-1'
                         : ''
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[#A67D28]">
+                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[#e60023]">
                           // {step.step}
                         </span>
                         <span
                           className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                            isActive ? 'bg-[#C5A059] shadow-[0_0_8px_#C5A059]' : 'bg-black/15 group-hover:bg-[#C5A059]/60'
+                            isActive ? 'bg-[#e60023] shadow-[0_0_8px_#e60023]' : 'bg-white/20 group-hover:bg-[#e60023]/60'
                           }`}
                         />
                       </div>
 
-                      <h3 className={`text-xl font-heading font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-[#A67D28]' : 'text-[#0F1012] group-hover:text-[#A67D28]'}`}>
+                      <h3 className={`text-xl font-heading font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-[#e60023]' : 'text-white group-hover:text-[#e60023]'}`}>
                         {step.title}
                       </h3>
 
-                      <p className="text-sm text-[#4B4F58] leading-[1.4]">
+                      <p className="text-sm text-[#a1a1aa] leading-[1.6]">
                         {step.desc}
                       </p>
                     </div>
 
-                    <div className={`mt-8 pt-4 border-t border-[#EADBBE] text-xs font-sans transition-colors duration-200 ${isActive ? 'text-[#A67D28] font-semibold' : 'text-[#636773] group-hover:text-[#0F1012]'}`}>
+                    <div className={`mt-8 pt-4 border-t border-white/10 text-xs font-sans transition-colors duration-200 ${isActive ? 'text-[#e60023] font-semibold' : 'text-[#71717a] group-hover:text-white'}`}>
                       {isActive ? '● Selected Phase' : '○ Click to inspect'}
                     </div>
                   </div>
@@ -885,22 +885,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          RESULTS / CASE STUDIES (CHAMPAGNE GOLD & ALABASTER)
+          RESULTS / CASE STUDIES (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section id="case-studies" ref={caseStudiesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#0F1012] relative overflow-hidden">
+      <section id="case-studies" ref={caseStudiesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-white relative overflow-hidden">
         {/* Parallax Layered Diagnostic Depth Scene */}
         <CaseStudiesParallaxBackdrop sectionRef={caseStudiesRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="left" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Visibility should lead somewhere.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4]">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6]">
               We measure progress through meaningful changes in AI presence, qualified visibility, source authority, and downstream business signals.
             </p>
           </SlideReveal>
@@ -916,7 +916,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="fa-stat-label">
                   Baseline Omission Rate
                 </div>
-                <p className="text-xs text-[#4B4F58] font-sans mt-1">
+                <p className="text-xs text-[#a1a1aa] font-sans mt-1">
                   Brands unmentioned across target buyer queries prior to Citepoint audit
                 </p>
               </div>
@@ -931,7 +931,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="fa-stat-label">
                   AI Engines Audited
                 </div>
-                <p className="text-xs text-[#4B4F58] font-sans mt-1">
+                <p className="text-xs text-[#a1a1aa] font-sans mt-1">
                   ChatGPT, Perplexity, Gemini, Claude & Google AI Overviews benchmarked
                 </p>
               </div>
@@ -946,7 +946,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="fa-stat-label">
                   Citation Retrieval Density
                 </div>
-                <p className="text-xs text-[#4B4F58] font-sans mt-1">
+                <p className="text-xs text-[#a1a1aa] font-sans mt-1">
                   Average increase in canonical entity citations across authoritative hubs
                 </p>
               </div>
@@ -961,7 +961,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="fa-stat-label">
                   Authority Sprint
                 </div>
-                <p className="text-xs text-[#4B4F58] font-sans mt-1">
+                <p className="text-xs text-[#a1a1aa] font-sans mt-1">
                   Structured sprint timeframe to verifiable category recommendation shift
                 </p>
               </div>
@@ -982,28 +982,28 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 >
                   <div className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#A67D28] font-semibold">
+                      <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
                         {cs.category}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-[8px] bg-[#FAF8F5] text-[#363940] border border-[#EADBBE] text-[10px] font-sans uppercase tracking-[0.12em] transition-colors duration-200 group-hover:border-[#C5A059]">
+                      <span className="px-3 py-1 rounded-full bg-[#161619] text-[#d4d4d8] border border-white/12 text-[10px] font-sans uppercase tracking-[0.12em] transition-colors duration-200 group-hover:border-[#e60023]">
                         {cs.status}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-heading font-medium text-[#0F1012] mb-3 transition-colors duration-200 group-hover:text-[#A67D28]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
                         {cs.title}
                       </h3>
 
-                      <p className="text-xs text-[#4B4F58] leading-[1.4] mb-6">
+                      <p className="text-xs text-[#a1a1aa] leading-[1.6] mb-6">
                         {cs.note}
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-[#EADBBE]">
+                    <div className="pt-4 border-t border-white/10">
                       <div className="flex items-center justify-between text-xs font-sans">
-                        <span className="text-[#636773]">{cs.metricLabel}:</span>
-                        <span className="stat-counter text-base font-semibold text-[#A67D28] transition-transform duration-300 group-hover:scale-105 inline-block">{cs.metricValue}</span>
+                        <span className="text-[#71717a]">{cs.metricLabel}:</span>
+                        <span className="stat-counter text-base font-semibold text-[#e60023] transition-transform duration-300 group-hover:scale-105 inline-block">{cs.metricValue}</span>
                       </div>
                     </div>
                   </div>
@@ -1016,22 +1016,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          WHY CITEPOINT (CHAMPAGNE GOLD & ALABASTER)
+          WHY CITEPOINT (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section ref={whyUsRef} className="py-48 lg:py-64 bg-transparent text-[#0F1012] relative overflow-hidden">
+      <section ref={whyUsRef} className="py-48 lg:py-64 bg-transparent text-white relative overflow-hidden">
         {/* Parallax Subtle Glass Bubbles & Refraction Rings */}
         <WhyUsParallaxBackdrop sectionRef={whyUsRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="right" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // DIFFERENTIATION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Not another content agency.
             </h2>
-            <p className="text-base sm:text-lg text-[#4B4F58] leading-[1.4]">
+            <p className="text-base sm:text-lg text-[#a1a1aa] leading-[1.6]">
               We don't sell bloated content packages or chase vanity keywords. Citepoint operates as a strategic AI visibility partner focused on the exact sources that influence high-consideration buying decisions.
             </p>
           </SlideReveal>
@@ -1048,21 +1048,21 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 >
                   <div className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default">
                     <div>
-                      <span className="font-sans text-xs text-[#A67D28] font-semibold tracking-[0.12em] block mb-4 transition-transform duration-300 group-hover:translate-x-0.5">
+                      <span className="font-sans text-xs text-[#e60023] font-semibold tracking-[0.12em] block mb-4 transition-transform duration-300 group-hover:translate-x-0.5">
                         // {d.num}
                       </span>
 
-                      <h3 className="text-2xl font-heading font-medium text-[#0F1012] mb-3 transition-colors duration-200 group-hover:text-[#A67D28]">
+                      <h3 className="text-2xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
                         {d.title}
                       </h3>
 
-                      <p className="text-sm text-[#4B4F58] leading-[1.4]">
+                      <p className="text-sm text-[#a1a1aa] leading-[1.6]">
                         {d.desc}
                       </p>
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-[#EADBBE] flex items-center gap-2 text-xs font-sans text-[#0F1012]">
-                      <CheckCircle2 className="w-4 h-4 text-[#C5A059] transition-transform duration-300 group-hover:scale-110" />
+                    <div className="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-sans text-white">
+                      <CheckCircle2 className="w-4 h-4 text-[#e60023] transition-transform duration-300 group-hover:scale-110" />
                       <span>Strategic Commitment</span>
                     </div>
                   </div>
@@ -1075,22 +1075,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          FAQ SECTION (CHAMPAGNE GOLD & ALABASTER)
+          FAQ SECTION (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section id="faq" ref={faqRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-[#0F1012] relative overflow-hidden">
+      <section id="faq" ref={faqRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-48 lg:py-64 bg-transparent text-white relative overflow-hidden">
         {/* Parallax Subtle Liquid Shape & Gold Citation Point */}
         <FaqParallaxBackdrop sectionRef={faqRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
               // FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] leading-none tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
               Clear answers on AI search visibility.
             </h2>
-            <p className="text-base text-[#4B4F58] leading-[1.4]">
+            <p className="text-base text-[#a1a1aa] leading-[1.6]">
               Common questions about Generative Engine Optimization, timelines, and our strategic methodology.
             </p>
           </SlideReveal>
@@ -1103,44 +1103,44 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          FINAL CTA BAND (CHAMPAGNE GOLD & FROSTED ALABASTER)
+          FINAL CTA BAND (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section ref={finalCtaRef} className="py-48 lg:py-64 bg-white/80 backdrop-blur-md text-[#0F1012] relative overflow-hidden border-t border-[#EADBBE]">
-        {/* Parallax Second-Strongest Scene: Gold & Light Fields + Citation Ring */}
+      <section ref={finalCtaRef} className="py-48 lg:py-64 bg-black/85 backdrop-blur-md text-white relative overflow-hidden border-t border-white/10">
+        {/* Parallax Second-Strongest Scene */}
         <FinalCtaParallaxBackdrop sectionRef={finalCtaRef} />
 
         <SlideReveal direction="scale-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#A67D28] px-3.5 py-1.5 rounded-[8px] bg-white border border-[#EADBBE] shadow-xs inline-block">
+          <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] px-4 py-1.5 rounded-full bg-white/10 border border-white/15 shadow-xs inline-block">
             GET CITED. GET CHOSEN.
           </span>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-medium text-[#0F1012] tracking-tightest leading-none">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-medium text-white tracking-tightest leading-none">
             Make your brand part of the answer.
           </h2>
 
-          <p className="text-base sm:text-lg text-[#4B4F58] max-w-2xl mx-auto leading-[1.4]">
+          <p className="text-base sm:text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-[1.6]">
             Find out how AI systems currently see your brand—and what it will take to become more visible.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={() => handleNav('audit')}
-              className="btn-aurora w-full sm:w-auto shadow-[0_4px_16px_rgba(197,160,89,0.32)]"
+              className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
             >
               <span>Get Your AI Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-[#0F1012]" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </button>
 
             <button
               onClick={() => handleNav('contact')}
-              className="btn-kelp w-full sm:w-auto"
+              className="btn-kelp w-full sm:w-auto rounded-full px-8 py-3.5"
             >
               <span>Talk to Citepoint</span>
             </button>
           </div>
 
-          <div className="pt-8 border-t border-[#EADBBE] max-w-md mx-auto">
-            <p className="text-xs font-sans text-[#636773] leading-[1.4]">
+          <div className="pt-8 border-t border-white/10 max-w-md mx-auto">
+            <p className="text-xs font-sans text-[#71717a] leading-[1.6]">
               No hype. No guaranteed rankings. Just an empirical baseline, practical priorities, and measurable progress.
             </p>
           </div>

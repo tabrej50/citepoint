@@ -73,12 +73,12 @@ export default function HeroVideoBackground() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0 bg-[#FAF8F5]"
+      className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0 bg-[#000000]"
       style={{ opacity: fadeOpacity }}
       aria-hidden="true"
     >
-      {/* Solid Opaque Base Ground to prevent any old background canvas bleed */}
-      <div className="absolute inset-0 bg-[#FAF8F5] pointer-events-none -z-10" />
+      {/* Solid Opaque Base Ground: Pitch Black */}
+      <div className="absolute inset-0 bg-[#000000] pointer-events-none -z-10" />
 
       {/* 1. Underlying Video Container with Parallax Transform */}
       <div
@@ -98,38 +98,38 @@ export default function HeroVideoBackground() {
           poster="/assets/videos/hero-background.jpg"
           onLoadedData={() => setIsLoaded(true)}
           className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            isLoaded ? 'opacity-90' : 'opacity-70'
+            isLoaded ? 'opacity-85' : 'opacity-65'
           }`}
           style={{
-            filter: 'contrast(1.08) brightness(1.02) saturate(1.15)',
+            filter: 'contrast(1.12) brightness(0.95) saturate(1.15)',
           }}
         >
           <source src="/assets/videos/hero-background.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* 2. Multi-Stage Atmospheric Champagne & Alabaster Gradient Overlays */}
+      {/* 2. Multi-Stage Atmospheric Formium Deep Black & Crimson Gradient Overlays */}
       {/* Central soft vignette for guaranteed text contrast */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 50% 45%, rgba(250, 248, 245, 0.72) 0%, rgba(250, 248, 245, 0.45) 55%, rgba(250, 248, 245, 0.85) 100%)',
+          background: 'radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.88) 100%)',
         }}
       />
 
-      {/* Top Navbar blend and bottom section melt */}
+      {/* Top Navbar blend and bottom section melt into #000000 */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(180deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.35) 25%, rgba(250, 248, 245, 0.25) 60%, rgba(250, 248, 245, 0.98) 95%, #FAF8F5 100%)',
+          background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.30) 25%, rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.98) 95%, #000000 100%)',
         }}
       />
 
-      {/* Warm champagne luminous sheen accent */}
+      {/* Subtle Formium crimson luminous sheen accent */}
       <div
-        className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
+        className="absolute inset-0 pointer-events-none mix-blend-screen opacity-25"
         style={{
-          background: 'linear-gradient(135deg, rgba(223, 183, 108, 0.4) 0%, transparent 60%, rgba(197, 160, 89, 0.3) 100%)',
+          background: 'linear-gradient(135deg, rgba(230, 0, 35, 0.3) 0%, transparent 60%, rgba(230, 0, 35, 0.15) 100%)',
         }}
       />
 
@@ -137,27 +137,27 @@ export default function HeroVideoBackground() {
       <div className="absolute bottom-6 right-6 z-20 pointer-events-auto hidden sm:flex items-center gap-2">
         <button
           onClick={togglePlayback}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 hover:bg-white text-[#0F1012] border border-[#EADBBE] shadow-sm backdrop-blur-md transition-all duration-200 text-xs font-mono font-medium hover:border-[#C5A059] group cursor-pointer"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/75 hover:bg-black text-[#fff0f0] border border-white/20 shadow-md backdrop-blur-md transition-all duration-200 text-xs font-sans font-medium hover:border-[#e60023] group cursor-pointer"
           aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
           title={isPlaying ? 'Pause video' : 'Play video'}
         >
           <span className="relative flex h-2 w-2">
             {isPlaying && (
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e60023] opacity-75" />
             )}
             <span
               className={`relative inline-flex rounded-full h-2 w-2 ${
-                isPlaying ? 'bg-[#DFB76C]' : 'bg-[#A0A5B0]'
+                isPlaying ? 'bg-[#e60023]' : 'bg-[#52525b]'
               }`}
             />
           </span>
-          <span className="text-[11px] uppercase tracking-wider text-[#363940] group-hover:text-[#0F1012]">
+          <span className="text-[11px] uppercase tracking-wider text-[#d4d4d8] group-hover:text-white">
             {isPlaying ? 'Ambient Motion' : 'Motion Paused'}
           </span>
           {isPlaying ? (
-            <Pause className="w-3 h-3 text-[#A67D28]" />
+            <Pause className="w-3 h-3 text-[#e60023]" />
           ) : (
-            <Play className="w-3 h-3 text-[#A67D28]" />
+            <Play className="w-3 h-3 text-[#e60023]" />
           )}
         </button>
       </div>

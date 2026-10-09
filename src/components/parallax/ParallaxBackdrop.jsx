@@ -117,24 +117,34 @@ export function CitationDot({
   className = '',
 }) {
   const colorMap = {
+    crimson: {
+      core: '#e60023',
+      halo: 'rgba(230, 0, 35, 0.25)',
+      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
+    },
+    white: {
+      core: '#ffffff',
+      halo: 'rgba(255, 255, 255, 0.2)',
+      shadow: '0 0 10px rgba(255, 255, 255, 0.4)',
+    },
     gold: {
-      core: '#C5A059',
-      halo: 'rgba(197, 160, 89, 0.25)',
-      shadow: '0 0 10px rgba(197, 160, 89, 0.45)',
+      core: '#e60023',
+      halo: 'rgba(230, 0, 35, 0.25)',
+      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
     },
     cyan: {
-      core: '#DFB76C',
-      halo: 'rgba(223, 183, 108, 0.25)',
-      shadow: '0 0 10px rgba(223, 183, 108, 0.45)',
+      core: '#e60023',
+      halo: 'rgba(230, 0, 35, 0.25)',
+      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
     },
     lavender: {
-      core: '#B88E3A',
-      halo: 'rgba(184, 142, 58, 0.25)',
-      shadow: '0 0 10px rgba(184, 142, 58, 0.45)',
+      core: '#cc001f',
+      halo: 'rgba(204, 0, 31, 0.25)',
+      shadow: '0 0 10px rgba(204, 0, 31, 0.45)',
     },
   };
 
-  const c = colorMap[color] || colorMap.gold;
+  const c = colorMap[color] || colorMap.crimson;
 
   return (
     <div
@@ -166,16 +176,16 @@ export function CitationDot({
 
 /**
  * OrbitalRing
- * Delicate hairline champagne gold orbital ring with optional dash styling.
+ * Delicate hairline crimson or silver orbital ring with optional dash styling.
  */
 export function OrbitalRing({
   size = 360,
   dash = true,
-  color = 'gold',
+  color = 'crimson',
   opacity = 0.25,
   className = '',
 }) {
-  const strokeColor = color === 'gold' ? '#D5C39E' : '#EADBBE';
+  const strokeColor = color === 'crimson' || color === 'gold' ? 'rgba(230, 0, 35, 0.35)' : 'rgba(255, 255, 255, 0.15)';
 
   return (
     <svg
@@ -218,7 +228,7 @@ export function DotGrid({
   dotSize = 1,
   spacing = 28,
   opacity = 0.05,
-  color = '#D5C39E',
+  color = 'rgba(255, 255, 255, 0.1)',
   className = '',
 }) {
   const patternId = `dot-grid-pat-${spacing}-${dotSize}`;
@@ -250,11 +260,11 @@ export function DotGrid({
  * Subtle citation vector lines connecting abstract nodes.
  */
 export function NetworkLines({
-  color = 'gold',
+  color = 'crimson',
   opacity = 0.18,
   className = '',
 }) {
-  const strokeColor = color === 'gold' ? 'rgba(197, 160, 89, 0.35)' : 'rgba(223, 183, 108, 0.35)';
+  const strokeColor = 'rgba(230, 0, 35, 0.35)';
 
   return (
     <svg
@@ -277,11 +287,11 @@ export function NetworkLines({
         opacity="0.7"
       />
       {/* Node Vertices */}
-      <circle cx="50" cy="180" r="3" fill="#C5A059" />
-      <circle cx="380" cy="120" r="2.5" fill="#DFB76C" />
-      <circle cx="560" cy="70" r="3" fill="#C5A059" />
-      <circle cx="280" cy="160" r="2" fill="#DFB76C" />
-      <circle cx="450" cy="220" r="2.5" fill="#C5A059" />
+      <circle cx="50" cy="180" r="3" fill="#e60023" />
+      <circle cx="380" cy="120" r="2.5" fill="#e60023" />
+      <circle cx="560" cy="70" r="3" fill="#e60023" />
+      <circle cx="280" cy="160" r="2" fill="#e60023" />
+      <circle cx="450" cy="220" r="2.5" fill="#e60023" />
     </svg>
   );
 }
@@ -297,7 +307,7 @@ export function GlassBubble({
 }) {
   return (
     <div
-      className={`rounded-full pointer-events-none border border-[#EADBBE] bg-white/40 backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_4px_12px_rgba(197,160,89,0.08)] ${className}`}
+      className={`rounded-full pointer-events-none border border-white/15 bg-white/5 backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),0_4px_12px_rgba(230,0,35,0.12)] ${className}`}
       style={{
         width: size,
         height: size,

@@ -3,71 +3,81 @@
 @tailwind utilities;
 
 /* ============================================================
-   CITEPOINT LUXURY DESIGN SYSTEM — CHAMPAGNE GOLD & ALABASTER
-   A radiant, high-contrast alabaster/ivory canvas built around #FAF8F5 and #FFFFFF,
-   obsidian black ink (#0F1012), warm charcoal body (#363940),
-   fine champagne gold hairline borders (#EADBBE), and radiant signature gold (#C5A059 / #DFB76C).
+   FORMIUM ALLIANCE DESIGN SYSTEM
+   Structured, accessible, implementation-first:
+   - Base Surface: Pure Pitch Black (#000000)
+   - Primary Accent: Formium Crimson Red (#E60023)
+   - Light Surfaces: Pure White (#FFFFFF) & Raised Gray (#F4F5F8)
+   - Typography: Bricolage Grotesque across all displays, headings, and body
+   - Geometry: 999px Pills & 24px Curved Surface Cards
    ============================================================ */
 
 :root {
   /* Surfaces */
-  --color-canvas: #FAF8F5;
-  --color-surface-1: #ffffff;
-  --color-surface-2: #F7F4EE;
-  --color-surface-3: #F0EAE0;
-  --color-surface-4: #E8E0D2;
-  --color-hairline: #EADBBE;
-  --color-hairline-strong: #D5C39E;
-  --color-hairline-tertiary: #C4AE7E;
+  --color-canvas: #000000;
+  --color-surface-base: #000000;
+  --color-surface-raised: #f4f5f8;
+  --color-surface-muted: #ffffff;
+  --color-surface-strong: #e60023;
+  --color-surface-1: #111113;
+  --color-surface-2: #18181b;
+  --color-surface-3: #27272a;
+  --color-surface-4: #3f3f46;
+  --color-hairline: rgba(255, 255, 255, 0.12);
+  --color-hairline-strong: rgba(255, 255, 255, 0.22);
+  --color-hairline-tertiary: rgba(255, 255, 255, 0.08);
 
-  /* Typography & Neutrals (WCAG AAA on alabaster/white) */
-  --color-ink: #0F1012;
-  --color-ink-muted: #363940;
-  --color-ink-subtle: #4B4F58;
-  --color-ink-tertiary: #6E7380;
+  /* Typography & Neutrals (WCAG 2.2 AA / AAA Compliant) */
+  --color-ink: #fff0f0;
+  --color-ink-muted: #d4d4d8;
+  --color-ink-subtle: #a1a1aa;
+  --color-ink-tertiary: #71717a;
+  --color-text-secondary: #1a1a1c;
+  --color-text-tertiary: #fff0f0;
+  --color-text-inverse: #222222;
 
-  /* Primary Accent: Champagne Gold */
-  --color-primary: #C5A059;
-  --color-primary-hover: #DFB76C;
-  --color-primary-focus: #B88E3A;
-  --color-on-primary: #0F1012;
-  --color-brand-secure: #9E7427;
+  /* Primary Accent: Formium Crimson */
+  --color-primary: #e60023;
+  --color-primary-hover: #cc001f;
+  --color-primary-focus: #b3001b;
+  --color-on-primary: #ffffff;
+  --color-brand-secure: #e60023;
   --color-semantic-success: #1E8E3E;
 
   /* Backward Compatibility Aliases */
-  --color-liquid-abyss: #FAF8F5;
-  --color-liquid-deep: #F7F4EE;
-  --color-liquid-kelp: #ffffff;
-  --color-slate-deep: #EADBBE;
-  --color-platinum: #0F1012;
-  --color-silver-mist: #4B4F58;
-  --color-ash: #363940;
-  --color-liquid-mist: #0F1012;
-  --color-lavender-phosphor: #C5A059;
-  --color-bioluminescent-gradient: #C5A059;
-  --gradient-bioluminescent-gradient: linear-gradient(135deg, #DFB76C 0%, #C5A059 50%, #B88E3A 100%);
-  --color-aurora-gradient: #C5A059;
-  --gradient-aurora-gradient: linear-gradient(135deg, #DFB76C 0%, #C5A059 50%, #B88E3A 100%);
+  --color-liquid-abyss: #000000;
+  --color-liquid-deep: #111113;
+  --color-liquid-kelp: #1a1a1d;
+  --color-slate-deep: rgba(255, 255, 255, 0.12);
+  --color-platinum: #ffffff;
+  --color-silver-mist: #a1a1aa;
+  --color-ash: #d4d4d8;
+  --color-liquid-mist: #fff0f0;
+  --color-lavender-phosphor: #e60023;
+  --color-bioluminescent-gradient: #e60023;
+  --gradient-bioluminescent-gradient: linear-gradient(135deg, #e60023 0%, #cc001f 100%);
+  --color-aurora-gradient: #e60023;
+  --gradient-aurora-gradient: linear-gradient(135deg, #e60023 0%, #cc001f 100%);
 
-  /* Font Families */
-  --font-matter: 'Inter Tight', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-arial: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Font Families: Bricolage Grotesque Universal */
+  --font-matter: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-arial: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-bricolage: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: 'Bricolage Grotesque', 'Inter Tight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: 'Bricolage Grotesque', 'Inter Tight', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-inter-tight: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter-tight: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Spacing & Radii */
-  --radius-cards: 12px;
-  --radius-buttons: 8px;
-  --radius-small: 6px;
+  /* Spacing & Radii (Formium Standard: 24px cards, 999px pills) */
+  --radius-cards: 24px;
+  --radius-buttons: 999px;
+  --radius-small: 12px;
 
   /* Header & Navigation */
-  --lg-header-bg: rgba(255, 255, 255, 0.88);
-  --lg-header-highlight: rgba(197, 160, 89, 0.2);
-  --lg-btn-bg: #FAF8F5;
-  --lg-btn-highlight: rgba(197, 160, 89, 0.15);
+  --lg-header-bg: rgba(0, 0, 0, 0.85);
+  --lg-header-highlight: rgba(230, 0, 35, 0.25);
+  --lg-btn-bg: #111113;
+  --lg-btn-highlight: rgba(230, 0, 35, 0.2);
 }
 
 @layer base {
@@ -254,30 +264,30 @@
     line-height: 22px;
   }
 
-  /* Luxury Alabaster & Champagne Gold Scrollbar */
+  /* Formium Alliance Deep Dark Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #FAF8F5;
+    background: #000000;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D8C5A2;
-    border-radius: 9999px;
+    background: #27272a;
+    border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #C5A059;
+    background: #e60023;
   }
 }
 
 /* ------------------------------------------------------------
-   CINEMATIC BUTTON SYSTEM (Micro-interactions, gold radiance, active press)
-   Primary: Champagne Gold gradient (#DFB76C -> #C5A059 -> #B88E3A) with obsidian bold text & gold glow
-   Secondary: Frosted alabaster white with #EADBBE hairline border
+   FORMIUM ALLIANCE BUTTON SYSTEM
+   Primary: Signature Formium Crimson (#e60023) Pill with pure white text
+   Secondary: Frosted dark surface with clean white hairline border
    ------------------------------------------------------------ */
 
-/* Primary CTA: Champagne Gold Radiant Button */
+/* Primary CTA: Formium Crimson Pill Button */
 .btn-aurora,
 .btn-primary,
 .btn-liquid-primary,
@@ -286,19 +296,19 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 11px 22px;
+  padding: 12px 24px;
   min-height: 44px;
-  font-family: var(--font-matter);
-  font-size: 15px;
+  font-family: var(--font-bricolage);
+  font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  letter-spacing: 0;
-  color: #0F1012 !important;
-  background: linear-gradient(135deg, #DFB76C 0%, #C5A059 50%, #B88E3A 100%);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 3px 12px rgba(197, 160, 89, 0.32), 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.01em;
+  color: #ffffff !important;
+  background-color: #e60023;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(230, 0, 35, 0.35);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   user-select: none;
   position: relative;
@@ -309,10 +319,9 @@
 .btn-primary:hover,
 .btn-liquid-primary:hover,
 .btn-terminal:hover {
-  background: linear-gradient(135deg, #E8C982 0%, #D4AE64 50%, #C49842 100%);
+  background-color: #cc001f;
   transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.8);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 8px 24px rgba(197, 160, 89, 0.45);
+  box-shadow: 0 6px 24px rgba(230, 0, 35, 0.5);
 }
 
 .btn-aurora:active,
@@ -320,10 +329,19 @@
 .btn-liquid-primary:active,
 .btn-terminal:active {
   transform: scale(0.98);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(197, 160, 89, 0.2);
+  background-color: #b3001b;
+  box-shadow: 0 2px 8px rgba(230, 0, 35, 0.3);
 }
 
-/* Secondary CTA: Frosted Alabaster Hairline Button */
+.btn-aurora:focus-visible,
+.btn-primary:focus-visible,
+.btn-liquid-primary:focus-visible,
+.btn-terminal:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Secondary CTA: Formium High-Contrast Dark Pill Button */
 .btn-kelp,
 .btn-secondary,
 .btn-liquid-secondary,
@@ -332,21 +350,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 11px 22px;
+  padding: 12px 24px;
   min-height: 44px;
-  font-family: var(--font-matter);
-  font-size: 15px;
+  font-family: var(--font-bricolage);
+  font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  letter-spacing: 0;
-  color: #0F1012 !important;
-  background-color: rgba(255, 255, 255, 0.92);
+  letter-spacing: -0.01em;
+  color: #fff0f0 !important;
+  background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid #EADBBE;
-  border-radius: 8px;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 6px rgba(197, 160, 89, 0.08);
-  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   user-select: none;
 }
@@ -355,10 +373,11 @@
 .btn-secondary:hover,
 .btn-liquid-secondary:hover,
 .btn-terminal-muted:hover {
-  background-color: #FAF8F5;
-  border-color: #C5A059;
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 14px rgba(197, 160, 89, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
 }
 
 .btn-kelp:active,
@@ -368,30 +387,39 @@
   transform: scale(0.98);
 }
 
+.btn-kelp:focus-visible,
+.btn-secondary:focus-visible,
+.btn-liquid-secondary:focus-visible,
+.btn-terminal-muted:focus-visible {
+  outline: 2px solid #e60023;
+  outline-offset: 2px;
+}
+
 /* Glass Pill Button */
 .btn-glass {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 8px 16px;
-  font-family: var(--font-matter);
-  font-size: 14px;
+  padding: 8px 18px;
+  font-family: var(--font-bricolage);
+  font-size: 13.5px;
   font-weight: 500;
-  color: #0F1012 !important;
-  background: rgba(255, 255, 255, 0.75);
+  color: #fff0f0 !important;
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px) saturate(180%);
   -webkit-backdrop-filter: blur(14px) saturate(180%);
-  border: 1px solid #EADBBE;
-  border-radius: 9999px;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 8px rgba(197, 160, 89, 0.08);
-  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .btn-glass:hover {
-  background: #FFFFFF;
-  border-color: #C5A059;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #e60023;
+  color: #ffffff !important;
   transform: translateY(-1px);
 }
 
@@ -430,23 +458,23 @@
   height: 36px;
   min-width: 36px;
   min-height: 36px;
-  border-radius: 8px;
-  background: #FFFFFF;
-  border: 1px solid #EADBBE;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 3px rgba(197, 160, 89, 0.08);
+  border-radius: 999px;
+  background: #111113;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #C5A059;
+  color: #e60023;
   flex-shrink: 0;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .arrow-icon-btn:hover {
-  background: #FAF8F5;
-  border-color: #C5A059;
-  color: #0F1012;
+  background: #e60023;
+  border-color: #e60023;
+  color: #ffffff;
   transform: translate(1px, -1px);
 }
 
@@ -455,12 +483,11 @@
 }
 
 /* ------------------------------------------------------------
-   CINEMATIC GLASS PANELS & CARDS (Alabaster Silk & Champagne Gold Depth)
-   - Background: rgba(255, 255, 255, 0.94)
-   - Backdrop blur: 16px saturate(180%)
-   - Border: 1px solid #EADBBE
-   - Inner highlight: inset 0 1px 0 #FFFFFF
-   - Specular top highlight: 1px subtle gold directional gradient
+   CINEMATIC GLASS PANELS & CARDS (Formium Obsidian Glass & Crimson Depth)
+   - Background: rgba(17, 17, 19, 0.85)
+   - Backdrop blur: 20px saturate(180%)
+   - Border: 1px solid rgba(255, 255, 255, 0.12)
+   - Specular top highlight: 1px crimson directional gradient
    ------------------------------------------------------------ */
 
 .surface-card,
@@ -473,12 +500,12 @@
 .card-selectable,
 .bento-card,
 .glass-panel {
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1px solid rgba(234, 219, 190, 0.85) !important;
-  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-  border-radius: 12px;
+  background: rgba(17, 17, 19, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
@@ -495,7 +522,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.35) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(230, 0, 35, 0.45) 50%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -506,9 +533,9 @@
 .card-selectable:hover,
 .bento-card:hover,
 .glass-panel:hover {
-  background: #FFFFFF !important;
-  border-color: rgba(197, 160, 89, 0.5) !important;
-  box-shadow: 0 14px 36px rgba(197, 160, 89, 0.14), 0 0 20px rgba(197, 160, 89, 0.08), inset 0 1px 0 #FFFFFF !important;
+  background: rgba(24, 24, 28, 0.95) !important;
+  border-color: rgba(230, 0, 35, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(230, 0, 35, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   transform: translateY(-2px);
 }
 
@@ -519,16 +546,16 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.25) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(230, 0, 35, 0.35) 50%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
 
 .card-selectable-active,
 .pricing-card-featured {
-  background: #FFFFFF !important;
-  border: 1.5px solid #C5A059 !important;
-  box-shadow: 0 10px 32px rgba(197, 160, 89, 0.18), inset 0 1px 0 #FFFFFF !important;
+  background: rgba(24, 24, 28, 0.95) !important;
+  border: 1.5px solid #e60023 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 0, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 .liquid-glass-refract {
@@ -549,11 +576,12 @@
 
 /* Liquid Glass with Formium SVG filter IDs */
 .formium-liquid-glass {
-  background: rgba(255, 255, 255, 0.88) !important;
+  background: rgba(17, 17, 19, 0.88) !important;
   -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
   backdrop-filter: blur(24px) saturate(180%) !important;
-  border: 1px solid #EADBBE !important;
-  box-shadow: 0 8px 32px rgba(197, 160, 89, 0.09), inset 0 1px 0 #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px;
   filter: url(#lg-dist);
 }
 
@@ -570,19 +598,19 @@
   text-align: center;
   padding: 40px 28px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #EADBBE;
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 6px 24px rgba(197, 160, 89, 0.08);
+  background: rgba(17, 17, 19, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 32px rgba(0, 0, 0, 0.6);
   gap: 14px;
   transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fa-stat-card:hover {
-  background: #FFFFFF;
-  border-color: rgba(197, 160, 89, 0.45);
-  box-shadow: inset 0 1px 0 #FFFFFF, 0 12px 32px rgba(197, 160, 89, 0.14), 0 0 16px rgba(197, 160, 89, 0.08);
+  background: rgba(24, 24, 28, 0.95);
+  border-color: rgba(230, 0, 35, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(230, 0, 35, 0.18);
   transform: translateY(-2px);
 }
 
@@ -592,7 +620,7 @@
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: #0F1012;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 3px;
@@ -601,8 +629,8 @@
 .fa-stat-suffix {
   font-size: 0.5em;
   font-weight: 700;
-  opacity: 0.85;
-  color: #C5A059;
+  opacity: 0.95;
+  color: #e60023;
   line-height: 1;
 }
 
@@ -610,7 +638,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #636773;
+  color: #a1a1aa;
   text-transform: uppercase;
 }
 
@@ -620,8 +648,8 @@
 }
 
 .btn-hover-white:hover {
-  background-color: #0F1012 !important;
-  border-color: #0F1012 !important;
+  background-color: #111113 !important;
+  border-color: #111113 !important;
   color: #FFFFFF !important;
 }
 
@@ -681,14 +709,14 @@
    ------------------------------------------------------------ */
 
 .text-shimmer {
-  background: linear-gradient(135deg, #0F1012 15%, #C5A059 60%, #DFB76C 85%, #9E7427 100%);
+  background: linear-gradient(135deg, #ffffff 20%, #e60023 60%, #ff4d6d 85%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-subtle {
-  background: linear-gradient(180deg, #0F1012 0%, #4B4F58 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -701,16 +729,16 @@
 /* Linear Section Eyebrow / Kicker */
 .section-kicker {
   font-family: var(--font-matter);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: #A67D28;
+  letter-spacing: 0.08em;
+  color: #e60023;
 }
 
 /* Statistic Counter */
 .stat-counter {
-  color: #0F1012;
+  color: #ffffff;
   font-family: var(--font-matter);
   font-weight: 600;
   line-height: 1.0;
@@ -726,23 +754,23 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #C5A059;
+  outline: 2px solid #e60023;
   outline-offset: 2px;
 }
 
 /* ------------------------------------------------------------
    TOP NAVIGATION BAR (.header-six)
-   Linear style: dark surface, hairline border #23252a, backdrop blur
+   Formium style: pitch black surface, hairline border rgba(255,255,255,0.12), backdrop blur
    ------------------------------------------------------------ */
 
 .header-six {
   position: relative;
   isolation: isolate;
-  background: rgba(255, 255, 255, 0.88) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1px solid #EADBBE !important;
-  box-shadow: 0 6px 28px rgba(197, 160, 89, 0.08) !important;
+  background: rgba(0, 0, 0, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8) !important;
   border-radius: 9999px;
 }
 
@@ -753,7 +781,7 @@ select:focus-visible {
   left: 20px;
   right: 20px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(230, 0, 35, 0.45), transparent);
   pointer-events: none;
 }
 
@@ -762,9 +790,9 @@ select:focus-visible {
   position: absolute;
   pointer-events: none;
   border-radius: 9999px;
-  background: #FAF8F5;
-  border: 1px solid #EADBBE;
-  box-shadow: 0 2px 6px rgba(197, 160, 89, 0.06);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   transition:
     left 180ms cubic-bezier(0.16, 1, 0.3, 1),
     width 180ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -774,7 +802,7 @@ select:focus-visible {
   z-index: 0;
 }
 
-/* Champagne Gold Alabaster Dropdown Surface */
+/* Formium Obsidian Dropdown Surface */
 .header-dropdown,
 .lg-dropdown {
   position: absolute;
@@ -782,13 +810,13 @@ select:focus-visible {
   left: 50%;
   transform: translateX(-50%);
   min-width: 280px;
-  background: #FFFFFF !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid #EADBBE !important;
-  border-radius: 12px;
-  box-shadow: 0 16px 36px rgba(197, 160, 89, 0.12) !important;
-  padding: 6px;
+  background: #111113 !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9) !important;
+  padding: 8px;
   z-index: 50;
 }
 
@@ -799,9 +827,9 @@ select:focus-visible {
   display: block;
   width: 100%;
   text-align: left;
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: #0F1012 !important;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #fff0f0 !important;
   font-size: 13px;
   font-weight: 500;
   transition: background-color 150ms ease, color 150ms ease;
@@ -814,33 +842,33 @@ select:focus-visible {
 .header-dropdown button:hover,
 .lg-dropdown a:hover,
 .lg-dropdown button:hover {
-  background: #FAF8F5 !important;
-  color: #C5A059 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #e60023 !important;
 }
 
 /* Mobile Off-canvas Drawer */
 .mobile-offcanvas,
 .glass-mobile-drawer {
-  background: #FFFFFF !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid #EADBBE !important;
-  border-radius: 16px;
-  box-shadow: 0 20px 48px rgba(197, 160, 89, 0.15) !important;
-  color: #0F1012 !important;
+  background: #111113 !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95) !important;
+  color: #fff0f0 !important;
 }
 
 .mobile-offcanvas nav button,
 .mobile-offcanvas nav a,
 .glass-mobile-drawer nav button,
 .glass-mobile-drawer nav a {
-  color: #0F1012 !important;
+  color: #fff0f0 !important;
 }
 
 .mobile-offcanvas nav button:hover,
 .glass-mobile-drawer nav button:hover {
-  background: #FAF8F5 !important;
-  color: #C5A059 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #e60023 !important;
 }
 
 /* ------------------------------------------------------------

@@ -76,7 +76,7 @@ export default function HeroAnimatedHeadline() {
     >
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-[26px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-[#0F1012] leading-[1.25] sm:leading-[1.08] tracking-[-0.035em] text-center">
+      <h1 className="relative z-10 text-[26px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-white leading-[1.25] sm:leading-[1.08] tracking-[-0.035em] text-center">
         {/* Prefix phrase: "Be the brand AI" */}
         <span className="block sm:inline">
           {PREFIX_WORDS.map((word, idx) => (
@@ -85,7 +85,7 @@ export default function HeroAnimatedHeadline() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.05 * idx, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-[#0F1012] mr-[0.26em]"
+              className="inline-block relative text-white mr-[0.26em]"
             >
               {word}
             </motion.span>
@@ -106,7 +106,7 @@ export default function HeroAnimatedHeadline() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#DFB76C] via-[#C5A059] to-[#9E7427] drop-shadow-[0_0_24px_rgba(197,160,89,0.35)]"
+                className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d6d] via-[#e60023] to-[#cc001f] drop-shadow-[0_0_24px_rgba(230,0,35,0.45)]"
               >
                 {DYNAMIC_VERBS[verbIndex]}
               </motion.span>
@@ -118,7 +118,7 @@ export default function HeroAnimatedHeadline() {
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block relative text-[#0F1012] ml-[0.26em]"
+            className="inline-block relative text-white ml-[0.26em]"
           >
             first.
             {/* Starlight diamond glint on the period of 'first.' */}
@@ -126,8 +126,8 @@ export default function HeroAnimatedHeadline() {
               className="absolute -right-2.5 top-1 pointer-events-none"
               aria-hidden="true"
             >
-              <span className="absolute -inset-1 rounded-full bg-[#C5A059] animate-ping opacity-35" />
-              <span className="relative block w-1.5 h-1.5 rounded-full bg-[#DFB76C] shadow-[0_0_8px_#C5A059] animate-starlight-dot" />
+              <span className="absolute -inset-1 rounded-full bg-[#e60023] animate-ping opacity-35" />
+              <span className="relative block w-1.5 h-1.5 rounded-full bg-[#ff4d6d] shadow-[0_0_8px_#e60023] animate-starlight-dot" />
             </span>
           </motion.span>
         </span>

@@ -21,7 +21,6 @@ const DYNAMIC_VERBS = ['mentions', 'cites', 'recommends', 'chooses'];
 
 export default function HeroAnimatedHeadline() {
   const containerRef = useRef(null);
-  const canvasRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000, active: false });
   const [reducedMotion, setReducedMotion] = useState(false);
   const [verbIndex, setVerbIndex] = useState(0);
@@ -66,152 +65,6 @@ export default function HeroAnimatedHeadline() {
     setMousePos((prev) => ({ ...prev, active: false }));
   };
 
-  // High-performance canvas particle field around the headline
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || reducedMotion) return;
-    const ctx = canvas.getContext('2d', { alpha: true });
-    if (!ctx) return;
-
-    let animId;
-    let width = 0;
-    let height = 0;
-
-    const resize = () => {
-      if (!containerRef.current || !canvas) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = Math.max(rect.width + 100, 320);
-      height = Math.max(rect.height + 60, 100);
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
-    };
-
-    resize();
-    window.addEventListener('resize', resize);
-
-    // Particle pool: bokeh circles + starlight sparks in cyan, amber-gold, and diamond white
-    const PARTICLE_COUNT = 45;
-    const particles = [];
-
-    const colors = [
-      { r: 223, g: 183, b: 108, isBokeh: true },   // Champagne Gold Bokeh
-      { r: 197, g: 160, b: 89,  isBokeh: true },   // Rich Gold Bokeh
-      { r: 255, g: 255, b: 255, isBokeh: false },  // Diamond White Point
-      { r: 197, g: 160, b: 89,  isBokeh: false },  // Gold Sparkle
-      { r: 245, g: 225, b: 175, isBokeh: true },   // Soft Pale Gold Bokeh
-      { r: 223, g: 183, b: 108, isBokeh: false },  // Champagne Gold Point
-    ];
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const colorDef = colors[i % colors.length];
-      const isBokeh = colorDef.isBokeh && Math.random() > 0.4;
-      particles.push({
-        x: Math.random() * (width || 800),
-        y: Math.random() * (height || 160),
-        radius: isBokeh ? Math.random() * 4.5 + 2.5 : Math.random() * 1.6 + 0.8,
-        isBokeh,
-        color: colorDef,
-        baseAlpha: isBokeh ? Math.random() * 0.4 + 0.2 : Math.random() * 0.65 + 0.3,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: -Math.random() * 0.3 - 0.1, // Soft upward drift
-        phase: Math.random() * Math.PI * 2,
-      });
-    }
-
-    let time = 0;
-
-    const render = () => {
-      time += 0.02;
-      ctx.clearRect(0, 0, width, height);
-
-      // Render and update each particle
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-
-        // Organic floating motion with gentle sinusoidal sway
-        p.y += p.vy;
-        p.x += p.vx + Math.sin(time + p.phase) * 0.2;
-
-        // Wrap around boundaries seamlessly
-        if (p.y < -15) p.y = height + 15;
-        if (p.x < -15) p.x = width + 15;
-        if (p.x > width + 15) p.x = -15;
-
-        // Interactive mouse repulsion
-        if (mousePos.active) {
-          const dx = p.x - (mousePos.x + 50);
-          const dy = p.y - (mousePos.y + 30);
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const maxDist = 110;
-
-          if (dist < maxDist && dist > 0.1) {
-            const force = (1 - dist / maxDist) * 1.8;
-            p.x += (dx / dist) * force;
-            p.y += (dy / dist) * force;
-          }
-        }
-
-        // Breathing opacity
-        const currentAlpha = p.baseAlpha * (0.7 + 0.3 * Math.sin(time * 2.0 + p.phase));
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-
-        if (p.isBokeh) {
-          // Soft radial glow for bokeh orbs
-          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 2);
-          grad.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.8})`);
-          grad.addColorStop(0.5, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.25})`);
-          grad.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
-          ctx.fillStyle = grad;
-          ctx.fill();
-        } else {
-          // Sharp diamond core with soft sparkle aura
-          ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha})`;
-          ctx.shadowColor = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0.7)`;
-          ctx.shadowBlur = 6;
-          ctx.fill();
-          ctx.shadowBlur = 0;
-        }
-      }
-
-      // Connecting neural citation lines between close particles
-      ctx.lineWidth = 0.5;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const p1 = particles[i];
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 45) {
-            const lineAlpha = (1 - dist / 45) * 0.14;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 49, 49, ${lineAlpha})`;
-            ctx.stroke();
-          }
-        }
-      }
-
-      animId = requestAnimationFrame(render);
-    };
-
-    animId = requestAnimationFrame(render);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', resize);
-    };
-  }, [mousePos, reducedMotion]);
-
   return (
     <div
       ref={containerRef}
@@ -221,27 +74,6 @@ export default function HeroAnimatedHeadline() {
       className="relative max-w-4xl mx-auto select-none cursor-default"
       aria-label="Be the brand AI mentions first."
     >
-      {/* 1. Interactive Ambient Radial Spotlight following cursor */}
-      {mousePos.active && !reducedMotion && (
-        <div
-          className="absolute pointer-events-none rounded-full blur-2xl transition-opacity duration-300 opacity-60 z-0"
-          style={{
-            left: `${mousePos.x - 100}px`,
-            top: `${mousePos.y - 100}px`,
-            width: '200px',
-            height: '200px',
-            background: 'radial-gradient(circle, rgba(223, 183, 108, 0.28) 0%, rgba(197, 160, 89, 0.12) 50%, transparent 75%)',
-          }}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* 2. Floating Constellation & Bokeh Particle Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute -top-6 -left-12 pointer-events-none z-0"
-        aria-hidden="true"
-      />
 
       {/* 3. Main Headline Container */}
       <h1 className="relative z-10 text-[26px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-[#0F1012] leading-[1.25] sm:leading-[1.08] tracking-[-0.035em] text-center">

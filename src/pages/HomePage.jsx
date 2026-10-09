@@ -25,7 +25,6 @@ import HeroVideoBackground from '../components/HeroVideoBackground';
 import SlideReveal, { SlideStaggerContainer, SlideStaggerItem } from '../components/SlideReveal';
 import { AiEngineIcon, AI_ENGINES } from '../components/AiEnginesRow';
 import {
-  HeroParallaxBackdrop,
   ProblemParallaxBackdrop,
   ServicesParallaxBackdrop,
   MethodParallaxBackdrop,
@@ -308,12 +307,9 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           HERO SECTION (CHAMPAGNE GOLD & ALABASTER VIEW)
           ============================================================ */}
-      <section ref={heroRef} className="relative pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 text-[#0F1012] overflow-hidden bg-transparent">
+      <section ref={heroRef} className="relative pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 text-[#0F1012] overflow-hidden bg-[#FAF8F5]">
         {/* Cinematic Ambient Hero Video Background */}
         <HeroVideoBackground />
-
-        {/* Refined 3-Plane Parallax Depth Backdrop */}
-        <HeroParallaxBackdrop sectionRef={heroRef} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 text-center flex flex-col items-center">

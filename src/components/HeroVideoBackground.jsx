@@ -73,10 +73,13 @@ export default function HeroVideoBackground() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0"
+      className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0 bg-[#FAF8F5]"
       style={{ opacity: fadeOpacity }}
       aria-hidden="true"
     >
+      {/* Solid Opaque Base Ground to prevent any old background canvas bleed */}
+      <div className="absolute inset-0 bg-[#FAF8F5] pointer-events-none -z-10" />
+
       {/* 1. Underlying Video Container with Parallax Transform */}
       <div
         className="w-full h-full relative will-change-transform"
@@ -95,7 +98,7 @@ export default function HeroVideoBackground() {
           poster="/assets/videos/hero-background.jpg"
           onLoadedData={() => setIsLoaded(true)}
           className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            isLoaded ? 'opacity-80' : 'opacity-60'
+            isLoaded ? 'opacity-90' : 'opacity-70'
           }`}
           style={{
             filter: 'contrast(1.08) brightness(1.02) saturate(1.15)',

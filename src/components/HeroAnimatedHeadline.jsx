@@ -250,9 +250,9 @@ export default function HeroAnimatedHeadline() {
           {PREFIX_WORDS.map((word, idx) => (
             <motion.span
               key={word}
-              initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 22, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.65, delay: 0.06 * idx, ease: [0.16, 1, 0.3, 1] }}
+              initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.05 * idx, ease: [0.16, 1, 0.3, 1] }}
               className="inline-block relative text-[#0F1012] mr-[0.26em]"
             >
               {word}
@@ -270,10 +270,10 @@ export default function HeroAnimatedHeadline() {
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={DYNAMIC_VERBS[verbIndex]}
-                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16, filter: 'blur(6px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -16, filter: 'blur(6px)' }}
-                transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
+                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#DFB76C] via-[#C5A059] to-[#9E7427] drop-shadow-[0_0_24px_rgba(197,160,89,0.35)]"
               >
                 {DYNAMIC_VERBS[verbIndex]}
@@ -283,9 +283,9 @@ export default function HeroAnimatedHeadline() {
 
           {/* Suffix: "first." */}
           <motion.span
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 22, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
             className="inline-block relative text-[#0F1012] ml-[0.26em]"
           >
             first.

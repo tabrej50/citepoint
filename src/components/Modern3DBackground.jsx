@@ -1,574 +1,207 @@
 import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
 
 /**
  * Modern3DBackground
  *
- * Endless Ultra-Luxury Champagne Gold & Pearl 3D Cybernetic Scene
- * Modeled with high precision after the reference brand aesthetic:
- * 1. Luminous Pure White & Alabaster Canvas with warm studio lighting.
- * 2. True 3D Metallic Golden Spheres (Pearls) of varying radii with mirror-polished
- *    specular highlights, clearcoat reflections, and procedural environment map.
- * 3. 3D Open Golden Torus Rings (○) positioned along connection nodes.
- * 4. Circuit & Constellation Rails with traveling golden energy pulses.
- * 5. Endless Silky 3D Flowing Champagne Ribbon Surfaces (parametric multi-layer waves).
- * 6. Fine Harmonic Guilloche / Multi-Frequency Golden Wave Lines.
- * 7. Concentric Champagne Circular Arcs on left & right margins.
- * 8. Center-Clear Framing: Center column is left pristine white & open for text legibility,
- *    while the opulent silk waves, rails, and spheres frame the peripheral wings and lower third.
- * 9. Endless Continuous Motion: monotonic harmonic undulation, levitation, and
- *    smooth kinetic scroll/mouse parallax spanning the entire website.
+ * Endless High-Tech Luxury Gold Circuit & Architectural Blueprint Scene
+ * Built directly around the user's uploaded master graphic:
+ * 1. Base Layer: Native high-definition render of `gold-circuit-bg.png`
+ *    with responsive `object-fit: cover` and subtle kinetic parallax.
+ * 2. Interactive Canvas Engine (Endless Living Motion):
+ *    - Mathematical sub-pixel alignment mapping to printed circuit traces.
+ *    - Continuous glowing golden current pulses (data photons with comet trails).
+ *    - Specular diamond starlight glints & breathing aura flares on 3D metallic pearls.
+ *    - Rotating radar sweeps & arc scans on concentric registration circles (lower-left).
+ *    - Sequential digital clocking pulses across dot matrix clusters.
+ *    - Floating champagne gold constellation particles.
+ *    - Interactive cursor spotlight with warm champagne luminance.
+ * 3. 100% Endless Temporal & Scroll Engine:
+ *    - Monotonic, stutter-free 60fps RAF loop with zero memory leaks.
+ *    - Fixed viewport coverage spanning all 11 pages without cuts or borders.
  */
 
+// Normalized circuit trace paths (0..1 coordinates mapped to 1024x576 master image)
+const CIRCUIT_PATHS = [
+  // 1. Right Upper Vertical Feed -> 45° Angle -> Hero Pearl -> Lower Bus
+  [
+    { x: 0.781, y: 0.000 },
+    { x: 0.781, y: 0.191 },
+    { x: 0.781, y: 0.295 },
+    { x: 0.826, y: 0.375 },
+    { x: 0.826, y: 0.435 },
+    { x: 0.816, y: 0.528 },
+    { x: 0.816, y: 0.722 },
+    { x: 0.805, y: 0.722 },
+    { x: 0.805, y: 0.840 },
+    { x: 0.805, y: 1.000 },
+  ],
+  // 2. Right Horizontal Bus -> 45° Step -> Right Margin
+  [
+    { x: 0.625, y: 0.191 },
+    { x: 0.750, y: 0.191 },
+    { x: 0.750, y: 0.320 },
+    { x: 0.812, y: 0.425 },
+    { x: 0.940, y: 0.425 },
+  ],
+  // 3. Center Cross-Bus -> Open Ring -> 45° Jog -> Hero Pearl -> Right Edge
+  [
+    { x: 0.435, y: 0.655 },
+    { x: 0.581, y: 0.655 },
+    { x: 0.650, y: 0.528 },
+    { x: 0.816, y: 0.528 },
+    { x: 0.870, y: 0.528 },
+  ],
+  // 4. Center-Right Multi-Angle Step Bus
+  [
+    { x: 0.601, y: 0.731 },
+    { x: 0.660, y: 0.620 },
+    { x: 0.742, y: 0.620 },
+    { x: 0.742, y: 0.570 },
+    { x: 0.805, y: 0.570 },
+    { x: 0.805, y: 0.722 },
+    { x: 0.869, y: 0.748 },
+    { x: 0.869, y: 0.920 },
+  ],
+  // 5. Lower Cross Bus
+  [
+    { x: 0.208, y: 0.731 },
+    { x: 0.601, y: 0.731 },
+    { x: 0.775, y: 0.731 },
+    { x: 0.775, y: 1.000 },
+  ],
+  // 6. Left Upper Feed -> Horizontal Line
+  [
+    { x: 0.045, y: 0.000 },
+    { x: 0.045, y: 0.160 },
+    { x: 0.185, y: 0.160 },
+  ],
+  // 7. Left Diagonal Bus through Large Pearl & Ring
+  [
+    { x: 0.000, y: 0.604 },
+    { x: 0.071, y: 0.604 },
+    { x: 0.170, y: 0.792 },
+    { x: 0.208, y: 0.792 },
+    { x: 0.340, y: 0.792 },
+  ],
+  // 8. Left Bottom Chamfer Bus
+  [
+    { x: 0.033, y: 0.665 },
+    { x: 0.033, y: 0.734 },
+    { x: 0.070, y: 0.734 },
+    { x: 0.100, y: 0.792 },
+    { x: 0.220, y: 0.792 },
+  ],
+  // 9. Left Outer Lower Step Bus
+  [
+    { x: 0.033, y: 0.812 },
+    { x: 0.080, y: 0.812 },
+    { x: 0.140, y: 0.812 },
+    { x: 0.208, y: 0.930 },
+    { x: 0.208, y: 1.000 },
+  ],
+];
+
+// Key metallic pearl nodes with specular glint effects
+const PEARL_NODES = [
+  { x: 0.816, y: 0.528, radius: 18, isHero: true, name: 'Hero Pearl' },
+  { x: 0.826, y: 0.375, radius: 13, isHero: false, name: 'Mid Right Pearl' },
+  { x: 0.781, y: 0.191, radius: 9, isHero: false, name: 'Upper Right Pearl' },
+  { x: 0.071, y: 0.604, radius: 15, isHero: false, name: 'Lower Left Pearl' },
+  { x: 0.045, y: 0.160, radius: 11, isHero: false, name: 'Upper Left Pearl' },
+];
+
+// Dot matrix clusters for sequential clocking pulses
+const DOT_CLUSTERS = [
+  { x: 0.110, y: 0.092, cols: 8, rows: 2, spacing: 7 },
+  { x: 0.835, y: 0.105, cols: 4, rows: 3, spacing: 7 },
+  { x: 0.662, y: 0.365, cols: 6, rows: 2, spacing: 7 },
+  { x: 0.912, y: 0.600, cols: 4, rows: 3, spacing: 7 },
+  { x: 0.720, y: 0.780, cols: 4, rows: 3, spacing: 7 },
+  { x: 0.215, y: 0.670, cols: 3, rows: 3, spacing: 7 },
+];
+
 export default function Modern3DBackground() {
-  const mountRef = useRef(null);
+  const containerRef = useRef(null);
+  const canvasRef = useRef(null);
+  const imgRef = useRef(null);
 
   useEffect(() => {
-    const container = mountRef.current;
-    if (!container) return;
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
+
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
 
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const isReducedMotion = motionQuery.matches;
 
     let width = window.innerWidth;
     let height = window.innerHeight;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    // ============================================================
-    // 1. SCENE, FOG & RENDERER SETUP
-    // ============================================================
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xFFFFFF);
-    // Subtle white exponential fog keeps foreground typography 100% legible
-    scene.fog = new THREE.FogExp2(0xFFFFFF, 0.006);
+    // Image aspect ratio of 1024 x 576 master asset
+    const IMG_ASPECT = 1024 / 576;
 
-    const camera = new THREE.PerspectiveCamera(46, width / height, 0.1, 300);
-    const CAM_BASE_Z = 28;
-    camera.position.set(0, 0, CAM_BASE_Z);
-    camera.lookAt(0, -1.2, 0);
+    // Helper: compute rendered bounds of the background image under object-fit: cover
+    const getRenderBounds = () => {
+      const containerAspect = width / height;
+      let renderW, renderH, offsetX, offsetY;
 
-    let renderer;
-    try {
-      renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: false,
-        powerPreference: 'high-performance',
-      });
-    } catch (e) {
-      console.warn('WebGL initialization failed:', e);
-      return;
-    }
-
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.12;
-    if (THREE.SRGBColorSpace) {
-      renderer.outputColorSpace = THREE.SRGBColorSpace;
-    }
-    container.appendChild(renderer.domElement);
-
-    // ============================================================
-    // 2. PROCEDURAL REFLECTION ENVIRONMENT MAP
-    // Yields photorealistic, mirror-like metallic gold reflections
-    // with brilliant white studio key-light hot-spots
-    // ============================================================
-    const createStudioEnvMap = () => {
-      const envCanvas = document.createElement('canvas');
-      envCanvas.width = 512;
-      envCanvas.height = 256;
-      const ctx = envCanvas.getContext('2d');
-
-      // Warm ivory & champagne sky gradient with deep bronze horizon
-      const grad = ctx.createLinearGradient(0, 0, 0, 256);
-      grad.addColorStop(0, '#FFFFFF');
-      grad.addColorStop(0.25, '#FFFDF8');
-      grad.addColorStop(0.55, '#F5E5C9');
-      grad.addColorStop(0.75, '#DFB76C');
-      grad.addColorStop(0.9, '#A67D28');
-      grad.addColorStop(1, '#3D2808');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, 512, 256);
-
-      // Bright studio key-light patches (specular reflection spots)
-      ctx.fillStyle = '#FFFFFF';
-      ctx.beginPath();
-      ctx.arc(150, 60, 55, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.arc(360, 80, 45, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Soft champagne rim bounce
-      ctx.fillStyle = 'rgba(255, 240, 190, 0.7)';
-      ctx.beginPath();
-      ctx.arc(260, 175, 75, 0, Math.PI * 2);
-      ctx.fill();
-
-      const envTex = new THREE.CanvasTexture(envCanvas);
-      envTex.mapping = THREE.EquirectangularReflectionMapping;
-      envTex.needsUpdate = true;
-      return envTex;
-    };
-
-    const envMap = createStudioEnvMap();
-    scene.environment = envMap;
-
-    // ============================================================
-    // 3. 3D LIGHTING RIG
-    // ============================================================
-    const ambientLight = new THREE.AmbientLight(0xFFF9EE, 2.5);
-    scene.add(ambientLight);
-
-    // Key Light positioned upper-right to illuminate the signature specular shine
-    const keyLight = new THREE.DirectionalLight(0xFFFFFF, 3.8);
-    keyLight.position.set(14, 18, 20);
-    scene.add(keyLight);
-
-    // Warm champagne fill light on the left
-    const fillLight = new THREE.PointLight(0xDFB76C, 3.2, 95);
-    fillLight.position.set(-20, -4, 16);
-    scene.add(fillLight);
-
-    // Gentle upward bounce light for translucent silk underfolds
-    const bounceLight = new THREE.DirectionalLight(0xFDF6E2, 1.5);
-    bounceLight.position.set(0, -20, 6);
-    scene.add(bounceLight);
-
-    // Dedicated high-intensity highlight spot targeting the spheres
-    const specularSpot = new THREE.PointLight(0xFFFFFF, 4.0, 50);
-    specularSpot.position.set(18, 12, 14);
-    scene.add(specularSpot);
-
-    // ============================================================
-    // 4. METALLIC GOLD SHADER MATERIALS
-    // ============================================================
-    const goldMetallicMat = new THREE.MeshPhysicalMaterial({
-      color: 0xF2D489,
-      emissive: 0x3A2808,
-      emissiveIntensity: 0.14,
-      metalness: 0.96,
-      roughness: 0.09,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.05,
-      reflectivity: 0.98,
-    });
-
-    const goldRailMat = new THREE.MeshStandardMaterial({
-      color: 0xD4AF37,
-      emissive: 0x7A5618,
-      emissiveIntensity: 0.38,
-      metalness: 0.88,
-      roughness: 0.18,
-    });
-
-    const energyPulseMat = new THREE.MeshBasicMaterial({
-      color: 0xFFFBE8,
-    });
-
-    // ============================================================
-    // 5. LIVING 3D METALLIC GOLDEN SPHERES & OPEN RINGS (○)
-    // Positioned along the peripheral wings & lower third
-    // keeping the center 100% open, legible, and pristine white
-    // ============================================================
-    const sphereMeshes = [];
-    const ringMeshes = [];
-
-    // Helper to spawn mirror-polished metallic gold sphere
-    const addGoldSphere = (x, y, z, radius, options = {}) => {
-      const geo = new THREE.SphereGeometry(radius, radius > 1.5 ? 48 : 32, radius > 1.5 ? 48 : 32);
-      const mesh = new THREE.Mesh(geo, goldMetallicMat);
-      mesh.position.set(x, y, z);
-      scene.add(mesh);
-
-      sphereMeshes.push({
-        mesh,
-        baseX: x,
-        baseY: y,
-        baseZ: z,
-        radius,
-        freq: options.freq || (0.7 + Math.random() * 0.4),
-        amp: options.amp || (0.18 + radius * 0.08),
-        phase: options.phase || Math.random() * Math.PI * 2,
-        rotSpeed: {
-          x: (Math.random() - 0.5) * 0.005,
-          y: (Math.random() - 0.5) * 0.007,
-        },
-      });
-      return mesh;
-    };
-
-    // Helper to spawn open golden torus ring (○)
-    const addGoldRing = (x, y, z, ringRadius, tubeRadius = 0.075, rotZ = 0) => {
-      const geo = new THREE.TorusGeometry(ringRadius, tubeRadius, 24, 48);
-      const mesh = new THREE.Mesh(geo, goldMetallicMat);
-      mesh.position.set(x, y, z);
-      mesh.rotation.z = rotZ;
-      mesh.rotation.x = Math.PI * 0.15;
-      scene.add(mesh);
-
-      ringMeshes.push({
-        mesh,
-        baseX: x,
-        baseY: y,
-        baseZ: z,
-        phase: Math.random() * Math.PI * 2,
-      });
-      return mesh;
-    };
-
-    // --- RIGHT SIDE CLUSTER (Framing the Right Flank) ---
-    // 1. Signature Large Hero Pearl on the right rail (lowered and pushed right)
-    addGoldSphere(20.5, 0.4, 2.5, 2.35, { freq: 0.65, amp: 0.32 });
-    // 2. Medium sphere on middle-lower right rail
-    addGoldSphere(14.5, -2.6, 1.3, 1.25, { freq: 0.8, amp: 0.25 });
-    // 3. Small beads & nodes on right circuit rails
-    addGoldSphere(16.5, 2.8, 0.4, 0.52, { freq: 0.9, amp: 0.2 });
-    addGoldSphere(19.2, 2.8, 0.4, 0.62, { freq: 0.85, amp: 0.18 });
-    addGoldSphere(17.8, -4.8, 0.4, 0.58, { freq: 1.0, amp: 0.22 });
-    addGoldSphere(11.2, -4.2, 0.4, 0.52, { freq: 0.95, amp: 0.18 });
-    addGoldSphere(22.8, -4.8, 0.4, 0.46, { freq: 1.1, amp: 0.16 });
-
-    // Right Open Ring Eyelets (○)
-    addGoldRing(17.5, -2.6, 1.0, 0.62, 0.075);
-    addGoldRing(14.8, 1.2, 0.5, 0.55, 0.07);
-
-    // --- LEFT SIDE CLUSTER (Framing the Left Flank) ---
-    // 1. Medium-Large sphere on left rail (lowered and pushed left)
-    addGoldSphere(-20.5, 2.2, 1.6, 1.38, { freq: 0.75, amp: 0.28 });
-    // 2. Medium sphere on lower-left branch
-    addGoldSphere(-15.5, -3.2, 1.1, 1.08, { freq: 0.85, amp: 0.24 });
-    // 3. Small beads & nodes on left rails
-    addGoldSphere(-17.5, 2.9, 0.4, 0.48, { freq: 0.95, amp: 0.18 });
-    addGoldSphere(-13.5, -0.6, 0.4, 0.62, { freq: 0.88, amp: 0.22 });
-    addGoldSphere(-18.5, -2.6, 0.4, 0.54, { freq: 1.05, amp: 0.18 });
-    addGoldSphere(-9.8, -5.4, 0.4, 0.46, { freq: 0.92, amp: 0.16 });
-
-    // Left Open Ring Eyelets (○)
-    addGoldRing(-15.5, 0.6, 0.5, 0.58, 0.075);
-    addGoldRing(-11.5, -4.4, 0.4, 0.52, 0.07);
-
-    // --- AMBIENT FLOATING PEARL PARTICLES ---
-    // Subtle constellation beads drifting in the midground for continuous depth
-    const ambientPearls = [];
-    const pearlCount = width < 768 ? 16 : 30;
-    for (let i = 0; i < pearlCount; i++) {
-      const radius = 0.14 + Math.random() * 0.26;
-      const geo = new THREE.SphereGeometry(radius, 16, 16);
-      const mesh = new THREE.Mesh(geo, goldMetallicMat);
-      const px = (Math.random() - 0.5) * 60;
-      const py = (Math.random() - 0.5) * 28 - 3;
-      const pz = -10 + Math.random() * 14;
-      mesh.position.set(px, py, pz);
-      scene.add(mesh);
-
-      ambientPearls.push({
-        mesh,
-        baseX: px,
-        baseY: py,
-        baseZ: pz,
-        speedY: 0.35 + Math.random() * 0.45,
-        phase: Math.random() * Math.PI * 2,
-        driftX: (Math.random() - 0.5) * 0.25,
-      });
-    }
-
-    // ============================================================
-    // 6. GOLDEN CIRCUIT / CONSTELLATION RAILS & ENERGY PULSES
-    // Smooth 3D spline lines connecting the spheres & nodes
-    // ============================================================
-    const railCurves = [];
-    const energyPulses = [];
-
-    const createRail = (points) => {
-      const curve = new THREE.CatmullRomCurve3(points);
-      const tubeGeo = new THREE.TubeGeometry(curve, 64, 0.042, 12, false);
-      const tubeMesh = new THREE.Mesh(tubeGeo, goldRailMat);
-      scene.add(tubeMesh);
-      railCurves.push({ curve, tubeMesh, tubeGeo });
-
-      // Add traveling energy pulse
-      const pulseGeo = new THREE.SphereGeometry(0.15, 12, 12);
-      const pulseMesh = new THREE.Mesh(pulseGeo, energyPulseMat);
-      scene.add(pulseMesh);
-      energyPulses.push({
-        mesh: pulseMesh,
-        geo: pulseGeo,
-        curve,
-        t: Math.random(),
-        speed: 0.12 + Math.random() * 0.1,
-      });
-    };
-
-    // Left Horizontal Rail
-    createRail([
-      new THREE.Vector3(-32, 2.2, 0),
-      new THREE.Vector3(-24, 2.2, 0.8),
-      new THREE.Vector3(-20.5, 2.2, 1.6),
-    ]);
-
-    // Left Curved Descending Branch
-    createRail([
-      new THREE.Vector3(-20.5, 2.2, 1.6),
-      new THREE.Vector3(-17.5, 1.2, 0.8),
-      new THREE.Vector3(-13.5, -0.6, 0.4),
-      new THREE.Vector3(-15.5, -3.2, 1.1),
-      new THREE.Vector3(-18.5, -2.6, 0.4),
-    ]);
-
-    // Left Lower Branch into Center Valley
-    createRail([
-      new THREE.Vector3(-15.5, -3.2, 1.1),
-      new THREE.Vector3(-11.5, -4.4, 0.4),
-      new THREE.Vector3(-9.8, -5.4, 0.4),
-      new THREE.Vector3(0, -7.5, 0),
-    ]);
-
-    // Right Upper Horizontal Rail
-    createRail([
-      new THREE.Vector3(16.5, 2.8, 0.4),
-      new THREE.Vector3(19.2, 2.8, 0.4),
-      new THREE.Vector3(25, 2.8, 0),
-      new THREE.Vector3(32, 2.8, 0),
-    ]);
-
-    // Right Main Curved Rail to Signature Hero Sphere
-    createRail([
-      new THREE.Vector3(0, -7.5, 0),
-      new THREE.Vector3(11.2, -4.2, 0.4),
-      new THREE.Vector3(14.5, -2.6, 1.3),
-      new THREE.Vector3(17.5, -2.6, 1.0),
-      new THREE.Vector3(20.5, 0.4, 2.5),
-      new THREE.Vector3(26, 0.4, 0.5),
-      new THREE.Vector3(32, 0.4, 0),
-    ]);
-
-    // Right Lower Horizontal Branch
-    createRail([
-      new THREE.Vector3(14.5, -2.6, 1.3),
-      new THREE.Vector3(17.8, -4.8, 0.4),
-      new THREE.Vector3(22.8, -4.8, 0.4),
-      new THREE.Vector3(32, -4.8, 0),
-    ]);
-
-    // ============================================================
-    // 7. ENDLESS SILKY 3D CHAMPAGNE RIBBON SURFACES (THE BIG WAVE)
-    // Parametric undulating meshes dipping in center, rising at wings
-    // ============================================================
-    const ribbonSegmentsX = width < 768 ? 90 : 160;
-    const ribbonSegmentsY = 36;
-    const ribbonWidth = 80;
-    const ribbonHeight = 24;
-
-    // Base structural curve matching the reference image:
-    // Peaceful dipping valley in the center (keeps center text clean and open)
-    const getBaseValley = (x) => {
-      const norm = x / 24;
-      return -7.8 + Math.pow(norm, 2) * 5.4 - Math.sin(norm * 1.5) * 1.6;
-    };
-
-    // Helper to generate dynamic ribbon mesh
-    const createSilkRibbon = (baseZ, opacity, colorTop, colorMid, colorBase, timeOffset = 0) => {
-      const geo = new THREE.PlaneGeometry(ribbonWidth, ribbonHeight, ribbonSegmentsX, ribbonSegmentsY);
-      const pos = geo.attributes.position;
-      const count = pos.count;
-
-      const colors = new Float32Array(count * 3);
-      const cT = new THREE.Color(colorTop);
-      const cM = new THREE.Color(colorMid);
-      const cB = new THREE.Color(colorBase);
-
-      for (let i = 0; i < count; i++) {
-        const v = (pos.getY(i) + ribbonHeight / 2) / ribbonHeight; // 0 (bottom) to 1 (top)
-        const c = v > 0.5
-          ? new THREE.Color().lerpColors(cM, cT, (v - 0.5) * 2)
-          : new THREE.Color().lerpColors(cB, cM, v * 2);
-
-        colors[i * 3] = c.r;
-        colors[i * 3 + 1] = c.g;
-        colors[i * 3 + 2] = c.b;
-      }
-      geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-      const mat = new THREE.MeshStandardMaterial({
-        vertexColors: true,
-        side: THREE.DoubleSide,
-        transparent: true,
-        opacity,
-        roughness: 0.26,
-        metalness: 0.56,
-      });
-
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.set(0, 0, baseZ);
-      scene.add(mesh);
-
-      return { mesh, geo, baseZ, timeOffset };
-    };
-
-    // Layer 1: Main Foreground Silky Wave
-    const silkLayer1 = createSilkRibbon(
-      -1.2,
-      0.82,
-      0xFDF8EE, // Pristine Ivory White crest
-      0xEAD2A4, // Radiant Champagne Gold
-      0xC5A059, // Rich Amber Gold base
-      0
-    );
-
-    // Layer 2: Secondary Background Silk Fold
-    const silkLayer2 = createSilkRibbon(
-      -4.8,
-      0.52,
-      0xFAF3E2,
-      0xDFC494,
-      0xB88E3A,
-      1.5
-    );
-
-    // ============================================================
-    // 8. FINE HARMONIC GUILLOCHE / MULTI-FREQUENCY WAVE LINES
-    // 22 delicate golden spline curves flowing alongside the ribbon
-    // ============================================================
-    const lineCount = 22;
-    const linePoints = width < 768 ? 64 : 120;
-    const guillocheLines = [];
-
-    const guillocheGroup = new THREE.Group();
-    guillocheGroup.position.set(0, 0, 0.4);
-    scene.add(guillocheGroup);
-
-    for (let l = 0; l < lineCount; l++) {
-      const geo = new THREE.BufferGeometry();
-      const posArray = new Float32Array(linePoints * 3);
-      const colArray = new Float32Array(linePoints * 3);
-
-      const tLine = l / (lineCount - 1);
-      const baseAlpha = 0.2 + Math.sin(tLine * Math.PI) * 0.45;
-
-      for (let p = 0; p < linePoints; p++) {
-        const x = ((p / (linePoints - 1)) - 0.5) * ribbonWidth;
-        posArray[p * 3] = x;
-        posArray[p * 3 + 1] = 0;
-        posArray[p * 3 + 2] = 0;
-
-        const c = new THREE.Color().lerpColors(
-          new THREE.Color(0xC5A059),
-          new THREE.Color(0xDFB76C),
-          Math.sin((p / linePoints) * Math.PI)
-        );
-        colArray[p * 3] = c.r;
-        colArray[p * 3 + 1] = c.g;
-        colArray[p * 3 + 2] = c.b;
+      if (containerAspect > IMG_ASPECT) {
+        // Container is wider than 16:9
+        renderW = width;
+        renderH = width / IMG_ASPECT;
+        offsetX = 0;
+        offsetY = (height - renderH) / 2;
+      } else {
+        // Container is taller than 16:9
+        renderH = height;
+        renderW = height * IMG_ASPECT;
+        offsetX = (width - renderW) / 2;
+        offsetY = 0;
       }
 
-      geo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-      geo.setAttribute('color', new THREE.BufferAttribute(colArray, 3));
-
-      const mat = new THREE.LineBasicMaterial({
-        vertexColors: true,
-        transparent: true,
-        opacity: baseAlpha,
-        linewidth: 1.2,
-        depthWrite: false,
-      });
-
-      const line = new THREE.Line(geo, mat);
-      guillocheGroup.add(line);
-
-      guillocheLines.push({
-        line,
-        geo,
-        posArray,
-        offsetY: (l / (lineCount - 1)) * 3.6 - 1.8,
-        freqMod: 0.08 + l * 0.003,
-        phaseOffset: l * 0.24,
-      });
-    }
-
-    // ============================================================
-    // 9. CONCENTRIC CHAMPAGNE CIRCULAR ARCS (LEFT & RIGHT)
-    // ============================================================
-    const arcMeshes = [];
-
-    const createConcentricArcs = (cx, cy, cz, radii, rotSpeed) => {
-      const group = new THREE.Group();
-      group.position.set(cx, cy, cz);
-      scene.add(group);
-
-      radii.forEach((r, idx) => {
-        const ringGeo = new THREE.RingGeometry(r - 0.05, r, 96);
-        const ringMat = new THREE.MeshBasicMaterial({
-          color: 0xDFB76C,
-          side: THREE.DoubleSide,
-          transparent: true,
-          opacity: 0.15 + (idx / radii.length) * 0.22,
-        });
-        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-        ringMesh.rotation.x = Math.PI * 0.1;
-        group.add(ringMesh);
-      });
-
-      arcMeshes.push({ group, rotSpeed });
+      return { renderW, renderH, offsetX, offsetY };
     };
 
-    // Left Arcs radiating outward from bottom-left corner
-    createConcentricArcs(-26, -12, -3.5, [11, 15, 19, 23, 27], 0.00025);
-    // Right Arcs arching downward from upper-right corner
-    createConcentricArcs(28, 14, -3.5, [13, 17, 21, 25, 29], -0.0002);
+    // Resize canvas with high DPI backing store
+    const handleResize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    // ============================================================
-    // 10. HIGH-RESOLUTION PHOTOGRAPHIC AMBIENT UNDERLAY PLANE
-    // Sits in mid-depth to reproduce the exact ambient gradients
-    // ============================================================
-    let underlayMesh = null;
-    let underlayTexture = null;
-    const textureLoader = new THREE.TextureLoader();
-    textureLoader.load(
-      '/assets/brand/gold-wave-reference.png',
-      (texture) => {
-        underlayTexture = texture;
-        if (THREE.SRGBColorSpace) {
-          texture.colorSpace = THREE.SRGBColorSpace;
-        }
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
 
-        const underlayGeo = new THREE.PlaneGeometry(62, 28);
-        const underlayMat = new THREE.MeshBasicMaterial({
-          map: texture,
-          transparent: true,
-          opacity: 0.65,
-          depthWrite: false,
-        });
+    handleResize();
+    window.addEventListener('resize', handleResize, { passive: true });
 
-        underlayMesh = new THREE.Mesh(underlayGeo, underlayMat);
-        underlayMesh.position.set(0, -3.2, -6.5);
-        scene.add(underlayMesh);
-      },
-      undefined,
-      (err) => {
-        console.warn('Reference underlay texture load notice:', err);
-      }
-    );
-
-    // ============================================================
-    // 11. INTERACTION & SCROLL TRACKING
-    // ============================================================
+    // Track mouse & scroll for 2.5D kinetic parallax
     const mouse = {
-      x: 0,
-      y: 0,
-      targetX: 0,
-      targetY: 0,
+      x: width / 2,
+      y: height / 2,
+      targetX: width / 2,
+      targetY: height / 2,
+      active: false,
     };
 
     let scrollY = window.scrollY || 0;
     let lastScrollY = scrollY;
-    let scrollVelocity = 0;
+    let scrollParallaxY = 0;
 
     const onMouseMove = (e) => {
-      mouse.targetX = (e.clientX / width) * 2 - 1;
-      mouse.targetY = -(e.clientY / height) * 2 + 1;
+      mouse.targetX = e.clientX;
+      mouse.targetY = e.clientY;
+      mouse.active = true;
+    };
+
+    const onMouseLeave = () => {
+      mouse.active = false;
     };
 
     const onScroll = () => {
@@ -576,144 +209,360 @@ export default function Modern3DBackground() {
     };
 
     window.addEventListener('mousemove', onMouseMove, { passive: true });
+    document.addEventListener('mouseleave', onMouseLeave);
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    const onResize = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    };
-
-    window.addEventListener('resize', onResize, { passive: true });
-
     // ============================================================
-    // 12. ENDLESS LIVING ANIMATION & PHYSICS ENGINE
+    // PULSE PARTICLES (Data photons traveling along circuit traces)
     // ============================================================
-    let rafId = null;
-    let clock = new THREE.Clock();
-    let isVisible = true;
-    let accumulatedTime = 0;
+    // Precompute cumulative lengths for each polyline path
+    const pathMetrics = CIRCUIT_PATHS.map((points) => {
+      const segments = [];
+      let totalLength = 0;
 
-    const animate = () => {
-      if (!isVisible) return;
-
-      const delta = Math.min(clock.getDelta(), 0.1);
-      accumulatedTime += delta;
-
-      // Scroll inertia decay
-      const scrollDiff = scrollY - lastScrollY;
-      lastScrollY = scrollY;
-      scrollVelocity += (scrollDiff * 0.05 - scrollVelocity) * 0.1;
-
-      // Cursor damping
-      mouse.x += (mouse.targetX - mouse.x) * 0.045;
-      mouse.y += (mouse.targetY - mouse.y) * 0.045;
-
-      // Kinetic camera breathing and scroll parallax
-      const camSwayX = Math.sin(accumulatedTime * 0.28) * 0.45;
-      const camSwayY = Math.cos(accumulatedTime * 0.22) * 0.35;
-      const scrollParallaxY = -scrollY * 0.0018;
-
-      camera.position.x = mouse.x * 2.5 + camSwayX;
-      camera.position.y = mouse.y * 1.4 + camSwayY + scrollParallaxY;
-      camera.position.z = CAM_BASE_Z;
-      camera.lookAt(mouse.x * 0.7, -1.2 + mouse.y * 0.4 + scrollParallaxY * 0.7, 0);
-
-      // Light drift follows cursor for dynamic specular highlights
-      keyLight.position.x = 14 + mouse.x * 6;
-      keyLight.position.y = 18 + mouse.y * 4;
-      specularSpot.position.x = 18 + mouse.x * 4;
-
-      // --- ENDLESS 3D METALLIC SPHERES & RINGS LEVITATION ---
-      sphereMeshes.forEach((item) => {
-        const floatY = Math.sin(accumulatedTime * item.freq + item.phase) * item.amp;
-        item.mesh.position.y = item.baseY + floatY;
-        item.mesh.rotation.x += item.rotSpeed.x;
-        item.mesh.rotation.y += item.rotSpeed.y;
-      });
-
-      ringMeshes.forEach((item) => {
-        item.mesh.position.y = item.baseY + Math.sin(accumulatedTime * 0.85 + item.phase) * 0.18;
-        item.mesh.rotation.z += 0.006;
-      });
-
-      // --- AMBIENT FLOATING PEARL PARTICLES ---
-      ambientPearls.forEach((pearl) => {
-        pearl.mesh.position.y = pearl.baseY + Math.sin(accumulatedTime * pearl.speedY + pearl.phase) * 0.7;
-        pearl.mesh.position.x = pearl.baseX + Math.cos(accumulatedTime * 0.3 + pearl.phase) * pearl.driftX;
-      });
-
-      // --- TRAVELING ENERGY PULSES ALONG CIRCUIT RAILS ---
-      energyPulses.forEach((pulse) => {
-        pulse.t += pulse.speed * delta;
-        if (pulse.t > 1) pulse.t = 0;
-        const pt = pulse.curve.getPointAt(pulse.t);
-        pulse.mesh.position.copy(pt);
-      });
-
-      // --- CONCENTRIC ARCS SLOW ROTATION ---
-      arcMeshes.forEach((arc) => {
-        arc.group.rotation.z += arc.rotSpeed;
-      });
-
-      // --- ENDLESS SILKY 3D RIBBON WAVES UNDULATION ---
-      const updateRibbon = (layer) => {
-        const pos = layer.geo.attributes.position;
-        const count = pos.count;
-        const t = accumulatedTime * 0.42 + layer.timeOffset;
-
-        for (let i = 0; i < count; i++) {
-          const x = pos.getX(i);
-          const yOrig = pos.getY(i);
-
-          const baseV = getBaseValley(x);
-          const waveHarmonic =
-            Math.sin(x * 0.11 - t + (yOrig * 0.15)) * 1.55 +
-            Math.cos(x * 0.06 + t * 0.7 - (yOrig * 0.1)) * 0.95 +
-            Math.sin((x + yOrig) * 0.04 - t * 0.4) * 0.55;
-
-          pos.setY(i, baseV + (yOrig * 0.45) + waveHarmonic);
-          pos.setZ(i, layer.baseZ + Math.sin(x * 0.08 + t * 0.5) * 0.8);
-        }
-        pos.needsUpdate = true;
-        layer.geo.computeVertexNormals();
-      };
-
-      updateRibbon(silkLayer1);
-      updateRibbon(silkLayer2);
-
-      // --- ENDLESS FINE GUILLOCHE WAVE FREQUENCY LINES ---
-      const waveT = accumulatedTime * 0.46;
-      for (let l = 0; l < guillocheLines.length; l++) {
-        const item = guillocheLines[l];
-        const arr = item.posArray;
-
-        for (let p = 0; p < linePoints; p++) {
-          const x = arr[p * 3];
-          const baseV = getBaseValley(x);
-          const wave1 = Math.sin(x * item.freqMod - waveT + item.phaseOffset) * 1.45;
-          const wave2 = Math.cos(x * 0.07 + waveT * 0.65 - item.phaseOffset) * 0.75;
-          arr[p * 3 + 1] = baseV + item.offsetY + wave1 + wave2;
-          arr[p * 3 + 2] = Math.sin(x * 0.09 - waveT * 0.5) * 0.6;
-        }
-        item.geo.attributes.position.needsUpdate = true;
+      for (let i = 0; i < points.length - 1; i++) {
+        const p1 = points[i];
+        const p2 = points[i + 1];
+        const dx = p2.x - p1.x;
+        const dy = (p2.y - p1.y) / IMG_ASPECT; // normalize aspect for distance
+        const dist = Math.hypot(dx, dy);
+        segments.push({ p1, p2, dist, cumDist: totalLength });
+        totalLength += dist;
       }
 
-      renderer.render(scene, camera);
+      return { points, segments, totalLength };
+    });
+
+    // Helper: interpolate point along normalized path at parametric distance `t` (0..1)
+    const getPointOnPath = (metric, t) => {
+      const targetDist = ((t % 1) + 1) % 1 * metric.totalLength;
+      for (let i = 0; i < metric.segments.length; i++) {
+        const seg = metric.segments[i];
+        if (targetDist >= seg.cumDist && targetDist <= seg.cumDist + seg.dist) {
+          const segT = seg.dist === 0 ? 0 : (targetDist - seg.cumDist) / seg.dist;
+          return {
+            x: seg.p1.x + (seg.p2.x - seg.p1.x) * segT,
+            y: seg.p1.y + (seg.p2.y - seg.p1.y) * segT,
+          };
+        }
+      }
+      return metric.points[metric.points.length - 1];
+    };
+
+    // Instantiate traveling current pulses
+    const pulses = [];
+    pathMetrics.forEach((metric, pathIdx) => {
+      // 2 pulses per path spaced along length
+      const pulseCount = pathIdx === 0 || pathIdx === 2 ? 3 : 2;
+      for (let p = 0; p < pulseCount; p++) {
+        pulses.push({
+          pathIdx,
+          t: p / pulseCount + (pathIdx * 0.17) % 1,
+          speed: 0.07 + (pathIdx % 3) * 0.025,
+          length: 0.045, // comet trail length
+          size: pathIdx === 0 || pathIdx === 2 ? 3.8 : 2.8,
+        });
+      }
+    });
+
+    // ============================================================
+    // FLOATING CONSTELlATION GOLD PARTICLES
+    // ============================================================
+    const ambientParticles = [];
+    const particleCount = width < 768 ? 24 : 45;
+    for (let i = 0; i < particleCount; i++) {
+      ambientParticles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        baseX: Math.random() * width,
+        baseY: Math.random() * height,
+        radius: 0.8 + Math.random() * 1.8,
+        alpha: 0.18 + Math.random() * 0.45,
+        speedX: (Math.random() - 0.5) * 0.25,
+        speedY: (Math.random() - 0.5) * 0.2,
+        phase: Math.random() * Math.PI * 2,
+      });
+    }
+
+    // ============================================================
+    // ANIMATION LOOP (ENDLESS LIVING MOTION)
+    // ============================================================
+    let rafId = null;
+    let lastTime = performance.now();
+    let accumulatedTime = 0;
+    let isVisible = true;
+
+    const render = (now) => {
+      if (!isVisible) return;
+
+      const delta = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+      accumulatedTime += delta;
+
+      // Smooth mouse lerp
+      mouse.x += (mouse.targetX - mouse.x) * 0.06;
+      mouse.y += (mouse.targetY - mouse.y) * 0.06;
+
+      // Parallax offsets
+      const mouseParallaxX = (mouse.x / width - 0.5) * 8;
+      const mouseParallaxY = (mouse.y / height - 0.5) * 6;
+      scrollParallaxY += (-scrollY * 0.04 - scrollParallaxY) * 0.08;
+
+      // Subtle parallax transform applied to the underlying master image
+      if (imgRef.current) {
+        imgRef.current.style.transform = `scale(1.025) translate(${mouseParallaxX * 0.6}px, ${mouseParallaxY * 0.6 + scrollParallaxY * 0.4}px)`;
+      }
+
+      // Clear canvas with transparent clearRect
+      ctx.clearRect(0, 0, width, height);
+
+      const bounds = getRenderBounds();
+      const { renderW, renderH, offsetX, offsetY } = bounds;
+
+      // Effective coordinate transformation function
+      const toScreen = (nx, ny) => ({
+        x: offsetX + nx * renderW + mouseParallaxX,
+        y: offsetY + ny * renderH + mouseParallaxY + scrollParallaxY * 0.4,
+      });
+
+      // ------------------------------------------------------------
+      // 1. INTERACTIVE CURSOR WARM CHAMPAGNE SPOTLIGHT
+      // ------------------------------------------------------------
+      if (mouse.active && !isReducedMotion) {
+        const spotRadius = 260;
+        const spotGrad = ctx.createRadialGradient(
+          mouse.x,
+          mouse.y,
+          0,
+          mouse.x,
+          mouse.y,
+          spotRadius
+        );
+        spotGrad.addColorStop(0, 'rgba(223, 183, 108, 0.14)');
+        spotGrad.addColorStop(0.4, 'rgba(197, 160, 89, 0.06)');
+        spotGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = spotGrad;
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, spotRadius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // ------------------------------------------------------------
+      // 2. RADAR SWEEP / ROTATING CONCENTRIC ARCS (LOWER LEFT)
+      // ------------------------------------------------------------
+      const radarCenter = toScreen(0.045, 0.795);
+      const radarRadius = renderW * 0.14;
+      const radarAngle = accumulatedTime * 0.45;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(radarCenter.x, radarCenter.y, radarRadius, 0, Math.PI * 2);
+      ctx.clip();
+
+      const sweepGrad = ctx.createRadialGradient(
+        radarCenter.x,
+        radarCenter.y,
+        0,
+        radarCenter.x,
+        radarCenter.y,
+        radarRadius
+      );
+      sweepGrad.addColorStop(0, 'rgba(223, 183, 108, 0.22)');
+      sweepGrad.addColorStop(0.8, 'rgba(197, 160, 89, 0.04)');
+      sweepGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+      ctx.fillStyle = sweepGrad;
+      ctx.beginPath();
+      ctx.moveTo(radarCenter.x, radarCenter.y);
+      ctx.arc(
+        radarCenter.x,
+        radarCenter.y,
+        radarRadius,
+        radarAngle - 0.4,
+        radarAngle
+      );
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+
+      // Delicate rotating dashed accent arc
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(radarCenter.x, radarCenter.y, radarRadius * 0.85, radarAngle * 0.5, radarAngle * 0.5 + Math.PI * 0.6);
+      ctx.strokeStyle = 'rgba(197, 160, 89, 0.28)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 6]);
+      ctx.stroke();
+      ctx.restore();
+
+      // ------------------------------------------------------------
+      // 3. TRAVELING CURRENT PULSES (DATA PHOTONS WITH COMET TRAILS)
+      // ------------------------------------------------------------
+      pulses.forEach((pulse) => {
+        pulse.t = (pulse.t + pulse.speed * delta) % 1;
+        const metric = pathMetrics[pulse.pathIdx];
+
+        // Draw comet trail (sub-samples behind the head)
+        const trailSteps = 6;
+        for (let s = trailSteps; s >= 1; s--) {
+          const trailT = pulse.t - (s / trailSteps) * pulse.length;
+          const pt = getPointOnPath(metric, trailT);
+          const screenPt = toScreen(pt.x, pt.y);
+
+          const trailAlpha = (1 - s / trailSteps) * 0.55;
+          const trailRadius = pulse.size * (1 - s / trailSteps * 0.6);
+
+          ctx.beginPath();
+          ctx.arc(screenPt.x, screenPt.y, trailRadius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(223, 183, 108, ${trailAlpha})`;
+          ctx.fill();
+        }
+
+        // Pulse Head: Radiant Champagne Gold with pure white core
+        const headPt = getPointOnPath(metric, pulse.t);
+        const headScreen = toScreen(headPt.x, headPt.y);
+
+        // Ambient glow halo
+        ctx.save();
+        ctx.shadowColor = '#DFB76C';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(headScreen.x, headScreen.y, pulse.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#DFB76C';
+        ctx.fill();
+
+        // Inner white spark
+        ctx.beginPath();
+        ctx.arc(headScreen.x, headScreen.y, pulse.size * 0.55, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // ------------------------------------------------------------
+      // 4. SPECULAR STARLIGHT FLARES & BREATHING AURAS ON 3D PEARLS
+      // ------------------------------------------------------------
+      PEARL_NODES.forEach((node, idx) => {
+        const pt = toScreen(node.x, node.y);
+        const screenRadius = (node.radius / 576) * renderH;
+
+        // Breathing cycle
+        const breath = Math.sin(accumulatedTime * 1.8 + idx * 1.2);
+        const auraAlpha = 0.14 + breath * 0.08;
+        const flareScale = 0.8 + breath * 0.25;
+
+        // Soft radial glow aura behind pearl
+        const auraGrad = ctx.createRadialGradient(
+          pt.x,
+          pt.y,
+          screenRadius * 0.4,
+          pt.x,
+          pt.y,
+          screenRadius * (node.isHero ? 2.6 : 2.0)
+        );
+        auraGrad.addColorStop(0, `rgba(223, 183, 108, ${auraAlpha})`);
+        auraGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = auraGrad;
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, screenRadius * (node.isHero ? 2.6 : 2.0), 0, Math.PI * 2);
+        ctx.fill();
+
+        // Dynamic 4-Point Diamond Starlight Glint on the specular hotspot (upper-left)
+        const glintX = pt.x - screenRadius * 0.32;
+        const glintY = pt.y - screenRadius * 0.35;
+        const glintLen = (node.isHero ? 14 : 9) * flareScale;
+        const glintWidth = 1.6;
+
+        ctx.save();
+        ctx.translate(glintX, glintY);
+        ctx.rotate(accumulatedTime * 0.15 + idx);
+
+        // Horizontal ray
+        const horizGrad = ctx.createLinearGradient(-glintLen, 0, glintLen, 0);
+        horizGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+        horizGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.95)');
+        horizGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = horizGrad;
+        ctx.fillRect(-glintLen, -glintWidth / 2, glintLen * 2, glintWidth);
+
+        // Vertical ray
+        const vertGrad = ctx.createLinearGradient(0, -glintLen, 0, glintLen);
+        vertGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+        vertGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.95)');
+        vertGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = vertGrad;
+        ctx.fillRect(-glintWidth / 2, -glintLen, glintWidth, glintLen * 2);
+
+        // Core brilliant dot
+        ctx.beginPath();
+        ctx.arc(0, 0, 1.8 * flareScale, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.shadowColor = '#DFB76C';
+        ctx.shadowBlur = 6;
+        ctx.fill();
+
+        ctx.restore();
+      });
+
+      // ------------------------------------------------------------
+      // 5. DIGITAL CLOCKING WAVE ACROSS DOT MATRIX CLUSTERS
+      // ------------------------------------------------------------
+      DOT_CLUSTERS.forEach((cluster, cIdx) => {
+        const clusterOrigin = toScreen(cluster.x, cluster.y);
+        const waveT = (accumulatedTime * 1.6 + cIdx * 0.8) % (cluster.cols + 4);
+
+        for (let col = 0; col < cluster.cols; col++) {
+          const dist = Math.abs(col - waveT);
+          if (dist < 2.0) {
+            const glowIntensity = Math.max(0, 1 - dist / 2.0) * 0.45;
+            for (let row = 0; row < cluster.rows; row++) {
+              const dx = clusterOrigin.x + (col - cluster.cols / 2) * (cluster.spacing * (renderW / 1024));
+              const dy = clusterOrigin.y + (row - cluster.rows / 2) * (cluster.spacing * (renderH / 576));
+
+              ctx.beginPath();
+              ctx.arc(dx, dy, 2.2, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(223, 183, 108, ${glowIntensity})`;
+              ctx.fill();
+            }
+          }
+        }
+      });
+
+      // ------------------------------------------------------------
+      // 6. AMBIENT FLOATING GOLDEN DATA PARTICLES
+      // ------------------------------------------------------------
+      ambientParticles.forEach((p) => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        // Wrap particles seamlessly
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        const pulseAlpha = p.alpha + Math.sin(accumulatedTime * 2 + p.phase) * 0.12;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y + scrollParallaxY * 0.2, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(197, 160, 89, ${Math.max(0.05, pulseAlpha)})`;
+        ctx.fill();
+      });
 
       if (!isReducedMotion) {
-        rafId = requestAnimationFrame(animate);
+        rafId = requestAnimationFrame(render);
       }
     };
 
     const onVisibilityChange = () => {
       isVisible = !document.hidden;
       if (isVisible && !isReducedMotion) {
-        clock.start();
-        animate();
+        lastTime = performance.now();
+        rafId = requestAnimationFrame(render);
       } else if (rafId) {
         cancelAnimationFrame(rafId);
         rafId = null;
@@ -723,74 +572,25 @@ export default function Modern3DBackground() {
     document.addEventListener('visibilitychange', onVisibilityChange);
     window.addEventListener('focus', onVisibilityChange);
 
-    // Initial trigger
-    animate();
+    // Initial start
+    rafId = requestAnimationFrame(render);
 
-    // ============================================================
-    // 13. BULLETPROOF LIFECYCLE CLEANUP
-    // Zero memory leaks, complete GPU resources disposal
-    // ============================================================
+    // Lifecycle cleanup
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseleave', onMouseLeave);
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
       document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('focus', onVisibilityChange);
-
-      envMap.dispose();
-
-      sphereMeshes.forEach((s) => {
-        s.mesh.geometry.dispose();
-      });
-      ringMeshes.forEach((r) => {
-        r.mesh.geometry.dispose();
-      });
-      ambientPearls.forEach((p) => {
-        p.mesh.geometry.dispose();
-      });
-      goldMetallicMat.dispose();
-      goldRailMat.dispose();
-      energyPulseMat.dispose();
-
-      railCurves.forEach((r) => {
-        r.tubeGeo.dispose();
-      });
-      energyPulses.forEach((ep) => {
-        ep.geo.dispose();
-      });
-
-      silkLayer1.geo.dispose();
-      silkLayer1.mesh.material.dispose();
-      silkLayer2.geo.dispose();
-      silkLayer2.mesh.material.dispose();
-
-      guillocheLines.forEach((gl) => {
-        gl.geo.dispose();
-        gl.line.material.dispose();
-      });
-
-      if (underlayMesh) {
-        underlayMesh.geometry.dispose();
-        underlayMesh.material.dispose();
-      }
-      if (underlayTexture) {
-        underlayTexture.dispose();
-      }
-
-      if (renderer) {
-        renderer.dispose();
-        if (renderer.domElement && container.contains(renderer.domElement)) {
-          container.removeChild(renderer.domElement);
-        }
-      }
     };
   }, []);
 
   return (
     <div
-      ref={mountRef}
-      className="fixed inset-0 pointer-events-none select-none z-0"
+      ref={containerRef}
+      className="fixed inset-0 pointer-events-none select-none z-0 overflow-hidden"
       style={{
         position: 'fixed',
         top: 0,
@@ -802,6 +602,36 @@ export default function Modern3DBackground() {
         overflow: 'hidden',
       }}
       aria-hidden="true"
-    />
+    >
+      {/* 1. Master High-Resolution Circuit Blueprint Image */}
+      <img
+        ref={imgRef}
+        src="/assets/brand/gold-circuit-bg.png"
+        alt=""
+        className="w-full h-full object-cover object-center will-change-transform transition-transform duration-700 ease-out"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          transformOrigin: 'center center',
+          filter: 'contrast(1.02) brightness(1.01)',
+        }}
+      />
+
+      {/* 2. Hardware-Accelerated Interactive Canvas Overlay (Endless Motion) */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none z-10"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none',
+        }}
+      />
+    </div>
   );
 }

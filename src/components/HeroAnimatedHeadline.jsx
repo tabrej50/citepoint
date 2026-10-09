@@ -77,59 +77,61 @@ export default function HeroAnimatedHeadline() {
 
       {/* 3. Main Headline Container */}
       <h1 className="relative z-10 text-[26px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-white leading-[1.25] sm:leading-[1.08] tracking-[-0.035em] text-center">
-        {/* Prefix phrase: "Be the brand AI" */}
-        <span className="block sm:inline">
+        {/* Line 1: "Be the brand AI" */}
+        <span className="block">
           {PREFIX_WORDS.map((word, idx) => (
             <motion.span
               key={word}
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.05 * idx, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-white mr-[0.26em]"
+              className="inline-block relative text-white mr-[0.26em] last:mr-0"
             >
               {word}
             </motion.span>
           ))}
         </span>
 
-        {/* Dynamic Verb + "first." grouped so they never orphan or clip */}
-        <span className="inline-flex sm:inline-flex items-baseline justify-center whitespace-nowrap">
-          <motion.span
-            layout
-            transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block relative text-center"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={DYNAMIC_VERBS[verbIndex]}
-                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d6d] via-[#e60023] to-[#cc001f] drop-shadow-[0_0_24px_rgba(230,0,35,0.45)]"
-              >
-                {DYNAMIC_VERBS[verbIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </motion.span>
-
-          {/* Suffix: "first." */}
-          <motion.span
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block relative text-white ml-[0.26em]"
-          >
-            first.
-            {/* Starlight diamond glint on the period of 'first.' */}
-            <span
-              className="absolute -right-2.5 top-1 pointer-events-none"
-              aria-hidden="true"
+        {/* Line 2: Dynamic Verb + "first." */}
+        <span className="block mt-1 sm:mt-1.5 md:mt-2">
+          <span className="inline-flex items-baseline justify-center whitespace-nowrap">
+            <motion.span
+              layout
+              transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-block relative text-center"
             >
-              <span className="absolute -inset-1 rounded-full bg-[#e60023] animate-ping opacity-35" />
-              <span className="relative block w-1.5 h-1.5 rounded-full bg-[#ff4d6d] shadow-[0_0_8px_#e60023] animate-starlight-dot" />
-            </span>
-          </motion.span>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={DYNAMIC_VERBS[verbIndex]}
+                  initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d6d] via-[#e60023] to-[#cc001f] drop-shadow-[0_0_24px_rgba(230,0,35,0.45)]"
+                >
+                  {DYNAMIC_VERBS[verbIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </motion.span>
+
+            {/* Suffix: "first." */}
+            <motion.span
+              initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-block relative text-white ml-[0.26em]"
+            >
+              first.
+              {/* Starlight diamond glint on the period of 'first.' */}
+              <span
+                className="absolute -right-2.5 top-1 pointer-events-none"
+                aria-hidden="true"
+              >
+                <span className="absolute -inset-1 rounded-full bg-[#e60023] animate-ping opacity-35" />
+                <span className="relative block w-1.5 h-1.5 rounded-full bg-[#ff4d6d] shadow-[0_0_8px_#e60023] animate-starlight-dot" />
+              </span>
+            </motion.span>
+          </span>
         </span>
       </h1>
     </div>

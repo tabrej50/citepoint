@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import FaqAccordion from '../components/FaqAccordion';
 import HeroAnimatedHeadline from '../components/HeroAnimatedHeadline';
+import HeroVideoBackground from '../components/HeroVideoBackground';
 import SlideReveal, { SlideStaggerContainer, SlideStaggerItem } from '../components/SlideReveal';
 import { AiEngineIcon, AI_ENGINES } from '../components/AiEnginesRow';
 import {
@@ -308,6 +309,9 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           HERO SECTION (CHAMPAGNE GOLD & ALABASTER VIEW)
           ============================================================ */}
       <section ref={heroRef} className="relative pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 text-[#0F1012] overflow-hidden bg-transparent">
+        {/* Cinematic Ambient Hero Video Background */}
+        <HeroVideoBackground />
+
         {/* Refined 3-Plane Parallax Depth Backdrop */}
         <HeroParallaxBackdrop sectionRef={heroRef} />
 

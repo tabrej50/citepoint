@@ -90,30 +90,22 @@ export default function InsightsPage({ setCurrentRoute }) {
     : articles.filter((a) => a.category === selectedCategory);
 
   return (
-    <div className="w-full bg-transparent text-[#8a8f98] font-sans">
+    <div className="w-full bg-transparent text-[#4B4F58] font-sans">
       
       {/* --------------------------------------------------
-          PAGE HERO (Liquid Abyss #010102)
+          PAGE HERO (Champagne Gold & Alabaster)
       -------------------------------------------------- */}
-      <section className="bg-[#010102]/60 backdrop-blur-[2px] text-[#ffffff] pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 50% 30%, rgba(130, 143, 255, 0.15) 0%, transparent 60%)',
-          }}
-        />
-
+      <section className="bg-transparent text-[#0F1012] pt-120 sm:pt-140 lg:pt-144 pb-24 sm:pb-28 lg:pb-32 relative overflow-hidden border-b border-[#EADBBE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <SlideReveal direction="down" distance={38} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-white border border-[#EADBBE] text-xs font-mono uppercase tracking-[0.12em] text-[#A67D28] font-semibold mb-4 shadow-xs">
                 // RESEARCH & ANALYSIS
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.08] mb-6 [text-wrap:balance]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-medium text-[#0F1012] tracking-[-0.04em] leading-[1.08] mb-6 [text-wrap:balance]">
                 Insights into the answer economy.
               </h1>
-              <p className="text-lg sm:text-xl text-[#8a8f98] leading-[1.4] mb-8">
+              <p className="text-lg sm:text-xl text-[#4B4F58] leading-[1.4] mb-8">
                 Empirical research, architectural guides, and strategic commentary on how generative discovery is reshaping B2B growth and brand recommendation.
               </p>
             </SlideReveal>
@@ -122,9 +114,9 @@ export default function InsightsPage({ setCurrentRoute }) {
       </section>
 
       {/* --------------------------------------------------
-          ARTICLE REPOSITORY (Liquid Deep #0f1011)
+          ARTICLE REPOSITORY (Champagne Gold & Alabaster)
       -------------------------------------------------- */}
-      <section ref={articlesSectionRef} className="py-48 lg:py-64 bg-[#0f1011]/70 backdrop-blur-[2px] border-t border-b border-[#23252a]/20 relative overflow-hidden">
+      <section ref={articlesSectionRef} className="py-48 lg:py-64 bg-transparent border-b border-[#EADBBE] relative overflow-hidden">
         {/* Parallax Fine Editorial Grid & Muted Geometric Shapes */}
         <InsightsParallaxBackdrop sectionRef={articlesSectionRef} />
 
@@ -139,8 +131,8 @@ export default function InsightsPage({ setCurrentRoute }) {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-5 py-2.5 rounded-[8px] text-xs font-heading uppercase tracking-wider transition-all border cursor-pointer ${
                     selectedCategory === cat
-                      ? 'bg-[#141516] text-[#ffffff] border-[#828fff]/40'
-                      : 'bg-[#010102] text-[#8a8f98] border-[#23252a]/20 hover:border-[#828fff]/30 hover:text-[#ffffff]'
+                      ? 'bg-white text-[#0F1012] border-[#C5A059] shadow-xs font-semibold'
+                      : 'bg-[#FAF8F5] text-[#636773] border-[#EADBBE] hover:border-[#C5A059] hover:text-[#0F1012]'
                   }`}
                 >
                   {cat}
@@ -158,8 +150,8 @@ export default function InsightsPage({ setCurrentRoute }) {
                 className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#8a8f98] mb-4 pb-4 border-b border-[#23252a]/20">
-                    <span className="px-2.5 py-0.5 rounded-[8px] bg-[#0f1011] text-[#828fff] border border-[#23252a]/30 font-mono uppercase tracking-wider text-[11px] transition-colors duration-200 group-hover:border-[#828fff]/40">
+                  <div className="flex items-center justify-between text-xs text-[#636773] mb-4 pb-4 border-b border-[#EADBBE]">
+                    <span className="px-2.5 py-0.5 rounded-[8px] bg-[#FAF8F5] text-[#A67D28] border border-[#EADBBE] font-mono uppercase tracking-wider text-[11px] font-semibold transition-colors duration-200 group-hover:border-[#C5A059]">
                       {art.category}
                     </span>
                     <span className="font-mono">
@@ -169,27 +161,27 @@ export default function InsightsPage({ setCurrentRoute }) {
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-heading font-medium text-[#ffffff] mb-3 group-hover:text-[#828fff] transition-colors leading-[1.0]">
+                  <h2 className="text-xl sm:text-2xl font-heading font-medium text-[#0F1012] mb-3 group-hover:text-[#A67D28] transition-colors leading-[1.1]">
                     {art.title}
                   </h2>
 
-                  <p className="text-sm text-[#8a8f98] leading-[1.4] mb-5">
+                  <p className="text-sm text-[#4B4F58] leading-[1.4] mb-5">
                     {art.excerpt}
                   </p>
 
-                  <div className="p-4 rounded-[8px] bg-[#0f1011]/90 border border-white/10 text-xs text-[#f7f8f8] mb-6 font-mono leading-relaxed transition-all duration-300 group-hover:border-[#828fff]/20">
+                  <div className="p-4 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] text-xs text-[#0F1012] mb-6 font-mono leading-relaxed transition-all duration-300 group-hover:border-[#C5A059]/40">
                     {art.highlight}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#23252a]/20 flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#8a8f98]">Citepoint Research Desk</span>
+                <div className="pt-4 border-t border-[#EADBBE] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#636773]">Citepoint Research Desk</span>
                   <button
                     onClick={() => handleNav('audit')}
-                    className="text-[#828fff] font-normal group-hover:underline inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
+                    className="text-[#A67D28] font-semibold group-hover:underline inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
                   >
                     <span>Read Analysis</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#A67D28]" />
                   </button>
                 </div>
               </SlideStaggerItem>
@@ -197,17 +189,17 @@ export default function InsightsPage({ setCurrentRoute }) {
           </SlideStaggerContainer>
 
           {/* --------------------------------------------------
-              GEO GLOSSARY SECTION (Liquid Kelp #141516 Card)
+              GEO GLOSSARY SECTION (Champagne Gold & Alabaster)
           -------------------------------------------------- */}
           <SlideReveal direction="scale-up" distance={30} duration={0.75} className="surface-card p-6 lg:p-8">
             <div className="max-w-2xl mb-8 lg:mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#0f1011] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#FAF8F5] border border-[#EADBBE] text-xs font-mono uppercase tracking-[0.12em] text-[#A67D28] font-semibold mb-3">
                 TERMINOLOGY & CONCEPTS
               </div>
-              <h3 className="text-2xl sm:text-3xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-3">
+              <h3 className="text-2xl sm:text-3xl font-heading font-medium text-[#0F1012] tracking-[-0.04em] leading-[1.1] mb-3">
                 The B2B GEO Glossary
               </h3>
-              <p className="text-sm text-[#8a8f98] leading-[1.4]">
+              <p className="text-sm text-[#4B4F58] leading-[1.4]">
                 Standardized definitions for the key technical and strategic concepts governing modern generative engine visibility.
               </p>
             </div>
@@ -221,8 +213,8 @@ export default function InsightsPage({ setCurrentRoute }) {
                     onClick={() => setSelectedGlossaryTerm(idx)}
                     className={`w-full text-left px-5 py-3.5 rounded-[8px] text-xs font-heading uppercase tracking-wider transition-all border cursor-pointer ${
                       selectedGlossaryTerm === idx
-                        ? 'bg-[#0f1011] text-[#ffffff] border-[#828fff]/40'
-                        : 'bg-[#141516] text-[#8a8f98] border-[#23252a]/20 hover:text-[#ffffff] hover:border-[#828fff]/30'
+                        ? 'bg-white text-[#0F1012] border-[#C5A059] shadow-xs font-semibold'
+                        : 'bg-[#FAF8F5] text-[#636773] border-[#EADBBE] hover:text-[#0F1012] hover:border-[#C5A059]'
                     }`}
                   >
                     {item.term}
@@ -231,24 +223,24 @@ export default function InsightsPage({ setCurrentRoute }) {
               </div>
 
               {/* Term Definition Detail */}
-              <div className="lg:col-span-7 bg-[#0f1011]/90 text-[#ffffff] rounded-[12px] p-6 lg:p-8 border border-white/10 flex flex-col justify-between min-h-[260px] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+              <div className="lg:col-span-7 bg-white text-[#0F1012] rounded-[12px] p-6 lg:p-8 border border-[#EADBBE] flex flex-col justify-between min-h-[260px] shadow-xs">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#828fff] block mb-2">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#A67D28] font-semibold block mb-2">
                     DEFINITION // 0{selectedGlossaryTerm + 1}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-heading font-medium text-[#ffffff] leading-[1.0] mb-4">
+                  <h4 className="text-xl sm:text-2xl font-heading font-medium text-[#0F1012] leading-[1.1] mb-4">
                     {glossary[selectedGlossaryTerm].term}
                   </h4>
-                  <p className="text-sm text-[#8a8f98] leading-[1.4]">
+                  <p className="text-sm text-[#4B4F58] leading-[1.4]">
                     {glossary[selectedGlossaryTerm].def}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-[#23252a]/20 mt-8 flex items-center justify-between text-xs font-mono text-[#8a8f98]">
+                <div className="pt-6 border-t border-[#EADBBE] mt-8 flex items-center justify-between text-xs font-mono text-[#636773]">
                   <span>Citepoint Knowledge Standard</span>
                   <button
                     onClick={() => handleNav('contact')}
-                    className="text-[#828fff] hover:underline cursor-pointer"
+                    className="text-[#A67D28] font-semibold hover:underline cursor-pointer"
                   >
                     [ Ask Our Specialists ]
                   </button>
@@ -261,39 +253,31 @@ export default function InsightsPage({ setCurrentRoute }) {
       </section>
 
       {/* --------------------------------------------------
-          FINAL CTA (Liquid Abyss #010102)
+          FINAL CTA (Champagne Gold & Frosted Alabaster)
       -------------------------------------------------- */}
-      <section className="bg-[#010102]/60 backdrop-blur-[2px] text-[#ffffff] py-48 lg:py-64 relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(130, 143, 255, 0.15) 0%, transparent 60%)',
-          }}
-        />
-
+      <section className="bg-white/80 backdrop-blur-md text-[#0F1012] py-48 lg:py-64 relative overflow-hidden border-t border-[#EADBBE]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SlideReveal direction="up" distance={36} duration={0.8}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[8px] bg-[#141516] border border-[#23252a]/30 text-xs font-mono uppercase tracking-[0.12em] text-[#f7f8f8] mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[8px] bg-white border border-[#EADBBE] text-xs font-mono uppercase tracking-[0.12em] text-[#A67D28] font-semibold mb-4 shadow-xs">
               ALGORITHM INTELLIGENCE
             </div>
-            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#ffffff] tracking-[-0.04em] leading-[1.0] mb-5">
+            <h2 className="text-3xl sm:text-5xl font-heading font-medium text-[#0F1012] tracking-[-0.04em] leading-[1.08] mb-5">
               Stay ahead of generative search algorithm updates.
             </h2>
-            <p className="text-base sm:text-lg text-[#8a8f98] max-w-2xl mx-auto leading-[1.4] mb-8">
+            <p className="text-base sm:text-lg text-[#4B4F58] max-w-2xl mx-auto leading-[1.4] mb-8">
               Request an audit to receive our executive briefing on your category’s AI search shifts.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() => handleNav('audit')}
-                className="btn-aurora text-white font-heading font-medium uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
+                className="btn-aurora shadow-[0_4px_16px_rgba(197,160,89,0.32)]"
               >
                 <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#0F1012]" />
               </button>
               <button
                 onClick={() => handleNav('contact')}
-                className="btn-kelp text-[#ffffff] font-heading font-medium uppercase tracking-wider text-xs px-6 py-3 rounded-[8px] inline-flex items-center gap-2 transition-all cursor-pointer"
+                className="btn-kelp"
               >
                 <span>Schedule a Consultation</span>
               </button>

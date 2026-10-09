@@ -86,11 +86,11 @@ export function LiquidBlob({
   className = '',
 }) {
   const gradientMap = {
-    gold: 'radial-gradient(circle, rgba(94, 106, 210, 0.22) 0%, rgba(94, 106, 210, 0.05) 50%, transparent 70%)',
-    cyan: 'radial-gradient(circle, rgba(130, 143, 255, 0.18) 0%, rgba(94, 106, 210, 0.04) 50%, transparent 70%)',
-    blue: 'radial-gradient(circle, rgba(94, 106, 210, 0.20) 0%, transparent 70%)',
-    lavender: 'radial-gradient(circle, rgba(130, 143, 255, 0.16) 0%, rgba(94, 106, 210, 0.03) 50%, transparent 70%)',
-    kelp: 'radial-gradient(circle, rgba(20, 21, 22, 0.6) 0%, transparent 70%)',
+    gold: 'radial-gradient(circle, rgba(223, 183, 108, 0.28) 0%, rgba(197, 160, 89, 0.08) 50%, transparent 70%)',
+    cyan: 'radial-gradient(circle, rgba(245, 225, 175, 0.35) 0%, rgba(223, 183, 108, 0.08) 50%, transparent 70%)',
+    blue: 'radial-gradient(circle, rgba(197, 160, 89, 0.22) 0%, transparent 70%)',
+    lavender: 'radial-gradient(circle, rgba(223, 183, 108, 0.25) 0%, rgba(197, 160, 89, 0.05) 50%, transparent 70%)',
+    kelp: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
   };
 
   const bg = gradientMap[color] || gradientMap.gold;
@@ -108,7 +108,7 @@ export function LiquidBlob({
 
 /**
  * CitationDot
- * Linear signal point with soft lavender halo.
+ * Radiant gold signal point with soft champagne halo.
  */
 export function CitationDot({
   color = 'gold',
@@ -118,19 +118,19 @@ export function CitationDot({
 }) {
   const colorMap = {
     gold: {
-      core: '#5e6ad2',
-      halo: 'rgba(94, 106, 210, 0.25)',
-      shadow: '0 0 10px rgba(94, 106, 210, 0.45)',
+      core: '#C5A059',
+      halo: 'rgba(197, 160, 89, 0.25)',
+      shadow: '0 0 10px rgba(197, 160, 89, 0.45)',
     },
     cyan: {
-      core: '#828fff',
-      halo: 'rgba(130, 143, 255, 0.25)',
-      shadow: '0 0 10px rgba(130, 143, 255, 0.45)',
+      core: '#DFB76C',
+      halo: 'rgba(223, 183, 108, 0.25)',
+      shadow: '0 0 10px rgba(223, 183, 108, 0.45)',
     },
     lavender: {
-      core: '#5e6ad2',
-      halo: 'rgba(94, 106, 210, 0.25)',
-      shadow: '0 0 10px rgba(94, 106, 210, 0.45)',
+      core: '#B88E3A',
+      halo: 'rgba(184, 142, 58, 0.25)',
+      shadow: '0 0 10px rgba(184, 142, 58, 0.45)',
     },
   };
 
@@ -166,7 +166,7 @@ export function CitationDot({
 
 /**
  * OrbitalRing
- * Delicate hairline orbital ring with optional dash styling.
+ * Delicate hairline champagne gold orbital ring with optional dash styling.
  */
 export function OrbitalRing({
   size = 360,
@@ -175,7 +175,7 @@ export function OrbitalRing({
   opacity = 0.25,
   className = '',
 }) {
-  const strokeColor = color === 'gold' ? '#34343a' : '#23252a';
+  const strokeColor = color === 'gold' ? '#D5C39E' : '#EADBBE';
 
   return (
     <svg
@@ -217,8 +217,8 @@ export function DotGrid({
   height = '100%',
   dotSize = 1,
   spacing = 28,
-  opacity = 0.04,
-  color = '#34343a',
+  opacity = 0.05,
+  color = '#D5C39E',
   className = '',
 }) {
   const patternId = `dot-grid-pat-${spacing}-${dotSize}`;
@@ -251,10 +251,10 @@ export function DotGrid({
  */
 export function NetworkLines({
   color = 'gold',
-  opacity = 0.15,
+  opacity = 0.18,
   className = '',
 }) {
-  const strokeColor = color === 'gold' ? 'rgba(94, 106, 210, 0.35)' : 'rgba(130, 143, 255, 0.35)';
+  const strokeColor = color === 'gold' ? 'rgba(197, 160, 89, 0.35)' : 'rgba(223, 183, 108, 0.35)';
 
   return (
     <svg
@@ -277,11 +277,11 @@ export function NetworkLines({
         opacity="0.7"
       />
       {/* Node Vertices */}
-      <circle cx="50" cy="180" r="3" fill="#5e6ad2" />
-      <circle cx="380" cy="120" r="2.5" fill="#828fff" />
-      <circle cx="560" cy="70" r="3" fill="#5e6ad2" />
-      <circle cx="280" cy="160" r="2" fill="#828fff" />
-      <circle cx="450" cy="220" r="2.5" fill="#5e6ad2" />
+      <circle cx="50" cy="180" r="3" fill="#C5A059" />
+      <circle cx="380" cy="120" r="2.5" fill="#DFB76C" />
+      <circle cx="560" cy="70" r="3" fill="#C5A059" />
+      <circle cx="280" cy="160" r="2" fill="#DFB76C" />
+      <circle cx="450" cy="220" r="2.5" fill="#C5A059" />
     </svg>
   );
 }
@@ -297,7 +297,7 @@ export function GlassBubble({
 }) {
   return (
     <div
-      className={`rounded-full pointer-events-none border border-white/12 bg-white/[0.02] backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.25)] ${className}`}
+      className={`rounded-full pointer-events-none border border-[#EADBBE] bg-white/40 backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),0_4px_12px_rgba(197,160,89,0.08)] ${className}`}
       style={{
         width: size,
         height: size,

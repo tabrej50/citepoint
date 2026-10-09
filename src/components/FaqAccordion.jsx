@@ -57,26 +57,26 @@ export default function FaqAccordion() {
             key={idx}
             className={`surface-card !p-0 overflow-hidden transition-all duration-300 group ${
               isOpen
-                ? '!border-[#828fff]/50 !shadow-[inset_0_1px_0_0_rgba(130,143,255,0.35),0_16px_36px_-10px_rgba(0,0,0,0.68),0_0_24px_rgba(130,143,255,0.12)]'
-                : 'hover:!border-white/25'
+                ? '!border-[#C5A059] !shadow-[0_8px_24px_rgba(197,160,89,0.12),inset_0_1px_0_#FFFFFF]'
+                : 'hover:!border-[#C5A059]/40'
             }`}
           >
             <button
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
-              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#828fff] cursor-pointer"
+              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A059] cursor-pointer"
             >
-              <span className="font-heading font-medium text-base text-white flex items-center gap-2.5 transition-colors duration-200 group-hover:text-[#828fff]">
+              <span className="font-heading font-semibold text-base text-[#0F1012] flex items-center gap-2.5 transition-colors duration-200 group-hover:text-[#A67D28]">
                 {faq.isGuarantee && (
-                  <ShieldCheck className="w-4 h-4 text-[#828fff] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#C5A059] shrink-0" />
                 )}
                 {faq.q}
               </span>
               <span
-                className={`w-8 h-8 rounded-[8px] border border-white/10 flex items-center justify-center transition-all duration-300 shrink-0 group-hover:scale-105 ${
+                className={`w-8 h-8 rounded-[8px] border border-[#EADBBE] flex items-center justify-center transition-all duration-300 shrink-0 group-hover:scale-105 ${
                   isOpen
-                    ? 'bg-[#0f1011] text-[#828fff] rotate-180 border-[#828fff]/30 shadow-[0_0_10px_rgba(130,143,255,0.2)]'
-                    : 'bg-[#0f1011]/60 text-[#8a8f98]'
+                    ? 'bg-[#FAF8F5] text-[#C5A059] rotate-180 border-[#C5A059] shadow-sm'
+                    : 'bg-white text-[#636773]'
                 }`}
               >
                 <ChevronDown className="w-4 h-4" />
@@ -87,9 +87,9 @@ export default function FaqAccordion() {
               className={`accordion-grid-wrapper ${isOpen ? 'is-open' : ''}`}
             >
               <div className="accordion-grid-inner">
-                <div className="px-6 pb-6 pt-1 text-sm text-[#8a8f98] leading-relaxed border-t border-white/6">
+                <div className="px-6 pb-6 pt-1 text-sm text-[#4B4F58] leading-relaxed border-t border-[#EADBBE]">
                   {faq.isGuarantee ? (
-                    <div className="p-4 rounded-[8px] bg-[#0f1011] border border-[#828fff]/30 text-[#f7f8f8] font-normal leading-relaxed">
+                    <div className="p-4 rounded-[8px] bg-[#FAF8F5] border border-[#C5A059]/30 text-[#0F1012] font-normal leading-relaxed">
                       {faq.a}
                     </div>
                   ) : (

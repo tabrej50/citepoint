@@ -99,12 +99,12 @@ export default function HeroAnimatedHeadline() {
     const particles = [];
 
     const colors = [
-      { r: 94,  g: 106, b: 210, isBokeh: true },   // Linear Lavender Bokeh
-      { r: 130, g: 143, b: 255, isBokeh: true },   // Light Lavender Bokeh
+      { r: 223, g: 183, b: 108, isBokeh: true },   // Champagne Gold Bokeh
+      { r: 197, g: 160, b: 89,  isBokeh: true },   // Rich Gold Bokeh
       { r: 255, g: 255, b: 255, isBokeh: false },  // Diamond White Point
-      { r: 94,  g: 106, b: 210, isBokeh: false },  // Lavender Point Star
-      { r: 255, g: 255, b: 255, isBokeh: true },   // Soft White Halo Bokeh
-      { r: 130, g: 143, b: 255, isBokeh: false },  // Soft Purple Point Star
+      { r: 197, g: 160, b: 89,  isBokeh: false },  // Gold Sparkle
+      { r: 245, g: 225, b: 175, isBokeh: true },   // Soft Pale Gold Bokeh
+      { r: 223, g: 183, b: 108, isBokeh: false },  // Champagne Gold Point
     ];
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -230,7 +230,7 @@ export default function HeroAnimatedHeadline() {
             top: `${mousePos.y - 100}px`,
             width: '200px',
             height: '200px',
-            background: 'radial-gradient(circle, rgba(94, 106, 210, 0.25) 0%, rgba(130, 143, 255, 0.15) 50%, transparent 75%)',
+            background: 'radial-gradient(circle, rgba(223, 183, 108, 0.28) 0%, rgba(197, 160, 89, 0.12) 50%, transparent 75%)',
           }}
           aria-hidden="true"
         />
@@ -244,7 +244,7 @@ export default function HeroAnimatedHeadline() {
       />
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-[#f7f8f8] leading-[1.12] sm:leading-[1.08] tracking-[-0.04em] whitespace-normal lg:whitespace-nowrap">
+      <h1 className="relative z-10 text-[28px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-[#0F1012] leading-[1.18] sm:leading-[1.08] tracking-[-0.035em] whitespace-normal">
         {/* Prefix: "Be the brand AI" with natural word spacing */}
         {PREFIX_WORDS.map((word, idx) => (
           <motion.span
@@ -252,7 +252,7 @@ export default function HeroAnimatedHeadline() {
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 22, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.65, delay: 0.06 * idx, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block relative text-[#f7f8f8] mr-[0.28em]"
+            className="inline-block relative text-[#0F1012] mr-[0.28em]"
           >
             {word}
           </motion.span>
@@ -271,7 +271,7 @@ export default function HeroAnimatedHeadline() {
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, y: -16, filter: 'blur(6px)' }}
               transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#828fff] via-[#5e6ad2] to-[#c4cbff] drop-shadow-[0_0_24px_rgba(94,106,210,0.4)]"
+              className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#DFB76C] via-[#C5A059] to-[#9E7427] drop-shadow-[0_0_24px_rgba(197,160,89,0.35)]"
             >
               {DYNAMIC_VERBS[verbIndex]}
             </motion.span>
@@ -283,7 +283,7 @@ export default function HeroAnimatedHeadline() {
           initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 22, filter: 'blur(8px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-block relative text-[#f7f8f8] ml-[0.28em]"
+          className="inline-block relative text-[#0F1012] ml-[0.28em]"
         >
           first.
           {/* Starlight diamond glint on the period of 'first.' */}
@@ -291,8 +291,8 @@ export default function HeroAnimatedHeadline() {
             className="absolute -right-2.5 top-1 pointer-events-none"
             aria-hidden="true"
           >
-            <span className="absolute -inset-1 rounded-full bg-[#828fff] animate-ping opacity-35" />
-            <span className="relative block w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_#828fff] animate-starlight-dot" />
+            <span className="absolute -inset-1 rounded-full bg-[#C5A059] animate-ping opacity-35" />
+            <span className="relative block w-1.5 h-1.5 rounded-full bg-[#DFB76C] shadow-[0_0_8px_#C5A059] animate-starlight-dot" />
           </span>
         </motion.span>
       </h1>

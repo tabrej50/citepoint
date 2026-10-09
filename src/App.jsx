@@ -193,8 +193,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#010102] text-[#f7f8f8] font-sans selection:bg-[#5e6ad2]/30 selection:text-white relative">
-      {/* Modern 3D Cybernetic Terrain & Crystalline Geometry Background */}
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#363940] font-sans selection:bg-[#C5A059]/30 selection:text-[#0F1012] relative">
+      {/* Modern 3D Champagne Gold Waves & Floating Geometry Background */}
       <Modern3DBackground />
       <LiquidGlassFilter />
 

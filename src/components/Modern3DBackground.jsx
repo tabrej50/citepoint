@@ -27,11 +27,11 @@ export default function Modern3DBackground() {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
-    // 1. Scene & Depth Fog
+    // 1. Scene & Depth Fog: Luminous Alabaster Warm Canvas
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x010102);
-    // Exponential fog keeps center text calm and deep horizon mysterious
-    scene.fog = new THREE.FogExp2(0x010102, 0.016);
+    scene.background = new THREE.Color(0xFAF8F5);
+    // Exponential fog keeps center text calm and deep horizon luminous and silky
+    scene.fog = new THREE.FogExp2(0xFAF8F5, 0.015);
 
     // 2. Perspective Camera
     const camera = new THREE.PerspectiveCamera(54, width / height, 0.1, 220);
@@ -55,10 +55,10 @@ export default function Modern3DBackground() {
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.15;
+    renderer.toneMappingExposure = 1.05;
     container.appendChild(renderer.domElement);
 
-    // 4. Soft Circular Glow Texture for Particles
+    // 4. Soft Golden Pearl Glow Texture for Particles
     const createCircleTexture = () => {
       const canvas = document.createElement('canvas');
       canvas.width = 64;
@@ -66,10 +66,10 @@ export default function Modern3DBackground() {
       const ctx = canvas.getContext('2d');
       const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
       gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.25, 'rgba(196, 203, 255, 0.9)');
-      gradient.addColorStop(0.55, 'rgba(130, 143, 255, 0.4)');
-      gradient.addColorStop(0.85, 'rgba(94, 106, 210, 0.1)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      gradient.addColorStop(0.25, 'rgba(245, 218, 145, 0.95)');
+      gradient.addColorStop(0.55, 'rgba(223, 183, 108, 0.65)');
+      gradient.addColorStop(0.85, 'rgba(197, 160, 89, 0.2)');
+      gradient.addColorStop(1, 'rgba(250, 248, 245, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 64, 64);
       const texture = new THREE.CanvasTexture(canvas);
@@ -79,22 +79,22 @@ export default function Modern3DBackground() {
 
     const particleTexture = createCircleTexture();
 
-    // 5. 3D Lighting Setup
-    const ambientLight = new THREE.AmbientLight(0x23253a, 1.4);
+    // 5. 3D Lighting Setup (Warm Champagne & Alabaster Illumination)
+    const ambientLight = new THREE.AmbientLight(0xFFF9EE, 1.8);
     scene.add(ambientLight);
 
-    // Primary Lavender Key Light
-    const primaryLight = new THREE.PointLight(0x828fff, 4.0, 95);
+    // Primary Champagne Gold Key Light
+    const primaryLight = new THREE.PointLight(0xDFB76C, 3.8, 95);
     primaryLight.position.set(16, 14, 12);
     scene.add(primaryLight);
 
-    // Secondary Indigo Fill Light
-    const secondaryLight = new THREE.PointLight(0x5e6ad2, 3.2, 80);
+    // Secondary Warm Gold Fill Light
+    const secondaryLight = new THREE.PointLight(0xC5A059, 2.8, 80);
     secondaryLight.position.set(-18, 8, -10);
     scene.add(secondaryLight);
 
     // Top Soft Luminescence
-    const topLight = new THREE.DirectionalLight(0xc4cbff, 0.55);
+    const topLight = new THREE.DirectionalLight(0xFFF6E5, 0.7);
     topLight.position.set(0, 30, 10);
     scene.add(topLight);
 
@@ -106,7 +106,7 @@ export default function Modern3DBackground() {
     const Z_FAR_BOUND = -130;
     const Z_NEAR_BOUND = 32;
 
-    const createCrystallineSolid = (geometry, initialPos, scale, rotSpeed, ringColor = 0x828fff) => {
+    const createCrystallineSolid = (geometry, initialPos, scale, rotSpeed, ringColor = 0xC5A059) => {
       const group = new THREE.Group();
       group.position.copy(initialPos);
 
@@ -116,10 +116,10 @@ export default function Modern3DBackground() {
         wireframe: true,
         roughness: 0.15,
         metalness: 0.85,
-        emissive: 0x5e6ad2,
-        emissiveIntensity: 0.45,
+        emissive: 0xC5A059,
+        emissiveIntensity: 0.35,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.55,
       });
       const wireMesh = new THREE.Mesh(geometry, wireMat);
       wireMesh.scale.setScalar(scale);
@@ -127,10 +127,10 @@ export default function Modern3DBackground() {
 
       // Inner Glowing Core
       const coreMat = new THREE.MeshBasicMaterial({
-        color: 0xc4cbff,
+        color: 0xFFF9EC,
         transparent: true,
-        opacity: 0.22,
-        blending: THREE.AdditiveBlending,
+        opacity: 0.35,
+        blending: THREE.NormalBlending,
       });
       const coreMesh = new THREE.Mesh(geometry, coreMat);
       coreMesh.scale.setScalar(scale * 0.65);
@@ -144,7 +144,7 @@ export default function Modern3DBackground() {
         side: THREE.DoubleSide,
         transparent: true,
         opacity: 0.35,
-        blending: THREE.AdditiveBlending,
+        blending: THREE.NormalBlending,
       });
       const ringMesh = new THREE.Mesh(ringGeo, ringMat);
       ringMesh.rotation.x = Math.PI * 0.35;
@@ -168,8 +168,8 @@ export default function Modern3DBackground() {
         color: ringColor,
         size: 0.36,
         transparent: true,
-        opacity: 0.75,
-        blending: THREE.AdditiveBlending,
+        opacity: 0.7,
+        blending: THREE.NormalBlending,
         depthWrite: false,
       });
       const dustPoints = new THREE.Points(dustGeo, dustMat);
@@ -201,15 +201,15 @@ export default function Modern3DBackground() {
     // Initial population distributed along depth corridor (-120 to +10)
     // Placed in left and right peripheral corridors to keep center text legible
     const polySpecs = [
-      { geo: icoGeo, pos: new THREE.Vector3(18, 4, -8), scale: 2.8, color: 0x828fff },
-      { geo: octGeo, pos: new THREE.Vector3(-18, 3, -16), scale: 2.4, color: 0x5e6ad2 },
-      { geo: dodGeo, pos: new THREE.Vector3(14, 11, -35), scale: 2.5, color: 0xc4cbff },
-      { geo: tetGeo, pos: new THREE.Vector3(-15, -6, -24), scale: 1.8, color: 0x828fff },
-      { geo: icoGeo, pos: new THREE.Vector3(-19, 9, -52), scale: 3.0, color: 0x828fff },
-      { geo: octGeo, pos: new THREE.Vector3(16, -4, -68), scale: 2.2, color: 0x5e6ad2 },
-      { geo: dodGeo, pos: new THREE.Vector3(-14, 12, -88), scale: 2.6, color: 0xc4cbff },
-      { geo: icoGeo, pos: new THREE.Vector3(19, 5, -105), scale: 2.9, color: 0x828fff },
-      { geo: tetGeo, pos: new THREE.Vector3(-17, -5, -120), scale: 2.0, color: 0x5e6ad2 },
+      { geo: icoGeo, pos: new THREE.Vector3(18, 4, -8), scale: 2.8, color: 0xDFB76C },
+      { geo: octGeo, pos: new THREE.Vector3(-18, 3, -16), scale: 2.4, color: 0xC5A059 },
+      { geo: dodGeo, pos: new THREE.Vector3(14, 11, -35), scale: 2.5, color: 0xB88E3A },
+      { geo: tetGeo, pos: new THREE.Vector3(-15, -6, -24), scale: 1.8, color: 0xDFB76C },
+      { geo: icoGeo, pos: new THREE.Vector3(-19, 9, -52), scale: 3.0, color: 0xC5A059 },
+      { geo: octGeo, pos: new THREE.Vector3(16, -4, -68), scale: 2.2, color: 0xB88E3A },
+      { geo: dodGeo, pos: new THREE.Vector3(-14, 12, -88), scale: 2.6, color: 0xDFB76C },
+      { geo: icoGeo, pos: new THREE.Vector3(19, 5, -105), scale: 2.9, color: 0xC5A059 },
+      { geo: tetGeo, pos: new THREE.Vector3(-17, -5, -120), scale: 2.0, color: 0xB88E3A },
     ];
 
     polySpecs.forEach((spec, idx) => {
@@ -227,7 +227,7 @@ export default function Modern3DBackground() {
     });
 
     // ============================================================
-    // 7. ENDLESS 3D HORIZONTAL CYBERNETIC WAVE RIBBONS
+    // 7. ENDLESS 3D HORIZONTAL CHAMPAGNE GOLD WAVE RIBBONS
     // Undulating sine waves sweeping across the lower horizon
     // ============================================================
     const ribbonCount = 8;
@@ -245,7 +245,7 @@ export default function Modern3DBackground() {
       const colArray = new Float32Array(ribbonPoints * 3);
 
       const zOffset = r * 5.0 - (ribbonCount * 2.5);
-      const baseAlpha = 0.14 + (r / ribbonCount) * 0.28;
+      const baseAlpha = 0.22 + (r / ribbonCount) * 0.24;
 
       for (let p = 0; p < ribbonPoints; p++) {
         const x = ((p / (ribbonPoints - 1)) - 0.5) * ribbonWidth;
@@ -253,11 +253,11 @@ export default function Modern3DBackground() {
         posArray[p * 3 + 1] = 0;
         posArray[p * 3 + 2] = zOffset;
 
-        // Gradient from lavender to deep indigo
+        // Gradient from rich gold to radiant champagne gold
         const t = p / (ribbonPoints - 1);
         const col = new THREE.Color().lerpColors(
-          new THREE.Color(0x5e6ad2),
-          new THREE.Color(0x828fff),
+          new THREE.Color(0xC5A059),
+          new THREE.Color(0xDFB76C),
           Math.sin(t * Math.PI)
         );
         colArray[p * 3] = col.r;
@@ -272,7 +272,7 @@ export default function Modern3DBackground() {
         vertexColors: true,
         transparent: true,
         opacity: baseAlpha,
-        blending: THREE.AdditiveBlending,
+        blending: THREE.NormalBlending,
         linewidth: 1.5,
       });
 
@@ -292,7 +292,7 @@ export default function Modern3DBackground() {
     }
 
     // ============================================================
-    // 8. ENDLESS VOLUMETRIC 3D STELLAR PARTICLE FIELD
+    // 8. ENDLESS VOLUMETRIC 3D GOLDEN PEARL PARTICLE FIELD
     // Flying forward continuously with seamless depth wrap-around
     // ============================================================
     const starCount = width < 768 ? 320 : 640;
@@ -300,9 +300,9 @@ export default function Modern3DBackground() {
     const starPositions = new Float32Array(starCount * 3);
     const starColors = new Float32Array(starCount * 3);
 
-    const c1 = new THREE.Color(0x828fff);
-    const c2 = new THREE.Color(0x5e6ad2);
-    const c3 = new THREE.Color(0xffffff);
+    const c1 = new THREE.Color(0xDFB76C);
+    const c2 = new THREE.Color(0xC5A059);
+    const c3 = new THREE.Color(0xB88E3A);
 
     // Scatter uniformly across a 3D tunnel [ -140 to 30 ]
     for (let s = 0; s < starCount; s++) {
@@ -326,8 +326,8 @@ export default function Modern3DBackground() {
       size: width < 768 ? 0.42 : 0.52,
       vertexColors: true,
       transparent: true,
-      opacity: 0.72,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.65,
+      blending: THREE.NormalBlending,
       depthWrite: false,
     });
     const starPoints = new THREE.Points(starGeo, starMat);

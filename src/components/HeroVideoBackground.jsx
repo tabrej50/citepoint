@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause } from 'lucide-react';
 
 /**
  * HeroVideoBackground
@@ -54,17 +53,6 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
     document.addEventListener('visibilitychange', handleVisibility);
     return () => document.removeEventListener('visibilitychange', handleVisibility);
   }, [isPlaying, reducedMotion]);
-
-  const togglePlayback = (e) => {
-    e.stopPropagation();
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
-    }
-  };
 
   const baseUrl = import.meta.env.BASE_URL || '/';
   const videoSrc = `${baseUrl}assets/videos/hero-background.mp4`.replace(/\/\//g, '/');
@@ -172,31 +160,6 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
         </>
       )}
 
-      {/* 3. Subtle Play/Pause micro-control for user agency */}
-      <div className="absolute bottom-4 right-4 z-20 pointer-events-auto">
-        <button
-          type="button"
-          onClick={togglePlayback}
-          aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
-          className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-sans transition-all duration-200 border ${
-            isDark
-              ? 'bg-[#000000]/70 hover:bg-[#000000] text-white/70 hover:text-white border-white/10'
-              : 'bg-white/80 hover:bg-white text-[#111111]/70 hover:text-[#111111] border-[#111111]/10'
-          } backdrop-blur-sm shadow-sm cursor-pointer`}
-        >
-          {isPlaying ? (
-            <>
-              <Pause className="w-3 h-3" />
-              <span className="hidden sm:inline">Pause Video</span>
-            </>
-          ) : (
-            <>
-              <Play className="w-3 h-3" />
-              <span className="hidden sm:inline">Play Video</span>
-            </>
-          )}
-        </button>
-      </div>
     </div>
   );
 }

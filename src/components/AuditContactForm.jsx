@@ -3,11 +3,11 @@ import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 /**
  * AuditContactForm
- * Formium Alliance Obsidian & Crimson design:
- * - surface-card container with obsidian border and soft dark shadow
- * - Dark input fields with subtle border and titanium white focus ring (#ffffff)
- * - btn-primary CTA button (#ffffff with #0a0b0d text)
- * - Pure White (#ffffff) headings and legible body text (#a1a1aa)
+ * Apple-style minimal monochrome:
+ * - Canvas: White (#FFFFFF) card on Light Gray (#F5F5F7) or White
+ * - Inputs: #F5F5F7 with #D2D2D7 border, text #1D1D1F
+ * - CTA: Solid black (#1D1D1F) with white text
+ * - Zero gradients, zero shadows
  */
 export default function AuditContactForm({ className = '' }) {
   const [formData, setFormData] = useState({
@@ -96,39 +96,39 @@ export default function AuditContactForm({ className = '' }) {
 
   if (submitted) {
     return (
-      <div className={`surface-card rounded-[24px] p-8 sm:p-14 text-center max-w-2xl mx-auto font-sans shadow-2xl ${className}`}>
-        <div className="w-14 h-14 rounded-full bg-[#16171d] border border-white/20 text-white flex items-center justify-center mx-auto mb-6 shadow-xs">
+      <div className={`rounded-[24px] p-8 sm:p-14 text-center max-w-2xl mx-auto font-sans bg-white border border-[#d2d2d7] ${className}`}>
+        <div className="w-14 h-14 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-7 h-7 stroke-[2] text-white" />
         </div>
-        <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white mb-3">
+        <h3 className="text-2xl sm:text-3xl font-medium text-[#1d1d1f] mb-3">
           Request Received
         </h3>
-        <p className="text-base text-[#a1a1aa] leading-relaxed mb-6 max-w-lg mx-auto">
+        <p className="text-base text-[#6e6e73] leading-relaxed mb-6 max-w-lg mx-auto">
           Thank you. We received your diagnostic request and will review your parameters before delivering your confidential assessment.
         </p>
-        <div className="p-5 rounded-[16px] bg-[#16171d] border border-white/10 text-left max-w-md mx-auto text-xs space-y-2">
-          <div className="text-white font-semibold">Submission Details:</div>
-          <div className="text-[#a1a1aa]">Company: <span className="text-white font-medium">{formData.company}</span></div>
-          <div className="text-[#a1a1aa]">Contact: <span className="text-white font-medium">{formData.workEmail}</span></div>
-          <div className="text-[#a1a1aa]">Focus: <span className="text-white font-semibold">{formData.mainGoal}</span></div>
+        <div className="p-5 rounded-[16px] bg-[#f5f5f7] border border-[#d2d2d7] text-left max-w-md mx-auto text-xs space-y-2">
+          <div className="text-[#1d1d1f] font-semibold">Submission Details:</div>
+          <div className="text-[#6e6e73]">Company: <span className="text-[#1d1d1f] font-medium">{formData.company}</span></div>
+          <div className="text-[#6e6e73]">Contact: <span className="text-[#1d1d1f] font-medium">{formData.workEmail}</span></div>
+          <div className="text-[#6e6e73]">Focus: <span className="text-[#1d1d1f] font-semibold">{formData.mainGoal}</span></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`surface-card rounded-[24px] p-6 sm:p-10 md:p-12 max-w-4xl mx-auto font-sans shadow-2xl ${className}`}>
+    <div className={`rounded-[24px] p-6 sm:p-10 md:p-12 max-w-4xl mx-auto font-sans bg-white border border-[#d2d2d7] ${className}`}>
       
       {/* Header */}
-      <div className="mb-8 pb-6 border-b border-white/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-white text-xs font-sans uppercase tracking-[0.12em] font-semibold mb-3 shadow-2xs">
-          <Sparkles className="w-3.5 h-3.5 text-white" />
+      <div className="mb-8 pb-6 border-b border-[#d2d2d7]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] text-xs font-sans uppercase tracking-[0.14em] font-semibold mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-[#1d1d1f]" />
           // AUDIT CONSULTATION
         </div>
-        <h2 className="text-2xl sm:text-3xl font-heading font-medium text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-medium text-[#1d1d1f] tracking-tight">
           Let’s find your missing citation points.
         </h2>
-        <p className="text-sm sm:text-base text-[#a1a1aa] mt-2 leading-relaxed">
+        <p className="text-sm sm:text-base text-[#6e6e73] mt-2 leading-relaxed">
           Tell us about your brand and commercial category. We’ll analyze how major AI engines perceive your solution and prepare a confidential visibility assessment.
         </p>
       </div>
@@ -149,7 +149,7 @@ export default function AuditContactForm({ className = '' }) {
         {/* Row 1: Full Name & Work Email */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Full Name *
             </label>
             <input
@@ -158,15 +158,15 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. Sarah Jenkins"
               value={formData.fullName}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
-                errors.fullName ? 'border-rose-400' : 'border-white/15'
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all ${
+                errors.fullName ? 'border-red-500' : 'border-[#d2d2d7]'
               }`}
             />
-            {errors.fullName && <p className="text-xs text-rose-500 mt-1">{errors.fullName}</p>}
+            {errors.fullName && <p className="text-xs text-red-500 mt-1">{errors.fullName}</p>}
           </div>
 
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Work Email *
             </label>
             <input
@@ -175,18 +175,18 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="sarah@company.com"
               value={formData.workEmail}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
-                errors.workEmail ? 'border-rose-400' : 'border-white/15'
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all ${
+                errors.workEmail ? 'border-red-500' : 'border-[#d2d2d7]'
               }`}
             />
-            {errors.workEmail && <p className="text-xs text-rose-500 mt-1">{errors.workEmail}</p>}
+            {errors.workEmail && <p className="text-xs text-red-500 mt-1">{errors.workEmail}</p>}
           </div>
         </div>
 
         {/* Row 2: Company Name & Website URL */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Company Name *
             </label>
             <input
@@ -195,15 +195,15 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. Acme Cloud Systems"
               value={formData.company}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
-                errors.company ? 'border-rose-400' : 'border-white/15'
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all ${
+                errors.company ? 'border-red-500' : 'border-[#d2d2d7]'
               }`}
             />
-            {errors.company && <p className="text-xs text-rose-500 mt-1">{errors.company}</p>}
+            {errors.company && <p className="text-xs text-red-500 mt-1">{errors.company}</p>}
           </div>
 
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Company Website URL *
             </label>
             <input
@@ -212,18 +212,18 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="https://acmecloud.com"
               value={formData.websiteUrl}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
-                errors.websiteUrl ? 'border-rose-400' : 'border-white/15'
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all ${
+                errors.websiteUrl ? 'border-red-500' : 'border-[#d2d2d7]'
               }`}
             />
-            {errors.websiteUrl && <p className="text-xs text-rose-500 mt-1">{errors.websiteUrl}</p>}
+            {errors.websiteUrl && <p className="text-xs text-red-500 mt-1">{errors.websiteUrl}</p>}
           </div>
         </div>
 
         {/* Row 3: Job Title & Industry */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Job Title
             </label>
             <input
@@ -232,23 +232,23 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. VP Marketing / Founder"
               value={formData.jobTitle}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
+              className="w-full px-4 py-3 rounded-[16px] border border-[#d2d2d7] bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
               Sector / Industry
             </label>
             <select
               name="industry"
               value={formData.industry}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
+              className="w-full px-4 py-3 rounded-[16px] border border-[#d2d2d7] bg-[#f5f5f7] text-[#1d1d1f] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all cursor-pointer"
             >
-              <option value="" className="bg-[#111113] text-[#71717a]">Select industry sector...</option>
+              <option value="" className="bg-[#f5f5f7] text-[#6e6e73]">Select industry sector...</option>
               {industryOptions.map((ind) => (
-                <option key={ind} value={ind} className="bg-[#111113] text-white">
+                <option key={ind} value={ind} className="bg-[#f5f5f7] text-[#1d1d1f]">
                   {ind}
                 </option>
               ))}
@@ -258,17 +258,17 @@ export default function AuditContactForm({ className = '' }) {
 
         {/* Primary Audit Goal */}
         <div>
-          <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
             Primary Visibility Objective
           </label>
           <select
             name="mainGoal"
             value={formData.mainGoal}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
+            className="w-full px-4 py-3 rounded-[16px] border border-[#d2d2d7] bg-[#f5f5f7] text-[#1d1d1f] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all cursor-pointer"
           >
             {goalOptions.map((goal) => (
-              <option key={goal} value={goal} className="bg-[#111113] text-white">
+              <option key={goal} value={goal} className="bg-[#f5f5f7] text-[#1d1d1f]">
                 {goal}
               </option>
             ))}
@@ -277,7 +277,7 @@ export default function AuditContactForm({ className = '' }) {
 
         {/* Specific Prompt Query Context */}
         <div>
-          <label className="block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#a1a1aa] mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[#1d1d1f] mb-2">
             Priority Buyer Prompts / Competitors (Optional)
           </label>
           <textarea
@@ -286,25 +286,25 @@ export default function AuditContactForm({ className = '' }) {
             placeholder="e.g. When buyers ask ChatGPT 'best alternative to Competitor X' or evaluate our category, we want our brand recommended."
             value={formData.promptContext}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
+            className="w-full px-4 py-3 rounded-[16px] border border-[#d2d2d7] bg-[#f5f5f7] text-[#1d1d1f] placeholder-[#6e6e73] text-sm focus:outline-none focus:ring-1 focus:ring-[#1d1d1f] focus:border-[#1d1d1f] transition-all resize-none"
           />
         </div>
 
         {/* Consent Checkbox */}
         <div className="pt-2">
-          <label className="flex items-start gap-3 cursor-pointer text-xs text-[#a1a1aa]">
+          <label className="flex items-start gap-3 cursor-pointer text-xs text-[#6e6e73]">
             <input
               type="checkbox"
               name="consent"
               checked={formData.consent}
               onChange={handleChange}
-              className="mt-0.5 rounded-[4px] border-white/20 text-white focus:ring-white accent-white"
+              className="mt-0.5 rounded-[4px] border-[#d2d2d7] text-[#1d1d1f] focus:ring-[#1d1d1f] accent-[#1d1d1f]"
             />
             <span>
               I understand Citepoint provides empirical AI visibility assessments and that third-party model weights cannot be guaranteed. *
             </span>
           </label>
-          {errors.consent && <p className="text-xs text-rose-500 mt-1">{errors.consent}</p>}
+          {errors.consent && <p className="text-xs text-red-500 mt-1">{errors.consent}</p>}
         </div>
 
         {/* Submit Button */}
@@ -312,14 +312,14 @@ export default function AuditContactForm({ className = '' }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
+            className="w-full sm:w-auto rounded-full px-8 py-3.5 text-[15px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
           >
             <span>{isSubmitting ? 'Analyzing Parameters...' : 'Request Confidential Audit'}</span>
-            <ArrowRight className="w-4 h-4 text-black" />
+            <ArrowRight className="w-4 h-4 text-white" />
           </button>
 
-          <div className="flex items-center gap-2 text-xs text-[#71717a]">
-            <ShieldCheck className="w-4 h-4 text-white" />
+          <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
+            <ShieldCheck className="w-4 h-4 text-[#1d1d1f]" />
             <span className="whitespace-nowrap">Strict NDA governance. Never shared.</span>
           </div>
         </div>

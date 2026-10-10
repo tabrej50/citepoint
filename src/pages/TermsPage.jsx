@@ -1,13 +1,12 @@
 import React from 'react';
-import { ShieldCheck, AlertCircle, ArrowRight } from 'lucide-react';
 
 /**
  * Citepoint TermsPage
- * - Base Canvas: Titanium Space Black (#0a0b0d)
- * - Accent: Pure White & Specular Quartz
- * - Cards: Frosted Glass Cards (#16171d, rounded-[24px], border-white/10)
- * - Callouts: Dark Obsidian (#18181b, rounded-[16px], border-white/10)
- * - Typography: Bricolage Grotesque, high contrast pure white & neutral zinc
+ * Apple-style minimal monochrome:
+ * - Canvas: White (#FFFFFF) and Light Gray (#F5F5F7)
+ * - Text: Near-black (#1D1D1F) and Gray (#6E6E73)
+ * - Borders: Hairline (#D2D2D7)
+ * - Zero gradients, zero shadows
  */
 export default function TermsPage({ setCurrentRoute }) {
   const handleNav = (route) => {
@@ -16,44 +15,38 @@ export default function TermsPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="w-full bg-[#0a0b0d] text-[#fff0f0] font-sans selection:bg-white selection:text-black">
-      {/* --------------------------------------------------
-          PAGE HERO (Titanium Space Black & Apple Monochrome)
-      -------------------------------------------------- */}
-      <section className="bg-transparent text-white pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 relative overflow-hidden border-b border-white/10">
+    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+      {/* PAGE HERO */}
+      <section className="bg-white text-[#1d1d1f] pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 relative overflow-hidden border-b border-[#d2d2d7]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-mono uppercase tracking-[0.14em] text-white font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-xs font-mono uppercase tracking-[0.14em] text-[#1d1d1f] font-semibold mb-4">
             // TERMS OF ENGAGEMENT
           </div>
-          <h1 className="text-4xl sm:text-5xl font-heading font-medium text-white tracking-tight leading-[1.1] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-medium text-[#1d1d1f] tracking-tight leading-[1.1] mb-4">
             Terms of Service
           </h1>
-          <p className="text-sm text-[#71717a] font-mono">
+          <p className="text-sm text-[#6e6e73] font-mono">
             Last Updated: September 2026 • Citepoint Agency
           </p>
         </div>
       </section>
 
-      {/* --------------------------------------------------
-          TERMS CONTENT (Titanium Surface Card)
-      -------------------------------------------------- */}
-      <section className="py-16 lg:py-24 bg-transparent">
+      {/* TERMS CONTENT */}
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="surface-card p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.6] text-[#a1a1aa] rounded-[24px] border border-white/10 bg-[#16171d]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
-            {/* Top Specular Hairline */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+          <div className="p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.6] text-[#6e6e73] rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
             
             <div>
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 01. Acceptance of Terms
               </h2>
               <p>
-                By accessing this website (<code className="text-white font-mono font-semibold">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-white">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
+                By accessing this website (<code className="text-[#1d1d1f] font-mono font-semibold">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-[#1d1d1f]">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 02. Scope of Services & Independent Advisory
               </h2>
               <p>
@@ -62,20 +55,20 @@ export default function TermsPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 03. Disclaimer Regarding Third-Party AI Models
               </h2>
               <p className="mb-4">
                 Third-party generative AI models (including ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews) are operated by autonomous third parties. Their model weights, training corpora, retrieval algorithms, and output filters evolve unpredictably.
               </p>
-              <div className="p-5 rounded-[16px] bg-[#18181b] border border-white/10 text-xs text-[#a1a1aa] font-mono leading-relaxed">
-                <strong className="text-white block mb-1 font-semibold">Explicit Agency Disclaimer:</strong>
+              <div className="p-5 rounded-[16px] bg-white border border-[#d2d2d7] text-xs text-[#6e6e73] leading-relaxed">
+                <strong className="text-[#1d1d1f] block mb-1 font-semibold">Explicit Agency Disclaimer:</strong>
                 Citepoint does not warrant or guarantee fixed rankings, guaranteed #1 recommendations, or permanent inclusion in any third-party synthetic response. All services focus on controllable variables: data integrity, citation authority, structured schemas, and empirical measurement.
               </div>
             </div>
 
             <div>
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 04. Intellectual Property
               </h2>
               <p>
@@ -84,7 +77,7 @@ export default function TermsPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 05. Limitation of Liability
               </h2>
               <p>
@@ -92,8 +85,8 @@ export default function TermsPage({ setCurrentRoute }) {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-white/10">
-              <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
+            <div className="pt-6 border-t border-[#d2d2d7]">
+              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
                 06. Governing Law & Arbitration
               </h2>
               <p>

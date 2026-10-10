@@ -1,8 +1,10 @@
 import React from 'react';
 
 /**
- * Official Brand SVG paths and definitions for major AI Search & Generative Engines
+ * Official Brand SVG paths for major AI Search & Generative Engines
  * (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews)
+ * Styled for Apple Minimal Monochrome:
+ * Monochromatic rendering (currentColor = #1D1D1F), clean light surfaces (#F5F5F7), hairline borders (#D2D2D7).
  */
 export const AI_ENGINES = [
   {
@@ -10,9 +12,7 @@ export const AI_ENGINES = [
     name: 'ChatGPT',
     provider: 'OpenAI',
     title: 'OpenAI ChatGPT',
-    color: '#10A37F', // Authentic ChatGPT emerald green
-    lightBg: 'rgba(16, 163, 127, 0.1)',
-    borderColor: 'rgba(16, 163, 127, 0.3)',
+    color: '#1D1D1F',
     role: 'Conversational Shortlists & Vendor Summaries',
     tagline: 'Leading conversational engine for B2B buyer discovery',
     svgPath:
@@ -23,9 +23,7 @@ export const AI_ENGINES = [
     name: 'Gemini',
     provider: 'Google',
     title: 'Google Gemini',
-    color: '#8E75B2', // Authentic Google Gemini violet
-    lightBg: 'rgba(142, 117, 178, 0.1)',
-    borderColor: 'rgba(142, 117, 178, 0.3)',
+    color: '#1D1D1F',
     role: 'Multimodal Knowledge Graph Integration',
     tagline: 'Google ecosystem integration with deep entity reasoning',
     svgPath:
@@ -36,9 +34,7 @@ export const AI_ENGINES = [
     name: 'Perplexity',
     provider: 'Perplexity AI',
     title: 'Perplexity',
-    color: '#1FB8CD', // Authentic Perplexity cyan / teal
-    lightBg: 'rgba(31, 184, 205, 0.1)',
-    borderColor: 'rgba(31, 184, 205, 0.3)',
+    color: '#1D1D1F',
     role: 'Real-Time Web Citations & Direct References',
     tagline: 'Deep research engine citing authoritative third-party sources',
     svgPath:
@@ -49,9 +45,7 @@ export const AI_ENGINES = [
     name: 'Claude',
     provider: 'Anthropic',
     title: 'Anthropic Claude',
-    color: '#D97757', // Authentic Claude terracotta / coral
-    lightBg: 'rgba(217, 119, 87, 0.1)',
-    borderColor: 'rgba(217, 119, 87, 0.3)',
+    color: '#1D1D1F',
     role: 'In-Depth Technical Synthesis & Enterprise Analysis',
     tagline: 'High-reasoning model for complex B2B vendor evaluation',
     svgPath:
@@ -64,10 +58,7 @@ export const AI_ENGINES = [
     shortName: 'AI Overviews',
     provider: 'Google',
     title: 'Google AI Overviews',
-    color: '#4285F4', // Google Blue
-    isGoogleMulti: true,
-    lightBg: 'rgba(66, 133, 244, 0.1)',
-    borderColor: 'rgba(66, 133, 244, 0.3)',
+    color: '#1D1D1F',
     role: 'Search-Engine Native Synthetic Answers',
     tagline: 'Mass-market search engine answers transforming blue links into summaries',
     svgPath:
@@ -81,7 +72,6 @@ export const AI_ENGINES = [
 export function AiEngineIcon({
   id,
   size = 22,
-  variant = 'brand',
   className = '',
   customColor,
 }) {
@@ -96,40 +86,7 @@ export function AiEngineIcon({
 
   if (!engine) return null;
 
-  // Render authentic 4-color Google icon if multi-color requested and engine is Google
-  if (engine.isGoogleMulti && variant === 'multicolor') {
-    return (
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        width={size}
-        height={size}
-        aria-hidden="true"
-        className={`shrink-0 transition-transform duration-200 ${className}`}
-        style={{ width: `${size}px`, height: `${size}px` }}
-      >
-        <title>{engine.title}</title>
-        <path
-          fill="#4285F4"
-          d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
-        />
-        <path
-          fill="#34A853"
-          d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.36 7.31 24 12 24z"
-        />
-        <path
-          fill="#FBBC05"
-          d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.94 0 12s.46 3.84 1.26 5.42l4.02-3.15z"
-        />
-        <path
-          fill="#EA4335"
-          d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
-        />
-      </svg>
-    );
-  }
-
-  const fillColor = customColor || (variant === 'monochrome' ? 'currentColor' : engine.color);
+  const fillColor = customColor || 'currentColor';
 
   return (
     <svg
@@ -170,16 +127,16 @@ export function AiEngineBadge({ id, className = '', size = 16 }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 align-middle px-2.5 py-1 rounded-[8px] text-xs font-sans font-medium bg-[#0f1011] hover:bg-[#141516] text-[#ffffff] border border-[#23252a]/30 transition-colors ${className}`}
+      className={`inline-flex items-center gap-1.5 align-middle px-3 py-1 rounded-full text-xs font-sans font-medium bg-[#f5f5f7] hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] transition-colors ${className}`}
     >
-      <AiEngineIcon id={engine.id} size={size} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
+      <AiEngineIcon id={engine.id} size={size} />
       <span>{engine.name}</span>
     </span>
   );
 }
 
 /**
- * Interactive Horizontal AI Engines Row with authentic colors
+ * Interactive Horizontal AI Engines Row
  */
 export default function AiEnginesRow({
   className = '',
@@ -190,36 +147,28 @@ export default function AiEnginesRow({
     <div
       role="region"
       aria-label="Audited and optimized AI engines"
-      className={`flex flex-wrap items-center justify-center gap-3 sm:gap-4 ${className}`}
+      className={`flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 ${className}`}
     >
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-[8px] border border-[#23252a]/20 bg-[#141516] hover:border-[#828fff]/40 text-[#ffffff] transition-all duration-200 group ${
-            interactive ? 'hover:-translate-y-0.5 cursor-default' : ''
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#d2d2d7] bg-[#f5f5f7] hover:border-[#1d1d1f] text-[#1d1d1f] transition-all duration-200 group ${
+            interactive ? 'cursor-default active:scale-[0.98]' : ''
           }`}
         >
           {/* Logo */}
-          <div
-            className="w-5 h-5 rounded-[8px] flex items-center justify-center transition-transform duration-200 group-hover:scale-110"
-          >
-            <AiEngineIcon
-              id={engine.id}
-              size={18}
-              variant={engine.isGoogleMulti ? 'multicolor' : 'brand'}
-            />
+          <div className="w-4 h-4 flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
+            <AiEngineIcon id={engine.id} size={15} />
           </div>
 
           {/* Engine Name */}
-          <span className="text-xs sm:text-sm font-sans font-medium text-[#ffffff] tracking-tight">
+          <span className="text-xs font-sans font-medium text-[#1d1d1f] tracking-tight">
             {engine.name}
           </span>
 
           {/* Provider Pill */}
           {showProvider && (
-            <span
-              className="text-[10px] font-mono px-1.5 py-0.5 rounded-[8px] bg-[#0f1011] text-[#8a8f98] border border-[#23252a]/30"
-            >
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-white text-[#6e6e73] border border-[#d2d2d7]">
               {engine.provider}
             </span>
           )}
@@ -238,39 +187,29 @@ export function AiEnginesGrid({ className = '' }) {
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className="p-5 rounded-[12px] border border-[#23252a]/20 bg-[#141516] hover:border-[#828fff]/40 text-[#ffffff] transition-all duration-200 flex flex-col justify-between group"
+          className="p-5 rounded-[20px] border border-[#d2d2d7] bg-[#f5f5f7] hover:border-[#1d1d1f] text-[#1d1d1f] transition-all duration-200 flex flex-col justify-between group"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
-              <div
-                className="w-10 h-10 rounded-[8px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105 bg-[#0f1011] border border-[#23252a]/30"
-              >
-                <AiEngineIcon
-                  id={engine.id}
-                  size={22}
-                  variant={engine.isGoogleMulti ? 'multicolor' : 'brand'}
-                />
+              <div className="w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-105 bg-white border border-[#d2d2d7]">
+                <AiEngineIcon id={engine.id} size={18} />
               </div>
-              <span
-                className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-[8px] bg-[#0f1011] text-[#8a8f98] border border-[#23252a]/30"
-              >
+              <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-full bg-white text-[#6e6e73] border border-[#d2d2d7]">
                 {engine.provider}
               </span>
             </div>
 
-            <h4 className="text-base font-heading font-medium mb-1 text-[#ffffff] group-hover:text-[#828fff] transition-colors leading-[1.0]">
+            <h4 className="text-base font-medium mb-1 text-[#1d1d1f] leading-snug">
               {engine.name}
             </h4>
 
-            <p className="text-xs leading-[1.4] line-clamp-2 mb-3 text-[#8a8f98]">
+            <p className="text-xs leading-[1.5] line-clamp-2 mb-3 text-[#6e6e73]">
               {engine.role}
             </p>
           </div>
 
-          <div
-            className="pt-3 border-t border-[#23252a]/20 text-[11px] font-mono flex items-center gap-1.5 text-[#828fff]"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#828fff]" />
+          <div className="pt-3 border-t border-[#d2d2d7] text-[11px] font-mono flex items-center gap-1.5 text-[#6e6e73]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1d1d1f]" />
             <span>Audited & Optimized</span>
           </div>
         </div>

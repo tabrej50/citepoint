@@ -14,7 +14,6 @@ import ContactPage from './pages/ContactPage';
 import AuditPage from './pages/AuditPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
-import Modern3DBackground from './components/Modern3DBackground';
 import LiquidGlassFilter from './components/LiquidGlassFilter';
 
 // Apple Fluid Interface: Unified elevated cross-fade with spatial continuity
@@ -144,9 +143,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0b0d] text-white font-sans selection:bg-white/20 selection:text-white relative">
-      {/* Apple Titanium Space Black Procedural 3D Canvas Background */}
-      <Modern3DBackground />
+    <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white relative">
       <LiquidGlassFilter />
 
       {/* Sticky / Transparent Floating Header Navbar */}

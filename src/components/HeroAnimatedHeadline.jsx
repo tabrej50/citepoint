@@ -76,7 +76,7 @@ export default function HeroAnimatedHeadline() {
     >
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-[26px] sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-display font-semibold text-white leading-[1.25] sm:leading-[1.08] tracking-[-0.035em] text-center">
+      <h1 className="relative z-10 text-[28px] sm:text-5xl md:text-6xl lg:text-[68px] xl:text-[76px] font-sans font-bold text-[#1D1D1F] leading-[1.15] sm:leading-[1.05] tracking-[-0.035em] text-center">
         {/* Line 1: "Be the brand AI" */}
         <span className="block">
           {PREFIX_WORDS.map((word, idx) => (
@@ -85,7 +85,7 @@ export default function HeroAnimatedHeadline() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.05 * idx, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-white mr-[0.26em] last:mr-0"
+              className="inline-block relative text-[#1D1D1F] mr-[0.26em] last:mr-0"
             >
               {word}
             </motion.span>
@@ -107,7 +107,7 @@ export default function HeroAnimatedHeadline() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 drop-shadow-[0_0_24px_rgba(255,255,255,0.25)]"
+                  className="inline-block font-bold text-[#1D1D1F]"
                 >
                   {DYNAMIC_VERBS[verbIndex]}
                 </motion.span>
@@ -119,17 +119,9 @@ export default function HeroAnimatedHeadline() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-white ml-[0.26em]"
+              className="inline-block relative text-[#1D1D1F] ml-[0.26em]"
             >
               first.
-              {/* Starlight diamond glint on the period of 'first.' */}
-              <span
-                className="absolute -right-2.5 top-1 pointer-events-none"
-                aria-hidden="true"
-              >
-                <span className="absolute -inset-1 rounded-full bg-white animate-ping opacity-40" />
-                <span className="relative block w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] animate-starlight-dot" />
-              </span>
             </motion.span>
           </span>
         </span>

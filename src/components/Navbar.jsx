@@ -138,24 +138,21 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
         <header
           className={`relative rounded-full transition-all duration-300 ${
             isScrolled
-              ? 'px-4 sm:px-6 py-2.5 bg-black/85 border border-white/12 shadow-[0_12px_36px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)]'
-              : 'px-5 sm:px-7 py-3 bg-black/75 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.06)]'
+              ? 'px-4 sm:px-6 py-2.5 bg-white/90 border border-[#d2d2d7]'
+              : 'px-5 sm:px-7 py-3 bg-white/80 border border-[#d2d2d7]'
           }`}
           style={{
-            WebkitBackdropFilter: isScrolled ? 'blur(24px) saturate(180%)' : 'blur(16px)',
-            backdropFilter: isScrolled ? 'blur(24px) saturate(180%)' : 'blur(16px)',
+            WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'blur(16px)',
+            backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'blur(16px)',
           }}
         >
-          {/* Subtle top hairline titanium specular highlight */}
-          <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-
           <div className="flex items-center justify-between gap-4 relative z-10">
             
-            {/* Citepoint Brand Mark */}
+            {/* Citepoint Brand Mark with Gold Emblem */}
             <button
               type="button"
               onClick={() => handleNavClick('home')}
-              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full transition-opacity duration-150 hover:opacity-90 min-h-[44px] py-1"
+              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1d1f] rounded-full transition-opacity duration-150 hover:opacity-85 min-h-[44px] py-1"
               aria-label="Citepoint Home"
             >
               <img
@@ -179,7 +176,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             >
               {/* Sliding Active/Hover Highlight Pill */}
               <div
-                className="absolute pointer-events-none rounded-full bg-white/10 border border-white/15 shadow-[0_2px_8px_rgba(0,0,0,0.4)] transition-all duration-150"
+                className="absolute pointer-events-none rounded-full bg-[#f5f5f7] border border-[#d2d2d7] transition-all duration-150"
                 style={{
                   left: `${pillStyle.left}px`,
                   top: `${pillStyle.top}px`,
@@ -217,15 +214,15 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                         }}
                         className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                           isHighlighted
-                            ? 'text-white font-semibold'
-                            : 'text-zinc-300 hover:text-white font-medium'
+                            ? 'text-[#1d1d1f] font-semibold'
+                            : 'text-[#6e6e73] hover:text-[#1d1d1f] font-medium'
                         }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
 
-                      {/* Titanium Monochrome Dropdown with Apple Spring Physics */}
+                      {/* Clean Apple Minimal Dropdown */}
                       <AnimatePresence>
                         {servicesDropdownOpen && (
                           <motion.div
@@ -238,7 +235,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                             onMouseEnter={handleDropdownEnter}
                             onMouseLeave={handleDropdownLeave}
                           >
-                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-white px-3.5 py-1.5 border-b border-white/10 mb-1">
+                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#1d1d1f] px-3.5 py-1.5 border-b border-[#d2d2d7] mb-1">
                               Enterprise AI Capabilities
                             </div>
                             {serviceItems.map((item) => (
@@ -248,12 +245,12 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                                   handleNavClick(item.route);
                                   setServicesDropdownOpen(false);
                                 }}
-                                className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-white/5 transition-colors cursor-pointer active:scale-[0.98]"
+                                className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-[#f5f5f7] transition-colors cursor-pointer active:scale-[0.98]"
                               >
-                                <div className="text-[13px] font-medium text-white group-hover:text-zinc-200 transition-colors">
+                                <div className="text-[13px] font-medium text-[#1d1d1f] group-hover:text-black transition-colors">
                                   {item.title}
                                 </div>
-                                <div className="text-[12px] text-[#a1a1aa] group-hover:text-white leading-snug">
+                                <div className="text-[12px] text-[#6e6e73] leading-snug">
                                   {item.desc}
                                 </div>
                               </button>
@@ -275,8 +272,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                     onMouseEnter={() => setHoveredRoute(link.route)}
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
-                        ? 'text-white font-semibold'
-                        : 'text-zinc-300 hover:text-white font-medium'
+                        ? 'text-[#1d1d1f] font-semibold'
+                        : 'text-[#6e6e73] hover:text-[#1d1d1f] font-medium'
                     }`}
                   >
                     {link.name}
@@ -285,14 +282,14 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               })}
             </nav>
 
-            {/* Right Action: Apple Keynote Pure White Pill CTA Button */}
+            {/* Right Action: Solid Black Button with White Text */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
-                className="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans font-semibold text-[13px] whitespace-nowrap cursor-pointer shadow-[0_4px_18px_rgba(255,255,255,0.18)]"
+                className="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans font-semibold text-[13px] whitespace-nowrap cursor-pointer"
               >
                 <span>Get AI Visibility Audit</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </button>
             </div>
 
@@ -300,17 +297,17 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-11 h-11 flex items-center justify-center text-white hover:text-white rounded-full bg-[#16171d] border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
+                className="w-11 h-11 flex items-center justify-center text-[#1d1d1f] rounded-full bg-[#f5f5f7] border border-[#d2d2d7] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1d1f] cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-[#1d1d1f]" /> : <Menu className="w-5 h-5 text-[#1d1d1f]" />}
               </button>
             </div>
 
           </div>
         </header>
 
-        {/* Mobile / Tablet Navigation Drawer with Apple Sheet Spring Physics */}
+        {/* Mobile / Tablet Navigation Drawer */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -319,11 +316,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ type: 'spring', damping: 26, stiffness: 280, mass: 0.9 }}
               style={{ transformOrigin: 'top center' }}
-              className="lg:hidden mt-2 p-5 rounded-[24px] bg-[#16171d]/95 backdrop-blur-2xl border border-white/15 shadow-2xl pointer-events-auto"
+              className="lg:hidden mt-2 p-5 rounded-[20px] bg-white border border-[#d2d2d7] pointer-events-auto"
             >
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[12px] text-[#a1a1aa]">
-                <span className="uppercase tracking-wider font-medium text-white">Navigation</span>
-                <span className="uppercase tracking-wider text-[11px] font-mono text-white">Citepoint</span>
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#d2d2d7] text-[12px] text-[#6e6e73]">
+                <span className="uppercase tracking-wider font-semibold text-[#1d1d1f]">Navigation</span>
+                <span className="uppercase tracking-wider text-[11px] font-mono text-[#6e6e73]">Citepoint</span>
               </div>
 
               <nav className="flex flex-col gap-1.5">
@@ -335,8 +332,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       onClick={() => handleNavClick(link.route)}
                       className={`text-left text-[13px] py-2.5 px-4 rounded-full transition-colors cursor-pointer active:scale-[0.98] ${
                         isActive
-                          ? 'bg-white/10 text-white font-semibold border border-white/15'
-                          : 'text-zinc-300 hover:text-white hover:bg-white/5'
+                          ? 'bg-[#f5f5f7] text-[#1d1d1f] font-semibold border border-[#d2d2d7]'
+                          : 'text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-[#f5f5f7]'
                       }`}
                     >
                       {link.name}
@@ -345,13 +342,13 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                 })}
               </nav>
 
-              <div className="pt-4 mt-3 border-t border-white/10">
+              <div className="pt-4 mt-3 border-t border-[#d2d2d7]">
                 <button
                   onClick={() => handleNavClick('audit')}
                   className="btn-primary w-full py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[13px] font-sans font-semibold cursor-pointer active:scale-[0.97]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </button>
               </div>
             </motion.div>

@@ -116,47 +116,41 @@ export default function ServicesPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-transparent text-[#fff0f0] font-sans">
+    <div className="w-full bg-white text-[#1D1D1F] font-sans">
       
       {/* ============================================================
-          SECTION 1: PAGE HEADER (Formium Obsidian & Crimson Hero)
+          SECTION 1: PAGE HEADER (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section className="relative pt-[120px] pb-[64px] md:pt-[140px] md:pb-[96px] border-b border-white/10 overflow-hidden bg-transparent">
-        {/* Subtle radial ambient atmosphere */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,255,255,0.08),transparent_70%)] pointer-events-none" />
-
+      <section className="relative pt-[120px] pb-[64px] md:pt-[140px] md:pb-[96px] border-b border-[#D2D2D7] overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-[800px] text-left">
             <SlideReveal direction="down">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-xs mb-6">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                </span>
-                <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-white font-semibold">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
+                <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold">
                   SERVICES & SYSTEM CAPABILITIES
                 </span>
               </div>
-              <h1 className="type-display text-white mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] mb-6 tracking-tight">
                 Engineering brand visibility in the answer economy.
               </h1>
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.1}>
-              <p className="type-body-lg text-[#a1a1aa] mb-8 max-w-[65ch] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#6E6E73] mb-8 max-w-[65ch] leading-relaxed">
                 We combine AI visibility research, structured content engineering, technical optimization, and authoritative citation building to help your brand become recommended across AI search.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-primary rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
+                  className="btn-primary rounded-full px-7 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-black" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}
-                  className="btn-secondary rounded-full px-7 py-3.5"
+                  className="btn-secondary rounded-full px-7 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
                 >
                   <span>Schedule a Consultation</span>
                 </button>
@@ -169,38 +163,35 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 2: 3 CORE SERVICE SPECIFICATIONS
           ============================================================ */}
-      <section className="py-[80px] lg:py-[100px] overflow-hidden bg-transparent">
+      <section className="py-[80px] lg:py-[100px] overflow-hidden bg-[#F5F5F7] border-b border-[#D2D2D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 lg:space-y-10">
           
           {serviceRows.map((svc) => (
             <SlideReveal key={svc.num} direction="up">
-              <div className="surface-card p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
-                {/* Top specular hairline highlight */}
-                <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-
+              <div className="bg-white border border-[#D2D2D7] p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                   
                   {/* Left Column: Number, Eyebrow, Title, Tagline, Description, CTA */}
                   <div className="lg:col-span-6 flex flex-col justify-between h-full">
                     <div>
                       <div className="inline-flex items-center gap-2 mb-3">
-                        <span className="text-[12px] font-mono text-white font-semibold tracking-[0.12em]">
+                        <span className="text-[12px] font-sans text-[#6E6E73] font-semibold tracking-[0.08em]">
                           // {svc.num}
                         </span>
-                        <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#a1a1aa] font-medium">
+                        <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-medium">
                           {svc.eyebrow}
                         </span>
                       </div>
 
-                      <h2 className="type-h2 text-white mb-3 group-hover:text-zinc-200 transition-colors">
+                      <h2 className="text-2xl sm:text-3xl font-sans font-bold text-[#1D1D1F] mb-3">
                         {svc.title}
                       </h2>
 
-                      <p className="text-sm font-semibold text-white mb-4 font-sans leading-snug">
+                      <p className="text-sm font-semibold text-[#1D1D1F] mb-4 font-sans leading-snug">
                         {svc.tagline}
                       </p>
 
-                      <p className="type-body text-[#a1a1aa] mb-8 leading-relaxed max-w-[55ch]">
+                      <p className="text-sm text-[#6E6E73] mb-8 leading-relaxed max-w-[55ch]">
                         {svc.description}
                       </p>
                     </div>
@@ -208,31 +199,31 @@ export default function ServicesPage({ setCurrentRoute }) {
                     <div>
                       <button
                         onClick={() => handleNav(svc.ctaAction)}
-                        className="btn-primary rounded-full px-7 py-3"
+                        className="btn-primary rounded-full px-7 py-3 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
                       >
                         <span>{svc.ctaText}</span>
-                        <ArrowRight className="w-4 h-4 text-black" />
+                        <ArrowRight className="w-4 h-4 text-white" />
                       </button>
                     </div>
                   </div>
 
                   {/* Right Column: Key Deliverables & Scope Details */}
                   <div className="lg:col-span-6">
-                    <div className="p-6 sm:p-7 rounded-[20px] bg-[#16171d] border border-white/10 shadow-xl">
-                      <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
-                        <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-white font-semibold">
+                    <div className="p-6 sm:p-7 rounded-[20px] bg-[#F5F5F7] border border-[#D2D2D7]">
+                      <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D2D2D7]">
+                        <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold">
                           Core Program Deliverables
                         </span>
-                        <span className="text-[10px] font-mono text-white bg-white/10 px-2.5 py-0.5 rounded-full border border-white/15 font-medium">
+                        <span className="text-[10px] font-sans text-[#1D1D1F] bg-white px-2.5 py-0.5 rounded-full border border-[#D2D2D7] font-medium">
                           Verified Scope
                         </span>
                       </div>
 
                       <div className="space-y-3.5">
                         {svc.deliverables.map((d, dIdx) => (
-                          <div key={dIdx} className="flex items-start gap-3 text-sm text-[#d4d4d8]">
-                            <div className="w-5 h-5 rounded-full bg-[#16171d] border border-white/15 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                              <Check className="w-3 h-3 text-white" />
+                          <div key={dIdx} className="flex items-start gap-3 text-sm text-[#1D1D1F]">
+                            <div className="w-5 h-5 rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center shrink-0 mt-0.5">
+                              <Check className="w-3 h-3 text-[#1D1D1F]" />
                             </div>
                             <span className="leading-snug pt-0.5">{d}</span>
                           </div>
@@ -252,21 +243,18 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 3: SYSTEMATIC METHODOLOGY (4 Operating Phases)
           ============================================================ */}
-      <section className="py-[120px] lg:py-[144px] bg-transparent border-y border-white/10 relative overflow-hidden">
-        {/* Subtle ambient lighting */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
-
+      <section className="py-[100px] lg:py-[120px] bg-white border-b border-[#D2D2D7] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="down">
             <div className="max-w-[720px] mb-12 lg:mb-16 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono uppercase tracking-[0.14em] text-white font-semibold mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-3">
                 // SYSTEMATIC METHODOLOGY
               </div>
-              <h2 className="type-h2 text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#1D1D1F] mb-4">
                 One visibility system. Four operating phases.
               </h2>
-              <p className="type-body text-[#a1a1aa] max-w-[65ch] leading-relaxed">
+              <p className="text-base text-[#6E6E73] max-w-[65ch] leading-relaxed">
                 We discover where your brand stands, diagnose citation gaps, build the signals models verify, and measure visibility gains over time.
               </p>
             </div>
@@ -281,25 +269,25 @@ export default function ServicesPage({ setCurrentRoute }) {
                 delay={idx * 0.08}
                 className="h-full"
               >
-                <div className="surface-card min-h-[320px] p-7 rounded-[24px] flex flex-col justify-between group h-full">
+                <div className="bg-[#F5F5F7] border border-[#D2D2D7] min-h-[320px] p-7 rounded-[24px] flex flex-col justify-between group h-full">
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <span className="text-[11px] font-mono uppercase tracking-[0.12em] text-white bg-[#16171d] px-3 py-1 rounded-full border border-white/15 font-semibold">
+                      <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] bg-white px-3 py-1 rounded-full border border-[#D2D2D7] font-semibold">
                         {step.step}
                       </span>
-                      <span className="text-[11px] font-mono text-[#a1a1aa]">{step.duration}</span>
+                      <span className="text-[11px] font-sans text-[#6E6E73]">{step.duration}</span>
                     </div>
-                    <h3 className="type-h4 text-white mb-3 group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl font-sans font-bold text-[#1D1D1F] mb-3">
                       {step.title}
                     </h3>
-                    <p className="type-small text-[#a1a1aa] leading-relaxed">
+                    <p className="text-sm text-[#6E6E73] leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 mt-6">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717a] block mb-1">Deliverable</span>
-                    <span className="type-small text-white font-semibold block">{step.deliverable}</span>
+                  <div className="pt-4 border-t border-[#D2D2D7] mt-6">
+                    <span className="text-[10px] font-sans uppercase tracking-wider text-[#6E6E73] block mb-1">Deliverable</span>
+                    <span className="text-sm text-[#1D1D1F] font-semibold block">{step.deliverable}</span>
                   </div>
                 </div>
               </SlideReveal>
@@ -312,18 +300,18 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 4: FAQ ACCORDION
           ============================================================ */}
-      <section className="py-[120px] overflow-hidden bg-transparent">
+      <section className="py-[100px] lg:py-[120px] overflow-hidden bg-[#F5F5F7] border-b border-[#D2D2D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SlideReveal direction="up">
             <div className="max-w-[720px] mx-auto text-center mb-12 lg:mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono uppercase tracking-[0.14em] text-white font-semibold mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-3">
                 // COMMONLY ASKED QUESTIONS
               </div>
-              <h2 className="type-h2 text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#1D1D1F] mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="type-body text-[#a1a1aa] max-w-[65ch] mx-auto leading-relaxed">
+              <p className="text-base text-[#6E6E73] max-w-[65ch] mx-auto leading-relaxed">
                 Clear answers to help you evaluate how Citepoint delivers durable visibility across AI search platforms.
               </p>
             </div>
@@ -335,26 +323,26 @@ export default function ServicesPage({ setCurrentRoute }) {
               return (
                 <div
                   key={idx}
-                  className="surface-card rounded-[20px] overflow-hidden transition-all duration-200"
+                  className="bg-white border border-[#D2D2D7] rounded-[20px] overflow-hidden transition-all duration-200"
                 >
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     aria-expanded={isOpen}
-                    className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                   >
-                    <span className="type-body text-white font-semibold">
+                    <span className="text-base font-sans font-semibold text-[#1D1D1F]">
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-white shrink-0 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#1D1D1F] shrink-0 transition-transform duration-200 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 sm:px-8 pb-5 type-body text-[#a1a1aa] leading-relaxed border-t border-white/10 pt-3">
+                    <div className="px-6 sm:px-8 pb-5 text-sm text-[#6E6E73] leading-relaxed border-t border-[#D2D2D7] pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -369,38 +357,34 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 5: FINAL CTA PANEL
           ============================================================ */}
-      <section className="py-[120px] bg-[#0a0b0d]/90 backdrop-blur-md border-t border-white/10 overflow-hidden">
+      <section className="py-[100px] lg:py-[120px] bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SlideReveal direction="up">
-            <div className="surface-card relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden">
-              {/* Radial ambient highlight */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono uppercase tracking-[0.14em] text-white font-semibold mb-4 shadow-xs">
+            <div className="bg-[#F5F5F7] border border-[#D2D2D7] relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-4">
                 // GET CITED. GET CHOSEN.
               </div>
 
-              <h2 className="type-h2 text-white mb-5 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#1D1D1F] mb-5 max-w-2xl mx-auto">
                 Ready to establish your synthetic search presence?
               </h2>
 
-              <p className="type-body text-[#a1a1aa] max-w-[65ch] mx-auto mb-8 leading-relaxed">
+              <p className="text-base text-[#6E6E73] max-w-[65ch] mx-auto mb-8 leading-relaxed">
                 Request an AI Visibility Audit to discover how your brand currently ranks, where competitors are winning attention, and the prioritized roadmap to lead AI discovery.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-primary w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
+                  className="btn-primary w-full sm:w-auto rounded-full px-8 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
                 >
                   <span>Request an AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-black" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}
-                  className="btn-secondary w-full sm:w-auto rounded-full px-8 py-3.5"
+                  className="btn-secondary w-full sm:w-auto rounded-full px-8 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
                 >
                   <span>Schedule a Briefing</span>
                 </button>

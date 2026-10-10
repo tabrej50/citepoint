@@ -74,36 +74,8 @@ export function ParallaxLayer({
   );
 }
 
-/**
- * LiquidBlob
- * Soft, fluid blurred gradient orb matching Citepoint's abyssal and gold palette.
- */
-export function LiquidBlob({
-  color = 'gold',
-  size = 'w-[500px] h-[500px]',
-  opacity = 0.35,
-  blur = 'blur-[80px]',
-  className = '',
-}) {
-  const gradientMap = {
-    gold: 'radial-gradient(circle, rgba(223, 183, 108, 0.28) 0%, rgba(197, 160, 89, 0.08) 50%, transparent 70%)',
-    cyan: 'radial-gradient(circle, rgba(245, 225, 175, 0.35) 0%, rgba(223, 183, 108, 0.08) 50%, transparent 70%)',
-    blue: 'radial-gradient(circle, rgba(197, 160, 89, 0.22) 0%, transparent 70%)',
-    lavender: 'radial-gradient(circle, rgba(223, 183, 108, 0.25) 0%, rgba(197, 160, 89, 0.05) 50%, transparent 70%)',
-    kelp: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
-  };
-
-  const bg = gradientMap[color] || gradientMap.gold;
-
-  return (
-    <div
-      className={`rounded-full pointer-events-none ${size} ${blur} ${className}`}
-      style={{
-        background: bg,
-        opacity,
-      }}
-    />
-  );
+export function LiquidBlob() {
+  return null;
 }
 
 /**

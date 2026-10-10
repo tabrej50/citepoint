@@ -37,7 +37,7 @@ function createIcoFromPngs(pngBuffers) {
 }
 
 (async () => {
-  const masterPath = 'public/assets/brand/_backup_gold/logo-icon-transparent.png';
+  const masterPath = 'public/assets/brand/logo-icon-red.png';
   if (!fs.existsSync(masterPath)) {
     console.error('Master file not found:', masterPath);
     process.exit(1);
@@ -111,10 +111,9 @@ function createIcoFromPngs(pngBuffers) {
   fs.writeFileSync('public/apple-touch-icon.png', png180);
   console.log('Wrote public/apple-touch-icon.png (180x180)');
 
-  // 5. Write public/assets/brand/logo-icon-gold.png & logo-icon-transparent.png
-  fs.writeFileSync('public/assets/brand/logo-icon-gold.png', masterBuf);
+  // 5. Write public/assets/brand/logo-icon-transparent.png
   fs.writeFileSync('public/assets/brand/logo-icon-transparent.png', masterBuf);
-  console.log('Updated public/assets/brand/logo-icon-gold.png and logo-icon-transparent.png with master');
+  console.log('Updated public/assets/brand/logo-icon-transparent.png with master');
 
   // 6. Write public/favicon.ico
   const icoBuf = createIcoFromPngs([

@@ -90,9 +90,9 @@ export default function ContactPage({ setCurrentRoute }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 gap-y-16 items-start">
             
             {/* Form Area: Columns 1-7 */}
-            <div className="order-1 lg:col-span-7 w-full max-w-2xl">
+            <div className="order-1 lg:col-span-7 w-full max-w-[560px]">
               <SlideReveal direction="left" distance={36} duration={0.7}>
-                <div className="p-6 sm:p-8 md:p-10 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+                <div className="apple-card bg-[#F5F5F7] relative overflow-hidden">
                   
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
@@ -242,10 +242,10 @@ export default function ContactPage({ setCurrentRoute }) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
+                        className="btn-primary w-full"
                       >
                         <span>{isSubmitting ? 'Transmitting Request...' : 'Send Briefing Request'}</span>
-                        <ArrowRight className="w-4 h-4 text-white" />
+                        <ArrowRight className="w-4 h-4 ml-2 text-white" />
                       </button>
 
                       <div className="pt-2 flex items-center justify-between text-[#6e6e73] text-xs">

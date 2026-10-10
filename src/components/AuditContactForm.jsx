@@ -117,18 +117,18 @@ export default function AuditContactForm({ className = '' }) {
   }
 
   return (
-    <div className={`rounded-[24px] p-6 sm:p-10 md:p-12 max-w-4xl mx-auto font-sans bg-white border border-[#d2d2d7] ${className}`}>
+    <div className={`apple-card max-w-[560px] mx-auto font-sans bg-white ${className}`}>
       
       {/* Header */}
-      <div className="mb-8 pb-6 border-b border-[#d2d2d7]">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] text-xs font-sans uppercase tracking-[0.14em] font-semibold mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-[#1d1d1f]" />
-          // AUDIT CONSULTATION
+      <div className="mb-6 pb-6 border-b border-[#D2D2D7]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] text-xs font-sans uppercase tracking-[0.08em] font-semibold mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-[#1D1D1F]" />
+          <span>Audit Consultation</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-medium text-[#1d1d1f] tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1D1F] tracking-tight">
           Let’s find your missing citation points.
         </h2>
-        <p className="text-sm sm:text-base text-[#6e6e73] mt-2 leading-relaxed">
+        <p className="text-sm text-[#6E6E73] mt-2 leading-relaxed">
           Tell us about your brand and commercial category. We’ll analyze how major AI engines perceive your solution and prepare a confidential visibility assessment.
         </p>
       </div>
@@ -312,15 +312,15 @@ export default function AuditContactForm({ className = '' }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto rounded-full px-8 py-3.5 text-[15px] font-semibold inline-flex items-center justify-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
+            className="btn-primary w-full sm:w-auto"
           >
-            <span>{isSubmitting ? 'Analyzing Parameters...' : 'Request Confidential Audit'}</span>
-            <ArrowRight className="w-4 h-4 text-white" />
+            <span>{isSubmitting ? 'Analyzing...' : 'Request Confidential Audit'}</span>
+            <ArrowRight className="w-4 h-4 ml-2 text-white" />
           </button>
 
           <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
             <ShieldCheck className="w-4 h-4 text-[#1d1d1f]" />
-            <span className="whitespace-nowrap">Strict NDA governance. Never shared.</span>
+            <span className="whitespace-nowrap">Strict NDA governance.</span>
           </div>
         </div>
       </form>

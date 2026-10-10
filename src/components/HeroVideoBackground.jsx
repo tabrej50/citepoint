@@ -86,7 +86,7 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
       {/* Base Ground */}
       <div
         className={`absolute inset-0 pointer-events-none -z-10 ${
-          isDark ? 'bg-[#111111]' : 'bg-white'
+          isDark ? 'bg-[#000000]' : 'bg-white'
         }`}
       />
 
@@ -130,16 +130,16 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                'radial-gradient(ellipse at 50% 48%, rgba(17, 17, 17, 0.72) 0%, rgba(17, 17, 17, 0.45) 50%, rgba(17, 17, 17, 0.92) 100%)',
+                'radial-gradient(ellipse at 50% 48%, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.92) 100%)',
             }}
           />
 
-          {/* Top Navbar blend and bottom section melt into #111111 */}
+          {/* Top Navbar blend and bottom section melt into #000000 */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                'linear-gradient(180deg, rgba(17, 17, 17, 0.92) 0%, rgba(17, 17, 17, 0.35) 24%, rgba(17, 17, 17, 0.20) 65%, rgba(17, 17, 17, 0.95) 94%, #111111 100%)',
+                'linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.35) 24%, rgba(0, 0, 0, 0.20) 65%, rgba(0, 0, 0, 0.95) 94%, #000000 100%)',
             }}
           />
 
@@ -180,7 +180,7 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
           aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
           className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-sans transition-all duration-200 border ${
             isDark
-              ? 'bg-[#111111]/70 hover:bg-[#111111] text-white/70 hover:text-white border-white/10'
+              ? 'bg-[#000000]/70 hover:bg-[#000000] text-white/70 hover:text-white border-white/10'
               : 'bg-white/80 hover:bg-white text-[#111111]/70 hover:text-[#111111] border-[#111111]/10'
           } backdrop-blur-sm shadow-sm cursor-pointer`}
         >

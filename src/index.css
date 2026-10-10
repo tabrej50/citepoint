@@ -1166,10 +1166,48 @@ input[type="button"] {
   box-sizing: border-box !important;
 }
 
-/* 4. Page Header Clearance */
+/* 4. Full Viewport Hero (Formium Alliance style: 100dvh / 100svh) */
+#hero,
+.hero-fullpage {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100svh !important;
+  min-height: 100dvh !important;
+  height: 100svh;
+  height: 100dvh;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  background-color: #000000 !important;
+}
+
+@media (max-height: 700px) {
+  #hero,
+  .hero-fullpage {
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+  }
+}
+
+#hero .hero-content-wrap,
+.hero-fullpage .hero-content-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding-top: clamp(96px, 15vh, 160px) !important;
+  padding-bottom: clamp(48px, 8vh, 96px) !important;
+  box-sizing: border-box !important;
+}
+
+/* 4b. Inner Page Header Clearance */
 .page-header,
-section.page-header,
-.hero-section {
+section.page-header {
   padding-top: var(--page-top-padding) !important;
   padding-bottom: 64px !important;
 }

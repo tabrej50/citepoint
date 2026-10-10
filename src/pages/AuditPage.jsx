@@ -3,6 +3,7 @@ import { Search, Target, Layers, Database, FileText, CheckCircle2 } from 'lucide
 import AuditContactForm from '../components/AuditContactForm';
 import { AiEngineIcon, AI_ENGINES } from '../components/AiEnginesRow';
 import { SlideReveal, SlideStaggerContainer, SlideStaggerItem } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 /**
  * Citepoint AuditPage
@@ -57,77 +58,64 @@ export default function AuditPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
       
       {/* Hero Header */}
-      <section className="bg-white text-[#1d1d1f] pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 relative overflow-hidden border-b border-[#d2d2d7]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <SlideReveal direction="down" distance={38} duration={0.65}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-xs font-semibold uppercase tracking-[0.14em] text-[#1d1d1f] mb-4">
-              // DIAGNOSTIC ASSESSMENT
+      <PageHeader
+        eyebrow="DIAGNOSTIC ASSESSMENT"
+        title="Get Your AI Visibility Audit"
+        intro="Understand how ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews currently perceive, cite, and recommend your brand for high-value buyer prompts."
+      >
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-6">
+          {AI_ENGINES.map((engine) => (
+            <div
+              key={engine.id}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] text-xs font-medium hover:border-[#1d1d1f] transition-colors"
+            >
+              <AiEngineIcon id={engine.id} size={15} />
+              <span>{engine.name}</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-[#1d1d1f] tracking-tight leading-[1.08] mb-6 [text-wrap:balance]">
-              Get Your AI Visibility Audit
-            </h1>
-            <p className="text-base sm:text-lg text-[#6e6e73] leading-[1.6]">
-              Understand how ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews currently perceive, cite, and recommend your brand for high-value buyer prompts.
-            </p>
-          </SlideReveal>
-
-          {/* AI Platforms Logo Row */}
-          <SlideReveal direction="up" distance={25} delay={0.15} duration={0.6}>
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-6">
-              {AI_ENGINES.map((engine) => (
-                <div
-                  key={engine.id}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] text-xs font-medium hover:border-[#1d1d1f] transition-colors"
-                >
-                  <AiEngineIcon id={engine.id} size={15} />
-                  <span>{engine.name}</span>
-                </div>
-              ))}
-            </div>
-          </SlideReveal>
+          ))}
         </div>
-      </section>
+      </PageHeader>
 
       {/* Deliverables Overview Section */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#d2d2d7] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section bg-white border-b border-[#d2d2d7]">
+        <div className="site-container">
           
           <SlideReveal direction="left" distance={36} duration={0.65}>
-            <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6e6e73] block mb-2">
-                // AUDIT SPECIFICATIONS
+            <div className="max-w-2xl mb-12 lg:mb-16">
+              <span className="eyebrow-label block">
+                AUDIT SPECIFICATIONS
               </span>
-              <h2 className="text-3xl sm:text-4xl font-medium text-[#1d1d1f] tracking-tight mb-3">
+              <h2 className="mb-4">
                 What your diagnostic audit includes
               </h2>
-              <p className="text-sm sm:text-base text-[#6e6e73] leading-[1.6]">
+              <p className="intro-text">
                 Every audit delivers empirical prompt logs, competitor share-of-voice benchmarks, and a prioritized action roadmap.
               </p>
             </div>
           </SlideReveal>
 
-          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <SlideStaggerContainer staggerDelay={0.1} className="card-grid-3">
             {auditDeliverables.map((item, i) => {
               const Icon = item.icon;
               return (
                 <SlideStaggerItem
                   key={i}
                   direction={item.dir}
-                  className="p-6 lg:p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-between h-full group cursor-default transition-all duration-200 hover:border-[#1d1d1f]"
+                  className="p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-between h-full group cursor-default transition-all duration-200 hover:border-[#1d1d1f]"
                 >
                   <div>
-                    <div className="w-9 h-9 rounded-full bg-white border border-[#d2d2d7] text-[#1d1d1f] flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="w-4 h-4 text-[#1d1d1f]" />
+                    <div className="w-10 h-10 rounded-full bg-white border border-[#d2d2d7] text-[#1d1d1f] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="w-5 h-5 text-[#1d1d1f]" />
                     </div>
-                    <h3 className="text-lg font-medium text-[#1d1d1f] mb-2 transition-colors duration-200">
+                    <h3 className="mb-3 transition-colors duration-200">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#6e6e73] leading-[1.6]">
+                    <p className="body-text">
                       {item.desc}
                     </p>
 
                     {i === 0 && (
-                      <div className="mt-4 pt-3 border-t border-[#d2d2d7] flex flex-wrap items-center gap-1.5">
+                      <div className="mt-6 pt-4 border-t border-[#d2d2d7] flex flex-wrap items-center gap-1.5">
                         {AI_ENGINES.map((e) => (
                           <div
                             key={e.id}
@@ -150,8 +138,8 @@ export default function AuditPage({ setCurrentRoute }) {
       </section>
 
       {/* Audit Request Form Section */}
-      <section className="py-20 lg:py-28 bg-[#f5f5f7] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section bg-[#f5f5f7]">
+        <div className="site-container">
           <SlideReveal direction="scale-up" distance={30} duration={0.8}>
             <AuditContactForm />
           </SlideReveal>

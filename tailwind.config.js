@@ -6,31 +6,34 @@ export default {
   ],
   theme: {
     screens: {
+      xs: '375px',
       sm: '640px',
       md: '768px',    // Tablet: 768px to 1023px
-      lg: '1024px',   // Desktop: 1024px to 1439px
-      xl: '1440px',   // Large desktop: 1440px and up
+      lg: '1024px',   // Desktop: 1024px to 1279px
+      xl: '1280px',   // Desktop: 1280px to 1439px
+      '2xl': '1440px',// Large desktop: 1440px and above
     },
     container: {
       center: true,
       padding: {
         DEFAULT: '20px',
         md: '40px',
-        lg: '0px',
+        lg: '24px',
         xl: '0px',
       },
       screens: {
         DEFAULT: '100%',
         md: '100%',
-        lg: '1080px',
+        lg: '1200px',
         xl: '1200px',
       },
     },
     extend: {
       maxWidth: {
-        'desktop': '1080px',
+        'desktop': '1200px',
         'large-desktop': '1200px',
         '7xl': '1200px',
+        'content': '1200px',
       },
       colors: {
         // Apple-style Minimal Monochrome Design Tokens

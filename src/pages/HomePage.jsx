@@ -307,59 +307,36 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           HERO SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={heroRef} className="relative pt-36 sm:pt-44 lg:pt-48 pb-20 sm:pb-24 lg:pb-28 text-[#1D1D1F] overflow-hidden bg-white border-b border-[#D2D2D7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 text-center flex flex-col items-center">
+      <section ref={heroRef} className="page-header relative text-[#1D1D1F] overflow-hidden bg-white border-b border-[#D2D2D7]">
+        <div className="site-container relative z-10">
+          <div className="max-w-[900px] mx-auto text-center flex flex-col items-center">
             
-            {/* Eyebrow / Kicker */}
-            <SlideReveal direction="down" delay={0.08}>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] mx-auto">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
-                <span className="text-[12px] font-sans font-semibold uppercase tracking-[0.08em] text-[#1D1D1F]">
-                  AI SEARCH VISIBILITY / GEO / AEO
-                </span>
-              </div>
-            </SlideReveal>
-
             {/* Main Animated Headline */}
             <HeroAnimatedHeadline />
 
             {/* Supporting Paragraph */}
             <SlideReveal direction="up" delay={0.16}>
-              <p className="animate-hero-paragraph text-base sm:text-lg text-[#6E6E73] max-w-3xl mx-auto font-normal leading-[1.6]">
-                Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] font-medium text-sm align-middle whitespace-nowrap">
-                  <AiEngineIcon id="chatgpt" size={15} /> ChatGPT
-                </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] font-medium text-sm align-middle whitespace-nowrap">
-                  <AiEngineIcon id="gemini" size={15} /> Gemini
-                </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] font-medium text-sm align-middle whitespace-nowrap">
-                  <AiEngineIcon id="perplexity" size={15} /> Perplexity
-                </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] font-medium text-sm align-middle whitespace-nowrap">
-                  <AiEngineIcon id="claude" size={15} /> Claude
-                </span>, and{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] font-medium text-sm align-middle whitespace-nowrap">
-                  <AiEngineIcon id="google-ai-overviews" size={15} /> Google AI Overviews
-                </span>.
+              <p className="intro-text mt-4 mx-auto text-center max-w-[680px]">
+                Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across ChatGPT, Gemini, Perplexity, Claude, and Google AI Overviews.
               </p>
             </SlideReveal>
 
             {/* Buttons Row (Centered) */}
             <SlideReveal direction="up" delay={0.24}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 mx-auto w-full sm:w-auto">
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons-container w-full sm:w-auto mx-auto">
                 <button
+                  type="button"
                   onClick={() => handleNav('audit')}
-                  className="btn-primary w-full sm:w-auto rounded-full px-7 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
+                  className="btn-primary"
                 >
                   <span>Get Your AI Visibility Audit</span>
                   <ArrowRight className="w-4 h-4 text-white" />
                 </button>
 
                 <button
-                  onClick={() => handleNav('#how-it-works')}
-                  className="btn-secondary w-full sm:w-auto rounded-full px-7 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
+                  type="button"
+                  onClick={() => handleNav('#shift-to-synthesis')}
+                  className="btn-secondary"
                 >
                   <span>Explore Our Method</span>
                 </button>
@@ -368,22 +345,11 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Trust Line */}
             <SlideReveal direction="up" delay={0.3}>
-              <div className="pt-1 flex items-center justify-center gap-2.5 text-xs text-[#6E6E73] font-sans mx-auto">
+              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#6E6E73] font-sans mx-auto">
                 <ShieldCheck className="w-4 h-4 text-[#1D1D1F] shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>
-
-            {/* Scroll Indicator */}
-            <div
-              onClick={() => handleNav('#shift-to-synthesis')}
-              className="pt-6 flex flex-col items-center justify-center text-[#6E6E73] hover:text-[#1D1D1F] transition-colors cursor-pointer select-none group"
-            >
-              <span className="text-[10px] font-sans uppercase tracking-[0.14em] text-[#6E6E73] mb-1 group-hover:text-[#1D1D1F] transition-colors">
-                // SCROLL TO EXPLORE
-              </span>
-              <ChevronDown className="w-4 h-4 text-[#1D1D1F] animate-bounce" />
-            </div>
 
           </div>
         </div>
@@ -392,16 +358,16 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           RECESSED STRIP: CONTINUOUS SINGLE-LINE TICKER (AI ENGINES & TARGET SECTORS)
           ============================================================ */}
-      <section className="py-3.5 bg-[#F5F5F7] border-b border-[#D2D2D7] text-[#1D1D1F] relative z-20 overflow-hidden">
-        <div className="w-full overflow-hidden ticker-fade-mask select-none">
-          <div className="animate-ticker-marquee flex items-center whitespace-nowrap">
+      <section className="marquee-strip group">
+        <div className="w-full overflow-hidden marquee-fade-edges select-none">
+          <div className="animate-ticker-marquee flex items-center whitespace-nowrap group-hover:[animation-play-state:paused]">
             {[0, 1, 2, 3].map((setIndex) => (
               <div key={setIndex} className="flex items-center gap-8 shrink-0 pr-8">
                 {/* AI Platform Logos */}
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="flex items-center gap-1.5 shrink-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
-                    <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#1D1D1F] font-semibold shrink-0">
+                    <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold shrink-0">
                       AI Engines Audited:
                     </span>
                   </div>
@@ -427,7 +393,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Target B2B Sectors */}
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#1D1D1F] font-semibold shrink-0">
+                  <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold shrink-0">
                     Target Sectors:
                   </span>
                   <div className="flex items-center gap-2 shrink-0">
@@ -458,37 +424,37 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           PROBLEM SECTION: THE SEARCH SHIFT
           ============================================================ */}
-      <section id="problem" ref={problemRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-24 lg:py-32 bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="problem" ref={problemRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Dual Opposing Orbs & Floating Citation Points */}
         <ProblemParallaxBackdrop sectionRef={problemRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // THE SEARCH SHIFT
+            <span className="eyebrow-label">
+              THE SEARCH SHIFT
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               Your buyers are no longer searching in one place.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text">
               Before they visit a website, buyers increasingly ask AI tools to compare vendors, explain categories, shortlist providers, and recommend the next step. If your brand is absent from those answers, you lose consideration before your sales team ever gets involved.
             </p>
           </SlideReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
             {/* Left Surface Card */}
             <SlideReveal direction="left" delay={0.12} className="lg:col-span-5 flex flex-col">
               <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between space-y-6 group h-full">
                 <div>
-                  <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block mb-4">
-                    // CORE REALITY
+                  <span className="eyebrow-label">
+                    CORE REALITY
                   </span>
                   <blockquote className="text-2xl sm:text-3xl font-sans font-bold text-[#1D1D1F] leading-tight">
                     “If AI cannot find, understand, or trust your brand, it cannot recommend you.”
                   </blockquote>
-                  <p className="text-sm text-[#6E6E73] mt-4 leading-[1.6]">
+                  <p className="body-text mt-4">
                     Traditional search indexed pages; generative engines synthesize consensus. When an LLM generates a response, it references authoritative citation hubs to formulate recommendations.
                   </p>
                 </div>
@@ -518,7 +484,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <Eye className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
                           RISK 01
                         </span>
                         <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
@@ -527,7 +493,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#6E6E73] leading-[1.6]">
+                  <p className="body-text text-sm">
                     Your brand does not appear for the questions your buyers ask. Competitors dominate the synthesized answer while your company is completely omitted.
                   </p>
                 </div>
@@ -542,7 +508,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <AlertTriangle className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
                           RISK 02
                         </span>
                         <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
@@ -551,7 +517,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#6E6E73] leading-[1.6]">
+                  <p className="body-text text-sm">
                     AI describes your offer using incomplete or outdated information. Sunset pricing, retired features, or inaccurate comparisons misinform high-intent buyers.
                   </p>
                 </div>
@@ -566,7 +532,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         <TrendingUp className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
                           RISK 03
                         </span>
                         <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
@@ -575,7 +541,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-[#6E6E73] leading-[1.6]">
+                  <p className="body-text text-sm">
                     Competitors are cited by the sources AI trusts most. They proactively seed the structured review platforms and reference datasets that LLMs query.
                   </p>
                 </div>
@@ -589,28 +555,28 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          6 BENTO GRID SERVICE CARDS (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
+          6 BENTO GRID SERVICE CARDS
           ============================================================ */}
-      <section id="services" ref={servicesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-24 lg:py-32 bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
+      <section id="services" ref={servicesRef} className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Far Dot Grid & Dual Opposing Liquid Radial Glows */}
         <ServicesParallaxBackdrop sectionRef={servicesRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="down" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // WHAT WE DO
+            <span className="eyebrow-label">
+              WHAT WE DO
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               We turn brand authority into AI visibility.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text">
               Citepoint combines research, content architecture, technical optimization, third-party authority building, and continuous monitoring to help your brand earn recommendations in AI answers.
             </p>
           </SlideReveal>
 
           {/* 6 Bento Grid Surface Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+          <div className="card-grid-3">
             {services.map((s, idx) => {
               const Icon = s.icon;
               const cardDirections = ['diagonal-left', 'up', 'diagonal-right', 'diagonal-left', 'up', 'diagonal-right'];
@@ -633,7 +599,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                           <Icon className="w-4 h-4" />
                         </div>
                         <span className="font-sans text-xs text-[#6E6E73] font-semibold tracking-[0.08em]">
-                          // {s.num}
+                          {s.num}
                         </span>
                       </div>
 
@@ -641,7 +607,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         {s.title}
                       </h3>
 
-                      <p className="text-sm text-[#6E6E73] leading-[1.6] mb-6">
+                      <p className="body-text text-sm mb-6">
                         {s.desc}
                       </p>
 
@@ -702,25 +668,25 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           SIGNATURE FLOW BAND (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={methodRef} className="py-24 lg:py-32 bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section ref={methodRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Connection Vector Line & Pulse Nodes */}
         <MethodParallaxBackdrop sectionRef={methodRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // METHODOLOGY IN ACTION
+            <span className="eyebrow-label text-center mx-auto">
+              METHODOLOGY IN ACTION
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               From question to citation.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6] max-w-2xl mx-auto">
+            <p className="intro-text mx-auto">
               We identify the questions that influence buying decisions, the sources AI trusts, and the actions required to make your brand visible in that journey.
             </p>
           </SlideReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 lg:gap-6 mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12 lg:mb-16">
             {signatureFlow.map((item, idx) => {
               const Icon = item.icon;
               const slideDir = idx % 2 === 0 ? 'left' : 'right';
@@ -780,7 +746,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           <SlideReveal direction="up" delay={0.2} className="text-center">
             <button
               onClick={() => handleNav('audit')}
-              className="btn-primary rounded-full px-7 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
+              className="btn-primary"
             >
               <span>Request Visibility Audit</span>
               <ArrowRight className="w-4 h-4 text-white" />
@@ -791,24 +757,24 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          PROCESS SECTION: 4-STEP TIMELINE (APPLE MINIMAL MONOCHROME)
+          PROCESS SECTION: 4-STEP TIMELINE
           ============================================================ */}
-      <section id="how-it-works" className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-24 lg:py-32 bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="how-it-works" className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative">
+        <div className="site-container">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // IMPLEMENTATION ROADMAP
+            <span className="eyebrow-label">
+              IMPLEMENTATION ROADMAP
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               A practical system for a changing search landscape.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text">
               We guide enterprise teams through an organized workflow from initial baseline diagnosis to sustained recommendation authority.
             </p>
           </SlideReveal>
 
-          <SlideStaggerContainer staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+          <SlideStaggerContainer staggerDelay={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => {
               const isActive = activeStep === idx;
               return (
@@ -822,7 +788,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     <div>
                       <div className="flex items-center justify-between mb-6">
                         <span className="font-sans text-xs font-semibold uppercase tracking-[0.08em] text-[#6E6E73]">
-                          // {step.step}
+                          {step.step}
                         </span>
                         <span
                           className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
@@ -835,7 +801,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         {step.title}
                       </h3>
 
-                      <p className="text-sm text-[#6E6E73] leading-[1.6]">
+                      <p className="body-text text-sm">
                         {step.desc}
                       </p>
                     </div>
@@ -853,33 +819,30 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          RESULTS / CASE STUDIES (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
-          ============================================================ */}
-      {/* ============================================================
           RESULTS / CASE STUDIES (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="case-studies" ref={caseStudiesRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-24 lg:py-32 bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="case-studies" ref={caseStudiesRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Layered Diagnostic Depth Scene */}
         <CaseStudiesParallaxBackdrop sectionRef={caseStudiesRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="left" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // MEASURABLE OUTCOMES
+            <span className="eyebrow-label">
+              MEASURABLE OUTCOMES
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               Visibility should lead somewhere.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text">
               We measure progress through meaningful changes in AI presence, qualified visibility, source authority, and downstream business signals.
             </p>
           </SlideReveal>
 
           {/* 4-Card Achievement Stat Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 lg:mb-16">
             <SlideReveal direction="up" delay={0.06}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group">
+              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
                 <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
                   <span>74</span>
                   <span className="text-2xl font-bold text-[#1D1D1F]">%</span>
@@ -894,7 +857,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.12}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group">
+              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
                 <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
                   <span>5</span>
                   <span className="text-2xl font-bold text-[#1D1D1F]">/5</span>
@@ -909,7 +872,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.18}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group">
+              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
                 <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
                   <span>3.8</span>
                   <span className="text-2xl font-bold text-[#1D1D1F]">x</span>
@@ -924,7 +887,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.24}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group">
+              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
                 <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
                   <span>90</span>
                   <span className="text-2xl font-bold text-[#1D1D1F]">d</span>
@@ -939,7 +902,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             </SlideReveal>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+          <div className="card-grid-3">
             {caseStudyPlaceholders.map((cs, i) => {
               const cardDirections = ['diagonal-right', 'scale-up', 'diagonal-left'];
               const dir = cardDirections[i % cardDirections.length];
@@ -966,7 +929,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         {cs.title}
                       </h3>
 
-                      <p className="text-xs text-[#6E6E73] leading-[1.6] mb-6">
+                      <p className="body-text text-xs mb-6">
                         {cs.note}
                       </p>
                     </div>
@@ -989,25 +952,25 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           WHY CITEPOINT (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={whyUsRef} className="py-24 lg:py-32 bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
+      <section ref={whyUsRef} className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Subtle Glass Bubbles & Refraction Rings */}
         <WhyUsParallaxBackdrop sectionRef={whyUsRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="right" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // DIFFERENTIATION
+            <span className="eyebrow-label">
+              DIFFERENTIATION
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               Not another content agency.
             </h2>
-            <p className="text-base sm:text-lg text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text">
               We don't sell bloated content packages or chase vanity keywords. Citepoint operates as a strategic AI visibility partner focused on the exact sources that influence high-consideration buying decisions.
             </p>
           </SlideReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {differentiators.map((d, i) => {
               const slideDir = i % 2 === 0 ? 'left' : 'right';
               return (
@@ -1020,14 +983,14 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   <div className="bg-white border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
                     <div>
                       <span className="font-sans text-xs text-[#6E6E73] font-semibold tracking-[0.08em] block mb-4">
-                        // {d.num}
+                        {d.num}
                       </span>
 
                       <h3 className="text-2xl font-sans font-bold text-[#1D1D1F] mb-3">
                         {d.title}
                       </h3>
 
-                      <p className="text-sm text-[#6E6E73] leading-[1.6]">
+                      <p className="body-text text-sm">
                         {d.desc}
                       </p>
                     </div>
@@ -1048,20 +1011,20 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           FAQ SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="faq" ref={faqRef} className="scroll-mt-88 sm:scroll-mt-96 lg:scroll-mt-104 py-24 lg:py-32 bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="faq" ref={faqRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
         {/* Parallax Subtle Liquid Shape & Gold Citation Point */}
         <FaqParallaxBackdrop sectionRef={faqRef} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#6E6E73] block mb-2">
-              // FREQUENTLY ASKED QUESTIONS
+            <span className="eyebrow-label text-center mx-auto">
+              FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
               Clear answers on AI search visibility.
             </h2>
-            <p className="text-base text-[#6E6E73] leading-[1.6]">
+            <p className="intro-text mx-auto">
               Common questions about Generative Engine Optimization, timelines, and our strategic methodology.
             </p>
           </SlideReveal>
@@ -1076,46 +1039,48 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           FINAL CTA BAND (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={finalCtaRef} className="py-24 lg:py-32 bg-[#F5F5F7] text-[#1D1D1F] relative overflow-hidden border-t border-[#D2D2D7]">
+      <section ref={finalCtaRef} className="site-section bg-[#F5F5F7] text-[#1D1D1F] relative overflow-hidden border-t border-[#D2D2D7]">
         {/* Parallax Second-Strongest Scene */}
         <FinalCtaParallaxBackdrop sectionRef={finalCtaRef} />
 
-        <SlideReveal direction="scale-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <span className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#1D1D1F] px-4 py-1.5 rounded-full bg-white border border-[#D2D2D7] inline-block">
-            GET CITED. GET CHOSEN.
-          </span>
+        <div className="site-container relative z-10">
+          <SlideReveal direction="scale-up" className="max-w-4xl mx-auto text-center space-y-6">
+            <span className="eyebrow-label text-center mx-auto">
+              GET CITED. GET CHOSEN.
+            </span>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] tracking-tight leading-tight">
-            Make your brand part of the answer.
-          </h2>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] tracking-tight leading-tight">
+              Make your brand part of the answer.
+            </h2>
 
-          <p className="text-base sm:text-lg text-[#6E6E73] max-w-2xl mx-auto leading-[1.6]">
-            Find out how AI systems currently see your brand—and what it will take to become more visible.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button
-              onClick={() => handleNav('audit')}
-              className="btn-primary w-full sm:w-auto rounded-full px-8 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
-            >
-              <span>Get Your AI Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-white" />
-            </button>
-
-            <button
-              onClick={() => handleNav('contact')}
-              className="btn-secondary w-full sm:w-auto rounded-full px-8 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
-            >
-              <span>Talk to Citepoint</span>
-            </button>
-          </div>
-
-          <div className="pt-8 border-t border-[#D2D2D7] max-w-md mx-auto">
-            <p className="text-xs font-sans text-[#6E6E73] leading-[1.6]">
-              No hype. No guaranteed rankings. Just an empirical baseline, practical priorities, and measurable progress.
+            <p className="intro-text mx-auto">
+              Find out how AI systems currently see your brand—and what it will take to become more visible.
             </p>
-          </div>
-        </SlideReveal>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 hero-buttons-container">
+              <button
+                onClick={() => handleNav('audit')}
+                className="btn-primary w-full sm:w-auto"
+              >
+                <span>Get Your AI Visibility Audit</span>
+                <ArrowRight className="w-4 h-4 text-white" />
+              </button>
+
+              <button
+                onClick={() => handleNav('contact')}
+                className="btn-secondary w-full sm:w-auto"
+              >
+                <span>Talk to Citepoint</span>
+              </button>
+            </div>
+
+            <div className="pt-8 border-t border-[#D2D2D7] max-w-md mx-auto">
+              <p className="text-xs font-sans text-[#6E6E73] leading-[1.6]">
+                No hype. No guaranteed rankings. Just an empirical baseline, practical priorities, and measurable progress.
+              </p>
+            </div>
+          </SlideReveal>
+        </div>
       </section>
 
     </div>

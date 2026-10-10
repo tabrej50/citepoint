@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Check, ShieldCheck } from 'lucide-react';
 import { SlideReveal } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 /**
  * Citepoint CaseStudiesPage
@@ -75,25 +76,18 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
       
       {/* Hero Header */}
-      <section className="bg-white text-[#1d1d1f] pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 relative overflow-hidden border-b border-[#d2d2d7]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <SlideReveal direction="down" distance={38} duration={0.65}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-xs font-semibold uppercase tracking-[0.14em] text-[#1d1d1f] mb-4">
-              // CASE STUDIES & OUTCOMES
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-[#1d1d1f] tracking-tight leading-[1.08] mb-6 [text-wrap:balance]">
-              Visibility should lead somewhere.
-            </h1>
-            <p className="text-base sm:text-lg text-[#6e6e73] leading-[1.6] max-w-2xl mx-auto">
-              We measure progress through meaningful changes in AI presence, qualified visibility, source authority, and downstream business signals.
-            </p>
-          </SlideReveal>
-        </div>
-      </section>
+      <PageHeader
+        title="Visibility should lead somewhere."
+        intro="We measure progress through meaningful changes in AI presence, qualified visibility, source authority, and downstream business signals."
+        primaryButton={{
+          text: 'Get Your AI Visibility Audit',
+          onClick: () => handleNav('audit'),
+        }}
+      />
 
-      {/* Case Studies List */}
-      <section className="py-20 lg:py-28 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Case Studies List (Flattened to 1 card level with 60/40 desktop layout) */}
+      <section className="site-section bg-white overflow-hidden">
+        <div className="site-container">
           
           <div className="space-y-8 lg:space-y-10">
             {caseStudyPlaceholders.map((cs) => (
@@ -102,10 +96,10 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                 direction={cs.direction}
                 distance={38}
                 duration={0.75}
-                className="p-6 lg:p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden group"
+                className="p-8 sm:p-10 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden group"
               >
-                {/* Status Badge */}
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-[#d2d2d7]">
+                {/* Status Bar */}
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#d2d2d7]">
                   <div className="flex items-center gap-3">
                     <span className="px-3 py-1 rounded-full bg-white text-[#1d1d1f] border border-[#d2d2d7] text-[11px] font-semibold tracking-wider uppercase">
                       {cs.status}
@@ -119,34 +113,42 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
+                {/* 60/40 Two-Column Layout on Desktop, 1 Column on Mobile */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
-                  {/* Left Info */}
-                  <div className="lg:col-span-5 space-y-4">
-                    <span className="text-xs uppercase tracking-[0.14em] text-[#6e6e73] font-semibold block">
-                      {cs.industry}
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-medium text-[#1d1d1f]">
-                      {cs.title}
-                    </h2>
-                    <p className="text-xs sm:text-sm text-[#6e6e73] leading-[1.5]">
-                      {cs.note}
-                    </p>
+                  {/* Left Column (60% on desktop: lg:col-span-7) */}
+                  <div className="lg:col-span-7 space-y-6">
+                    <div>
+                      <span className="eyebrow-label">
+                        {cs.industry}
+                      </span>
+                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#1d1d1f] mb-3">
+                        {cs.title}
+                      </h2>
+                      <p className="body-text text-sm">
+                        {cs.note}
+                      </p>
+                    </div>
 
-                    <div className="p-4 rounded-[16px] bg-white border border-[#d2d2d7] text-xs text-[#6e6e73] leading-[1.6]">
-                      <strong className="text-[#1d1d1f] block mb-1 font-semibold">Initial Baseline Challenge:</strong>
-                      {cs.initialProblem}
+                    {/* Baseline challenge as plain text block with divider */}
+                    <div className="pt-6 border-t border-[#d2d2d7] space-y-2">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#1d1d1f] block">
+                        Initial Baseline Challenge:
+                      </span>
+                      <p className="body-text text-sm leading-relaxed">
+                        {cs.initialProblem}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Right Scope Details */}
-                  <div className="lg:col-span-7 rounded-[20px] bg-white border border-[#d2d2d7] p-6 lg:p-8 space-y-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1d1d1f]">
-                      // METHODOLOGY & EXECUTION SUMMARY
-                    </h4>
-                    <ul className="space-y-3 text-xs sm:text-sm">
+                  {/* Right Column (40% on desktop: lg:col-span-5) */}
+                  <div className="lg:col-span-5 space-y-6 lg:border-l lg:border-[#d2d2d7] lg:pl-8">
+                    <span className="eyebrow-label">
+                      METHODOLOGY & EXECUTION SUMMARY
+                    </span>
+                    <ul className="space-y-3.5">
                       {cs.workCompleted.map((task, tIdx) => (
-                        <li key={tIdx} className="flex items-start gap-3 text-[#1d1d1f]">
+                        <li key={tIdx} className="flex items-start gap-3 text-sm text-[#1d1d1f]">
                           <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-3 h-3 text-white" />
                           </div>
@@ -155,7 +157,7 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                       ))}
                     </ul>
 
-                    <div className="pt-4 border-t border-[#d2d2d7] flex items-center justify-between text-xs text-[#6e6e73]">
+                    <div className="pt-6 border-t border-[#d2d2d7] flex items-center justify-between text-xs text-[#6e6e73]">
                       <span>NDA Confidentiality Notice: Anonymized by agreement</span>
                       <ShieldCheck className="w-4 h-4 text-[#6e6e73]" />
                     </div>
@@ -168,17 +170,17 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
 
           {/* Bottom Reassurance Banner */}
           <SlideReveal direction="up" distance={36} duration={0.7} className="mt-12 lg:mt-16">
-            <div className="p-8 lg:p-10 text-center max-w-3xl mx-auto space-y-4 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
-              <h3 className="text-2xl font-medium text-[#1d1d1f]">
+            <div className="p-8 lg:p-10 text-left max-w-3xl space-y-4 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+              <h3 className="text-2xl font-semibold text-[#1d1d1f]">
                 Want to see how your brand compares to these baselines?
               </h3>
-              <p className="text-sm text-[#6e6e73] max-w-xl mx-auto leading-[1.6]">
+              <p className="intro-text text-sm">
                 We evaluate your exact high-intent buyer prompts and deliver an empirical share-of-voice benchmark report.
               </p>
               <div className="pt-3">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="rounded-full px-8 py-3.5 text-[15px] font-semibold inline-flex items-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
+                  className="btn-primary"
                 >
                   <span>Request Your AI Visibility Audit</span>
                   <ArrowRight className="w-4 h-4 text-white" />

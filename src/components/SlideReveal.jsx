@@ -20,23 +20,23 @@ const VARIANT_MAP = {
     visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -28 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 28 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   },
   'diagonal-left': {
-    hidden: { opacity: 0, x: -20, y: 20 },
-    visible: { opacity: 1, x: 0, y: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   },
   'diagonal-right': {
-    hidden: { opacity: 0, x: 20, y: 20 },
-    visible: { opacity: 1, x: 0, y: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   },
   'scale-up': {
-    hidden: { opacity: 0, y: 16, scale: 0.97 },
+    hidden: { opacity: 0, y: 16, scale: 0.98 },
     visible: { opacity: 1, y: 0, scale: 1 },
   },
 };

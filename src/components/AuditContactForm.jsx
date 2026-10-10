@@ -319,8 +319,8 @@ export default function AuditContactForm({ className = '' }) {
           </button>
 
           <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
-            <ShieldCheck className="w-4 h-4 text-[#1d1d1f]" />
-            <span className="whitespace-nowrap">Strict NDA governance. Never shared.</span>
+            <ShieldCheck className="w-4 h-4 text-[#1d1d1f] shrink-0" />
+            <span>Strict NDA governance. Never shared.</span>
           </div>
         </div>
       </form>

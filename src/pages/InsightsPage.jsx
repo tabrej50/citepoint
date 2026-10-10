@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { SlideReveal, SlideStaggerContainer, SlideStaggerItem } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 /**
  * Citepoint InsightsPage
@@ -101,27 +102,18 @@ export default function InsightsPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
       
       {/* PAGE HERO */}
-      <section className="bg-white text-[#1d1d1f] pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 relative overflow-hidden border-b border-[#d2d2d7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <SlideReveal direction="down" distance={38} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-xs uppercase tracking-[0.14em] text-[#1d1d1f] font-semibold mb-4">
-                // RESEARCH & ANALYSIS
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-[#1d1d1f] tracking-tight leading-[1.08] mb-6 [text-wrap:balance]">
-                Insights into the answer economy.
-              </h1>
-              <p className="text-lg sm:text-xl text-[#6e6e73] leading-[1.5] mb-8">
-                Empirical research, architectural guides, and strategic commentary on how generative discovery is reshaping B2B growth and brand recommendation.
-              </p>
-            </SlideReveal>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Insights into the answer economy."
+        intro="Empirical research, architectural guides, and strategic commentary on how generative discovery is reshaping B2B growth and brand recommendation."
+        primaryButton={{
+          text: 'Get Your AI Visibility Audit',
+          onClick: () => handleNav('audit'),
+        }}
+      />
 
       {/* ARTICLE REPOSITORY */}
-      <section ref={articlesSectionRef} className="py-20 lg:py-28 bg-white border-b border-[#d2d2d7] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section ref={articlesSectionRef} className="site-section bg-white border-b border-[#d2d2d7] relative overflow-hidden">
+        <div className="site-container relative z-10">
           
           {/* Category Filter Pills */}
           <SlideReveal direction="left" distance={30} duration={0.6}>
@@ -130,7 +122,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all border cursor-pointer active:scale-[0.98] ${
+                  className={`px-5 py-2.5 min-h-[44px] inline-flex items-center justify-center rounded-full text-xs font-semibold uppercase tracking-wider transition-all border cursor-pointer active:scale-[0.98] ${
                     selectedCategory === cat
                       ? 'bg-[#1d1d1f] text-white border-[#1d1d1f]'
                       : 'bg-[#f5f5f7] text-[#6e6e73] border-[#d2d2d7] hover:border-[#1d1d1f] hover:text-[#1d1d1f]'
@@ -143,7 +135,7 @@ export default function InsightsPage({ setCurrentRoute }) {
           </SlideReveal>
 
           {/* Articles Grid */}
-          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6 mb-16 lg:mb-24">
+          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 lg:mb-24">
             {filteredArticles.map((art, aIdx) => (
               <SlideStaggerItem
                 key={art.id}
@@ -162,11 +154,11 @@ export default function InsightsPage({ setCurrentRoute }) {
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-[#1d1d1f] mb-3 leading-[1.2]">
                     {art.title}
                   </h2>
 
-                  <p className="text-sm text-[#6e6e73] leading-[1.6] mb-5">
+                  <p className="body-text text-sm mb-5">
                     {art.excerpt}
                   </p>
 
@@ -192,18 +184,18 @@ export default function InsightsPage({ setCurrentRoute }) {
           {/* GEO GLOSSARY SECTION */}
           <SlideReveal direction="scale-up" distance={30} duration={0.75} className="p-6 lg:p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
             <div className="max-w-2xl mb-8 lg:mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#d2d2d7] text-xs uppercase tracking-[0.14em] text-[#1d1d1f] font-semibold mb-3">
+              <span className="eyebrow-label">
                 TERMINOLOGY & CONCEPTS
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-medium text-[#1d1d1f] tracking-tight leading-[1.1] mb-3">
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-[#1d1d1f] tracking-tight leading-[1.1] mb-3">
                 The B2B GEO Glossary
               </h3>
-              <p className="text-sm text-[#6e6e73] leading-[1.6]">
+              <p className="intro-text text-sm">
                 Standardized definitions for the key technical and strategic concepts governing modern generative engine visibility.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Term list */}
               <div className="lg:col-span-5 space-y-2">
                 {glossary.map((item, idx) => (
@@ -224,13 +216,13 @@ export default function InsightsPage({ setCurrentRoute }) {
               {/* Term Definition Detail */}
               <div className="lg:col-span-7 bg-white text-[#1d1d1f] rounded-[20px] p-6 lg:p-8 border border-[#d2d2d7] flex flex-col justify-between min-h-[260px]">
                 <div>
-                  <span className="text-xs uppercase tracking-wider text-[#6e6e73] font-semibold block mb-2">
-                    DEFINITION // 0{selectedGlossaryTerm + 1}
+                  <span className="eyebrow-label">
+                    DEFINITION 0{selectedGlossaryTerm + 1}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-medium text-[#1d1d1f] leading-[1.2] mb-4">
+                  <h4 className="text-xl sm:text-2xl font-semibold text-[#1d1d1f] leading-[1.2] mb-4">
                     {glossary[selectedGlossaryTerm].term}
                   </h4>
-                  <p className="text-sm text-[#6e6e73] leading-[1.6]">
+                  <p className="body-text text-sm">
                     {glossary[selectedGlossaryTerm].def}
                   </p>
                 </div>
@@ -239,7 +231,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                   <span>Citepoint Knowledge Standard</span>
                   <button
                     onClick={() => handleNav('contact')}
-                    className="text-[#1d1d1f] font-semibold hover:underline cursor-pointer"
+                    className="text-[#1d1d1f] font-semibold hover:underline cursor-pointer min-h-[48px] h-12 px-2 inline-flex items-center"
                   >
                     [ Ask Our Specialists ]
                   </button>
@@ -252,29 +244,29 @@ export default function InsightsPage({ setCurrentRoute }) {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#f5f5f7] text-[#1d1d1f] py-20 lg:py-28 relative overflow-hidden border-t border-[#d2d2d7]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <section className="site-section bg-[#f5f5f7] text-[#1d1d1f] relative overflow-hidden border-t border-[#d2d2d7]">
+        <div className="site-container relative z-10 text-center">
           <SlideReveal direction="up" distance={36} duration={0.8}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#d2d2d7] text-xs uppercase tracking-[0.14em] text-[#1d1d1f] font-semibold mb-4">
+            <span className="eyebrow-label text-center mx-auto">
               ALGORITHM INTELLIGENCE
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-medium text-[#1d1d1f] tracking-tight leading-[1.08] mb-5">
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-semibold text-[#1d1d1f] tracking-tight leading-[1.08] mb-5">
               Stay ahead of generative search algorithm updates.
             </h2>
-            <p className="text-base sm:text-lg text-[#6e6e73] max-w-2xl mx-auto leading-[1.6] mb-8">
+            <p className="intro-text max-w-2xl mx-auto mb-8">
               Request an audit to receive our executive briefing on your category’s AI search shifts.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons-container">
               <button
                 onClick={() => handleNav('audit')}
-                className="rounded-full px-8 py-3.5 text-[15px] font-semibold inline-flex items-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
+                className="btn-primary w-full sm:w-auto"
               >
                 <span>Get Your AI Visibility Audit</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </button>
               <button
                 onClick={() => handleNav('contact')}
-                className="rounded-full px-8 py-3.5 text-[15px] font-medium inline-flex items-center gap-2 cursor-pointer bg-white text-[#1d1d1f] border border-[#d2d2d7] hover:bg-[#f5f5f7] transition-all active:scale-[0.98]"
+                className="btn-secondary w-full sm:w-auto"
               >
                 <span>Schedule a Consultation</span>
               </button>

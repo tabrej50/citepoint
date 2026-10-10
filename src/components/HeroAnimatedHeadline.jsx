@@ -71,12 +71,12 @@ export default function HeroAnimatedHeadline() {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative max-w-4xl mx-auto select-none cursor-default"
+      className="relative max-w-[900px] mx-auto select-none cursor-default"
       aria-label="Be the brand AI mentions first."
     >
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-[28px] sm:text-5xl md:text-6xl lg:text-[68px] xl:text-[76px] font-sans font-bold text-[#1D1D1F] leading-[1.15] sm:leading-[1.05] tracking-[-0.035em] text-center">
+      <h1 className="relative z-10 text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-sans font-semibold text-[#1D1D1F] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-center">
         {/* Line 1: "Be the brand AI" */}
         <span className="block">
           {PREFIX_WORDS.map((word, idx) => (

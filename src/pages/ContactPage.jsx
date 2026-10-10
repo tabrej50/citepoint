@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle2, ArrowRight, Sparkles, Globe2, ShieldCheck } from 'lucide-react';
 import { SlideReveal } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 /**
  * Citepoint ContactPage
@@ -64,30 +65,17 @@ export default function ContactPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
       
       {/* SECTION 1: HEADER */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden border-b border-[#d2d2d7] bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl text-left">
-            <SlideReveal direction="down" distance={30} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] font-semibold text-xs uppercase tracking-[0.14em] mb-4">
-                <Sparkles className="w-3.5 h-3.5 text-[#1d1d1f]" />
-                <span>// ADVISORY & AUDIT INQUIRIES</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-[#1d1d1f] tracking-tight leading-[1.08] mb-6 [text-wrap:balance]">
-                Talk to Citepoint.
-              </h1>
-              <p className="text-base sm:text-lg text-[#6e6e73] leading-relaxed max-w-2xl">
-                Schedule a confidential discovery conversation to evaluate your brand’s AI search presence, citation readiness, and strategic opportunities across major LLMs.
-              </p>
-            </SlideReveal>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="ADVISORY & AUDIT INQUIRIES"
+        title="Talk to Citepoint."
+        intro="Schedule a confidential discovery conversation to evaluate your brand’s AI search presence, citation readiness, and strategic opportunities across major LLMs."
+      />
 
       {/* SECTION 2: FORM + DETAILS */}
-      <section className="py-20 lg:py-28 relative bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section relative bg-white">
+        <div className="site-container">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             
             {/* Form Area: Columns 1-7 */}
             <div className="order-1 lg:col-span-7 w-full max-w-2xl">
@@ -272,8 +260,8 @@ export default function ContactPage({ setCurrentRoute }) {
                   <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
                       <Mail className="w-4 h-4 text-[#1d1d1f]" />
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#6e6e73]">
-                        // GENERAL ADVISORY
+                      <span className="eyebrow-label mb-0!">
+                        GENERAL ADVISORY
                       </span>
                     </div>
                     <a
@@ -291,8 +279,8 @@ export default function ContactPage({ setCurrentRoute }) {
                   <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
                       <Sparkles className="w-4 h-4 text-[#1d1d1f]" />
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#6e6e73]">
-                        // STRATEGIC ACCOUNTS
+                      <span className="eyebrow-label mb-0!">
+                        STRATEGIC ACCOUNTS
                       </span>
                     </div>
                     <a
@@ -310,8 +298,8 @@ export default function ContactPage({ setCurrentRoute }) {
                   <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
                       <Globe2 className="w-4 h-4 text-[#1d1d1f]" />
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#6e6e73]">
-                        // GLOBAL DELIVERY
+                      <span className="eyebrow-label mb-0!">
+                        GLOBAL DELIVERY
                       </span>
                     </div>
                     <div className="text-lg font-medium text-[#1d1d1f]">

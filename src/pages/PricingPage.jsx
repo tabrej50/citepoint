@@ -10,6 +10,7 @@ import {
   FileCheck2
 } from 'lucide-react';
 import { SlideReveal } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 export default function PricingPage({ setCurrentRoute }) {
   const [step, setStep] = useState(1);
@@ -101,35 +102,24 @@ export default function PricingPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1D1D1F] font-sans">
       
       {/* ============================================================
-          SECTION 1: HEADER
+          SECTION 1: PAGE HEADER (LEFT-ALIGNED)
           ============================================================ */}
-      <section className="pt-[120px] pb-[64px] border-b border-[#D2D2D7] overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mx-auto text-center">
-            <SlideReveal direction="down">
-              <div className="text-xs font-sans uppercase tracking-[0.08em] text-[#6E6E73] mb-4 font-semibold">
-                // TRANSPARENT SCOPE & ENGAGEMENT MODELS
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] mb-6 tracking-tight">
-                Start with clarity. Build toward visibility.
-              </h1>
-            </SlideReveal>
-            <SlideReveal direction="up" delay={0.1}>
-              <p className="text-base sm:text-lg text-[#6E6E73] max-w-[65ch] mx-auto leading-relaxed">
-                Every Citepoint engagement begins with your category, buyer evaluation questions, existing authority, and AI search opportunity—not an arbitrary one-size-fits-all package.
-              </p>
-            </SlideReveal>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Start with clarity. Build toward visibility."
+        intro="Every Citepoint engagement begins with your category, buyer evaluation questions, existing authority, and AI search opportunity—not an arbitrary one-size-fits-all package."
+        primaryButton={{
+          text: 'Get Your AI Visibility Audit',
+          onClick: () => handleNav('audit'),
+        }}
+      />
 
       {/* ============================================================
           SECTION 2: TWO-STEP CONFIGURATOR
           ============================================================ */}
-      <section className="pt-12 sm:pt-16 pb-[160px] overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section overflow-hidden bg-white">
+        <div className="site-container">
           
-          <div className="grid grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
+          <div className="grid grid-cols-12 gap-6 items-start">
             
             {/* LEFT FORM AREA: Columns 1-8 */}
             <div className="col-span-12 lg:col-span-8">

@@ -5,6 +5,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { SlideReveal } from '../components/SlideReveal';
+import PageHeader from '../components/PageHeader';
 
 export default function ServicesPage({ setCurrentRoute }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -119,71 +120,41 @@ export default function ServicesPage({ setCurrentRoute }) {
     <div className="w-full bg-white text-[#1D1D1F] font-sans">
       
       {/* ============================================================
-          SECTION 1: PAGE HEADER (APPLE MINIMAL MONOCHROME)
+          SECTION 1: PAGE HEADER
           ============================================================ */}
-      <section className="relative pt-[120px] pb-[64px] md:pt-[140px] md:pb-[96px] border-b border-[#D2D2D7] overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-[800px] text-left">
-            <SlideReveal direction="down">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
-                <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold">
-                  SERVICES & SYSTEM CAPABILITIES
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] mb-6 tracking-tight">
-                Engineering brand visibility in the answer economy.
-              </h1>
-            </SlideReveal>
-
-            <SlideReveal direction="up" delay={0.1}>
-              <p className="text-base sm:text-lg text-[#6E6E73] mb-8 max-w-[65ch] leading-relaxed">
-                We combine AI visibility research, structured content engineering, technical optimization, and authoritative citation building to help your brand become recommended across AI search.
-              </p>
-              <div className="flex flex-wrap items-center gap-4">
-                <button
-                  onClick={() => handleNav('audit')}
-                  className="btn-primary rounded-full px-7 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
-                >
-                  <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
-                <button
-                  onClick={() => handleNav('contact')}
-                  className="btn-secondary rounded-full px-7 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
-                >
-                  <span>Schedule a Consultation</span>
-                </button>
-              </div>
-            </SlideReveal>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="SERVICES & SYSTEM CAPABILITIES"
+        title="Engineering brand visibility in the answer economy."
+        intro="We combine AI visibility research, structured content engineering, technical optimization, and authoritative citation building to help your brand become recommended across AI search."
+        primaryButton={{
+          text: 'Get Your AI Visibility Audit',
+          onClick: () => handleNav('audit'),
+        }}
+        secondaryButton={{
+          text: 'Schedule a Consultation',
+          onClick: () => handleNav('contact'),
+        }}
+      />
 
       {/* ============================================================
           SECTION 2: 3 CORE SERVICE SPECIFICATIONS
           ============================================================ */}
-      <section className="py-[80px] lg:py-[100px] overflow-hidden bg-[#F5F5F7] border-b border-[#D2D2D7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 lg:space-y-10">
+      <section className="site-section bg-[#F5F5F7] border-b border-[#D2D2D7]">
+        <div className="site-container space-y-8 lg:space-y-10">
           
           {serviceRows.map((svc) => (
             <SlideReveal key={svc.num} direction="up">
               <div className="bg-white border border-[#D2D2D7] p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   
                   {/* Left Column: Number, Eyebrow, Title, Tagline, Description, CTA */}
                   <div className="lg:col-span-6 flex flex-col justify-between h-full">
                     <div>
-                      <div className="inline-flex items-center gap-2 mb-3">
-                        <span className="text-[12px] font-sans text-[#6E6E73] font-semibold tracking-[0.08em]">
-                          // {svc.num}
-                        </span>
-                        <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-medium">
-                          {svc.eyebrow}
-                        </span>
-                      </div>
+                      <span className="eyebrow-label">
+                        {svc.num} · {svc.eyebrow}
+                      </span>
 
-                      <h2 className="text-2xl sm:text-3xl font-sans font-bold text-[#1D1D1F] mb-3">
+                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#1D1D1F] mb-3">
                         {svc.title}
                       </h2>
 
@@ -191,7 +162,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                         {svc.tagline}
                       </p>
 
-                      <p className="text-sm text-[#6E6E73] mb-8 leading-relaxed max-w-[55ch]">
+                      <p className="body-text text-sm mb-8 leading-relaxed max-w-[55ch]">
                         {svc.description}
                       </p>
                     </div>
@@ -199,7 +170,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                     <div>
                       <button
                         onClick={() => handleNav(svc.ctaAction)}
-                        className="btn-primary rounded-full px-7 py-3 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
+                        className="btn-primary"
                       >
                         <span>{svc.ctaText}</span>
                         <ArrowRight className="w-4 h-4 text-white" />
@@ -243,25 +214,25 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 3: SYSTEMATIC METHODOLOGY (4 Operating Phases)
           ============================================================ */}
-      <section className="py-[100px] lg:py-[120px] bg-white border-b border-[#D2D2D7] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="site-section bg-white border-b border-[#D2D2D7] relative overflow-hidden">
+        <div className="site-container relative z-10">
           
           <SlideReveal direction="down">
             <div className="max-w-[720px] mb-12 lg:mb-16 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-3">
-                // SYSTEMATIC METHODOLOGY
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#1D1D1F] mb-4">
+              <span className="eyebrow-label">
+                SYSTEMATIC METHODOLOGY
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] mb-4">
                 One visibility system. Four operating phases.
               </h2>
-              <p className="text-base text-[#6E6E73] max-w-[65ch] leading-relaxed">
+              <p className="intro-text max-w-[65ch]">
                 We discover where your brand stands, diagnose citation gaps, build the signals models verify, and measure visibility gains over time.
               </p>
             </div>
           </SlideReveal>
 
           {/* 4 equal columns grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, idx) => (
               <SlideReveal
                 key={step.step}
@@ -280,7 +251,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                     <h3 className="text-xl font-sans font-bold text-[#1D1D1F] mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-[#6E6E73] leading-relaxed">
+                    <p className="body-text text-sm">
                       {step.desc}
                     </p>
                   </div>
@@ -300,18 +271,18 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 4: FAQ ACCORDION
           ============================================================ */}
-      <section className="py-[100px] lg:py-[120px] overflow-hidden bg-[#F5F5F7] border-b border-[#D2D2D7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section bg-[#F5F5F7] border-b border-[#D2D2D7]">
+        <div className="site-container">
           
           <SlideReveal direction="up">
             <div className="max-w-[720px] mx-auto text-center mb-12 lg:mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-3">
-                // COMMONLY ASKED QUESTIONS
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-sans font-bold text-[#1D1D1F] mb-4">
+              <span className="eyebrow-label text-center mx-auto">
+                COMMONLY ASKED QUESTIONS
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-base text-[#6E6E73] max-w-[65ch] mx-auto leading-relaxed">
+              <p className="intro-text mx-auto max-w-[65ch]">
                 Clear answers to help you evaluate how Citepoint delivers durable visibility across AI search platforms.
               </p>
             </div>
@@ -357,34 +328,34 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 5: FINAL CTA PANEL
           ============================================================ */}
-      <section className="py-[100px] lg:py-[120px] bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="site-section bg-white overflow-hidden">
+        <div className="site-container">
           
           <SlideReveal direction="up">
             <div className="bg-[#F5F5F7] border border-[#D2D2D7] relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D2D2D7] text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold mb-4">
-                // GET CITED. GET CHOSEN.
-              </div>
+              <span className="eyebrow-label text-center mx-auto">
+                GET CITED. GET CHOSEN.
+              </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-[#1D1D1F] mb-5 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1D1D1F] mb-5 max-w-2xl mx-auto">
                 Ready to establish your synthetic search presence?
               </h2>
 
-              <p className="text-base text-[#6E6E73] max-w-[65ch] mx-auto mb-8 leading-relaxed">
+              <p className="intro-text mx-auto max-w-[65ch] mb-8">
                 Request an AI Visibility Audit to discover how your brand currently ranks, where competitors are winning attention, and the prioritized roadmap to lead AI discovery.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons-container">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-primary w-full sm:w-auto rounded-full px-8 py-3.5 bg-[#1D1D1F] text-white hover:bg-black font-medium transition-all"
+                  className="btn-primary w-full sm:w-auto"
                 >
                   <span>Request an AI Visibility Audit</span>
                   <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}
-                  className="btn-secondary w-full sm:w-auto rounded-full px-8 py-3.5 bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] font-medium transition-all"
+                  className="btn-secondary w-full sm:w-auto"
                 >
                   <span>Schedule a Briefing</span>
                 </button>

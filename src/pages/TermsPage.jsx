@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader from '../components/PageHeader';
 
 /**
  * Citepoint TermsPage
@@ -17,24 +18,16 @@ export default function TermsPage({ setCurrentRoute }) {
   return (
     <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
       {/* PAGE HERO */}
-      <section className="bg-white text-[#1d1d1f] pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 relative overflow-hidden border-b border-[#d2d2d7]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-xs font-mono uppercase tracking-[0.14em] text-[#1d1d1f] font-semibold mb-4">
-            // TERMS OF ENGAGEMENT
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-medium text-[#1d1d1f] tracking-tight leading-[1.1] mb-4">
-            Terms of Service
-          </h1>
-          <p className="text-sm text-[#6e6e73] font-mono">
-            Last Updated: September 2026 • Citepoint Agency
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="TERMS OF ENGAGEMENT"
+        title="Terms of Service"
+        intro="Last Updated: September 2026 • Citepoint Agency"
+      />
 
       {/* TERMS CONTENT */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.6] text-[#6e6e73] rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+      <section className="site-section bg-white">
+        <div className="site-container">
+          <div className="p-8 sm:p-12 space-y-10 body-text rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
             
             <div>
               <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">

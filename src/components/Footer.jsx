@@ -31,7 +31,7 @@ export default function Footer({ setCurrentRoute }) {
 
   return (
     <footer className="bg-[#F5F5F7] border-t border-[#D2D2D7] text-[#6E6E73] pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="site-container relative z-10">
         
         {/* Top Brand Identity & Positioning Header */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-[#D2D2D7] mb-10 lg:mb-14">
@@ -63,45 +63,45 @@ export default function Footer({ setCurrentRoute }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#FFFFFF] border border-[#D2D2D7] px-4 py-2 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
-            <span className="text-[12px] uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold whitespace-nowrap">
+          <div className="flex items-center gap-2 bg-[#FFFFFF] border border-[#D2D2D7] px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full max-w-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] shrink-0" />
+            <span className="text-[11px] sm:text-[12px] uppercase tracking-[0.06em] sm:tracking-[0.08em] text-[#1D1D1F] font-semibold text-center truncate sm:whitespace-nowrap">
               AI Search Visibility Infrastructure
             </span>
           </div>
         </div>
 
         {/* 4 Main Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 lg:gap-6 pb-12 border-b border-[#D2D2D7]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-5 lg:gap-6 pb-12 border-b border-[#D2D2D7]">
           
           {/* Column 1: Services */}
           <div>
             <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
               Services
             </h4>
-            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+            <ul className="space-y-1.5 text-[13px] text-[#6E6E73]">
               <li>
-                <button onClick={() => handleNav('audit')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('audit')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   AI Visibility Audit
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('pricing')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('pricing')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Pricing & Engagements
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Generative Engine Optimization
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Citation Engineering
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Knowledge Graph Alignment
                 </button>
               </li>
@@ -113,29 +113,29 @@ export default function Footer({ setCurrentRoute }) {
             <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
               Methodology
             </h4>
-            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+            <ul className="space-y-1.5 text-[13px] text-[#6E6E73]">
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   4-Phase Operating System
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Discovery & Audit
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Diagnostic & Gap Analysis
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Foundation Building
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Longitudinal Monitoring
                 </button>
               </li>
@@ -147,29 +147,29 @@ export default function Footer({ setCurrentRoute }) {
             <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
               Evidence & Thinking
             </h4>
-            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+            <ul className="space-y-1.5 text-[13px] text-[#6E6E73]">
               <li>
-                <button onClick={() => handleNav('case-studies')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('case-studies')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Case Studies & Proof
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Insights & Research
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   GEO vs. Traditional SEO
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   AI Shortlist Anatomy
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Glossary of Terms
                 </button>
               </li>
@@ -181,29 +181,29 @@ export default function Footer({ setCurrentRoute }) {
             <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
               About & Contact
             </h4>
-            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+            <ul className="space-y-1.5 text-[13px] text-[#6E6E73]">
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   About Citepoint
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Operating Principles
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('contact')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('contact')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Contact & Briefing
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer py-1 inline-flex items-center">
                   Terms of Service
                 </button>
               </li>
@@ -216,13 +216,13 @@ export default function Footer({ setCurrentRoute }) {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#6E6E73]">
           <p>© {new Date().getFullYear()} Citepoint. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors">
+            <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors py-1.5">
               Privacy
             </button>
-            <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors">
+            <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors py-1.5">
               Terms
             </button>
-            <a href="mailto:hello@citepoint.io" className="hover:text-[#1D1D1F] transition-colors">
+            <a href="mailto:hello@citepoint.io" className="hover:text-[#1D1D1F] transition-colors py-1.5">
               Support
             </a>
           </div>

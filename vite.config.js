@@ -35,6 +35,19 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['motion/react'],
+          'vendor-icons': ['lucide-react'],
+          'vendor-lenis': ['lenis'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
   server: {
     port: 3000,
     open: false,

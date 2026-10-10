@@ -4,17 +4,17 @@ import React, { useRef, useState, useEffect } from 'react';
  * HeroVideoBackground
  *
  * Cinematic Background Video for Citepoint Hero Section:
+ * - Instant poster image fallback with high fetchPriority (zero black screen on load)
  * - Autoplaying, looping, muted, playsinline HTML5 video
- * - High-resolution poster fallback for instant first frame
- * - Multi-layer atmospheric vignette ensuring 100% text contrast & legibility
- * - Smooth scroll-driven parallax translation & fade
+ * - Ultra-smooth crossfade from poster to video once video starts playing
+ * - High-performance requestAnimationFrame scroll parallax (zero React re-renders on scroll)
+ * - Atmospheric vignettes and gold starlight preserved 100%
  * - Respects prefers-reduced-motion & tab visibility
- * - Elegant micro-control for user agency (Play/Pause toggle)
  */
 export default function HeroVideoBackground({ mode = 'dark' }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
-  const videoWrapperRef = useRef(null);
+  const videoParallaxRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -28,22 +28,25 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
       videoRef.current.pause();
       setIsPlaying(false);
     }
+    const handler = (e) => setReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
   }, []);
 
-  // Butter-smooth hardware-accelerated parallax on scroll (zero React re-renders)
+  // Butter-smooth hardware-accelerated parallax on scroll (no React state updates)
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const sy = window.scrollY || window.pageYOffset || 0;
-          if (videoWrapperRef.current) {
-            const parallaxOffset = sy * 0.22;
-            videoWrapperRef.current.style.transform = `translate3d(0, ${parallaxOffset}px, 0) scale(1.04)`;
+          const currentY = window.scrollY || window.pageYOffset || 0;
+          if (videoParallaxRef.current) {
+            const offset = currentY * 0.22;
+            videoParallaxRef.current.style.transform = `translate3d(0, ${offset}px, 0) scale(1.04)`;
           }
           if (containerRef.current) {
-            const fadeOpacity = Math.max(0, 1 - sy / 900);
-            containerRef.current.style.opacity = fadeOpacity;
+            const opacity = Math.max(0, 1 - currentY / 900);
+            containerRef.current.style.opacity = opacity;
           }
           ticking = false;
         });
@@ -70,10 +73,8 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
   }, [isPlaying, reducedMotion]);
 
   const baseUrl = import.meta.env.BASE_URL || '/';
-  const webmSrc = `${baseUrl}assets/hero-bg.webm`.replace(/\/\//g, '/');
-  const mp4Src = `${baseUrl}assets/hero-bg.mp4`.replace(/\/\//g, '/');
-  const fallbackMp4Src = `${baseUrl}assets/videos/hero-background.mp4`.replace(/\/\//g, '/');
-  const posterSrc = `${baseUrl}assets/hero-bg-poster.png`.replace(/\/\//g, '/');
+  const videoSrc = `${baseUrl}assets/videos/hero-background.mp4`.replace(/\/\//g, '/');
+  const posterSrc = `${baseUrl}assets/videos/hero-background.jpg`.replace(/\/\//g, '/');
 
   const isDark = mode === 'dark';
 
@@ -81,7 +82,6 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
     <div
       ref={containerRef}
       className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0"
-      style={{ opacity: 1, willChange: 'opacity' }}
       aria-hidden="true"
     >
       {/* Base Ground */}
@@ -91,28 +91,46 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
         }`}
       />
 
-      {/* 1. Underlying Video Container with Parallax Transform */}
+      {/* 1. Underlying Video & Poster Container with Hardware-Accelerated Parallax */}
       <div
-        ref={videoWrapperRef}
+        ref={videoParallaxRef}
         className="w-full h-full relative will-change-transform"
         style={{
           transform: 'translate3d(0, 0, 0) scale(1.04)',
         }}
       >
+        {/* Instant High-Resolution Poster Layer (renders on frame 0, zero flash) */}
+        <img
+          src={posterSrc}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className={`absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none ${
+            isDark ? 'opacity-65' : 'opacity-25'
+          }`}
+          style={{
+            filter: isDark
+              ? 'contrast(1.12) brightness(0.92) saturate(1.15)'
+              : 'contrast(1.05) brightness(1.05) saturate(0.9)',
+          }}
+        />
+
+        {/* Cinematic Video Layer (crossfades smoothly over poster once playing) */}
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={posterSrc}
+          onPlaying={() => setIsLoaded(true)}
           onLoadedData={() => setIsLoaded(true)}
-          onCanPlay={() => setIsLoaded(true)}
-          className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
+          className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
             isLoaded
               ? isDark ? 'opacity-65' : 'opacity-25'
-              : isDark ? 'opacity-40' : 'opacity-15'
+              : 'opacity-0'
           }`}
           style={{
             filter: isDark
@@ -120,13 +138,11 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
               : 'contrast(1.05) brightness(1.05) saturate(0.9)',
           }}
         >
-          <source src={webmSrc} type="video/webm" />
-          <source src={mp4Src} type="video/mp4" />
-          <source src={fallbackMp4Src} type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
       </div>
 
-      {/* 2. Atmospheric Gradient Vignettes */}
+      {/* 2. Atmospheric Gradient Vignettes (All backgrounds 100% preserved) */}
       {isDark ? (
         <>
           {/* Central radial vignette protecting headline & copy contrast */}

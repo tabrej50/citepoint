@@ -154,11 +154,18 @@
     font-family: var(--font-matter);
     color: var(--color-text-primary);
     background-color: var(--color-dominant-bg);
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     scroll-padding-top: 96px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dominant-bg);
   }
 
   /* Lenis Momentum Smooth Scroll Core */
@@ -1598,19 +1605,4 @@ section.site-section {
   .grid-gap-responsive {
     gap: 24px !important;
   }
-}
-
-/* ------------------------------------------------------------
-   10. SMOOTH PERFORMANCE & RENDER OPTIMIZATIONS
-   - Content-visibility for below-the-fold sections (instant LCP)
-   - GPU-promoted scrolling layers (buttery 60/120fps motion)
-   ------------------------------------------------------------ */
-.section-deferred {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 750px;
-}
-
-.gpu-accelerated {
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }

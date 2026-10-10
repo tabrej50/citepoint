@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 
 /**
  * Linear-Style Navigation Bar
@@ -12,6 +12,8 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 export default function Navbar({ currentRoute, setCurrentRoute }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef(null);
 
   // Sliding highlight pill state
   const [hoveredRoute, setHoveredRoute] = useState(null);
@@ -30,24 +32,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prefetch route chunks on hover for instant smooth navigation
-  const prefetchRoute = (route) => {
-    const routeLoaders = {
-      services: () => import('../pages/ServicesPage'),
-      'how-it-works': () => import('../pages/HowItWorksPage'),
-      pricing: () => import('../pages/PricingPage'),
-      'case-studies': () => import('../pages/CaseStudiesPage'),
-      insights: () => import('../pages/InsightsPage'),
-      about: () => import('../pages/AboutPage'),
-      audit: () => import('../pages/AuditPage'),
-    };
-    if (routeLoaders[route]) {
-      try { routeLoaders[route](); } catch (_) {}
-    }
-  };
-
   const navLinks = [
-    { name: 'Services', route: 'services' },
+    { name: 'Services', route: 'services', hasDropdown: true },
     { name: 'How It Works', route: 'how-it-works' },
     { name: 'Pricing', route: 'pricing' },
     { name: 'Results', route: 'case-studies' },
@@ -55,8 +41,34 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     { name: 'About', route: 'about' },
   ];
 
+  // Async Route Prefetching on Hover for Instant Zero-Delay Page Transitions
+  const routeImports = {
+    services: () => import('../pages/ServicesPage'),
+    'how-it-works': () => import('../pages/HowItWorksPage'),
+    pricing: () => import('../pages/PricingPage'),
+    'case-studies': () => import('../pages/CaseStudiesPage'),
+    about: () => import('../pages/AboutPage'),
+    insights: () => import('../pages/InsightsPage'),
+    audit: () => import('../pages/AuditPage'),
+    contact: () => import('../pages/ContactPage'),
+  };
+
+  const prefetchRoute = (route) => {
+    if (routeImports[route]) {
+      routeImports[route]().catch(() => {});
+    }
+  };
+
+  const serviceItems = [
+    { title: 'Generative Engine Optimization (GEO)', desc: 'AI visibility, entity grounding & citation ranking', route: 'services' },
+    { title: 'AI Citation Engineering', desc: 'Acquisition & verification across LLM answer engines', route: 'services' },
+    { title: 'Brand Knowledge Graphing', desc: 'Structured schema authority & semantic modeling', route: 'services' },
+    { title: 'Answer Engine Optimization (AEO)', desc: 'Optimized direct synthetic answers for B2B buyers', route: 'services' },
+  ];
+
   const handleNavClick = (route) => {
     setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
     setHoveredRoute(null);
     if (route === 'pricing') {
       window.location.hash = '#/pricing';
@@ -85,6 +97,17 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setServicesDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 150);
   };
 
   // Update sliding pill position
@@ -148,8 +171,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                 src={`${import.meta.env.BASE_URL}assets/brand/logo-dark-transparent.png`}
                 alt="Citepoint — Get Cited. Get Chosen."
                 className="h-7 lg:h-8 w-auto object-contain"
-                fetchPriority="high"
-                decoding="async"
               />
             </button>
 
@@ -160,6 +181,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               aria-label="Main Navigation"
               onMouseLeave={() => {
                 setHoveredRoute(null);
+                handleDropdownLeave();
               }}
             >
               {/* Sliding Active/Hover Highlight Pill */}
@@ -180,6 +202,76 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                 const isHighlighted = hoveredRoute
                   ? hoveredRoute === link.route
                   : currentRoute === link.route;
+
+                if (link.hasDropdown) {
+                  return (
+                    <div
+                      key={link.name}
+                      className="relative"
+                      onMouseEnter={() => {
+                        setHoveredRoute(link.route);
+                        prefetchRoute(link.route);
+                        handleDropdownEnter();
+                      }}
+                      onMouseLeave={handleDropdownLeave}
+                    >
+                      <button
+                        ref={(el) => {
+                          if (el) navItemRefs.current[link.route] = el;
+                        }}
+                        onClick={() => {
+                          handleNavClick(link.route);
+                          setServicesDropdownOpen(!servicesDropdownOpen);
+                        }}
+                        className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
+                          isHighlighted
+                            ? 'text-white font-semibold'
+                            : 'text-white/70 hover:text-white font-medium'
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className={`w-3.5 h-3.5 text-white/70 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180 text-white' : ''}`} />
+                      </button>
+
+                      {/* Clean Dropdown */}
+                      <AnimatePresence>
+                        {servicesDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -6 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.96, y: -4 }}
+                            transition={{ type: 'spring', damping: 28, stiffness: 340, mass: 0.8 }}
+                            style={{ transformOrigin: 'top center' }}
+                            className="header-dropdown"
+                            onMouseEnter={handleDropdownEnter}
+                            onMouseLeave={handleDropdownLeave}
+                          >
+                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#111111] px-3.5 py-1.5 border-b border-[#111111]/10 mb-1">
+                              Enterprise AI Capabilities
+                            </div>
+                            {serviceItems.map((item) => (
+                              <button
+                                key={item.title}
+                                onClick={() => {
+                                  handleNavClick(item.route);
+                                  setServicesDropdownOpen(false);
+                                }}
+                                className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-[#f5f5f7] transition-colors cursor-pointer active:scale-[0.98]"
+                              >
+                                <div className="text-[13px] font-medium text-[#111111] group-hover:text-black transition-colors">
+                                  {item.title}
+                                </div>
+                                <div className="text-[12px] text-[#111111]/60 leading-snug">
+                                  {item.desc}
+                                </div>
+                              </button>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
 
                 return (
                   <button

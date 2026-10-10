@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import LiquidGlassFilter from './components/LiquidGlassFilter';
 
-// Lazy load secondary routes for optimal initial chunk size and fast smooth loading
+// Code-split secondary routes for instantaneous initial bundle loading
 const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage'));
@@ -18,13 +18,10 @@ const AuditPage = lazy(() => import('./pages/AuditPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
 
-function PageLoadingFallback() {
+function PageFallback() {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center relative">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#E60023] to-transparent animate-pulse" />
-      <div className="text-white/40 text-[13px] font-sans tracking-wider uppercase animate-pulse">
-        Loading…
-      </div>
+    <div className="min-h-[70vh] flex items-center justify-center bg-transparent" aria-busy="true">
+      <div className="w-7 h-7 rounded-full border-2 border-white/10 border-t-[#E60023] animate-spin" />
     </div>
   );
 }
@@ -146,25 +143,65 @@ export default function App() {
   const renderCurrentPage = () => {
     switch (currentRoute) {
       case 'services':
-        return <ServicesPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <ServicesPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'how-it-works':
-        return <HowItWorksPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <HowItWorksPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'pricing':
-        return <PricingPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <PricingPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'case-studies':
-        return <CaseStudiesPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <CaseStudiesPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'about':
-        return <AboutPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <AboutPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'insights':
-        return <InsightsPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <InsightsPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'contact':
-        return <ContactPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <ContactPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'audit':
-        return <AuditPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <AuditPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'privacy':
-        return <PrivacyPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <PrivacyPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'terms':
-        return <TermsPage setCurrentRoute={navigateTo} />;
+        return (
+          <Suspense fallback={<PageFallback />}>
+            <TermsPage setCurrentRoute={navigateTo} />
+          </Suspense>
+        );
       case 'home':
       default:
         return <HomePage setCurrentRoute={navigateTo} />;
@@ -188,9 +225,7 @@ export default function App() {
             exit={APPLE_PAGE_TRANSITION.exit}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Suspense fallback={<PageLoadingFallback />}>
-              {renderCurrentPage()}
-            </Suspense>
+            {renderCurrentPage()}
           </motion.div>
         </AnimatePresence>
       </main>

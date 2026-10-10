@@ -399,7 +399,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
         <div className="site-container text-center">
           <SlideReveal direction="up" distance={40} duration={0.8}>
             <div className="max-w-4xl mx-auto space-y-6">
-              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
+              <span className="eyebrow-label text-center mx-auto text-[#E60023]">
                 PHASE 01 DISCOVERY
               </span>
               <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
@@ -414,7 +414,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                   className="btn-primary w-full sm:w-auto"
                 >
                   <span>Request Phase 01 Audit</span>
-                  <ArrowRight className="w-4 h-4 text-[#111111]" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

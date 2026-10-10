@@ -3,80 +3,78 @@
 @tailwind utilities;
 
 /* ============================================================
-   60-30-10 COLOR ARCHITECTURE (CSS VARIABLES)
-   - 60% Dominant: Pure White (#FFFFFF) page backgrounds & white space,
-                   #F5F5F7 for alternate sections & surfaces.
-   - 30% Secondary: Black (#111111) for text, headings, the nav CTA,
-                    dark sections (final CTA & footer), and 1px borders at 10% opacity.
-   - 10% Accent: Gold (#F3C753, hover #E8B84A) reserved for the single most important
-                 CTA per page, key highlights, link underlines, and small badges.
-   - Strict Rules:
-     * Gold is NEVER used as text on white or light backgrounds (contrast 1.6:1).
-     * Links on light backgrounds are #111111 with a gold underline.
-     * On black sections, buttons are gold with #111111 text, and gold text is allowed.
-     * Secondary text is #111111 at 60% opacity.
-     * No other colors, no gradients, no shadows.
-     * All tokens defined as CSS variables and referenced universally.
+   FORMIUM ALLIANCE DESIGN SYSTEM ARCHITECTURE (CSS VARIABLES)
+   - Surface Base: Deep Black #000000 (dark sections/footer), Pure White #FFFFFF (canvas)
+   - Raised Surface: #F4F5F8 for cards, secondary panels, stat cards & wells
+   - Strong Accent: Formium Red #E60023 (hover #CC001F) for primary actions, badges, highlights
+   - Primary Text: #1A1A1C (light surfaces), #FFFFFF / #FFF0F0 (dark surfaces)
+   - Secondary Text: rgba(26, 26, 28, 0.65) (light), rgba(255, 255, 255, 0.65) (dark)
+   - Primary Typography: Bricolage Grotesque
    ============================================================ */
 
 :root {
-  /* --- 60% Dominant: White & Light Gray --- */
+  /* --- Surfaces --- */
   --color-dominant-bg: #ffffff;
-  --color-dominant-alt: #f5f5f7;
+  --color-dominant-alt: #f4f5f8;
   --color-canvas: var(--color-dominant-bg);
-  --color-surface-base: var(--color-dominant-bg);
+  --color-surface-base: #000000;
   --color-surface-raised: var(--color-dominant-alt);
-  --color-surface-muted: var(--color-dominant-alt);
+  --color-surface-muted: #ffffff;
   --color-surface-card: var(--color-dominant-alt);
+  --color-surface-strong: #e60023;
+  --color-surface-strong-hover: #cc001f;
   --color-surface-1: var(--color-dominant-bg);
   --color-surface-2: var(--color-dominant-alt);
   --color-surface-3: #e8e8ed;
-  --color-surface-4: rgba(17, 17, 17, 0.10);
+  --color-surface-4: rgba(26, 26, 28, 0.08);
 
-  /* --- 30% Secondary: Black #111111 & 10% Opacity Borders --- */
-  --color-secondary-black: #111111;
-  --color-ink: #111111;
-  --color-ink-muted: #111111;
-  --color-text-primary: #111111;
-  --color-text-secondary: rgba(17, 17, 17, 0.60);
-  --color-text-tertiary: rgba(17, 17, 17, 0.40);
+  /* --- Text & Borders --- */
+  --color-secondary-black: #1a1a1c;
+  --color-ink: #1a1a1c;
+  --color-ink-muted: #1a1a1c;
+  --color-text-primary: #1a1a1c;
+  --color-text-secondary: rgba(26, 26, 28, 0.65);
+  --color-text-tertiary: #fff0f0;
+  --color-text-inverse: #222222;
   --color-ink-subtle: var(--color-text-secondary);
-  --color-ink-tertiary: var(--color-text-tertiary);
-  --color-border-light: rgba(17, 17, 17, 0.10);
+  --color-ink-tertiary: rgba(26, 26, 28, 0.40);
+  --color-border-light: rgba(26, 26, 28, 0.08);
   --color-border: var(--color-border-light);
   --color-hairline: var(--color-border-light);
-  --color-hairline-strong: rgba(17, 17, 17, 0.15);
-  --color-hairline-tertiary: rgba(17, 17, 17, 0.08);
+  --color-hairline-strong: rgba(26, 26, 28, 0.15);
+  --color-hairline-tertiary: rgba(26, 26, 28, 0.06);
 
-  /* --- 30% Secondary: Dark Sections (Final CTA & Footer) --- */
-  --color-dark-bg: #111111;
+  /* --- Dark Sections (Hero, Final CTA & Footer) --- */
+  --color-dark-bg: #000000;
   --color-dark-text-primary: #ffffff;
-  --color-dark-text-secondary: rgba(255, 255, 255, 0.60);
+  --color-dark-text-secondary: rgba(255, 255, 255, 0.65);
   --color-dark-border: rgba(255, 255, 255, 0.10);
 
-  /* --- 10% Accent: Gold #F3C753 (Hover #E8B84A) --- */
-  --color-accent-gold: #f3c753;
-  --color-accent-gold-hover: #e8b84a;
-  --color-gold: var(--color-accent-gold);
-  --color-gold-hover: var(--color-accent-gold-hover);
-  --color-accent-text: #111111;
-  --color-gold-underline: var(--color-accent-gold);
+  /* --- Brand Accent: Formium Red #E60023 (Hover #CC001F) --- */
+  --color-accent-red: #e60023;
+  --color-accent-red-hover: #cc001f;
+  --color-accent-gold: #e60023;
+  --color-accent-gold-hover: #cc001f;
+  --color-gold: var(--color-accent-red);
+  --color-gold-hover: var(--color-accent-red-hover);
+  --color-accent-text: #ffffff;
+  --color-gold-underline: var(--color-accent-red);
 
-  /* --- Nav CTA: Solid Black #111111 --- */
-  --color-nav-cta-bg: #111111;
+  /* --- Nav CTA: Formium Red #E60023 --- */
+  --color-nav-cta-bg: #e60023;
   --color-nav-cta-text: #ffffff;
-  --color-nav-cta-hover: #222222;
+  --color-nav-cta-hover: #cc001f;
 
   /* --- Secondary Buttons --- */
   --color-btn-secondary-bg: #ffffff;
-  --color-btn-secondary-text: #111111;
-  --color-btn-secondary-border: rgba(17, 17, 17, 0.10);
-  --color-btn-secondary-hover-bg: #f5f5f7;
+  --color-btn-secondary-text: #1a1a1c;
+  --color-btn-secondary-border: rgba(26, 26, 28, 0.15);
+  --color-btn-secondary-hover-bg: #f4f5f8;
 
   /* --- Backward Compatibility Token Aliases --- */
-  --color-primary: var(--color-accent-gold);
-  --color-primary-hover: var(--color-accent-gold-hover);
-  --color-primary-focus: var(--color-accent-gold);
+  --color-primary: var(--color-accent-red);
+  --color-primary-hover: var(--color-accent-red-hover);
+  --color-primary-focus: var(--color-accent-red);
   --color-on-primary: var(--color-accent-text);
   --color-brand-secure: var(--color-secondary-black);
   --color-semantic-success: var(--color-secondary-black);
@@ -88,33 +86,33 @@
   --color-silver-mist: var(--color-text-secondary);
   --color-ash: var(--color-text-secondary);
   --color-liquid-mist: var(--color-secondary-black);
-  --color-lavender-phosphor: var(--color-secondary-black);
+  --color-lavender-phosphor: var(--color-accent-red);
   --color-bioluminescent-gradient: var(--color-dominant-bg);
   --gradient-bioluminescent-gradient: var(--color-dominant-bg);
   --color-aurora-gradient: var(--color-dominant-bg);
   --gradient-aurora-gradient: var(--color-dominant-bg);
 
-  /* Clean Inter Sans-Serif */
-  --font-matter: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
-  --font-arial: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
-  --font-bricolage: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  --font-inter-tight: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  /* Formium Signature: Bricolage Grotesque */
+  --font-matter: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arial: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-bricolage: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter-tight: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
 
   /* Radii */
-  --radius-cards: 20px;
+  --radius-cards: 24px;
   --radius-buttons: 999px;
   --radius-small: 12px;
 
   /* Navigation */
   --nav-bg: rgba(255, 255, 255, 0.88);
-  --nav-border: rgba(17, 17, 17, 0.10);
-  --nav-pill-bg: #f5f5f7;
+  --nav-border: rgba(26, 26, 28, 0.08);
+  --nav-pill-bg: #f4f5f8;
 
   /* Global Layout Architecture Variables */
-  --container-max: 1200px;
+  --container-max: 1280px;
   --section-space: 120px;
   --gutter: 24px;
   --nav-top: 16px;
@@ -318,14 +316,14 @@
 }
 
 /* ------------------------------------------------------------
-   60-30-10 BUTTON SYSTEM
-   - Primary: Gold #F3C753 with #111111 text (hover #E8B84A)
-     Reserved for the single most important CTA per page
-   - Nav CTA: Solid Black #111111 with Pure White text (hover #222222)
-   - Secondary: White #FFFFFF with #111111 text & 1px 10% opacity border
+   FORMIUM ALLIANCE BUTTON SYSTEM
+   - Primary: Formium Red #E60023 with Pure White #FFFFFF text (hover #CC001F)
+   - In Dark Sections (Hero / Final CTA): Hover turns White #FFFFFF with Black text
+   - Nav CTA: Formium Red #E60023 capsule pill button with Pure White text
+   - Secondary: White #FFFFFF with #1A1A1C text & 1px border rgba(26, 26, 28, 0.15)
    ------------------------------------------------------------ */
 
-/* Primary Page CTA: Gold #F3C753 Button */
+/* Primary Page CTA: Formium Red #E60023 Button */
 .btn-aurora,
 .btn-primary,
 .btn-liquid-primary,
@@ -337,15 +335,15 @@
   height: 48px !important;
   min-height: 48px !important;
   padding: 0 24px !important;
-  font-family: var(--font-matter);
+  font-family: var(--font-bricolage);
   font-size: 15px;
   line-height: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--color-accent-text) !important;
-  background-color: var(--color-accent-gold) !important;
+  color: #ffffff !important;
+  background-color: var(--color-surface-strong) !important;
   border-radius: 9999px !important;
-  border: 1px solid var(--color-accent-gold) !important;
+  border: 1px solid var(--color-surface-strong) !important;
   box-shadow: none !important;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
@@ -358,17 +356,32 @@
 .btn-primary *,
 .btn-liquid-primary *,
 .btn-terminal * {
-  color: var(--color-accent-text) !important;
+  color: #ffffff !important;
 }
 
 .btn-aurora:hover,
 .btn-primary:hover,
 .btn-liquid-primary:hover,
 .btn-terminal:hover {
-  background-color: var(--color-accent-gold-hover) !important;
-  border-color: var(--color-accent-gold-hover) !important;
+  background-color: var(--color-surface-strong-hover) !important;
+  border-color: var(--color-surface-strong-hover) !important;
   transform: translateY(-1px);
   box-shadow: none !important;
+}
+
+/* Formium Alliance Hero Button: Turns White on hover in dark hero */
+.section-dark .btn-primary:hover,
+.hero-btn-primary a:hover,
+.section-dark .btn-aurora:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+.section-dark .btn-primary:hover *,
+.hero-btn-primary a:hover *,
+.section-dark .btn-aurora:hover * {
+  color: #111111 !important;
 }
 
 .btn-aurora:active,
@@ -376,7 +389,7 @@
 .btn-liquid-primary:active,
 .btn-terminal:active {
   transform: scale(0.98) !important;
-  background-color: var(--color-accent-gold-hover) !important;
+  background-color: var(--color-surface-strong-hover) !important;
   box-shadow: none !important;
   transition: transform 80ms ease !important;
 }
@@ -385,11 +398,11 @@
 .btn-primary:focus-visible,
 .btn-liquid-primary:focus-visible,
 .btn-terminal:focus-visible {
-  outline: 2px solid var(--color-accent-gold);
+  outline: 2px solid var(--color-surface-strong);
   outline-offset: 2px;
 }
 
-/* Nav CTA: Solid Black #111111 with Pure White Text */
+/* Nav CTA: Formium Red #E60023 Capsule Pill Button */
 .btn-nav,
 .nav-cta-btn,
 .btn-primary.btn-nav {
@@ -399,7 +412,9 @@
   background-color: var(--color-nav-cta-bg) !important;
   color: var(--color-nav-cta-text) !important;
   border: 1px solid var(--color-nav-cta-bg) !important;
+  font-family: var(--font-bricolage);
   font-weight: 600;
+  border-radius: 9999px !important;
 }
 
 .btn-nav *,
@@ -579,11 +594,11 @@
   -webkit-backdrop-filter: none !important;
   border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
-  border-radius: 20px;
+  border-radius: 24px !important;
   position: relative;
   overflow: hidden;
   color: var(--color-text-primary);
-  transition: border-color 200ms ease, background-color 200ms ease;
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
 }
 
 /* Remove all pseudo specular gradients */
@@ -603,20 +618,20 @@
 .card-selectable:hover,
 .bento-card:hover,
 .glass-panel:hover {
-  border-color: rgba(17, 17, 17, 0.25) !important;
+  border-color: rgba(230, 0, 35, 0.35) !important;
   box-shadow: none !important;
-  transform: none !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Featured / Active Highlight Card */
 .card-selectable-active,
 .pricing-card-featured {
   background: var(--color-dominant-bg) !important;
-  border: 2px solid var(--color-accent-gold) !important;
+  border: 2px solid var(--color-surface-strong) !important;
   box-shadow: none !important;
 }
 
-/* Stat Cards */
+/* Formium Achievement Stat Cards */
 .fa-stat-card {
   display: flex;
   flex-direction: column;
@@ -624,23 +639,25 @@
   justify-content: center;
   text-align: center;
   padding: 40px 28px;
-  border-radius: 20px;
+  border-radius: 24px !important;
   background: var(--color-dominant-alt) !important;
   border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   gap: 12px;
+  transition: transform 200ms ease, border-color 200ms ease !important;
 }
 
 .fa-stat-card:hover {
-  border-color: rgba(17, 17, 17, 0.25) !important;
+  border-color: rgba(230, 0, 35, 0.35) !important;
+  transform: translateY(-2px) !important;
 }
 
 .fa-stat-value {
-  font-family: var(--font-heading);
-  font-size: clamp(40px, 5vw, 60px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
+  font-family: var(--font-bricolage) !important;
+  font-size: clamp(48px, 5.5vw, 68px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1 !important;
   color: var(--color-text-primary) !important;
   display: flex;
   align-items: center;
@@ -650,16 +667,17 @@
 .fa-stat-suffix {
   font-size: 0.5em;
   font-weight: 700;
-  color: var(--color-text-primary) !important;
+  color: var(--color-surface-strong) !important;
   line-height: 1;
 }
 
 .fa-stat-label {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--color-text-secondary) !important;
-  text-transform: uppercase;
+  font-family: var(--font-bricolage) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(26, 26, 28, 0.45) !important;
+  text-transform: uppercase !important;
 }
 
 /* Remove all text shimmers & text gradients */
@@ -691,21 +709,38 @@
   line-height: 1.2 !important;
 }
 
-/* Badges: 10% Gold Accent with #111111 Text */
+/* Badges: Formium Red Accent */
 .badge-accent,
 .badge-gold,
+.badge-formium,
 .badge-recommended {
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
+  font-family: var(--font-bricolage);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 9999px;
-  background-color: var(--color-accent-gold) !important;
-  color: var(--color-accent-text) !important;
-  border: 1px solid var(--color-accent-gold) !important;
+  background-color: var(--color-surface-strong) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--color-surface-strong) !important;
+}
+
+.badge-subtle-red {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-family: var(--font-bricolage);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  background-color: #fff0f0 !important;
+  color: #e60023 !important;
+  border: 1px solid #ffbfbf !important;
 }
 
 /* Statistic Counter */
@@ -896,13 +931,12 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ============================================================
-   DARK SECTIONS & FOOTER (30% SECONDARY BLACK #111111)
-   - Background: #111111
+   DARK SECTIONS & FOOTER (FORMIUM DEEP BLACK CANVAS)
+   - Background: var(--color-dark-bg) (#000000)
    - Headings & Primary Text: Pure White #FFFFFF
-   - Secondary Text: White at 60% opacity (rgba(255, 255, 255, 0.60))
+   - Secondary Text: White at 65% opacity (rgba(255, 255, 255, 0.65))
    - Borders: 1px at 10% opacity (rgba(255, 255, 255, 0.10))
-   - Buttons: Gold #F3C753 with #111111 text (hover #E8B84A)
-   - Gold text allowed on black sections
+   - Primary Buttons: Formium Red #E60023 with White text (hover #FFFFFF with Black text)
    ============================================================ */
 
 .section-dark,

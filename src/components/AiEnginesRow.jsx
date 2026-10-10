@@ -187,7 +187,7 @@ export function AiEnginesGrid({ className = '' }) {
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className="p-5 rounded-[20px] border border-[#111111]/10 bg-[#f5f5f7] hover:border-[#111111] text-[#111111] transition-all duration-200 flex flex-col justify-between group"
+          className="p-5 rounded-[24px] border border-[#111111]/10 bg-[#f4f5f8] hover:border-[#E60023] text-[#111111] transition-all duration-200 flex flex-col justify-between group"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -209,7 +209,7 @@ export function AiEnginesGrid({ className = '' }) {
           </div>
 
           <div className="pt-3 border-t border-[#111111]/10 text-[11px] font-mono flex items-center gap-1.5 text-[#111111]/60">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#111111]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E60023]" />
             <span>Audited & Optimized</span>
           </div>
         </div>

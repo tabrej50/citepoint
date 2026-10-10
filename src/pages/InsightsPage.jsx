@@ -247,7 +247,7 @@ export default function InsightsPage({ setCurrentRoute }) {
       <section className="site-section section-dark bg-[#111111] text-white relative overflow-hidden border-t border-white/10">
         <div className="site-container relative z-10 text-center">
           <SlideReveal direction="up" distance={36} duration={0.8}>
-            <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
+            <span className="eyebrow-label text-center mx-auto text-[#E60023]">
               ALGORITHM INTELLIGENCE
             </span>
             <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-[1.08] mb-5">
@@ -262,7 +262,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                 className="btn-primary w-full sm:w-auto"
               >
                 <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-4 h-4 text-[#111111]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </button>
               <button
                 onClick={() => handleNav('contact')}

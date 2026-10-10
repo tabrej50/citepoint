@@ -3,10 +3,10 @@ import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 /**
  * AuditContactForm
- * 60-30-10 Color Architecture:
- * - 60% Dominant: White (#FFFFFF) & Light Gray (#F5F5F7)
- * - 30% Secondary: Black (#111111) text, labels & 10% opacity borders
- * - 10% Accent: Gold (#F3C753) primary submission CTA
+ * Formium Alliance Architecture:
+ * - Dominant: Pure White (#FFFFFF) & Raised Light (#F4F5F8)
+ * - Text: High-contrast Dark (#1A1A1C) & 8% opacity borders
+ * - Accent: Formium Red (#E60023) primary submission CTA
  */
 export default function AuditContactForm({ className = '' }) {
   const [formData, setFormData] = useState({
@@ -314,7 +314,7 @@ export default function AuditContactForm({ className = '' }) {
             className="btn-primary w-full sm:w-auto px-8 py-3.5 inline-flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.98]"
           >
             <span>{isSubmitting ? 'Analyzing Parameters...' : 'Request Confidential Audit'}</span>
-            <ArrowRight className="w-4 h-4 text-[#111111]" />
+            <ArrowRight className="w-4 h-4 text-white" />
           </button>
 
           <div className="flex items-center gap-2 text-xs text-[#111111]/60">

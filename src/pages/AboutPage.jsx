@@ -191,7 +191,7 @@ export default function AboutPage({ setCurrentRoute }) {
         <div className="site-container">
           <SlideReveal direction="up" distance={32} duration={0.75}>
             <div className="text-center p-8 sm:p-12 md:p-16 max-w-4xl mx-auto rounded-[24px] border border-white/10 bg-white/5">
-              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
+              <span className="eyebrow-label text-center mx-auto text-[#E60023]">
                 STRATEGIC ENGAGEMENT
               </span>
               <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4">
@@ -206,7 +206,7 @@ export default function AboutPage({ setCurrentRoute }) {
                   className="btn-primary"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-[#111111]" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

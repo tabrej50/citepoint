@@ -333,7 +333,7 @@ export default function ServicesPage({ setCurrentRoute }) {
           
           <SlideReveal direction="up">
             <div className="section-dark bg-[#111111] border border-white/10 relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden text-white">
-              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
+              <span className="eyebrow-label text-center mx-auto text-[#E60023]">
                 GET CITED. GET CHOSEN.
               </span>
 
@@ -351,7 +351,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                   className="btn-primary w-full sm:w-auto"
                 >
                   <span>Request an AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-[#111111]" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

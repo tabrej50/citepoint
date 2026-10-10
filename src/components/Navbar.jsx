@@ -345,7 +345,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                   className="btn-primary w-full min-h-[48px] py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[14px] font-sans font-semibold cursor-pointer active:scale-[0.97]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#111111]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </button>
               </div>
             </motion.div>

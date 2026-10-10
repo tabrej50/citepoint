@@ -153,8 +153,8 @@ export default function PricingPage({ setCurrentRoute }) {
                           onClick={() => setSelectedPlanId(plan.id)}
                           className={`min-h-[340px] md:min-h-[260px] p-[20px] sm:p-[28px] rounded-[24px] border transition-all cursor-pointer flex flex-col justify-between ${
                             isSelected
-                              ? 'bg-white !border-[#F3C753] -translate-y-0.5'
-                              : 'bg-[#F5F5F7] border-[#111111]/10 hover:border-[#111111]/30'
+                              ? 'bg-white !border-[#E60023] -translate-y-0.5'
+                              : 'bg-[#F4F5F8] border-[#111111]/10 hover:border-[#111111]/30'
                           }`}
                         >
                           <div>
@@ -168,8 +168,8 @@ export default function PricingPage({ setCurrentRoute }) {
                                   {plan.label}
                                 </span>
                               )}
-                              <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#F3C753] bg-[#F3C753]' : 'border-[#111111]/10'}`}>
-                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-[#111111]" />}
+                              <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#E60023] bg-[#E60023]' : 'border-[#111111]/10'}`}>
+                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                               </div>
                             </div>
 

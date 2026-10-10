@@ -320,23 +320,23 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               <p className="intro-text mt-4 mx-auto text-center max-w-[760px] text-white/80 leading-[1.7]">
                 Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across{' '}
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
-                  <AiEngineIcon id="chatgpt" size={15} customColor="#F3C753" />
+                  <AiEngineIcon id="chatgpt" size={15} customColor="#E60023" />
                   <span>ChatGPT</span>
                 </span>,{' '}
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
-                  <AiEngineIcon id="gemini" size={15} customColor="#F3C753" />
+                  <AiEngineIcon id="gemini" size={15} customColor="#E60023" />
                   <span>Gemini</span>
                 </span>,{' '}
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
-                  <AiEngineIcon id="perplexity" size={15} customColor="#F3C753" />
+                  <AiEngineIcon id="perplexity" size={15} customColor="#E60023" />
                   <span>Perplexity</span>
                 </span>,{' '}
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
-                  <AiEngineIcon id="claude" size={15} customColor="#F3C753" />
+                  <AiEngineIcon id="claude" size={15} customColor="#E60023" />
                   <span>Claude</span>
                 </span>, and{' '}
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
-                  <AiEngineIcon id="google-ai-overviews" size={15} customColor="#F3C753" />
+                  <AiEngineIcon id="google-ai-overviews" size={15} customColor="#E60023" />
                   <span>Google AI Overviews</span>
                 </span>.
               </p>
@@ -351,7 +351,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   className="btn-primary"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-[#111111]" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </button>
 
                 <button
@@ -367,7 +367,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             {/* Trust Line */}
             <SlideReveal direction="up" delay={0.3}>
               <div className="mt-6 flex items-center justify-center gap-2 text-xs text-white/60 font-sans mx-auto">
-                <ShieldCheck className="w-4 h-4 text-[#F3C753] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#E60023] shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>
@@ -1066,7 +1066,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
         <div className="site-container relative z-10">
           <SlideReveal direction="scale-up" className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
+            <span className="eyebrow-label text-center mx-auto text-[#E60023]">
               GET CITED. GET CHOSEN.
             </span>
 
@@ -1084,7 +1084,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 className="btn-primary w-full sm:w-auto"
               >
                 <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-4 h-4 text-[#111111]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </button>
 
               <button

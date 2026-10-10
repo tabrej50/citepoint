@@ -912,6 +912,8 @@ footer.footer-dark,
   background-color: var(--color-dark-bg) !important;
   color: var(--color-dark-text-primary) !important;
   border-color: var(--color-dark-border) !important;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.60);
 }
 
 .section-dark h1,

@@ -307,7 +307,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           HERO SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={heroRef} className="page-header relative text-[#111111] overflow-hidden bg-white border-b border-[#111111]/10">
+      <section ref={heroRef} className="page-header relative section-dark text-white overflow-hidden bg-[#111111] border-b border-white/10">
+        <HeroVideoBackground mode="dark" />
         <div className="site-container relative z-10">
           <div className="max-w-[900px] mx-auto text-center flex flex-col items-center">
             
@@ -316,7 +317,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Supporting Paragraph */}
             <SlideReveal direction="up" delay={0.16}>
-              <p className="intro-text mt-4 mx-auto text-center max-w-[680px]">
+              <p className="intro-text mt-4 mx-auto text-center max-w-[680px] text-white/70">
                 Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across ChatGPT, Gemini, Perplexity, Claude, and Google AI Overviews.
               </p>
             </SlideReveal>
@@ -345,8 +346,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Trust Line */}
             <SlideReveal direction="up" delay={0.3}>
-              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#111111]/60 font-sans mx-auto">
-                <ShieldCheck className="w-4 h-4 text-[#111111] shrink-0" />
+              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-white/60 font-sans mx-auto">
+                <ShieldCheck className="w-4 h-4 text-[#F3C753] shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>

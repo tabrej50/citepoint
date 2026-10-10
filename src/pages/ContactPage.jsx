@@ -62,7 +62,7 @@ export default function ContactPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* SECTION 1: HEADER */}
       <PageHeader
@@ -80,17 +80,17 @@ export default function ContactPage({ setCurrentRoute }) {
             {/* Form Area: Columns 1-7 */}
             <div className="order-1 lg:col-span-7 w-full max-w-2xl">
               <SlideReveal direction="left" distance={36} duration={0.7}>
-                <div className="p-6 sm:p-8 md:p-10 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+                <div className="p-6 sm:p-8 md:p-10 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] relative overflow-hidden">
                   
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
-                      <div className="w-16 h-16 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 rounded-full bg-[#111111] text-white flex items-center justify-center mx-auto mb-4">
                         <CheckCircle2 className="w-8 h-8 stroke-[2] text-white" />
                       </div>
-                      <h3 className="text-2xl font-medium text-[#1d1d1f]">
+                      <h3 className="text-2xl font-medium text-[#111111]">
                         Briefing Request Received
                       </h3>
-                      <p className="text-sm sm:text-base text-[#6e6e73] max-w-md mx-auto leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#111111]/60 max-w-md mx-auto leading-relaxed">
                         Thank you for reaching out. A senior partner will review your inquiry and get in touch within 24 business hours.
                       </p>
                       <button
@@ -105,7 +105,7 @@ export default function ContactPage({ setCurrentRoute }) {
                             message: '',
                           });
                         }}
-                        className="rounded-full h-[52px] px-8 text-[15px] font-medium inline-flex items-center gap-2 cursor-pointer bg-white text-[#1d1d1f] border border-[#d2d2d7] hover:bg-[#f5f5f7] transition-all active:scale-[0.98] mt-4"
+                        className="rounded-full h-[52px] px-8 text-[15px] font-medium inline-flex items-center gap-2 cursor-pointer bg-white text-[#111111] border border-[#111111]/10 hover:bg-[#f5f5f7] transition-all active:scale-[0.98] mt-4"
                       >
                         <span>Send Another Message</span>
                       </button>
@@ -115,7 +115,7 @@ export default function ContactPage({ setCurrentRoute }) {
                       
                       {/* Full Name */}
                       <div>
-                        <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                        <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                           FULL NAME *
                         </label>
                         <input
@@ -124,8 +124,8 @@ export default function ContactPage({ setCurrentRoute }) {
                           placeholder="e.g. Sarah Jenkins"
                           value={formData.fullName}
                           onChange={handleChange}
-                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#1d1d1f] placeholder-[#6e6e73] text-[15px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors ${
-                            errors.fullName ? 'border-red-500' : 'border-[#d2d2d7]'
+                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#111111] placeholder-[#111111]/40 text-[15px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors ${
+                            errors.fullName ? 'border-red-500' : 'border-[#111111]/10'
                           }`}
                         />
                         {errors.fullName && <p className="text-xs text-red-500 mt-1">{errors.fullName}</p>}
@@ -133,7 +133,7 @@ export default function ContactPage({ setCurrentRoute }) {
 
                       {/* Work Email */}
                       <div>
-                        <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                        <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                           WORK EMAIL *
                         </label>
                         <input
@@ -142,8 +142,8 @@ export default function ContactPage({ setCurrentRoute }) {
                           placeholder="sarah@company.com"
                           value={formData.workEmail}
                           onChange={handleChange}
-                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#1d1d1f] placeholder-[#6e6e73] text-[15px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors ${
-                            errors.workEmail ? 'border-red-500' : 'border-[#d2d2d7]'
+                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#111111] placeholder-[#111111]/40 text-[15px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors ${
+                            errors.workEmail ? 'border-red-500' : 'border-[#111111]/10'
                           }`}
                         />
                         {errors.workEmail && <p className="text-xs text-red-500 mt-1">{errors.workEmail}</p>}
@@ -152,7 +152,7 @@ export default function ContactPage({ setCurrentRoute }) {
                       {/* Company Name & Website */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                          <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                             COMPANY NAME *
                           </label>
                           <input
@@ -161,15 +161,15 @@ export default function ContactPage({ setCurrentRoute }) {
                             placeholder="e.g. Acme Enterprise"
                             value={formData.company}
                             onChange={handleChange}
-                            className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#1d1d1f] placeholder-[#6e6e73] text-[15px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors ${
-                              errors.company ? 'border-red-500' : 'border-[#d2d2d7]'
+                            className={`w-full h-[52px] px-4 rounded-[16px] border bg-white text-[#111111] placeholder-[#111111]/40 text-[15px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors ${
+                              errors.company ? 'border-red-500' : 'border-[#111111]/10'
                             }`}
                           />
                           {errors.company && <p className="text-xs text-red-500 mt-1">{errors.company}</p>}
                         </div>
 
                         <div>
-                          <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                          <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                             COMPANY WEBSITE
                           </label>
                           <input
@@ -178,21 +178,21 @@ export default function ContactPage({ setCurrentRoute }) {
                             placeholder="https://acme.com"
                             value={formData.websiteUrl}
                             onChange={handleChange}
-                            className="w-full h-[52px] px-4 rounded-[16px] border border-[#d2d2d7] bg-white text-[#1d1d1f] placeholder-[#6e6e73] text-[15px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors"
+                            className="w-full h-[52px] px-4 rounded-[16px] border border-[#111111]/10 bg-white text-[#111111] placeholder-[#111111]/40 text-[15px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors"
                           />
                         </div>
                       </div>
 
                       {/* Primary Objective */}
                       <div>
-                        <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                        <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                           PRIMARY ENGAGEMENT OBJECTIVE
                         </label>
                         <select
                           name="objective"
                           value={formData.objective}
                           onChange={handleChange}
-                          className="w-full h-[52px] px-4 rounded-[16px] border border-[#d2d2d7] bg-white text-[#1d1d1f] text-[15px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors cursor-pointer"
+                          className="w-full h-[52px] px-4 rounded-[16px] border border-[#111111]/10 bg-white text-[#111111] text-[15px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors cursor-pointer"
                         >
                           <option value="AI Visibility Diagnostic Assessment">
                             AI Visibility Diagnostic Assessment
@@ -214,7 +214,7 @@ export default function ContactPage({ setCurrentRoute }) {
 
                       {/* Message Textarea */}
                       <div>
-                        <label className="block text-xs font-semibold text-[#1d1d1f] tracking-wider uppercase mb-2">
+                        <label className="block text-xs font-semibold text-[#111111] tracking-wider uppercase mb-2">
                           BRIEF CONTEXT / NOTES
                         </label>
                         <textarea
@@ -222,7 +222,7 @@ export default function ContactPage({ setCurrentRoute }) {
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="Provide any priority competitor comparisons, target buyer prompts, or specific timeline requirements..."
-                          className="w-full h-[160px] p-4 rounded-[16px] border border-[#d2d2d7] bg-white text-[#1d1d1f] placeholder-[#6e6e73] text-[15px] leading-[24px] focus:outline-none focus:border-[#1d1d1f] focus:ring-1 focus:ring-[#1d1d1f] transition-colors resize-none"
+                          className="w-full h-[160px] p-4 rounded-[16px] border border-[#111111]/10 bg-white text-[#111111] placeholder-[#111111]/40 text-[15px] leading-[24px] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors resize-none"
                         />
                       </div>
 
@@ -230,15 +230,15 @@ export default function ContactPage({ setCurrentRoute }) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
+                        className="btn-primary w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.98]"
                       >
                         <span>{isSubmitting ? 'Transmitting Request...' : 'Send Briefing Request'}</span>
-                        <ArrowRight className="w-4 h-4 text-white" />
+                        <ArrowRight className="w-4 h-4 text-[#111111]" />
                       </button>
 
-                      <div className="pt-2 flex items-center justify-between text-[#6e6e73] text-xs">
+                      <div className="pt-2 flex items-center justify-between text-[#111111]/60 text-xs">
                         <span className="flex items-center gap-1.5">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#1d1d1f]" />
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#111111]" />
                           Strict NDA governance
                         </span>
                         <span>SLA: 24 business hours</span>
@@ -257,55 +257,55 @@ export default function ContactPage({ setCurrentRoute }) {
                 <div className="flex flex-col space-y-6">
                   
                   {/* Block 1 */}
-                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
+                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#111111] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Mail className="w-4 h-4 text-[#1d1d1f]" />
+                      <Mail className="w-4 h-4 text-[#111111]" />
                       <span className="eyebrow-label mb-0!">
                         GENERAL ADVISORY
                       </span>
                     </div>
                     <a
                       href="mailto:hello@citepoint.io"
-                      className="text-lg font-medium text-[#1d1d1f] group-hover:text-black transition-colors duration-200"
+                      className="text-lg font-medium text-[#111111] group-hover:text-black transition-colors duration-200"
                     >
                       hello@citepoint.io
                     </a>
-                    <p className="text-xs text-[#6e6e73] mt-1">
+                    <p className="text-xs text-[#111111]/60 mt-1">
                       Diagnostic consultations, strategy sessions, and speaking engagements.
                     </p>
                   </div>
 
                   {/* Block 2 */}
-                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
+                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#111111] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Sparkles className="w-4 h-4 text-[#1d1d1f]" />
+                      <Sparkles className="w-4 h-4 text-[#111111]" />
                       <span className="eyebrow-label mb-0!">
                         STRATEGIC ACCOUNTS
                       </span>
                     </div>
                     <a
                       href="mailto:advisory@citepoint.io"
-                      className="text-lg font-medium text-[#1d1d1f] group-hover:text-black transition-colors duration-200"
+                      className="text-lg font-medium text-[#111111] group-hover:text-black transition-colors duration-200"
                     >
                       advisory@citepoint.io
                     </a>
-                    <p className="text-xs text-[#6e6e73] mt-1">
+                    <p className="text-xs text-[#111111]/60 mt-1">
                       Multi-brand portfolios, custom prompt evals, and enterprise MSAs.
                     </p>
                   </div>
 
                   {/* Block 3 */}
-                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#1d1d1f] group relative overflow-hidden">
+                  <div className="min-h-[96px] p-6 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] flex flex-col justify-center transition-all duration-200 hover:border-[#111111] group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Globe2 className="w-4 h-4 text-[#1d1d1f]" />
+                      <Globe2 className="w-4 h-4 text-[#111111]" />
                       <span className="eyebrow-label mb-0!">
                         GLOBAL DELIVERY
                       </span>
                     </div>
-                    <div className="text-lg font-medium text-[#1d1d1f]">
+                    <div className="text-lg font-medium text-[#111111]">
                       San Francisco & London
                     </div>
-                    <p className="text-xs text-[#6e6e73] mt-1">
+                    <p className="text-xs text-[#111111]/60 mt-1">
                       Global remote delivery with client coverage across North America, EMEA, and APAC.
                     </p>
                   </div>

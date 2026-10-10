@@ -17,7 +17,7 @@ export default function PrivacyPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       {/* PAGE HERO */}
       <PageHeader
         eyebrow="LEGAL DISCLOSURE"
@@ -28,19 +28,19 @@ export default function PrivacyPage({ setCurrentRoute }) {
       {/* POLICY CONTENT */}
       <section className="site-section bg-white">
         <div className="site-container">
-          <div className="p-8 sm:p-12 space-y-10 body-text rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+          <div className="p-8 sm:p-12 space-y-10 body-text rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] relative overflow-hidden">
             
             <div>
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 01. Overview & Commitment to Client Privacy
               </h2>
               <p>
-                Citepoint (“Citepoint,” “we,” “us,” or “our”), operated by <strong className="text-[#1d1d1f]">Citepoint Technologies Pvt. Ltd.</strong>, respects the proprietary nature of your enterprise data. This Privacy Policy governs how we collect, process, and safeguard information collected through our website (<code className="text-[#1d1d1f] font-mono font-semibold">citepoint.io</code>), diagnostic visibility audits, and client advisory engagements.
+                Citepoint (“Citepoint,” “we,” “us,” or “our”), operated by <strong className="text-[#111111]">Citepoint Technologies Pvt. Ltd.</strong>, respects the proprietary nature of your enterprise data. This Privacy Policy governs how we collect, process, and safeguard information collected through our website (<code className="text-[#111111] font-mono font-semibold">citepoint.io</code>), diagnostic visibility audits, and client advisory engagements.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 02. Information We Collect
               </h2>
               <p className="mb-4">
@@ -48,34 +48,34 @@ export default function PrivacyPage({ setCurrentRoute }) {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 mt-0.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <span><strong className="text-[#1d1d1f]">Contact Information:</strong> Full name, work email, job title, company name, and official website URL submitted via our audit request forms.</span>
+                  <span><strong className="text-[#111111]">Contact Information:</strong> Full name, work email, job title, company name, and official website URL submitted via our audit request forms.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 mt-0.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <span><strong className="text-[#1d1d1f]">Audit Input Data:</strong> Information you provide regarding your category, key competitors, target buyer questions, and evaluation priorities.</span>
+                  <span><strong className="text-[#111111]">Audit Input Data:</strong> Information you provide regarding your category, key competitors, target buyer questions, and evaluation priorities.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 mt-0.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <span><strong className="text-[#1d1d1f]">Publicly Available Data:</strong> We inspect public web information, schema markups, knowledge graph entities, and generative model outputs referencing your brand.</span>
+                  <span><strong className="text-[#111111]">Publicly Available Data:</strong> We inspect public web information, schema markups, knowledge graph entities, and generative model outputs referencing your brand.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 mt-0.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   </div>
-                  <span><strong className="text-[#1d1d1f]">Technical Telemetry:</strong> Standard non-identifying telemetry collected via privacy-compliant analytics to improve site performance.</span>
+                  <span><strong className="text-[#111111]">Technical Telemetry:</strong> Standard non-identifying telemetry collected via privacy-compliant analytics to improve site performance.</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 03. How We Use Audit Information
               </h2>
               <p>
@@ -84,7 +84,7 @@ export default function PrivacyPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 04. Mutual Confidentiality & NDAs
               </h2>
               <p>
@@ -93,7 +93,7 @@ export default function PrivacyPage({ setCurrentRoute }) {
             </div>
 
             <div>
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 05. International Data Transfers & Compliance
               </h2>
               <p>
@@ -101,12 +101,12 @@ export default function PrivacyPage({ setCurrentRoute }) {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#d2d2d7]">
-              <h2 className="text-xl font-medium text-[#1d1d1f] mb-3 leading-[1.2]">
+            <div className="pt-6 border-t border-[#111111]/10">
+              <h2 className="text-xl font-medium text-[#111111] mb-3 leading-[1.2]">
                 06. Contact Our Data Governance Team
               </h2>
               <p>
-                For privacy inquiries, data deletion requests, or NDA submissions, please contact our team at: <code className="text-[#1d1d1f] font-mono font-semibold">privacy@citepoint.io</code>.
+                For privacy inquiries, data deletion requests, or NDA submissions, please contact our team at: <code className="text-[#111111] font-mono font-semibold">privacy@citepoint.io</code>.
               </p>
             </div>
 

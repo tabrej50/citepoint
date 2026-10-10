@@ -139,7 +139,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-white text-[#1D1D1F] font-sans">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* --------------------------------------------------
           PAGE HERO (APPLE MINIMAL MONOCHROME)
@@ -161,7 +161,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
       {/* --------------------------------------------------
           THE RETRIEVAL PIPELINE (5 COLUMNS DESKTOP)
       -------------------------------------------------- */}
-      <section className="site-section bg-[#F5F5F7] border-b border-[#D2D2D7] overflow-hidden">
+      <section className="site-section bg-[#F5F5F7] border-b border-[#111111]/10 overflow-hidden">
         <div className="site-container">
           
           <SlideReveal direction="down" distance={36} duration={0.65}>
@@ -169,7 +169,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <span className="eyebrow-label text-center mx-auto">
                 SIGNATURE CITATION FLOW
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] tracking-tight mb-4">
                 How generative engines formulate answers
               </h2>
               <p className="intro-text mx-auto">
@@ -186,29 +186,29 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                   key={step.num}
                   direction="right"
                   distance={35}
-                  className="bg-white border border-[#D2D2D7] p-6 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all"
+                  className="bg-white border border-[#111111]/10 p-6 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#111111] transition-all"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="font-sans text-xs font-semibold text-[#6E6E73]">
+                      <span className="font-sans text-xs font-semibold text-[#111111]/60">
                         {step.num}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-[#F5F5F7] border border-[#111111]/10 text-[#111111] flex items-center justify-center">
                         <IconC className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="text-base font-sans font-bold text-[#1D1D1F] mb-2">
+                    <h3 className="text-base font-sans font-bold text-[#111111] mb-2">
                       {step.title}
                     </h3>
                     <p className="body-text text-xs mb-3">
                       {step.desc}
                     </p>
-                    <p className="text-[11px] text-[#6E6E73] font-sans leading-[1.6] border-t border-[#D2D2D7] pt-2">
+                    <p className="text-[11px] text-[#111111]/60 font-sans leading-[1.6] border-t border-[#111111]/10 pt-2">
                       {step.detail}
                     </p>
                   </div>
                   {step.platforms && (
-                    <div className="flex items-center gap-2 mt-4 pt-3 border-t border-[#D2D2D7]">
+                    <div className="flex items-center gap-2 mt-4 pt-3 border-t border-[#111111]/10">
                       <AiEngineIcon id="chatgpt" size={14} />
                       <AiEngineIcon id="gemini" size={14} />
                       <AiEngineIcon id="claude" size={14} />
@@ -234,7 +234,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <span className="eyebrow-label text-center mx-auto">
                 THE 4-STEP FRAMEWORK
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] tracking-tight mb-4">
                 Disciplined, measurable execution
               </h2>
               <p className="intro-text mx-auto">
@@ -251,7 +251,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               return (
                 <div
                   key={phase.step}
-                  className="bg-[#F5F5F7] border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] grid grid-cols-1 lg:grid-cols-12 gap-6 items-start group overflow-hidden"
+                  className="bg-[#F5F5F7] border border-[#111111]/10 p-6 lg:p-8 rounded-[24px] grid grid-cols-1 lg:grid-cols-12 gap-6 items-start group overflow-hidden"
                 >
                   {/* Column 1: Phase Info */}
                   <SlideReveal
@@ -261,22 +261,22 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     className="lg:col-span-5 space-y-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-9 h-9 rounded-full bg-white text-[#1D1D1F] font-sans text-xs font-bold flex items-center justify-center border border-[#D2D2D7]">
+                      <span className="w-9 h-9 rounded-full bg-white text-[#111111] font-sans text-xs font-bold flex items-center justify-center border border-[#111111]/10">
                         {phase.step}
                       </span>
-                      <div className="w-9 h-9 rounded-full bg-white border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F]">
+                      <div className="w-9 h-9 rounded-full bg-white border border-[#111111]/10 flex items-center justify-center text-[#111111]">
                         <IconC className="w-4 h-4" />
                       </div>
-                      <span className="px-3 py-1 rounded-full bg-white border border-[#D2D2D7] text-xs font-sans text-[#6E6E73] font-medium">
+                      <span className="px-3 py-1 rounded-full bg-white border border-[#111111]/10 text-xs font-sans text-[#111111]/60 font-medium">
                         {phase.cadence}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-semibold text-[#1D1D1F]">
+                    <h3 className="text-2xl sm:text-3xl font-semibold text-[#111111]">
                       {phase.title}
                     </h3>
 
-                    <p className="text-xs uppercase tracking-[0.08em] font-sans font-semibold text-[#1D1D1F]">
+                    <p className="text-xs uppercase tracking-[0.08em] font-sans font-semibold text-[#111111]">
                       {phase.subtitle}
                     </p>
 
@@ -284,8 +284,8 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                       {phase.desc}
                     </p>
 
-                    <div className="p-4 rounded-[16px] bg-white border border-[#D2D2D7] text-xs text-[#6E6E73] leading-[1.6]">
-                      <strong className="text-[#1D1D1F] block mb-1 font-semibold">Strategic Context:</strong>
+                    <div className="p-4 rounded-[16px] bg-white border border-[#111111]/10 text-xs text-[#111111]/60 leading-[1.6]">
+                      <strong className="text-[#111111] block mb-1 font-semibold">Strategic Context:</strong>
                       {phase.detail}
                     </div>
                   </SlideReveal>
@@ -296,25 +296,25 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     distance={40}
                     duration={0.65}
                     delay={0.1}
-                    className="lg:col-span-7 rounded-[20px] bg-white border border-[#D2D2D7] p-6 lg:p-8"
+                    className="lg:col-span-7 rounded-[20px] bg-white border border-[#111111]/10 p-6 lg:p-8"
                   >
-                    <h4 className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#1D1D1F] mb-4">
+                    <h4 className="text-xs font-sans font-semibold uppercase tracking-[0.08em] text-[#111111] mb-4">
                       CORE PHASE DELIVERABLES
                     </h4>
                     <ul className="space-y-3.5">
                       {phase.deliverables.map((item, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#1D1D1F]">
-                          <div className="w-4 h-4 rounded-full bg-[#F5F5F7] text-[#1D1D1F] flex items-center justify-center shrink-0 mt-0.5 border border-[#D2D2D7]">
-                            <Check className="w-2.5 h-2.5 text-[#1D1D1F]" />
+                        <li key={dIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#111111]">
+                          <div className="w-4 h-4 rounded-full bg-[#F5F5F7] text-[#111111] flex items-center justify-center shrink-0 mt-0.5 border border-[#111111]/10">
+                            <Check className="w-2.5 h-2.5 text-[#111111]" />
                           </div>
                           <span className="leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <div className="mt-6 pt-5 border-t border-[#D2D2D7] flex items-center justify-between text-xs text-[#6E6E73] font-sans">
+                    <div className="mt-6 pt-5 border-t border-[#111111]/10 flex items-center justify-between text-xs text-[#111111]/60 font-sans">
                       <span>Verifiable milestone audit</span>
-                      <span className="text-[#1D1D1F] font-semibold">Documented & Delivered</span>
+                      <span className="text-[#111111] font-semibold">Documented & Delivered</span>
                     </div>
                   </SlideReveal>
                 </div>
@@ -328,7 +328,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
       {/* --------------------------------------------------
           COLLABORATION MODEL
       -------------------------------------------------- */}
-      <section className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] overflow-hidden">
+      <section className="site-section bg-[#F5F5F7] border-y border-[#111111]/10 overflow-hidden">
         <div className="site-container">
           
           <SlideReveal direction="left" distance={36} duration={0.65}>
@@ -336,7 +336,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <span className="eyebrow-label">
                 CLIENT COLLABORATION MODEL
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] tracking-tight mb-4">
                 How we work alongside your team
               </h2>
               <p className="intro-text">
@@ -346,12 +346,12 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           </SlideReveal>
 
           <SlideStaggerContainer staggerDelay={0.1} className="card-grid-3">
-            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
+            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#111111]/10 p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#111111] transition-all">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] mb-4">
+                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111] mb-4">
                   <Users className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-bold text-[#1D1D1F] mb-2">
+                <h3 className="text-base font-sans font-bold text-[#111111] mb-2">
                   Executive & Marketing Alignment
                 </h3>
                 <p className="body-text text-xs sm:text-sm">
@@ -360,12 +360,12 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               </div>
             </SlideStaggerItem>
 
-            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
+            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#111111]/10 p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#111111] transition-all">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] mb-4">
+                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111] mb-4">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-bold text-[#1D1D1F] mb-2">
+                <h3 className="text-base font-sans font-bold text-[#111111] mb-2">
                   Asynchronous Sprint Rhythm
                 </h3>
                 <p className="body-text text-xs sm:text-sm">
@@ -374,12 +374,12 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               </div>
             </SlideStaggerItem>
 
-            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
+            <SlideStaggerItem direction="scale-up" className="bg-white border border-[#111111]/10 p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#111111] transition-all">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] mb-4">
+                <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111] mb-4">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-sans font-bold text-[#1D1D1F] mb-2">
+                <h3 className="text-base font-sans font-bold text-[#111111] mb-2">
                   Strict NDA & Governance
                 </h3>
                 <p className="body-text text-xs sm:text-sm">
@@ -393,19 +393,19 @@ export default function HowItWorksPage({ setCurrentRoute }) {
       </section>
 
       {/* --------------------------------------------------
-          FINAL ACTION SECTION
+          FINAL ACTION SECTION (DARK SECTION #111111)
       -------------------------------------------------- */}
-      <section className="site-section bg-white text-[#1D1D1F] relative overflow-hidden border-t border-[#D2D2D7]">
+      <section className="site-section section-dark bg-[#111111] text-white relative overflow-hidden border-t border-white/10">
         <div className="site-container text-center">
           <SlideReveal direction="up" distance={40} duration={0.8}>
             <div className="max-w-4xl mx-auto space-y-6">
-              <span className="eyebrow-label text-center mx-auto">
+              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
                 PHASE 01 DISCOVERY
               </span>
-              <h2 className="text-3xl sm:text-5xl font-semibold text-[#1D1D1F] tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
                 Discover how your brand currently fares in Phase 01.
               </h2>
-              <p className="intro-text mx-auto">
+              <p className="intro-text mx-auto text-white/60">
                 We begin with a targeted discovery audit to show where you appear, what AI says, and where competitors have claimed citations.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 hero-buttons-container">
@@ -414,7 +414,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                   className="btn-primary w-full sm:w-auto"
                 >
                   <span>Request Phase 01 Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

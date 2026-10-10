@@ -73,7 +73,7 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* Hero Header */}
       <PageHeader
@@ -96,19 +96,19 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                 direction={cs.direction}
                 distance={38}
                 duration={0.75}
-                className="p-8 sm:p-10 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden group"
+                className="p-8 sm:p-10 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] relative overflow-hidden group"
               >
                 {/* Status Bar */}
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#d2d2d7]">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#111111]/10">
                   <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 rounded-full bg-white text-[#1d1d1f] border border-[#d2d2d7] text-[11px] font-semibold tracking-wider uppercase">
+                    <span className="px-3 py-1 rounded-full bg-white text-[#111111] border border-[#111111]/10 text-[11px] font-semibold tracking-wider uppercase">
                       {cs.status}
                     </span>
-                    <span className="text-xs text-[#6e6e73]">
-                      Data Category: <span className="text-[#1d1d1f] font-semibold">[{cs.labelType}]</span>
+                    <span className="text-xs text-[#111111]/60">
+                      Data Category: <span className="text-[#111111] font-semibold">[{cs.labelType}]</span>
                     </span>
                   </div>
-                  <span className="text-xs text-[#6e6e73]">
+                  <span className="text-xs text-[#111111]/60">
                     Timeline: {cs.timePeriod}
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                       <span className="eyebrow-label">
                         {cs.industry}
                       </span>
-                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#1d1d1f] mb-3">
+                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#111111] mb-3">
                         {cs.title}
                       </h2>
                       <p className="body-text text-sm">
@@ -131,8 +131,8 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                     </div>
 
                     {/* Baseline challenge as plain text block with divider */}
-                    <div className="pt-6 border-t border-[#d2d2d7] space-y-2">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#1d1d1f] block">
+                    <div className="pt-6 border-t border-[#111111]/10 space-y-2">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#111111] block">
                         Initial Baseline Challenge:
                       </span>
                       <p className="body-text text-sm leading-relaxed">
@@ -142,14 +142,14 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                   </div>
 
                   {/* Right Column (40% on desktop: lg:col-span-5) */}
-                  <div className="lg:col-span-5 space-y-6 lg:border-l lg:border-[#d2d2d7] lg:pl-8">
+                  <div className="lg:col-span-5 space-y-6 lg:border-l lg:border-[#111111]/10 lg:pl-8">
                     <span className="eyebrow-label">
                       METHODOLOGY & EXECUTION SUMMARY
                     </span>
                     <ul className="space-y-3.5">
                       {cs.workCompleted.map((task, tIdx) => (
-                        <li key={tIdx} className="flex items-start gap-3 text-sm text-[#1d1d1f]">
-                          <div className="w-5 h-5 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                        <li key={tIdx} className="flex items-start gap-3 text-sm text-[#111111]">
+                          <div className="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-3 h-3 text-white" />
                           </div>
                           <span className="leading-snug">{task}</span>
@@ -157,9 +157,9 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                       ))}
                     </ul>
 
-                    <div className="pt-6 border-t border-[#d2d2d7] flex items-center justify-between text-xs text-[#6e6e73]">
+                    <div className="pt-6 border-t border-[#111111]/10 flex items-center justify-between text-xs text-[#111111]/60">
                       <span>NDA Confidentiality Notice: Anonymized by agreement</span>
-                      <ShieldCheck className="w-4 h-4 text-[#6e6e73]" />
+                      <ShieldCheck className="w-4 h-4 text-[#111111]/60" />
                     </div>
                   </div>
 
@@ -170,8 +170,8 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
 
           {/* Bottom Reassurance Banner */}
           <SlideReveal direction="up" distance={36} duration={0.7} className="mt-12 lg:mt-16">
-            <div className="p-8 lg:p-10 text-left max-w-3xl space-y-4 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
-              <h3 className="text-2xl font-semibold text-[#1d1d1f]">
+            <div className="p-8 lg:p-10 text-left max-w-3xl space-y-4 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] relative overflow-hidden">
+              <h3 className="text-2xl font-semibold text-[#111111]">
                 Want to see how your brand compares to these baselines?
               </h3>
               <p className="intro-text text-sm">
@@ -183,7 +183,7 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                   className="btn-primary"
                 >
                   <span>Request Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                 </button>
               </div>
             </div>

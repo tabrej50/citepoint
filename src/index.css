@@ -3,64 +3,98 @@
 @tailwind utilities;
 
 /* ============================================================
-   APPLE-STYLE MINIMAL MONOCHROME DESIGN SYSTEM
-   - Base Background: Pure White (#FFFFFF)
-   - Secondary / Card Background: Light Gray (#F5F5F7)
-   - Primary Text: Near-black (#1D1D1F)
-   - Secondary Text: Gray (#6E6E73)
-   - Hairline Borders: Light Gray (#D2D2D7)
-   - Primary Button: Solid Black (#1D1D1F) with Pure White (#FFFFFF) text
-   - No gradients, no shadows, huge white space, clean Inter typography
+   60-30-10 COLOR ARCHITECTURE (CSS VARIABLES)
+   - 60% Dominant: Pure White (#FFFFFF) page backgrounds & white space,
+                   #F5F5F7 for alternate sections & surfaces.
+   - 30% Secondary: Black (#111111) for text, headings, the nav CTA,
+                    dark sections (final CTA & footer), and 1px borders at 10% opacity.
+   - 10% Accent: Gold (#F3C753, hover #E8B84A) reserved for the single most important
+                 CTA per page, key highlights, link underlines, and small badges.
+   - Strict Rules:
+     * Gold is NEVER used as text on white or light backgrounds (contrast 1.6:1).
+     * Links on light backgrounds are #111111 with a gold underline.
+     * On black sections, buttons are gold with #111111 text, and gold text is allowed.
+     * Secondary text is #111111 at 60% opacity.
+     * No other colors, no gradients, no shadows.
+     * All tokens defined as CSS variables and referenced universally.
    ============================================================ */
 
 :root {
-  /* Surfaces */
-  --color-canvas: #ffffff;
-  --color-surface-base: #ffffff;
-  --color-surface-raised: #f5f5f7;
-  --color-surface-muted: #f5f5f7;
-  --color-surface-strong: #1d1d1f;
-  --color-surface-1: #ffffff;
-  --color-surface-2: #f5f5f7;
+  /* --- 60% Dominant: White & Light Gray --- */
+  --color-dominant-bg: #ffffff;
+  --color-dominant-alt: #f5f5f7;
+  --color-canvas: var(--color-dominant-bg);
+  --color-surface-base: var(--color-dominant-bg);
+  --color-surface-raised: var(--color-dominant-alt);
+  --color-surface-muted: var(--color-dominant-alt);
+  --color-surface-card: var(--color-dominant-alt);
+  --color-surface-1: var(--color-dominant-bg);
+  --color-surface-2: var(--color-dominant-alt);
   --color-surface-3: #e8e8ed;
-  --color-surface-4: #d2d2d7;
-  --color-hairline: #d2d2d7;
-  --color-hairline-strong: #d2d2d7;
-  --color-hairline-tertiary: #e5e5ea;
+  --color-surface-4: rgba(17, 17, 17, 0.10);
 
-  /* Typography (Apple Standard) */
-  --color-ink: #1d1d1f;
-  --color-ink-muted: #1d1d1f;
-  --color-ink-subtle: #6e6e73;
-  --color-ink-tertiary: #86868b;
-  --color-text-secondary: #6e6e73;
-  --color-text-tertiary: #86868b;
-  --color-text-inverse: #ffffff;
+  /* --- 30% Secondary: Black #111111 & 10% Opacity Borders --- */
+  --color-secondary-black: #111111;
+  --color-ink: #111111;
+  --color-ink-muted: #111111;
+  --color-text-primary: #111111;
+  --color-text-secondary: rgba(17, 17, 17, 0.60);
+  --color-text-tertiary: rgba(17, 17, 17, 0.40);
+  --color-ink-subtle: var(--color-text-secondary);
+  --color-ink-tertiary: var(--color-text-tertiary);
+  --color-border-light: rgba(17, 17, 17, 0.10);
+  --color-border: var(--color-border-light);
+  --color-hairline: var(--color-border-light);
+  --color-hairline-strong: rgba(17, 17, 17, 0.15);
+  --color-hairline-tertiary: rgba(17, 17, 17, 0.08);
 
-  /* Primary Accent: Solid Black #1D1D1F */
-  --color-primary: #1d1d1f;
-  --color-primary-hover: #333336;
-  --color-primary-focus: #1d1d1f;
-  --color-on-primary: #ffffff;
-  --color-brand-secure: #1d1d1f;
-  --color-semantic-success: #1d1d1f;
+  /* --- 30% Secondary: Dark Sections (Final CTA & Footer) --- */
+  --color-dark-bg: #111111;
+  --color-dark-text-primary: #ffffff;
+  --color-dark-text-secondary: rgba(255, 255, 255, 0.60);
+  --color-dark-border: rgba(255, 255, 255, 0.10);
 
-  /* Backward Compatibility Aliases */
-  --color-liquid-abyss: #ffffff;
-  --color-liquid-deep: #f5f5f7;
-  --color-liquid-kelp: #f5f5f7;
-  --color-slate-deep: #d2d2d7;
-  --color-platinum: #1d1d1f;
-  --color-silver-mist: #6e6e73;
-  --color-ash: #6e6e73;
-  --color-liquid-mist: #1d1d1f;
-  --color-lavender-phosphor: #1d1d1f;
-  --color-bioluminescent-gradient: #1d1d1f;
-  --gradient-bioluminescent-gradient: #1d1d1f;
-  --color-aurora-gradient: #1d1d1f;
-  --gradient-aurora-gradient: #1d1d1f;
+  /* --- 10% Accent: Gold #F3C753 (Hover #E8B84A) --- */
+  --color-accent-gold: #f3c753;
+  --color-accent-gold-hover: #e8b84a;
+  --color-gold: var(--color-accent-gold);
+  --color-gold-hover: var(--color-accent-gold-hover);
+  --color-accent-text: #111111;
+  --color-gold-underline: var(--color-accent-gold);
 
-  /* Universal Clean Sans-Serif: Inter */
+  /* --- Nav CTA: Solid Black #111111 --- */
+  --color-nav-cta-bg: #111111;
+  --color-nav-cta-text: #ffffff;
+  --color-nav-cta-hover: #222222;
+
+  /* --- Secondary Buttons --- */
+  --color-btn-secondary-bg: #ffffff;
+  --color-btn-secondary-text: #111111;
+  --color-btn-secondary-border: rgba(17, 17, 17, 0.10);
+  --color-btn-secondary-hover-bg: #f5f5f7;
+
+  /* --- Backward Compatibility Token Aliases --- */
+  --color-primary: var(--color-accent-gold);
+  --color-primary-hover: var(--color-accent-gold-hover);
+  --color-primary-focus: var(--color-accent-gold);
+  --color-on-primary: var(--color-accent-text);
+  --color-brand-secure: var(--color-secondary-black);
+  --color-semantic-success: var(--color-secondary-black);
+  --color-liquid-abyss: var(--color-dominant-bg);
+  --color-liquid-deep: var(--color-dominant-alt);
+  --color-liquid-kelp: var(--color-dominant-alt);
+  --color-slate-deep: var(--color-border-light);
+  --color-platinum: var(--color-secondary-black);
+  --color-silver-mist: var(--color-text-secondary);
+  --color-ash: var(--color-text-secondary);
+  --color-liquid-mist: var(--color-secondary-black);
+  --color-lavender-phosphor: var(--color-secondary-black);
+  --color-bioluminescent-gradient: var(--color-dominant-bg);
+  --gradient-bioluminescent-gradient: var(--color-dominant-bg);
+  --color-aurora-gradient: var(--color-dominant-bg);
+  --gradient-aurora-gradient: var(--color-dominant-bg);
+
+  /* Clean Inter Sans-Serif */
   --font-matter: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
   --font-arial: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
   --font-bricolage: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
@@ -69,16 +103,15 @@
   --font-inter-tight: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Apple Radii */
+  /* Radii */
   --radius-cards: 20px;
   --radius-buttons: 999px;
   --radius-small: 12px;
 
   /* Navigation */
-  --lg-header-bg: rgba(255, 255, 255, 0.82);
-  --lg-header-highlight: rgba(0, 0, 0, 0.06);
-  --lg-btn-bg: #1d1d1f;
-  --lg-btn-highlight: #333336;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-border: rgba(17, 17, 17, 0.10);
+  --nav-pill-bg: #f5f5f7;
 
   /* Global Layout Architecture Variables */
   --container-max: 1200px;
@@ -105,11 +138,17 @@
   }
 }
 
+/* Universal Rule: No Drop Shadows, No Text Shadows */
+*, *::before, *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
 @layer base {
   html {
     font-family: var(--font-matter);
-    color: var(--color-ink-subtle);
-    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    background-color: var(--color-dominant-bg);
     scroll-behavior: smooth;
     scroll-padding-top: 96px;
     -webkit-font-smoothing: antialiased;
@@ -140,18 +179,18 @@
 
   body {
     font-family: var(--font-matter);
-    color: var(--color-ink-subtle);
-    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    background-color: var(--color-dominant-bg);
     line-height: 1.5;
     overflow-x: clip;
   }
 
   ::selection {
-    background-color: #1d1d1f;
-    color: #ffffff;
+    background-color: var(--color-accent-gold);
+    color: var(--color-accent-text);
   }
 
-  /* Standard Apple Typography Scale */
+  /* Standard Typography Scale */
   .type-display, .type-h1, .page-title, h1 {
     font-family: var(--font-heading);
     font-weight: 600 !important;
@@ -160,7 +199,7 @@
     letter-spacing: -0.03em !important;
     max-width: 900px !important;
     text-wrap: balance !important;
-    color: #1d1d1f !important;
+    color: var(--color-text-primary) !important;
     margin-top: 0 !important;
   }
 
@@ -171,7 +210,7 @@
     line-height: 1.1 !important;
     letter-spacing: -0.025em !important;
     text-wrap: balance !important;
-    color: #1d1d1f !important;
+    color: var(--color-text-primary) !important;
   }
 
   .type-h3, .section-subtitle, h3 {
@@ -179,7 +218,7 @@
     font-weight: 500 !important;
     font-size: 28px !important;
     line-height: 1.25 !important;
-    color: #1d1d1f !important;
+    color: var(--color-text-primary) !important;
   }
   @media (max-width: 767px) {
     .type-h3, .section-subtitle, h3 {
@@ -192,7 +231,7 @@
     font-weight: 600 !important;
     font-size: 18px;
     line-height: 1.35;
-    color: #1d1d1f;
+    color: var(--color-text-primary);
   }
   @media (min-width: 1024px) {
     .type-h4, h4 {
@@ -205,7 +244,7 @@
     font-size: 21px !important;
     line-height: 1.45 !important;
     max-width: 680px !important;
-    color: #6e6e73 !important;
+    color: var(--color-text-secondary) !important;
   }
   @media (max-width: 767px) {
     .intro-text, .hero-intro, .type-body-lg {
@@ -214,7 +253,7 @@
   }
 
   .body-text, .type-body, p {
-    color: #6e6e73 !important;
+    color: var(--color-text-secondary) !important;
     font-size: 17px !important;
     line-height: 1.5 !important;
     max-width: 680px;
@@ -228,7 +267,7 @@
   .type-small {
     font-size: 13px;
     line-height: 1.5;
-    color: var(--color-ink-subtle);
+    color: var(--color-text-secondary);
   }
 
   .type-eyebrow, .type-label {
@@ -245,30 +284,48 @@
     font-weight: 500;
   }
 
-  /* Minimal Apple Light Scrollbar */
+  /* Links on light backgrounds: #111111 with gold underline */
+  a:not([class*="btn"]):not([class*="logo"]),
+  .link-gold-underline {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold-underline);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    transition: text-decoration-color 150ms ease, opacity 150ms ease;
+  }
+  a:not([class*="btn"]):not([class*="logo"]):hover,
+  .link-gold-underline:hover {
+    text-decoration-color: var(--color-accent-gold-hover);
+    opacity: 0.85;
+  }
+
+  /* Minimal Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: var(--color-dominant-bg);
   }
   ::-webkit-scrollbar-thumb {
-    background: #d2d2d7;
+    background: rgba(17, 17, 17, 0.15);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #86868b;
+    background: rgba(17, 17, 17, 0.35);
   }
 }
 
 /* ------------------------------------------------------------
-   APPLE MINIMAL MONOCHROME BUTTON SYSTEM
-   - Primary: Solid Black (#1D1D1F) with Pure White text, no shadows
-   - Secondary: White/Light Gray with Hairline Border (#D2D2D7), no shadows
+   60-30-10 BUTTON SYSTEM
+   - Primary: Gold #F3C753 with #111111 text (hover #E8B84A)
+     Reserved for the single most important CTA per page
+   - Nav CTA: Solid Black #111111 with Pure White text (hover #222222)
+   - Secondary: White #FFFFFF with #111111 text & 1px 10% opacity border
    ------------------------------------------------------------ */
 
-/* Primary CTA: Solid Black #1D1D1F Button */
+/* Primary Page CTA: Gold #F3C753 Button */
 .btn-aurora,
 .btn-primary,
 .btn-liquid-primary,
@@ -285,10 +342,10 @@
   line-height: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #ffffff !important;
-  background-color: #1d1d1f !important;
+  color: var(--color-accent-text) !important;
+  background-color: var(--color-accent-gold) !important;
   border-radius: 9999px !important;
-  border: 1px solid #1d1d1f !important;
+  border: 1px solid var(--color-accent-gold) !important;
   box-shadow: none !important;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
@@ -301,15 +358,15 @@
 .btn-primary *,
 .btn-liquid-primary *,
 .btn-terminal * {
-  color: #ffffff !important;
+  color: var(--color-accent-text) !important;
 }
 
 .btn-aurora:hover,
 .btn-primary:hover,
 .btn-liquid-primary:hover,
 .btn-terminal:hover {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
+  background-color: var(--color-accent-gold-hover) !important;
+  border-color: var(--color-accent-gold-hover) !important;
   transform: translateY(-1px);
   box-shadow: none !important;
 }
@@ -319,7 +376,7 @@
 .btn-liquid-primary:active,
 .btn-terminal:active {
   transform: scale(0.98) !important;
-  background-color: #000000 !important;
+  background-color: var(--color-accent-gold-hover) !important;
   box-shadow: none !important;
   transition: transform 80ms ease !important;
 }
@@ -328,11 +385,38 @@
 .btn-primary:focus-visible,
 .btn-liquid-primary:focus-visible,
 .btn-terminal:focus-visible {
-  outline: 2px solid #1d1d1f;
+  outline: 2px solid var(--color-accent-gold);
   outline-offset: 2px;
 }
 
-/* Secondary CTA: Clean Hairline Button */
+/* Nav CTA: Solid Black #111111 with Pure White Text */
+.btn-nav,
+.nav-cta-btn,
+.btn-primary.btn-nav {
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 20px !important;
+  background-color: var(--color-nav-cta-bg) !important;
+  color: var(--color-nav-cta-text) !important;
+  border: 1px solid var(--color-nav-cta-bg) !important;
+  font-weight: 600;
+}
+
+.btn-nav *,
+.nav-cta-btn *,
+.btn-primary.btn-nav * {
+  color: var(--color-nav-cta-text) !important;
+}
+
+.btn-nav:hover,
+.nav-cta-btn:hover,
+.btn-primary.btn-nav:hover {
+  background-color: var(--color-nav-cta-hover) !important;
+  border-color: var(--color-nav-cta-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Secondary CTA: White Button with 1px 10% Opacity Border */
 .btn-kelp,
 .btn-secondary,
 .btn-liquid-secondary,
@@ -349,9 +433,9 @@
   line-height: 20px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: #1d1d1f !important;
-  background-color: #ffffff !important;
-  border: 1px solid #d2d2d7 !important;
+  color: var(--color-btn-secondary-text) !important;
+  background-color: var(--color-btn-secondary-bg) !important;
+  border: 1px solid var(--color-btn-secondary-border) !important;
   border-radius: 9999px !important;
   box-shadow: none !important;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -364,16 +448,16 @@
 .btn-secondary *,
 .btn-liquid-secondary *,
 .btn-terminal-muted * {
-  color: #1d1d1f !important;
+  color: var(--color-btn-secondary-text) !important;
 }
 
 .btn-kelp:hover,
 .btn-secondary:hover,
 .btn-liquid-secondary:hover,
 .btn-terminal-muted:hover {
-  background-color: #f5f5f7 !important;
-  border-color: #86868b !important;
-  color: #1d1d1f !important;
+  background-color: var(--color-btn-secondary-hover-bg) !important;
+  border-color: rgba(17, 17, 17, 0.20) !important;
+  color: var(--color-btn-secondary-text) !important;
   transform: translateY(-1px);
   box-shadow: none !important;
 }
@@ -387,11 +471,12 @@
   transition: transform 80ms ease !important;
 }
 
-/* Nav Button: 44px tall */
-.btn-nav {
-  height: 44px !important;
-  min-height: 44px !important;
-  padding: 0 20px !important;
+.btn-kelp:focus-visible,
+.btn-secondary:focus-visible,
+.btn-liquid-secondary:focus-visible,
+.btn-terminal-muted:focus-visible {
+  outline: 2px solid var(--color-secondary-black);
+  outline-offset: 2px;
 }
 
 /* Mobile: full width and stacked buttons */
@@ -411,14 +496,6 @@
   }
 }
 
-.btn-kelp:focus-visible,
-.btn-secondary:focus-visible,
-.btn-liquid-secondary:focus-visible,
-.btn-terminal-muted:focus-visible {
-  outline: 2px solid #1d1d1f;
-  outline-offset: 2px;
-}
-
 /* Glass & Inverse Button Normalization */
 .btn-glass,
 .btn-inverse {
@@ -430,9 +507,9 @@
   font-family: var(--font-matter);
   font-size: 14px;
   font-weight: 500;
-  color: #1d1d1f !important;
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  color: var(--color-text-primary) !important;
+  background: var(--color-dominant-alt) !important;
+  border: 1px solid var(--color-border-light) !important;
   border-radius: 999px;
   box-shadow: none !important;
   transition: all 180ms ease;
@@ -442,7 +519,7 @@
 .btn-glass:hover,
 .btn-inverse:hover {
   background: #e8e8ed !important;
-  border-color: #86868b !important;
+  border-color: rgba(17, 17, 17, 0.20) !important;
 }
 
 .btn-glass:active,
@@ -456,21 +533,21 @@
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  background: var(--color-dominant-alt) !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
   flex-shrink: 0;
   transition: all 180ms ease;
   cursor: pointer;
 }
 
 .arrow-icon-btn:hover {
-  background: #1d1d1f !important;
-  border-color: #1d1d1f !important;
+  background: var(--color-secondary-black) !important;
+  border-color: var(--color-secondary-black) !important;
   color: #ffffff !important;
 }
 
@@ -479,9 +556,9 @@
 }
 
 /* ------------------------------------------------------------
-   APPLE MINIMAL SURFACE CARDS & CONTAINERS
+   SURFACE CARDS & CONTAINERS
    - Background: Light Gray #F5F5F7
-   - Border: Hairline #D2D2D7
+   - Border: 1px 10% opacity border (rgba(17, 17, 17, 0.10))
    - Shadows: None
    - Gradients: None
    ------------------------------------------------------------ */
@@ -497,15 +574,15 @@
 .bento-card,
 .glass-panel,
 .formium-liquid-glass {
-  background: #f5f5f7 !important;
+  background: var(--color-dominant-alt) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  color: #1d1d1f;
+  color: var(--color-text-primary);
   transition: border-color 200ms ease, background-color 200ms ease;
 }
 
@@ -526,15 +603,16 @@
 .card-selectable:hover,
 .bento-card:hover,
 .glass-panel:hover {
-  border-color: #86868b !important;
+  border-color: rgba(17, 17, 17, 0.25) !important;
   box-shadow: none !important;
   transform: none !important;
 }
 
+/* Featured / Active Highlight Card */
 .card-selectable-active,
 .pricing-card-featured {
-  background: #ffffff !important;
-  border: 2px solid #1d1d1f !important;
+  background: var(--color-dominant-bg) !important;
+  border: 2px solid var(--color-accent-gold) !important;
   box-shadow: none !important;
 }
 
@@ -547,14 +625,14 @@
   text-align: center;
   padding: 40px 28px;
   border-radius: 20px;
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  background: var(--color-dominant-alt) !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   gap: 12px;
 }
 
 .fa-stat-card:hover {
-  border-color: #86868b !important;
+  border-color: rgba(17, 17, 17, 0.25) !important;
 }
 
 .fa-stat-value {
@@ -563,7 +641,7 @@
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1;
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
   display: flex;
   align-items: center;
   gap: 2px;
@@ -572,7 +650,7 @@
 .fa-stat-suffix {
   font-size: 0.5em;
   font-weight: 700;
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
   line-height: 1;
 }
 
@@ -580,7 +658,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: #6e6e73 !important;
+  color: var(--color-text-secondary) !important;
   text-transform: uppercase;
 }
 
@@ -589,8 +667,8 @@
 .text-gradient-subtle {
   background: none !important;
   -webkit-background-clip: unset !important;
-  -webkit-text-fill-color: #1d1d1f !important;
-  color: #1d1d1f !important;
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+  color: var(--color-text-primary) !important;
 }
 
 /* Universal Eyebrow Label Specification */
@@ -602,7 +680,7 @@
   font-size: 12px !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  color: #6e6e73 !important;
+  color: var(--color-text-secondary) !important;
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
@@ -613,9 +691,26 @@
   line-height: 1.2 !important;
 }
 
+/* Badges: 10% Gold Accent with #111111 Text */
+.badge-accent,
+.badge-gold,
+.badge-recommended {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  background-color: var(--color-accent-gold) !important;
+  color: var(--color-accent-text) !important;
+  border: 1px solid var(--color-accent-gold) !important;
+}
+
 /* Statistic Counter */
 .stat-counter {
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.0;
@@ -628,22 +723,22 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #1d1d1f !important;
+  outline: 2px solid var(--color-secondary-black) !important;
   outline-offset: 2px;
 }
 
 /* ------------------------------------------------------------
-   APPLE NAVIGATION BAR & DROPDOWNS
-   - Frosted Glass #FFFFFF with Hairline Border #D2D2D7
+   NAVIGATION BAR & DROPDOWNS
+   - Frosted Glass #FFFFFF with 10% opacity border
    ------------------------------------------------------------ */
 
 .header-six {
   position: relative;
   isolation: isolate;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: var(--nav-bg) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   border-radius: 9999px;
 }
@@ -652,8 +747,8 @@ select:focus-visible {
   position: absolute;
   pointer-events: none;
   border-radius: 9999px;
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  background: var(--color-dominant-alt) !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   transition:
     left 180ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -671,12 +766,12 @@ select:focus-visible {
   left: 50%;
   transform: translateX(-50%);
   min-width: 280px;
-  background: #ffffff !important;
+  background: var(--color-dominant-bg) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid var(--color-border-light) !important;
   border-radius: 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
   padding: 8px;
   z-index: 50;
 }
@@ -690,7 +785,7 @@ select:focus-visible {
   text-align: left;
   padding: 10px 14px;
   border-radius: 12px;
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
   font-size: 14px;
   font-weight: 500;
   transition: background-color 150ms ease;
@@ -703,33 +798,33 @@ select:focus-visible {
 .header-dropdown button:hover,
 .lg-dropdown a:hover,
 .lg-dropdown button:hover {
-  background: #f5f5f7 !important;
-  color: #1d1d1f !important;
+  background: var(--color-dominant-alt) !important;
+  color: var(--color-text-primary) !important;
 }
 
 /* Mobile Off-canvas Drawer */
 .mobile-offcanvas,
 .glass-mobile-drawer {
-  background: #ffffff !important;
+  background: var(--color-dominant-bg) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border: 1px solid #d2d2d7 !important;
+  border: 1px solid var(--color-border-light) !important;
   border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
-  color: #1d1d1f !important;
+  box-shadow: none !important;
+  color: var(--color-text-primary) !important;
 }
 
 .mobile-offcanvas nav button,
 .mobile-offcanvas nav a,
 .glass-mobile-drawer nav button,
 .glass-mobile-drawer nav a {
-  color: #1d1d1f !important;
+  color: var(--color-text-primary) !important;
 }
 
 .mobile-offcanvas nav button:hover,
 .glass-mobile-drawer nav button:hover {
-  background: #f5f5f7 !important;
-  color: #1d1d1f !important;
+  background: var(--color-dominant-alt) !important;
+  color: var(--color-text-primary) !important;
 }
 
 /* Accordion */
@@ -751,18 +846,18 @@ select:focus-visible {
 
 /* Form Inputs */
 input, textarea, select {
-  background-color: #ffffff !important;
-  color: #1d1d1f !important;
-  border-color: #d2d2d7 !important;
+  background-color: var(--color-dominant-bg) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border-light) !important;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #86868b !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: #1d1d1f !important;
-  outline: 1px solid #1d1d1f !important;
+  border-color: var(--color-accent-gold) !important;
+  outline: 1px solid var(--color-accent-gold) !important;
   box-shadow: none !important;
 }
 
@@ -798,6 +893,115 @@ input:focus, textarea:focus, select:focus {
 
 .formium-mono-logo:hover {
   opacity: 0.9;
+}
+
+/* ============================================================
+   DARK SECTIONS & FOOTER (30% SECONDARY BLACK #111111)
+   - Background: #111111
+   - Headings & Primary Text: Pure White #FFFFFF
+   - Secondary Text: White at 60% opacity (rgba(255, 255, 255, 0.60))
+   - Borders: 1px at 10% opacity (rgba(255, 255, 255, 0.10))
+   - Buttons: Gold #F3C753 with #111111 text (hover #E8B84A)
+   - Gold text allowed on black sections
+   ============================================================ */
+
+.section-dark,
+section.section-dark,
+footer.footer-dark,
+.dark-section {
+  background-color: var(--color-dark-bg) !important;
+  color: var(--color-dark-text-primary) !important;
+  border-color: var(--color-dark-border) !important;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+footer.footer-dark h1,
+footer.footer-dark h2,
+footer.footer-dark h3,
+footer.footer-dark h4 {
+  color: var(--color-dark-text-primary) !important;
+}
+
+.section-dark p,
+.section-dark .intro-text,
+.section-dark .body-text,
+footer.footer-dark p,
+footer.footer-dark ul,
+footer.footer-dark li,
+footer.footer-dark span.text-muted {
+  color: var(--color-dark-text-secondary) !important;
+}
+
+.section-dark .eyebrow-label,
+.section-dark .section-eyebrow {
+  color: var(--color-accent-gold) !important; /* Gold text allowed on black sections */
+}
+
+/* Gold button on dark sections */
+.section-dark .btn-primary,
+footer.footer-dark .btn-primary,
+#cta .btn-primary {
+  background-color: var(--color-accent-gold) !important;
+  color: var(--color-accent-text) !important;
+  border-color: var(--color-accent-gold) !important;
+}
+
+.section-dark .btn-primary:hover,
+footer.footer-dark .btn-primary:hover,
+#cta .btn-primary:hover {
+  background-color: var(--color-accent-gold-hover) !important;
+  border-color: var(--color-accent-gold-hover) !important;
+}
+
+.section-dark .btn-primary *,
+footer.footer-dark .btn-primary *,
+#cta .btn-primary * {
+  color: var(--color-accent-text) !important;
+}
+
+/* Secondary button on dark sections: transparent with 10% white border */
+.section-dark .btn-secondary,
+footer.footer-dark .btn-secondary,
+#cta .btn-secondary {
+  background-color: transparent !important;
+  color: var(--color-dark-text-primary) !important;
+  border: 1px solid var(--color-dark-border) !important;
+}
+
+.section-dark .btn-secondary:hover,
+footer.footer-dark .btn-secondary:hover,
+#cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  color: var(--color-dark-text-primary) !important;
+}
+
+.section-dark .btn-secondary *,
+footer.footer-dark .btn-secondary *,
+#cta .btn-secondary * {
+  color: var(--color-dark-text-primary) !important;
+}
+
+/* Links in dark sections / footer */
+.section-dark a:not([class*="btn"]):not([class*="logo"]),
+footer.footer-dark a:not([class*="btn"]):not([class*="logo"]),
+footer.footer-dark button {
+  color: var(--color-dark-text-secondary);
+  transition: color 150ms ease;
+}
+
+.section-dark a:not([class*="btn"]):not([class*="logo"]):hover,
+footer.footer-dark a:not([class*="btn"]):not([class*="logo"]):hover,
+footer.footer-dark button:hover {
+  color: var(--color-accent-gold) !important; /* Gold text allowed on dark sections */
+}
+
+/* Gold text utility (strictly allowed on dark sections) */
+.text-gold-allowed {
+  color: var(--color-accent-gold) !important;
 }
 
 /* ============================================================
@@ -899,7 +1103,7 @@ input[type="button"] {
   box-sizing: border-box !important;
 }
 
-/* 4. Page Header Clearance: Nav height (64px/56px) + Nav top (16px) + 64px = 144px desktop, 120px mobile */
+/* 4. Page Header Clearance */
 .page-header,
 section.page-header,
 .hero-section {
@@ -932,12 +1136,13 @@ section.site-section {
 
 /* Alternating Section Backgrounds: White and #F5F5F7 */
 .section-white {
-  background-color: #ffffff !important;
+  background-color: var(--color-dominant-bg) !important;
 }
-.section-gray {
-  background-color: #f5f5f7 !important;
-  border-top: 1px solid #d2d2d7;
-  border-bottom: 1px solid #d2d2d7;
+.section-gray,
+.section-alt {
+  background-color: var(--color-dominant-alt) !important;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 /* 6. Card Grids: 3 columns desktop, 2 tablet, 1 mobile */
@@ -967,8 +1172,8 @@ section.site-section {
   height: 100% !important;
   border-radius: 24px !important;
   padding: 32px !important;
-  background: #f5f5f7 !important;
-  border: 1px solid #d2d2d7 !important;
+  background: var(--color-dominant-alt) !important;
+  border: 1px solid var(--color-border-light) !important;
   box-shadow: none !important;
   box-sizing: border-box !important;
   display: flex;
@@ -976,7 +1181,7 @@ section.site-section {
   justify-content: space-between;
 }
 
-/* 7. Marquee Strip (Home) */
+/* 7. Marquee Strip */
 @keyframes ticker-marquee {
   0% {
     transform: translate3d(0, 0, 0);
@@ -991,9 +1196,9 @@ section.site-section {
   min-height: 72px !important;
   display: flex !important;
   align-items: center !important;
-  border-top: 1px solid #d2d2d7 !important;
-  border-bottom: 1px solid #d2d2d7 !important;
-  background-color: #f5f5f7 !important;
+  border-top: 1px solid var(--color-border-light) !important;
+  border-bottom: 1px solid var(--color-border-light) !important;
+  background-color: var(--color-dominant-alt) !important;
   position: relative !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
@@ -1069,5 +1274,3 @@ section.site-section {
     gap: 24px !important;
   }
 }
-
-

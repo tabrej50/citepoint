@@ -55,8 +55,8 @@ export default function FaqAccordion() {
         return (
           <div
             key={idx}
-            className={`bg-[#F5F5F7] border border-[#D2D2D7] p-0 overflow-hidden transition-all duration-200 group rounded-[20px] ${
-              isOpen ? '!border-[#1D1D1F]' : 'hover:border-[#1D1D1F]/50'
+            className={`bg-[#F5F5F7] border border-[#111111]/10 p-0 overflow-hidden transition-all duration-200 group rounded-[20px] ${
+              isOpen ? '!border-[#111111]' : 'hover:border-[#111111]/50'
             }`}
           >
             <button
@@ -64,17 +64,17 @@ export default function FaqAccordion() {
               aria-expanded={isOpen}
               className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none cursor-pointer active:scale-[0.99] transition-transform duration-75 select-none"
             >
-              <span className="font-sans font-semibold text-base text-[#1D1D1F] flex items-center gap-2.5">
+              <span className="font-sans font-semibold text-base text-[#111111] flex items-center gap-2.5">
                 {faq.isGuarantee && (
-                  <ShieldCheck className="w-4 h-4 text-[#1D1D1F] shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-[#111111] shrink-0" />
                 )}
                 {faq.q}
               </span>
               <span
-                className={`w-8 h-8 rounded-full border border-[#D2D2D7] flex items-center justify-center transition-all duration-200 shrink-0 ${
+                className={`w-8 h-8 rounded-full border border-[#111111]/10 flex items-center justify-center transition-all duration-200 shrink-0 ${
                   isOpen
-                    ? 'bg-[#1D1D1F] text-white rotate-180 border-[#1D1D1F]'
-                    : 'bg-white text-[#1D1D1F]'
+                    ? 'bg-[#111111] text-white rotate-180 border-[#111111]'
+                    : 'bg-white text-[#111111]'
                 }`}
               >
                 <ChevronDown className="w-4 h-4" />
@@ -85,9 +85,9 @@ export default function FaqAccordion() {
               className={`accordion-grid-wrapper ${isOpen ? 'is-open' : ''}`}
             >
               <div className="accordion-grid-inner">
-                <div className="px-6 pb-6 pt-2 text-sm text-[#6E6E73] leading-relaxed border-t border-[#D2D2D7]">
+                <div className="px-6 pb-6 pt-2 text-sm text-[#111111]/60 leading-relaxed border-t border-[#111111]/10">
                   {faq.isGuarantee ? (
-                    <div className="p-4 rounded-[14px] bg-white border border-[#D2D2D7] text-[#1D1D1F] font-normal leading-relaxed">
+                    <div className="p-4 rounded-[14px] bg-white border border-[#111111]/10 text-[#111111] font-normal leading-relaxed">
                       {faq.a}
                     </div>
                   ) : (

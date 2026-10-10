@@ -74,7 +74,7 @@ export default function AboutPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* SECTION 1: PAGE HEADER */}
       <PageHeader
@@ -92,7 +92,7 @@ export default function AboutPage({ setCurrentRoute }) {
       />
 
       {/* SECTION 2: STORY: THE SHIFT TO SYNTHESIS (ALIGNED TO SITE-CONTAINER LEFT EDGE) */}
-      <section className="site-section border-b border-[#d2d2d7] bg-[#f5f5f7]">
+      <section className="site-section border-b border-[#111111]/10 bg-[#f5f5f7]">
         <div className="site-container">
           <div className="max-w-3xl text-left">
             <SlideReveal direction="up" distance={32} duration={0.7}>
@@ -100,7 +100,7 @@ export default function AboutPage({ setCurrentRoute }) {
                 THE SHIFT TO SYNTHESIS
               </span>
               
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1d1d1f] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] tracking-tight mb-6">
                 The search landscape has shifted from discovery to synthesis.
               </h2>
               
@@ -114,14 +114,14 @@ export default function AboutPage({ setCurrentRoute }) {
                 </p>
 
                 {/* Callout Quote Card */}
-                <div className="p-6 sm:p-8 my-8 rounded-[24px] border border-[#d2d2d7] bg-white group">
-                  <Quote className="w-8 h-8 text-[#1d1d1f] mb-3 transition-transform duration-200 group-hover:scale-105" />
-                  <blockquote className="text-xl sm:text-2xl font-medium leading-normal text-[#1d1d1f] mb-4">
+                <div className="p-6 sm:p-8 my-8 rounded-[24px] border border-[#111111]/10 bg-white group">
+                  <Quote className="w-8 h-8 text-[#111111] mb-3 transition-transform duration-200 group-hover:scale-105" />
+                  <blockquote className="text-xl sm:text-2xl font-medium leading-normal text-[#111111] mb-4">
                     “In the answer economy, the winner isn’t who pays the most for clicks—it’s who earns the synthetic consensus of AI discovery.”
                   </blockquote>
-                  <div className="pt-4 border-t border-[#d2d2d7] flex items-center justify-between text-xs text-[#6e6e73]">
+                  <div className="pt-4 border-t border-[#111111]/10 flex items-center justify-between text-xs text-[#111111]/60">
                     <span>Citepoint Strategic Philosophy</span>
-                    <span className="text-[#1d1d1f] font-semibold">Canonical Reference</span>
+                    <span className="text-[#111111] font-semibold">Canonical Reference</span>
                   </div>
                 </div>
 
@@ -143,7 +143,7 @@ export default function AboutPage({ setCurrentRoute }) {
               <span className="eyebrow-label">
                 CORE VALUES & PRINCIPLES
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1d1d1f] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] tracking-tight mb-4">
                 Built on empirical rigor, not marketing hype.
               </h2>
               <p className="intro-text">
@@ -160,18 +160,18 @@ export default function AboutPage({ setCurrentRoute }) {
                 <SlideStaggerItem
                   key={v.num}
                   direction={v.dir}
-                  className="min-h-[260px] p-6 sm:p-8 flex flex-col justify-between rounded-[24px] bg-[#f5f5f7] border border-[#d2d2d7] group cursor-default transition-all duration-200 hover:border-[#1d1d1f]"
+                  className="min-h-[260px] p-6 sm:p-8 flex flex-col justify-between rounded-[24px] bg-[#f5f5f7] border border-[#111111]/10 group cursor-default transition-all duration-200 hover:border-[#111111]"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-[#6e6e73] font-mono font-semibold">
+                      <span className="text-xs text-[#111111]/60 font-mono font-semibold">
                         {v.num}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-white border border-[#d2d2d7] text-[#1d1d1f] flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
-                        <IconC className="w-4 h-4 text-[#1d1d1f]" />
+                      <div className="w-8 h-8 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
+                        <IconC className="w-4 h-4 text-[#111111]" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-medium text-[#1d1d1f] transition-colors duration-200">
+                    <h3 className="text-xl font-medium text-[#111111] transition-colors duration-200">
                       {v.title}
                     </h3>
                   </div>
@@ -186,18 +186,18 @@ export default function AboutPage({ setCurrentRoute }) {
         </div>
       </section>
 
-      {/* SECTION 4: FINAL CTA */}
-      <section className="site-section border-t border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+      {/* SECTION 4: FINAL CTA (DARK SECTION #111111) */}
+      <section className="site-section section-dark border-t border-white/10 bg-[#111111] text-white relative overflow-hidden">
         <div className="site-container">
           <SlideReveal direction="up" distance={32} duration={0.75}>
-            <div className="text-center p-8 sm:p-12 md:p-16 max-w-4xl mx-auto rounded-[24px] border border-[#d2d2d7] bg-white">
-              <span className="eyebrow-label text-center mx-auto">
+            <div className="text-center p-8 sm:p-12 md:p-16 max-w-4xl mx-auto rounded-[24px] border border-white/10 bg-white/5">
+              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
                 STRATEGIC ENGAGEMENT
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1d1d1f] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-4">
                 Partner with Citepoint.
               </h2>
-              <p className="intro-text mx-auto mb-8">
+              <p className="intro-text mx-auto mb-8 text-white/60">
                 Start a confidential discovery discussion with our strategy team to evaluate your company’s generative presence.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons-container">
@@ -206,7 +206,7 @@ export default function AboutPage({ setCurrentRoute }) {
                   className="btn-primary"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

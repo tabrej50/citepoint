@@ -99,7 +99,7 @@ export default function InsightsPage({ setCurrentRoute }) {
     : articles.filter((a) => a.category === selectedCategory);
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* PAGE HERO */}
       <PageHeader
@@ -112,7 +112,7 @@ export default function InsightsPage({ setCurrentRoute }) {
       />
 
       {/* ARTICLE REPOSITORY */}
-      <section ref={articlesSectionRef} className="site-section bg-white border-b border-[#d2d2d7] relative overflow-hidden">
+      <section ref={articlesSectionRef} className="site-section bg-white border-b border-[#111111]/10 relative overflow-hidden">
         <div className="site-container relative z-10">
           
           {/* Category Filter Pills */}
@@ -124,8 +124,8 @@ export default function InsightsPage({ setCurrentRoute }) {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-5 py-2.5 min-h-[44px] inline-flex items-center justify-center rounded-full text-xs font-semibold uppercase tracking-wider transition-all border cursor-pointer active:scale-[0.98] ${
                     selectedCategory === cat
-                      ? 'bg-[#1d1d1f] text-white border-[#1d1d1f]'
-                      : 'bg-[#f5f5f7] text-[#6e6e73] border-[#d2d2d7] hover:border-[#1d1d1f] hover:text-[#1d1d1f]'
+                      ? 'bg-[#111111] text-white border-[#111111]'
+                      : 'bg-[#f5f5f7] text-[#111111]/60 border-[#111111]/10 hover:border-[#111111] hover:text-[#111111]'
                   }`}
                 >
                   {cat}
@@ -140,11 +140,11 @@ export default function InsightsPage({ setCurrentRoute }) {
               <SlideStaggerItem
                 key={art.id}
                 direction={aIdx % 2 === 0 ? 'diagonal-left' : 'diagonal-right'}
-                className="p-6 lg:p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-between h-full group relative overflow-hidden transition-all duration-200 hover:border-[#1d1d1f]"
+                className="p-6 lg:p-8 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] flex flex-col justify-between h-full group relative overflow-hidden transition-all duration-200 hover:border-[#111111]"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#6e6e73] mb-4 pb-4 border-b border-[#d2d2d7]">
-                    <span className="px-3 py-1 rounded-full bg-white text-[#1d1d1f] border border-[#d2d2d7] uppercase tracking-wider text-[11px] font-semibold">
+                  <div className="flex items-center justify-between text-xs text-[#111111]/60 mb-4 pb-4 border-b border-[#111111]/10">
+                    <span className="px-3 py-1 rounded-full bg-white text-[#111111] border border-[#111111]/10 uppercase tracking-wider text-[11px] font-semibold">
                       {art.category}
                     </span>
                     <span className="font-mono text-[11px]">
@@ -154,7 +154,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-semibold text-[#1d1d1f] mb-3 leading-[1.2]">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-[#111111] mb-3 leading-[1.2]">
                     {art.title}
                   </h2>
 
@@ -162,19 +162,19 @@ export default function InsightsPage({ setCurrentRoute }) {
                     {art.excerpt}
                   </p>
 
-                  <div className="p-4 rounded-[16px] bg-white border border-[#d2d2d7] text-xs text-[#1d1d1f] mb-6 leading-relaxed">
+                  <div className="p-4 rounded-[16px] bg-white border border-[#111111]/10 text-xs text-[#111111] mb-6 leading-relaxed">
                     {art.highlight}
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#d2d2d7] flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#6e6e73]">Citepoint Research Desk</span>
+                <div className="pt-4 border-t border-[#111111]/10 flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#111111]/60">Citepoint Research Desk</span>
                   <button
                     onClick={() => handleNav('audit')}
-                    className="text-[#1d1d1f] font-semibold inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
+                    className="text-[#111111] font-semibold inline-flex items-center gap-1 cursor-pointer transition-transform duration-300 group-hover:translate-x-0.5"
                   >
                     <span>Read Analysis</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#1d1d1f]" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#111111]" />
                   </button>
                 </div>
               </SlideStaggerItem>
@@ -182,12 +182,12 @@ export default function InsightsPage({ setCurrentRoute }) {
           </SlideStaggerContainer>
 
           {/* GEO GLOSSARY SECTION */}
-          <SlideReveal direction="scale-up" distance={30} duration={0.75} className="p-6 lg:p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
+          <SlideReveal direction="scale-up" distance={30} duration={0.75} className="p-6 lg:p-8 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] relative overflow-hidden">
             <div className="max-w-2xl mb-8 lg:mb-12">
               <span className="eyebrow-label">
                 TERMINOLOGY & CONCEPTS
               </span>
-              <h3 className="text-2xl sm:text-3xl font-semibold text-[#1d1d1f] tracking-tight leading-[1.1] mb-3">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-[#111111] tracking-tight leading-[1.1] mb-3">
                 The B2B GEO Glossary
               </h3>
               <p className="intro-text text-sm">
@@ -204,8 +204,8 @@ export default function InsightsPage({ setCurrentRoute }) {
                     onClick={() => setSelectedGlossaryTerm(idx)}
                     className={`w-full text-left px-5 py-3.5 rounded-[16px] text-xs font-semibold uppercase tracking-wider transition-all border cursor-pointer active:scale-[0.98] ${
                       selectedGlossaryTerm === idx
-                        ? 'bg-[#1d1d1f] text-white border-[#1d1d1f]'
-                        : 'bg-white text-[#6e6e73] border-[#d2d2d7] hover:text-[#1d1d1f] hover:border-[#1d1d1f]'
+                        ? 'bg-[#111111] text-white border-[#111111]'
+                        : 'bg-white text-[#111111]/60 border-[#111111]/10 hover:text-[#111111] hover:border-[#111111]'
                     }`}
                   >
                     {item.term}
@@ -214,12 +214,12 @@ export default function InsightsPage({ setCurrentRoute }) {
               </div>
 
               {/* Term Definition Detail */}
-              <div className="lg:col-span-7 bg-white text-[#1d1d1f] rounded-[20px] p-6 lg:p-8 border border-[#d2d2d7] flex flex-col justify-between min-h-[260px]">
+              <div className="lg:col-span-7 bg-white text-[#111111] rounded-[20px] p-6 lg:p-8 border border-[#111111]/10 flex flex-col justify-between min-h-[260px]">
                 <div>
                   <span className="eyebrow-label">
                     DEFINITION 0{selectedGlossaryTerm + 1}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-[#1d1d1f] leading-[1.2] mb-4">
+                  <h4 className="text-xl sm:text-2xl font-semibold text-[#111111] leading-[1.2] mb-4">
                     {glossary[selectedGlossaryTerm].term}
                   </h4>
                   <p className="body-text text-sm">
@@ -227,11 +227,11 @@ export default function InsightsPage({ setCurrentRoute }) {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-[#d2d2d7] mt-8 flex items-center justify-between text-xs text-[#6e6e73]">
+                <div className="pt-6 border-t border-[#111111]/10 mt-8 flex items-center justify-between text-xs text-[#111111]/60">
                   <span>Citepoint Knowledge Standard</span>
                   <button
                     onClick={() => handleNav('contact')}
-                    className="text-[#1d1d1f] font-semibold hover:underline cursor-pointer min-h-[48px] h-12 px-2 inline-flex items-center"
+                    className="text-[#111111] font-semibold hover:underline cursor-pointer min-h-[48px] h-12 px-2 inline-flex items-center"
                   >
                     [ Ask Our Specialists ]
                   </button>
@@ -243,17 +243,17 @@ export default function InsightsPage({ setCurrentRoute }) {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="site-section bg-[#f5f5f7] text-[#1d1d1f] relative overflow-hidden border-t border-[#d2d2d7]">
+      {/* FINAL CTA (DARK SECTION #111111) */}
+      <section className="site-section section-dark bg-[#111111] text-white relative overflow-hidden border-t border-white/10">
         <div className="site-container relative z-10 text-center">
           <SlideReveal direction="up" distance={36} duration={0.8}>
-            <span className="eyebrow-label text-center mx-auto">
+            <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
               ALGORITHM INTELLIGENCE
             </span>
-            <h2 className="text-3xl sm:text-5xl font-semibold text-[#1d1d1f] tracking-tight leading-[1.08] mb-5">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-[1.08] mb-5">
               Stay ahead of generative search algorithm updates.
             </h2>
-            <p className="intro-text max-w-2xl mx-auto mb-8">
+            <p className="intro-text max-w-2xl mx-auto mb-8 text-white/60">
               Request an audit to receive our executive briefing on your category’s AI search shifts.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 hero-buttons-container">
@@ -262,7 +262,7 @@ export default function InsightsPage({ setCurrentRoute }) {
                 className="btn-primary w-full sm:w-auto"
               >
                 <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-4 h-4 text-[#111111]" />
               </button>
               <button
                 onClick={() => handleNav('contact')}

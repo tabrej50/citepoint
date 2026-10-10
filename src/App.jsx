@@ -159,7 +159,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#ffffff] text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white relative">
+    <div className="min-h-screen flex flex-col bg-[var(--color-dominant-bg)] text-[var(--color-text-primary)] font-sans selection:bg-[var(--color-accent-gold)] selection:text-[var(--color-accent-text)] relative">
       <LiquidGlassFilter />
 
       {/* Sticky / Transparent Floating Header Navbar */}
@@ -180,7 +180,7 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {/* Deep Midnight Navy Footer */}
+      {/* 30% Secondary Black #111111 Footer */}
       <Footer setCurrentRoute={navigateTo} />
     </div>
   );

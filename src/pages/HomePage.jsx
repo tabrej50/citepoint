@@ -302,12 +302,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
   ];
 
   return (
-    <div className="relative overflow-hidden font-sans bg-white text-[#1D1D1F]">
+    <div className="relative overflow-hidden font-sans bg-white text-[#111111]">
 
       {/* ============================================================
           HERO SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={heroRef} className="page-header relative text-[#1D1D1F] overflow-hidden bg-white border-b border-[#D2D2D7]">
+      <section ref={heroRef} className="page-header relative text-[#111111] overflow-hidden bg-white border-b border-[#111111]/10">
         <div className="site-container relative z-10">
           <div className="max-w-[900px] mx-auto text-center flex flex-col items-center">
             
@@ -330,7 +330,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   className="btn-primary"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                 </button>
 
                 <button
@@ -345,8 +345,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Trust Line */}
             <SlideReveal direction="up" delay={0.3}>
-              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#6E6E73] font-sans mx-auto">
-                <ShieldCheck className="w-4 h-4 text-[#1D1D1F] shrink-0" />
+              <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#111111]/60 font-sans mx-auto">
+                <ShieldCheck className="w-4 h-4 text-[#111111] shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>
@@ -366,8 +366,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 {/* AI Platform Logos */}
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="flex items-center gap-1.5 shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
-                    <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#111111]" />
+                    <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#111111] font-semibold shrink-0">
                       AI Engines Audited:
                     </span>
                   </div>
@@ -375,10 +375,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     {AI_ENGINES.map((engine) => (
                       <div
                         key={`set-${setIndex}-${engine.id}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#D2D2D7] text-xs font-sans font-medium text-[#1D1D1F] shrink-0"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#111111]/10 text-xs font-sans font-medium text-[#111111] shrink-0"
                       >
                         <AiEngineIcon id={engine.id} size={14} />
-                        <span className="text-[#1D1D1F]">{engine.name}</span>
+                        <span className="text-[#111111]">{engine.name}</span>
                       </div>
                     ))}
                   </div>
@@ -386,21 +386,21 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#1D1D1F]" />
-                  <div className="w-6 h-[1px] bg-[#D2D2D7]" />
-                  <div className="w-1 h-1 rounded-full bg-[#1D1D1F]" />
+                  <div className="w-1 h-1 rounded-full bg-[#111111]" />
+                  <div className="w-6 h-[1px] bg-[#111111]/10" />
+                  <div className="w-1 h-1 rounded-full bg-[#111111]" />
                 </div>
 
                 {/* Target B2B Sectors */}
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold shrink-0">
+                  <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#111111] font-semibold shrink-0">
                     Target Sectors:
                   </span>
                   <div className="flex items-center gap-2 shrink-0">
                     {trustBadges.map((badge, bIdx) => (
                       <span
                         key={`set-${setIndex}-badge-${bIdx}`}
-                        className="px-3 py-1 rounded-full text-xs font-sans uppercase tracking-[0.08em] bg-white border border-[#D2D2D7] text-[#1D1D1F] font-medium shrink-0"
+                        className="px-3 py-1 rounded-full text-xs font-sans uppercase tracking-[0.08em] bg-white border border-[#111111]/10 text-[#111111] font-medium shrink-0"
                       >
                         {badge}
                       </span>
@@ -410,9 +410,9 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator between loops */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#1D1D1F]" />
-                  <div className="w-6 h-[1px] bg-[#D2D2D7]" />
-                  <div className="w-1 h-1 rounded-full bg-[#1D1D1F]" />
+                  <div className="w-1 h-1 rounded-full bg-[#111111]" />
+                  <div className="w-6 h-[1px] bg-[#111111]/10" />
+                  <div className="w-1 h-1 rounded-full bg-[#111111]" />
                 </div>
               </div>
             ))}
@@ -424,7 +424,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           PROBLEM SECTION: THE SEARCH SHIFT
           ============================================================ */}
-      <section id="problem" ref={problemRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="problem" ref={problemRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Dual Opposing Orbs & Floating Citation Points */}
         <ProblemParallaxBackdrop sectionRef={problemRef} />
 
@@ -434,7 +434,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label">
               THE SEARCH SHIFT
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               Your buyers are no longer searching in one place.
             </h2>
             <p className="intro-text">
@@ -446,12 +446,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             
             {/* Left Surface Card */}
             <SlideReveal direction="left" delay={0.12} className="lg:col-span-5 flex flex-col">
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between space-y-6 group h-full">
+              <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between space-y-6 group h-full">
                 <div>
                   <span className="eyebrow-label">
                     CORE REALITY
                   </span>
-                  <blockquote className="text-2xl sm:text-3xl font-sans font-bold text-[#1D1D1F] leading-tight">
+                  <blockquote className="text-2xl sm:text-3xl font-sans font-bold text-[#111111] leading-tight">
                     “If AI cannot find, understand, or trust your brand, it cannot recommend you.”
                   </blockquote>
                   <p className="body-text mt-4">
@@ -459,13 +459,13 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   </p>
                 </div>
                 
-                <div className="p-4 rounded-[16px] bg-white border border-[#D2D2D7] space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-sans text-[#6E6E73]">
-                    <HelpCircle className="w-3.5 h-3.5 text-[#1D1D1F]" />
+                <div className="p-4 rounded-[16px] bg-white border border-[#111111]/10 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-sans text-[#111111]/60">
+                    <HelpCircle className="w-3.5 h-3.5 text-[#111111]" />
                     <span>Buyer Prompt: "Top enterprise platforms for..."</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-sans text-[#1D1D1F] font-semibold pl-5 border-l-2 border-[#1D1D1F]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#1D1D1F]" />
+                  <div className="flex items-center gap-2 text-xs font-sans text-[#111111] font-semibold pl-5 border-l-2 border-[#111111]">
+                    <Sparkles className="w-3.5 h-3.5 text-[#111111]" />
                     <span>AI Synthesis: Highlights Citepoint-verified brands</span>
                   </div>
                 </div>
@@ -477,17 +477,17 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               
               {/* Card 1: Invisible */}
               <SlideStaggerItem direction="right">
-                <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 group cursor-default">
+                <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                      <div className="w-9 h-9 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                         <Eye className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 font-semibold block">
                           RISK 01
                         </span>
-                        <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
+                        <h3 className="text-lg font-sans font-bold text-[#111111]">
                           Invisible
                         </h3>
                       </div>
@@ -501,17 +501,17 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
               {/* Card 2: Misrepresented */}
               <SlideStaggerItem direction="right">
-                <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 group cursor-default">
+                <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                      <div className="w-9 h-9 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                         <AlertTriangle className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 font-semibold block">
                           RISK 02
                         </span>
-                        <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
+                        <h3 className="text-lg font-sans font-bold text-[#111111]">
                           Misrepresented
                         </h3>
                       </div>
@@ -525,17 +525,17 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
               {/* Card 3: Outranked */}
               <SlideStaggerItem direction="right">
-                <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 group cursor-default">
+                <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                      <div className="w-9 h-9 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                         <TrendingUp className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold block">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 font-semibold block">
                           RISK 03
                         </span>
-                        <h3 className="text-lg font-sans font-bold text-[#1D1D1F]">
+                        <h3 className="text-lg font-sans font-bold text-[#111111]">
                           Outranked
                         </h3>
                       </div>
@@ -557,7 +557,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           6 BENTO GRID SERVICE CARDS
           ============================================================ */}
-      <section id="services" ref={servicesRef} className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
+      <section id="services" ref={servicesRef} className="site-section bg-[#F5F5F7] border-y border-[#111111]/10 text-[#111111] relative overflow-hidden">
         {/* Parallax Far Dot Grid & Dual Opposing Liquid Radial Glows */}
         <ServicesParallaxBackdrop sectionRef={servicesRef} />
 
@@ -567,7 +567,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label">
               WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               We turn brand authority into AI visibility.
             </h2>
             <p className="intro-text">
@@ -591,19 +591,19 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 >
                   <div
                     onClick={() => handleNav('services')}
-                    className="bg-white border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group cursor-pointer hover:border-[#1D1D1F] transition-all"
+                    className="bg-white border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group cursor-pointer hover:border-[#111111] transition-all"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] transition-all duration-200 group-hover:bg-[#1D1D1F] group-hover:text-white">
+                        <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111] transition-all duration-200 group-hover:bg-[#111111] group-hover:text-white">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <span className="font-sans text-xs text-[#6E6E73] font-semibold tracking-[0.08em]">
+                        <span className="font-sans text-xs text-[#111111]/60 font-semibold tracking-[0.08em]">
                           {s.num}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-sans font-bold text-[#1D1D1F] mb-3">
+                      <h3 className="text-xl font-sans font-bold text-[#111111] mb-3">
                         {s.title}
                       </h3>
 
@@ -611,22 +611,22 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                         {s.desc}
                       </p>
 
-                      <div className="space-y-2 pt-4 border-t border-[#D2D2D7]">
-                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] block font-semibold">
+                      <div className="space-y-2 pt-4 border-t border-[#111111]/10">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 block font-semibold">
                           DELIVERABLES:
                         </span>
-                        <ul className="text-xs text-[#1D1D1F] space-y-1.5 font-sans">
+                        <ul className="text-xs text-[#111111] space-y-1.5 font-sans">
                           {s.deliverables.map((item, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] shrink-0" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#111111] shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
 
                         {s.num === '01' && (
-                          <div className="pt-3 border-t border-[#D2D2D7] mt-3">
-                            <span className="text-[10px] font-sans text-[#6E6E73] block mb-1.5 uppercase tracking-[0.08em] font-medium">
+                          <div className="pt-3 border-t border-[#111111]/10 mt-3">
+                            <span className="text-[10px] font-sans text-[#111111]/60 block mb-1.5 uppercase tracking-[0.08em] font-medium">
                               Engines Audited:
                             </span>
                             <div className="flex items-center gap-1.5">
@@ -634,7 +634,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                                 <div
                                  key={e.id}
                                  title={e.name}
-                                 className="w-6 h-6 rounded-[6px] bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F]"
+                                 className="w-6 h-6 rounded-[6px] bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111]"
                                >
                                  <AiEngineIcon id={e.id} size={13} />
                                </div>
@@ -645,12 +645,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-[#D2D2D7] flex items-center justify-between min-h-[44px]">
-                      <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#1D1D1F] flex items-center gap-1.5 font-semibold">
+                    <div className="mt-8 pt-4 border-t border-[#111111]/10 flex items-center justify-between min-h-[44px]">
+                      <span className="text-xs font-sans uppercase tracking-[0.08em] text-[#111111] flex items-center gap-1.5 font-semibold">
                         Explore service
                       </span>
                       <div
-                        className="w-7 h-7 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] group-hover:bg-[#1D1D1F] group-hover:text-white transition-all"
+                        className="w-7 h-7 rounded-full bg-[#F5F5F7] border border-[#111111]/10 flex items-center justify-center text-[#111111] group-hover:bg-[#111111] group-hover:text-white transition-all"
                         aria-hidden="true"
                       >
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -668,7 +668,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           SIGNATURE FLOW BAND (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={methodRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section ref={methodRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Connection Vector Line & Pulse Nodes */}
         <MethodParallaxBackdrop sectionRef={methodRef} />
 
@@ -678,7 +678,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label text-center mx-auto">
               METHODOLOGY IN ACTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               From question to citation.
             </h2>
             <p className="intro-text mx-auto">
@@ -698,34 +698,34 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   delay={idx * 0.08}
                   className="h-full flex flex-col"
                 >
-                  <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 flex flex-col justify-between h-full group cursor-default">
+                  <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 flex flex-col justify-between h-full group cursor-default">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="w-7 h-7 rounded-full bg-white border border-[#D2D2D7] flex items-center justify-center font-sans text-xs font-semibold text-[#1D1D1F]">
+                        <span className="w-7 h-7 rounded-full bg-white border border-[#111111]/10 flex items-center justify-center font-sans text-xs font-semibold text-[#111111]">
                           {item.step}
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-[#1D1D1F]" />
+                        <span className="w-2 h-2 rounded-full bg-[#111111]" />
                       </div>
 
-                      <div className="w-9 h-9 rounded-full bg-white border border-[#D2D2D7] flex items-center justify-center mb-4 text-[#1D1D1F]">
+                      <div className="w-9 h-9 rounded-full bg-white border border-[#111111]/10 flex items-center justify-center mb-4 text-[#111111]">
                         <Icon className="w-4 h-4" />
                       </div>
 
-                      <h3 className="text-base font-sans font-bold text-[#1D1D1F] mb-2">
+                      <h3 className="text-base font-sans font-bold text-[#111111] mb-2">
                         {item.label}
                       </h3>
 
-                      <p className="text-xs text-[#6E6E73] leading-[1.6]">
+                      <p className="text-xs text-[#111111]/60 leading-[1.6]">
                         {item.desc}
                       </p>
 
                       {item.step === '02' && (
-                        <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-[#D2D2D7]">
+                        <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-[#111111]/10">
                           {AI_ENGINES.map((e) => (
                             <div
                               key={e.id}
                               title={e.name}
-                              className="w-5 h-5 rounded-[4px] bg-white border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F]"
+                              className="w-5 h-5 rounded-[4px] bg-white border border-[#111111]/10 flex items-center justify-center text-[#111111]"
                             >
                               <AiEngineIcon id={e.id} size={11} />
                             </div>
@@ -734,7 +734,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       )}
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-[#D2D2D7] text-[10px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold">
+                    <div className="mt-4 pt-3 border-t border-[#111111]/10 text-[10px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 font-semibold">
                       Stage {item.step}
                     </div>
                   </div>
@@ -748,8 +748,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               onClick={() => handleNav('audit')}
               className="btn-primary"
             >
-              <span>Request Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+                  <span>Request Visibility Audit</span>
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
             </button>
           </SlideReveal>
 
@@ -759,14 +759,14 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           PROCESS SECTION: 4-STEP TIMELINE
           ============================================================ */}
-      <section id="how-it-works" className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative">
+      <section id="how-it-works" className="site-section bg-[#F5F5F7] border-y border-[#111111]/10 text-[#111111] relative">
         <div className="site-container">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
             <span className="eyebrow-label">
               IMPLEMENTATION ROADMAP
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               A practical system for a changing search landscape.
             </h2>
             <p className="intro-text">
@@ -781,23 +781,23 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <SlideStaggerItem key={step.step} direction="up" className="h-full">
                   <div
                     onClick={() => setActiveStep(idx)}
-                    className={`bg-white border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 cursor-pointer flex flex-col justify-between h-full group transition-all ${
-                      isActive ? '!border-[#1D1D1F]' : 'hover:border-[#1D1D1F]/50'
+                    className={`bg-white border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 cursor-pointer flex flex-col justify-between h-full group transition-all ${
+                      isActive ? '!border-[#111111]' : 'hover:border-[#111111]/50'
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.08em] text-[#6E6E73]">
+                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.08em] text-[#111111]/60">
                           {step.step}
                         </span>
                         <span
                           className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                            isActive ? 'bg-[#1D1D1F]' : 'bg-[#D2D2D7]'
+                            isActive ? 'bg-[#111111]' : 'bg-[#111111]/10'
                           }`}
                         />
                       </div>
 
-                      <h3 className={`text-xl font-sans font-bold mb-3 ${isActive ? 'text-[#1D1D1F]' : 'text-[#1D1D1F]'}`}>
+                      <h3 className={`text-xl font-sans font-bold mb-3 ${isActive ? 'text-[#111111]' : 'text-[#111111]'}`}>
                         {step.title}
                       </h3>
 
@@ -806,7 +806,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </p>
                     </div>
 
-                    <div className={`mt-8 pt-4 border-t border-[#D2D2D7] text-xs font-sans transition-colors duration-200 ${isActive ? 'text-[#1D1D1F] font-semibold' : 'text-[#6E6E73]'}`}>
+                    <div className={`mt-8 pt-4 border-t border-[#111111]/10 text-xs font-sans transition-colors duration-200 ${isActive ? 'text-[#111111] font-semibold' : 'text-[#111111]/60'}`}>
                       {isActive ? '● Selected Phase' : '○ Click to inspect'}
                     </div>
                   </div>
@@ -821,7 +821,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           RESULTS / CASE STUDIES (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="case-studies" ref={caseStudiesRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="case-studies" ref={caseStudiesRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Layered Diagnostic Depth Scene */}
         <CaseStudiesParallaxBackdrop sectionRef={caseStudiesRef} />
 
@@ -831,7 +831,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label">
               MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               Visibility should lead somewhere.
             </h2>
             <p className="intro-text">
@@ -842,60 +842,60 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           {/* 4-Card Achievement Stat Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 lg:mb-16">
             <SlideReveal direction="up" delay={0.06}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
-                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
+              <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
+                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#111111] tracking-tight">
                   <span>74</span>
-                  <span className="text-2xl font-bold text-[#1D1D1F]">%</span>
+                  <span className="text-2xl font-bold text-[#111111]">%</span>
                 </div>
-                <div className="text-sm font-sans font-semibold text-[#1D1D1F] mt-2 mb-1">
+                <div className="text-sm font-sans font-semibold text-[#111111] mt-2 mb-1">
                   Baseline Omission Rate
                 </div>
-                <p className="text-xs text-[#6E6E73] font-sans mt-1 leading-normal">
+                <p className="text-xs text-[#111111]/60 font-sans mt-1 leading-normal">
                   Brands unmentioned across target buyer queries prior to Citepoint audit
                 </p>
               </div>
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.12}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
-                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
+              <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
+                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#111111] tracking-tight">
                   <span>5</span>
-                  <span className="text-2xl font-bold text-[#1D1D1F]">/5</span>
+                  <span className="text-2xl font-bold text-[#111111]">/5</span>
                 </div>
-                <div className="text-sm font-sans font-semibold text-[#1D1D1F] mt-2 mb-1">
+                <div className="text-sm font-sans font-semibold text-[#111111] mt-2 mb-1">
                   AI Engines Audited
                 </div>
-                <p className="text-xs text-[#6E6E73] font-sans mt-1 leading-normal">
+                <p className="text-xs text-[#111111]/60 font-sans mt-1 leading-normal">
                   ChatGPT, Perplexity, Gemini, Claude & Google AI Overviews benchmarked
                 </p>
               </div>
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.18}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
-                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
+              <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
+                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#111111] tracking-tight">
                   <span>3.8</span>
-                  <span className="text-2xl font-bold text-[#1D1D1F]">x</span>
+                  <span className="text-2xl font-bold text-[#111111]">x</span>
                 </div>
-                <div className="text-sm font-sans font-semibold text-[#1D1D1F] mt-2 mb-1">
+                <div className="text-sm font-sans font-semibold text-[#111111] mt-2 mb-1">
                   Citation Retrieval Density
                 </div>
-                <p className="text-xs text-[#6E6E73] font-sans mt-1 leading-normal">
+                <p className="text-xs text-[#111111]/60 font-sans mt-1 leading-normal">
                   Average increase in canonical entity citations across authoritative hubs
                 </p>
               </div>
             </SlideReveal>
 
             <SlideReveal direction="up" delay={0.24}>
-              <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
-                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#1D1D1F] tracking-tight">
+              <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between group h-full">
+                <div className="text-4xl sm:text-5xl font-sans font-bold text-[#111111] tracking-tight">
                   <span>90</span>
-                  <span className="text-2xl font-bold text-[#1D1D1F]">d</span>
+                  <span className="text-2xl font-bold text-[#111111]">d</span>
                 </div>
-                <div className="text-sm font-sans font-semibold text-[#1D1D1F] mt-2 mb-1">
+                <div className="text-sm font-sans font-semibold text-[#111111] mt-2 mb-1">
                   Authority Sprint
                 </div>
-                <p className="text-xs text-[#6E6E73] font-sans mt-1 leading-normal">
+                <p className="text-xs text-[#111111]/60 font-sans mt-1 leading-normal">
                   Structured sprint timeframe to verifiable category recommendation shift
                 </p>
               </div>
@@ -914,18 +914,18 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   delay={i * 0.1}
                   className="h-full flex flex-col"
                 >
-                  <div className="bg-[#F5F5F7] border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group">
+                  <div className="bg-[#F5F5F7] border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#6E6E73] font-semibold">
+                      <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#111111]/60 font-semibold">
                         {cs.category}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-white text-[#1D1D1F] border border-[#D2D2D7] text-[10px] font-sans uppercase tracking-[0.08em]">
+                      <span className="px-3 py-1 rounded-full bg-white text-[#111111] border border-[#111111]/10 text-[10px] font-sans uppercase tracking-[0.08em]">
                         {cs.status}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-sans font-bold text-[#1D1D1F] mb-3">
+                      <h3 className="text-xl font-sans font-bold text-[#111111] mb-3">
                         {cs.title}
                       </h3>
 
@@ -934,10 +934,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-[#D2D2D7]">
+                    <div className="pt-4 border-t border-[#111111]/10">
                       <div className="flex items-center justify-between text-xs font-sans">
-                        <span className="text-[#6E6E73]">{cs.metricLabel}:</span>
-                        <span className="text-base font-bold text-[#1D1D1F] inline-block">{cs.metricValue}</span>
+                        <span className="text-[#111111]/60">{cs.metricLabel}:</span>
+                        <span className="text-base font-bold text-[#111111] inline-block">{cs.metricValue}</span>
                       </div>
                     </div>
                   </div>
@@ -952,7 +952,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           WHY CITEPOINT (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={whyUsRef} className="site-section bg-[#F5F5F7] border-y border-[#D2D2D7] text-[#1D1D1F] relative overflow-hidden">
+      <section ref={whyUsRef} className="site-section bg-[#F5F5F7] border-y border-[#111111]/10 text-[#111111] relative overflow-hidden">
         {/* Parallax Subtle Glass Bubbles & Refraction Rings */}
         <WhyUsParallaxBackdrop sectionRef={whyUsRef} />
 
@@ -962,7 +962,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label">
               DIFFERENTIATION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               Not another content agency.
             </h2>
             <p className="intro-text">
@@ -980,13 +980,13 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   delay={i * 0.1}
                   className="h-full flex flex-col"
                 >
-                  <div className="bg-white border border-[#D2D2D7] rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
+                  <div className="bg-white border border-[#111111]/10 rounded-[24px] p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default hover:border-[#111111] transition-all">
                     <div>
-                      <span className="font-sans text-xs text-[#6E6E73] font-semibold tracking-[0.08em] block mb-4">
+                      <span className="font-sans text-xs text-[#111111]/60 font-semibold tracking-[0.08em] block mb-4">
                         {d.num}
                       </span>
 
-                      <h3 className="text-2xl font-sans font-bold text-[#1D1D1F] mb-3">
+                      <h3 className="text-2xl font-sans font-bold text-[#111111] mb-3">
                         {d.title}
                       </h3>
 
@@ -995,8 +995,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </p>
                     </div>
 
-                    <div className="mt-8 pt-4 border-t border-[#D2D2D7] flex items-center gap-2 text-xs font-sans text-[#1D1D1F] font-semibold">
-                      <CheckCircle2 className="w-4 h-4 text-[#1D1D1F]" />
+                    <div className="mt-8 pt-4 border-t border-[#111111]/10 flex items-center gap-2 text-xs font-sans text-[#111111] font-semibold">
+                      <CheckCircle2 className="w-4 h-4 text-[#111111]" />
                       <span>Strategic Commitment</span>
                     </div>
                   </div>
@@ -1011,7 +1011,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           FAQ SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="faq" ref={faqRef} className="site-section bg-white text-[#1D1D1F] relative overflow-hidden">
+      <section id="faq" ref={faqRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Subtle Liquid Shape & Gold Citation Point */}
         <FaqParallaxBackdrop sectionRef={faqRef} />
 
@@ -1021,7 +1021,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <span className="eyebrow-label text-center mx-auto">
               FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#1D1D1F] leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-sans font-bold text-[#111111] leading-tight tracking-tight mb-4">
               Clear answers on AI search visibility.
             </h2>
             <p className="intro-text mx-auto">
@@ -1037,23 +1037,23 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       </section>
 
       {/* ============================================================
-          FINAL CTA BAND (APPLE MINIMAL MONOCHROME)
+          FINAL CTA BAND (30% SECONDARY BLACK #111111 DARK SECTION)
           ============================================================ */}
-      <section ref={finalCtaRef} className="site-section bg-[#F5F5F7] text-[#1D1D1F] relative overflow-hidden border-t border-[#D2D2D7]">
+      <section ref={finalCtaRef} className="site-section section-dark bg-[#111111] text-white relative overflow-hidden border-t border-white/10">
         {/* Parallax Second-Strongest Scene */}
         <FinalCtaParallaxBackdrop sectionRef={finalCtaRef} />
 
         <div className="site-container relative z-10">
           <SlideReveal direction="scale-up" className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="eyebrow-label text-center mx-auto">
+            <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
               GET CITED. GET CHOSEN.
             </span>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#1D1D1F] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-white tracking-tight leading-tight">
               Make your brand part of the answer.
             </h2>
 
-            <p className="intro-text mx-auto">
+            <p className="intro-text mx-auto text-white/60">
               Find out how AI systems currently see your brand—and what it will take to become more visible.
             </p>
 
@@ -1063,7 +1063,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 className="btn-primary w-full sm:w-auto"
               >
                 <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-4 h-4 text-[#111111]" />
               </button>
 
               <button
@@ -1074,8 +1074,8 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               </button>
             </div>
 
-            <div className="pt-8 border-t border-[#D2D2D7] max-w-md mx-auto">
-              <p className="text-xs font-sans text-[#6E6E73] leading-[1.6]">
+            <div className="pt-8 border-t border-white/10 max-w-md mx-auto">
+              <p className="text-xs font-sans text-white/60 leading-[1.6]">
                 No hype. No guaranteed rankings. Just an empirical baseline, practical priorities, and measurable progress.
               </p>
             </div>

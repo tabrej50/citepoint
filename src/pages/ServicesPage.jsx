@@ -117,7 +117,7 @@ export default function ServicesPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-white text-[#1D1D1F] font-sans">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* ============================================================
           SECTION 1: PAGE HEADER
@@ -139,12 +139,12 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 2: 3 CORE SERVICE SPECIFICATIONS
           ============================================================ */}
-      <section className="site-section bg-[#F5F5F7] border-b border-[#D2D2D7]">
+      <section className="site-section bg-[#F5F5F7] border-b border-[#111111]/10">
         <div className="site-container space-y-8 lg:space-y-10">
           
           {serviceRows.map((svc) => (
             <SlideReveal key={svc.num} direction="up">
-              <div className="bg-white border border-[#D2D2D7] p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
+              <div className="bg-white border border-[#111111]/10 p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   
                   {/* Left Column: Number, Eyebrow, Title, Tagline, Description, CTA */}
@@ -154,11 +154,11 @@ export default function ServicesPage({ setCurrentRoute }) {
                         {svc.num} · {svc.eyebrow}
                       </span>
 
-                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#1D1D1F] mb-3">
+                      <h2 className="text-2xl sm:text-3xl font-semibold text-[#111111] mb-3">
                         {svc.title}
                       </h2>
 
-                      <p className="text-sm font-semibold text-[#1D1D1F] mb-4 font-sans leading-snug">
+                      <p className="text-sm font-semibold text-[#111111] mb-4 font-sans leading-snug">
                         {svc.tagline}
                       </p>
 
@@ -172,29 +172,29 @@ export default function ServicesPage({ setCurrentRoute }) {
                         onClick={() => handleNav(svc.ctaAction)}
                         className="btn-primary"
                       >
-                        <span>{svc.ctaText}</span>
-                        <ArrowRight className="w-4 h-4 text-white" />
+                  <span>{svc.ctaText}</span>
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                       </button>
                     </div>
                   </div>
 
                   {/* Right Column: Key Deliverables & Scope Details */}
                   <div className="lg:col-span-6">
-                    <div className="p-6 sm:p-7 rounded-[20px] bg-[#F5F5F7] border border-[#D2D2D7]">
-                      <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D2D2D7]">
-                        <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold">
+                    <div className="p-6 sm:p-7 rounded-[20px] bg-[#F5F5F7] border border-[#111111]/10">
+                      <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#111111]/10">
+                        <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#111111] font-semibold">
                           Core Program Deliverables
                         </span>
-                        <span className="text-[10px] font-sans text-[#1D1D1F] bg-white px-2.5 py-0.5 rounded-full border border-[#D2D2D7] font-medium">
+                        <span className="text-[10px] font-sans text-[#111111] bg-white px-2.5 py-0.5 rounded-full border border-[#111111]/10 font-medium">
                           Verified Scope
                         </span>
                       </div>
 
                       <div className="space-y-3.5">
                         {svc.deliverables.map((d, dIdx) => (
-                          <div key={dIdx} className="flex items-start gap-3 text-sm text-[#1D1D1F]">
-                            <div className="w-5 h-5 rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] flex items-center justify-center shrink-0 mt-0.5">
-                              <Check className="w-3 h-3 text-[#1D1D1F]" />
+                          <div key={dIdx} className="flex items-start gap-3 text-sm text-[#111111]">
+                            <div className="w-5 h-5 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center shrink-0 mt-0.5">
+                              <Check className="w-3 h-3 text-[#111111]" />
                             </div>
                             <span className="leading-snug pt-0.5">{d}</span>
                           </div>
@@ -214,7 +214,7 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 3: SYSTEMATIC METHODOLOGY (4 Operating Phases)
           ============================================================ */}
-      <section className="site-section bg-white border-b border-[#D2D2D7] relative overflow-hidden">
+      <section className="site-section bg-white border-b border-[#111111]/10 relative overflow-hidden">
         <div className="site-container relative z-10">
           
           <SlideReveal direction="down">
@@ -222,7 +222,7 @@ export default function ServicesPage({ setCurrentRoute }) {
               <span className="eyebrow-label">
                 SYSTEMATIC METHODOLOGY
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] mb-4">
                 One visibility system. Four operating phases.
               </h2>
               <p className="intro-text max-w-[65ch]">
@@ -240,15 +240,15 @@ export default function ServicesPage({ setCurrentRoute }) {
                 delay={idx * 0.08}
                 className="h-full"
               >
-                <div className="bg-[#F5F5F7] border border-[#D2D2D7] min-h-[320px] p-7 rounded-[24px] flex flex-col justify-between group h-full">
+                <div className="bg-[#F5F5F7] border border-[#111111]/10 min-h-[320px] p-7 rounded-[24px] flex flex-col justify-between group h-full">
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#1D1D1F] bg-white px-3 py-1 rounded-full border border-[#D2D2D7] font-semibold">
+                      <span className="text-[11px] font-sans uppercase tracking-[0.08em] text-[#111111] bg-white px-3 py-1 rounded-full border border-[#111111]/10 font-semibold">
                         {step.step}
                       </span>
-                      <span className="text-[11px] font-sans text-[#6E6E73]">{step.duration}</span>
+                      <span className="text-[11px] font-sans text-[#111111]/60">{step.duration}</span>
                     </div>
-                    <h3 className="text-xl font-sans font-bold text-[#1D1D1F] mb-3">
+                    <h3 className="text-xl font-sans font-bold text-[#111111] mb-3">
                       {step.title}
                     </h3>
                     <p className="body-text text-sm">
@@ -256,9 +256,9 @@ export default function ServicesPage({ setCurrentRoute }) {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#D2D2D7] mt-6">
-                    <span className="text-[10px] font-sans uppercase tracking-wider text-[#6E6E73] block mb-1">Deliverable</span>
-                    <span className="text-sm text-[#1D1D1F] font-semibold block">{step.deliverable}</span>
+                  <div className="pt-4 border-t border-[#111111]/10 mt-6">
+                    <span className="text-[10px] font-sans uppercase tracking-wider text-[#111111]/60 block mb-1">Deliverable</span>
+                    <span className="text-sm text-[#111111] font-semibold block">{step.deliverable}</span>
                   </div>
                 </div>
               </SlideReveal>
@@ -271,7 +271,7 @@ export default function ServicesPage({ setCurrentRoute }) {
       {/* ============================================================
           SECTION 4: FAQ ACCORDION
           ============================================================ */}
-      <section className="site-section bg-[#F5F5F7] border-b border-[#D2D2D7]">
+      <section className="site-section bg-[#F5F5F7] border-b border-[#111111]/10">
         <div className="site-container">
           
           <SlideReveal direction="up">
@@ -279,7 +279,7 @@ export default function ServicesPage({ setCurrentRoute }) {
               <span className="eyebrow-label text-center mx-auto">
                 COMMONLY ASKED QUESTIONS
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[#1D1D1F] mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#111111] mb-4">
                 Frequently Asked Questions
               </h2>
               <p className="intro-text mx-auto max-w-[65ch]">
@@ -294,7 +294,7 @@ export default function ServicesPage({ setCurrentRoute }) {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-[#D2D2D7] rounded-[20px] overflow-hidden transition-all duration-200"
+                  className="bg-white border border-[#111111]/10 rounded-[20px] overflow-hidden transition-all duration-200"
                 >
                   <button
                     type="button"
@@ -302,18 +302,18 @@ export default function ServicesPage({ setCurrentRoute }) {
                     aria-expanded={isOpen}
                     className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                   >
-                    <span className="text-base font-sans font-semibold text-[#1D1D1F]">
+                    <span className="text-base font-sans font-semibold text-[#111111]">
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-[#1D1D1F] shrink-0 transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#111111] shrink-0 transition-transform duration-200 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 sm:px-8 pb-5 text-sm text-[#6E6E73] leading-relaxed border-t border-[#D2D2D7] pt-3">
+                    <div className="px-6 sm:px-8 pb-5 text-sm text-[#111111]/60 leading-relaxed border-t border-[#111111]/10 pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -326,22 +326,22 @@ export default function ServicesPage({ setCurrentRoute }) {
       </section>
 
       {/* ============================================================
-          SECTION 5: FINAL CTA PANEL
+          SECTION 5: FINAL CTA PANEL (DARK SECTION #111111)
           ============================================================ */}
       <section className="site-section bg-white overflow-hidden">
         <div className="site-container">
           
           <SlideReveal direction="up">
-            <div className="bg-[#F5F5F7] border border-[#D2D2D7] relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden">
-              <span className="eyebrow-label text-center mx-auto">
+            <div className="section-dark bg-[#111111] border border-white/10 relative p-10 sm:p-14 lg:p-16 rounded-[24px] text-center max-w-4xl mx-auto overflow-hidden text-white">
+              <span className="eyebrow-label text-center mx-auto text-[#F3C753]">
                 GET CITED. GET CHOSEN.
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1D1D1F] mb-5 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-5 max-w-2xl mx-auto">
                 Ready to establish your synthetic search presence?
               </h2>
 
-              <p className="intro-text mx-auto max-w-[65ch] mb-8">
+              <p className="intro-text mx-auto max-w-[65ch] mb-8 text-white/60">
                 Request an AI Visibility Audit to discover how your brand currently ranks, where competitors are winning attention, and the prioritized roadmap to lead AI discovery.
               </p>
 
@@ -351,7 +351,7 @@ export default function ServicesPage({ setCurrentRoute }) {
                   className="btn-primary w-full sm:w-auto"
                 >
                   <span>Request an AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#111111]" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

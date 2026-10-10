@@ -136,7 +136,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
       <div className="site-container pointer-events-auto">
         
         <header
-          className={`relative rounded-full transition-all duration-300 h-[56px] lg:h-[64px] px-4 sm:px-6 flex items-center border border-[#d2d2d7] ${
+          className={`relative rounded-full transition-all duration-300 h-[56px] lg:h-[64px] px-4 sm:px-6 flex items-center border border-[#111111]/10 ${
             isScrolled ? 'bg-white/95' : 'bg-white/85'
           }`}
           style={{
@@ -150,7 +150,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <button
               type="button"
               onClick={() => handleNavClick('home')}
-              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1d1f] rounded-full transition-opacity duration-150 hover:opacity-85 py-1 min-h-[44px]"
+              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] rounded-full transition-opacity duration-150 hover:opacity-85 py-1 min-h-[44px]"
               aria-label="Citepoint Home"
             >
               <img
@@ -172,7 +172,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             >
               {/* Sliding Active/Hover Highlight Pill */}
               <div
-                className="absolute pointer-events-none rounded-full bg-[#f5f5f7] border border-[#d2d2d7] transition-all duration-150"
+                className="absolute pointer-events-none rounded-full bg-[#f5f5f7] border border-[#111111]/10 transition-all duration-150"
                 style={{
                   left: `${pillStyle.left}px`,
                   top: `${pillStyle.top}px`,
@@ -210,15 +210,15 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                         }}
                         className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                           isHighlighted
-                            ? 'text-[#1d1d1f] font-semibold'
-                            : 'text-[#6e6e73] hover:text-[#1d1d1f] font-medium'
+                            ? 'text-[#111111] font-semibold'
+                            : 'text-[#111111]/60 hover:text-[#111111] font-medium'
                         }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
 
-                      {/* Clean Apple Minimal Dropdown */}
+                      {/* Clean Dropdown */}
                       <AnimatePresence>
                         {servicesDropdownOpen && (
                           <motion.div
@@ -231,7 +231,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                             onMouseEnter={handleDropdownEnter}
                             onMouseLeave={handleDropdownLeave}
                           >
-                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#1d1d1f] px-3.5 py-1.5 border-b border-[#d2d2d7] mb-1">
+                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#111111] px-3.5 py-1.5 border-b border-[#111111]/10 mb-1">
                               Enterprise AI Capabilities
                             </div>
                             {serviceItems.map((item) => (
@@ -243,10 +243,10 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                                 }}
                                 className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-[#f5f5f7] transition-colors cursor-pointer active:scale-[0.98]"
                               >
-                                <div className="text-[13px] font-medium text-[#1d1d1f] group-hover:text-black transition-colors">
+                                <div className="text-[13px] font-medium text-[#111111] group-hover:text-black transition-colors">
                                   {item.title}
                                 </div>
-                                <div className="text-[12px] text-[#6e6e73] leading-snug">
+                                <div className="text-[12px] text-[#111111]/60 leading-snug">
                                   {item.desc}
                                 </div>
                               </button>
@@ -268,8 +268,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                     onMouseEnter={() => setHoveredRoute(link.route)}
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
-                        ? 'text-[#1d1d1f] font-semibold'
-                        : 'text-[#6e6e73] hover:text-[#1d1d1f] font-medium'
+                        ? 'text-[#111111] font-semibold'
+                        : 'text-[#111111]/60 hover:text-[#111111] font-medium'
                     }`}
                   >
                     {link.name}
@@ -278,7 +278,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               })}
             </nav>
 
-            {/* Right Action: Solid Black Button with White Text */}
+            {/* Right Action: Nav CTA Solid Black #111111 Button with White Text */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
@@ -293,11 +293,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#1d1d1f] rounded-full bg-[#f5f5f7] border border-[#d2d2d7] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1d1f] cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#111111] rounded-full bg-[#f5f5f7] border border-[#111111]/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] cursor-pointer"
                 aria-label="Toggle Navigation Menu"
                 aria-expanded={mobileMenuOpen}
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-[#1d1d1f]" /> : <Menu className="w-5 h-5 text-[#1d1d1f]" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-[#111111]" /> : <Menu className="w-5 h-5 text-[#111111]" />}
               </button>
             </div>
 
@@ -313,11 +313,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ type: 'spring', damping: 26, stiffness: 280, mass: 0.9 }}
               style={{ transformOrigin: 'top center' }}
-              className="lg:hidden mt-2 p-5 rounded-[20px] bg-white border border-[#d2d2d7] pointer-events-auto max-h-[calc(100vh-96px)] overflow-y-auto overscroll-contain shadow-lg"
+              className="lg:hidden mt-2 p-5 rounded-[20px] bg-white border border-[#111111]/10 pointer-events-auto max-h-[calc(100vh-96px)] overflow-y-auto overscroll-contain shadow-none"
             >
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#d2d2d7] text-[12px] text-[#6e6e73]">
-                <span className="uppercase tracking-wider font-semibold text-[#1d1d1f]">Navigation</span>
-                <span className="uppercase tracking-wider text-[11px] font-mono text-[#6e6e73]">Citepoint</span>
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#111111]/10 text-[12px] text-[#111111]/60">
+                <span className="uppercase tracking-wider font-semibold text-[#111111]">Navigation</span>
+                <span className="uppercase tracking-wider text-[11px] font-mono text-[#111111]/60">Citepoint</span>
               </div>
 
               <nav className="flex flex-col gap-1.5">
@@ -329,8 +329,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       onClick={() => handleNavClick(link.route)}
                       className={`text-left text-[14px] min-h-[44px] py-2.5 px-4 rounded-full transition-colors cursor-pointer active:scale-[0.98] flex items-center ${
                         isActive
-                          ? 'bg-[#f5f5f7] text-[#1d1d1f] font-semibold border border-[#d2d2d7]'
-                          : 'text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-[#f5f5f7]'
+                          ? 'bg-[#f5f5f7] text-[#111111] font-semibold border border-[#111111]/10'
+                          : 'text-[#111111]/60 hover:text-[#111111] hover:bg-[#f5f5f7]'
                       }`}
                     >
                       {link.name}
@@ -339,13 +339,13 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                 })}
               </nav>
 
-              <div className="pt-4 mt-3 border-t border-[#d2d2d7]">
+              <div className="pt-4 mt-3 border-t border-[#111111]/10">
                 <button
                   onClick={() => handleNavClick('audit')}
                   className="btn-primary w-full min-h-[48px] py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[14px] font-sans font-semibold cursor-pointer active:scale-[0.97]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#111111]" />
                 </button>
               </div>
             </motion.div>

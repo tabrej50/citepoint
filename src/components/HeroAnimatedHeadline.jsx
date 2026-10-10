@@ -76,7 +76,7 @@ export default function HeroAnimatedHeadline() {
     >
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-sans font-semibold text-[#1D1D1F] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-center">
+      <h1 className="relative z-10 text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-sans font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-center">
         {/* Line 1: "Be the brand AI" */}
         <span className="block">
           {PREFIX_WORDS.map((word, idx) => (
@@ -85,7 +85,7 @@ export default function HeroAnimatedHeadline() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.05 * idx, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-[#1D1D1F] mr-[0.26em] last:mr-0"
+              className="inline-block relative text-[var(--color-text-primary)] mr-[0.26em] last:mr-0"
             >
               {word}
             </motion.span>
@@ -107,7 +107,7 @@ export default function HeroAnimatedHeadline() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-block font-bold text-[#1D1D1F]"
+                  className="inline-block font-bold text-[var(--color-text-primary)]"
                 >
                   {DYNAMIC_VERBS[verbIndex]}
                 </motion.span>
@@ -119,7 +119,7 @@ export default function HeroAnimatedHeadline() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-block relative text-[#1D1D1F] ml-[0.26em]"
+              className="inline-block relative text-[var(--color-text-primary)] ml-[0.26em]"
             >
               first.
             </motion.span>

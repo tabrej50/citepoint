@@ -55,7 +55,7 @@ export default function AuditPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-white text-[#1d1d1f] font-sans selection:bg-[#1d1d1f] selection:text-white">
+    <div className="w-full bg-white text-[#111111] font-sans">
       
       {/* Hero Header */}
       <PageHeader
@@ -67,7 +67,7 @@ export default function AuditPage({ setCurrentRoute }) {
           {AI_ENGINES.map((engine) => (
             <div
               key={engine.id}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#d2d2d7] text-[#1d1d1f] text-xs font-medium hover:border-[#1d1d1f] transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5f5f7] border border-[#111111]/10 text-[#111111] text-xs font-medium hover:border-[#111111] transition-colors"
             >
               <AiEngineIcon id={engine.id} size={15} />
               <span>{engine.name}</span>
@@ -77,7 +77,7 @@ export default function AuditPage({ setCurrentRoute }) {
       </PageHeader>
 
       {/* Deliverables Overview Section */}
-      <section className="site-section bg-white border-b border-[#d2d2d7]">
+      <section className="site-section bg-white border-b border-[#111111]/10">
         <div className="site-container">
           
           <SlideReveal direction="left" distance={36} duration={0.65}>
@@ -101,11 +101,11 @@ export default function AuditPage({ setCurrentRoute }) {
                 <SlideStaggerItem
                   key={i}
                   direction={item.dir}
-                  className="p-8 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] flex flex-col justify-between h-full group cursor-default transition-all duration-200 hover:border-[#1d1d1f]"
+                  className="p-8 rounded-[24px] border border-[#111111]/10 bg-[#f5f5f7] flex flex-col justify-between h-full group cursor-default transition-all duration-200 hover:border-[#111111]"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-full bg-white border border-[#d2d2d7] text-[#1d1d1f] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="w-5 h-5 text-[#1d1d1f]" />
+                    <div className="w-10 h-10 rounded-full bg-white border border-[#111111]/10 text-[#111111] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="w-5 h-5 text-[#111111]" />
                     </div>
                     <h3 className="mb-3 transition-colors duration-200">
                       {item.title}
@@ -115,12 +115,12 @@ export default function AuditPage({ setCurrentRoute }) {
                     </p>
 
                     {i === 0 && (
-                      <div className="mt-6 pt-4 border-t border-[#d2d2d7] flex flex-wrap items-center gap-1.5">
+                      <div className="mt-6 pt-4 border-t border-[#111111]/10 flex flex-wrap items-center gap-1.5">
                         {AI_ENGINES.map((e) => (
                           <div
                             key={e.id}
                             title={e.name}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-white border border-[#d2d2d7] text-[11px] text-[#1d1d1f]"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-white border border-[#111111]/10 text-[11px] text-[#111111]"
                           >
                             <AiEngineIcon id={e.id} size={12} />
                             <span>{e.name}</span>

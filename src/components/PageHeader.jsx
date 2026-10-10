@@ -22,18 +22,18 @@ export default function PageHeader({
   className = '',
 }) {
   return (
-    <section className={`page-header border-b border-[#D2D2D7] bg-white relative overflow-hidden ${className}`}>
+    <section className={`page-header border-b border-[var(--color-border-light)] bg-white relative overflow-hidden ${className}`}>
       <div className="site-container relative z-10">
         <div className="max-w-[900px] text-left">
           <SlideReveal direction="down" distance={15} duration={0.5}>
-            <h1 className="page-title text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-semibold text-[#1D1D1F] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-left m-0">
+            <h1 className="page-title text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-left m-0">
               {title}
             </h1>
           </SlideReveal>
 
           {intro && (
             <SlideReveal direction="up" distance={15} duration={0.5} delay={0.08}>
-              <p className="intro-text mt-4 text-[18px] lg:text-[21px] leading-[1.45] text-[#6E6E73] max-w-[680px] text-left">
+              <p className="intro-text mt-4 text-[18px] lg:text-[21px] leading-[1.45] text-[var(--color-text-secondary)] max-w-[680px] text-left">
                 {intro}
               </p>
             </SlideReveal>
@@ -50,7 +50,7 @@ export default function PageHeader({
                   >
                     <span>{primaryButton.text}</span>
                     {primaryButton.icon !== false && (
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowRight className="w-4 h-4 text-[var(--color-accent-text)]" />
                     )}
                   </button>
                 )}

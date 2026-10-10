@@ -12,7 +12,7 @@ export const AI_ENGINES = [
     name: 'ChatGPT',
     provider: 'OpenAI',
     title: 'OpenAI ChatGPT',
-    color: '#1D1D1F',
+    color: '#111111',
     role: 'Conversational Shortlists & Vendor Summaries',
     tagline: 'Leading conversational engine for B2B buyer discovery',
     svgPath:
@@ -23,7 +23,7 @@ export const AI_ENGINES = [
     name: 'Gemini',
     provider: 'Google',
     title: 'Google Gemini',
-    color: '#1D1D1F',
+    color: '#111111',
     role: 'Multimodal Knowledge Graph Integration',
     tagline: 'Google ecosystem integration with deep entity reasoning',
     svgPath:
@@ -34,7 +34,7 @@ export const AI_ENGINES = [
     name: 'Perplexity',
     provider: 'Perplexity AI',
     title: 'Perplexity',
-    color: '#1D1D1F',
+    color: '#111111',
     role: 'Real-Time Web Citations & Direct References',
     tagline: 'Deep research engine citing authoritative third-party sources',
     svgPath:
@@ -45,7 +45,7 @@ export const AI_ENGINES = [
     name: 'Claude',
     provider: 'Anthropic',
     title: 'Anthropic Claude',
-    color: '#1D1D1F',
+    color: '#111111',
     role: 'In-Depth Technical Synthesis & Enterprise Analysis',
     tagline: 'High-reasoning model for complex B2B vendor evaluation',
     svgPath:
@@ -58,7 +58,7 @@ export const AI_ENGINES = [
     shortName: 'AI Overviews',
     provider: 'Google',
     title: 'Google AI Overviews',
-    color: '#1D1D1F',
+    color: '#111111',
     role: 'Search-Engine Native Synthetic Answers',
     tagline: 'Mass-market search engine answers transforming blue links into summaries',
     svgPath:
@@ -127,7 +127,7 @@ export function AiEngineBadge({ id, className = '', size = 16 }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 align-middle px-3 py-1 rounded-full text-xs font-sans font-medium bg-[#f5f5f7] hover:bg-white text-[#1d1d1f] border border-[#d2d2d7] transition-colors ${className}`}
+      className={`inline-flex items-center gap-1.5 align-middle px-3 py-1 rounded-full text-xs font-sans font-medium bg-[#f5f5f7] hover:bg-white text-[#111111] border border-[#111111]/10 transition-colors ${className}`}
     >
       <AiEngineIcon id={engine.id} size={size} />
       <span>{engine.name}</span>
@@ -152,7 +152,7 @@ export default function AiEnginesRow({
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#d2d2d7] bg-[#f5f5f7] hover:border-[#1d1d1f] text-[#1d1d1f] transition-all duration-200 group ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#111111]/10 bg-[#f5f5f7] hover:border-[#111111] text-[#111111] transition-all duration-200 group ${
             interactive ? 'cursor-default active:scale-[0.98]' : ''
           }`}
         >
@@ -162,13 +162,13 @@ export default function AiEnginesRow({
           </div>
 
           {/* Engine Name */}
-          <span className="text-xs font-sans font-medium text-[#1d1d1f] tracking-tight">
+          <span className="text-xs font-sans font-medium text-[#111111] tracking-tight">
             {engine.name}
           </span>
 
           {/* Provider Pill */}
           {showProvider && (
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-white text-[#6e6e73] border border-[#d2d2d7]">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-white text-[#111111]/60 border border-[#111111]/10">
               {engine.provider}
             </span>
           )}
@@ -187,29 +187,29 @@ export function AiEnginesGrid({ className = '' }) {
       {AI_ENGINES.map((engine) => (
         <div
           key={engine.id}
-          className="p-5 rounded-[20px] border border-[#d2d2d7] bg-[#f5f5f7] hover:border-[#1d1d1f] text-[#1d1d1f] transition-all duration-200 flex flex-col justify-between group"
+          className="p-5 rounded-[20px] border border-[#111111]/10 bg-[#f5f5f7] hover:border-[#111111] text-[#111111] transition-all duration-200 flex flex-col justify-between group"
         >
           <div>
             <div className="flex items-center justify-between mb-3">
-              <div className="w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-105 bg-white border border-[#d2d2d7]">
+              <div className="w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-105 bg-white border border-[#111111]/10">
                 <AiEngineIcon id={engine.id} size={18} />
               </div>
-              <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-full bg-white text-[#6e6e73] border border-[#d2d2d7]">
+              <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded-full bg-white text-[#111111]/60 border border-[#111111]/10">
                 {engine.provider}
               </span>
             </div>
 
-            <h4 className="text-base font-medium mb-1 text-[#1d1d1f] leading-snug">
+            <h4 className="text-base font-medium mb-1 text-[#111111] leading-snug">
               {engine.name}
             </h4>
 
-            <p className="text-xs leading-[1.5] line-clamp-2 mb-3 text-[#6e6e73]">
+            <p className="text-xs leading-[1.5] line-clamp-2 mb-3 text-[#111111]/60">
               {engine.role}
             </p>
           </div>
 
-          <div className="pt-3 border-t border-[#d2d2d7] text-[11px] font-mono flex items-center gap-1.5 text-[#6e6e73]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1d1d1f]" />
+          <div className="pt-3 border-t border-[#111111]/10 text-[11px] font-mono flex items-center gap-1.5 text-[#111111]/60">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#111111]" />
             <span>Audited & Optimized</span>
           </div>
         </div>

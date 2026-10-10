@@ -1,20 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import PricingPage from './pages/PricingPage';
-import ServicesPage from './pages/ServicesPage';
-import HowItWorksPage from './pages/HowItWorksPage';
-import CaseStudiesPage from './pages/CaseStudiesPage';
-import AboutPage from './pages/AboutPage';
-import InsightsPage from './pages/InsightsPage';
-import ContactPage from './pages/ContactPage';
-import AuditPage from './pages/AuditPage';
-import PrivacyPage from './pages/PrivacyPage';
-import TermsPage from './pages/TermsPage';
 import LiquidGlassFilter from './components/LiquidGlassFilter';
+
+// Lazy load secondary routes for optimal initial chunk size and fast smooth loading
+const PricingPage = lazy(() => import('./pages/PricingPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage'));
+const CaseStudiesPage = lazy(() => import('./pages/CaseStudiesPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const InsightsPage = lazy(() => import('./pages/InsightsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const AuditPage = lazy(() => import('./pages/AuditPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+
+function PageLoadingFallback() {
+  return (
+    <div className="min-h-[70vh] flex items-center justify-center relative">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#E60023] to-transparent animate-pulse" />
+      <div className="text-white/40 text-[13px] font-sans tracking-wider uppercase animate-pulse">
+        Loading…
+      </div>
+    </div>
+  );
+}
 
 // Apple Fluid Interface: Unified elevated cross-fade with spatial continuity
 // Animates strictly GPU-compositor properties (opacity, scale, micro-y).
@@ -175,7 +188,9 @@ export default function App() {
             exit={APPLE_PAGE_TRANSITION.exit}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           >
-            {renderCurrentPage()}
+            <Suspense fallback={<PageLoadingFallback />}>
+              {renderCurrentPage()}
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>

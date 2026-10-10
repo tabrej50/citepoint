@@ -14,10 +14,10 @@ import React, { useRef, useState, useEffect } from 'react';
 export default function HeroVideoBackground({ mode = 'dark' }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
+  const videoWrapperRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   // Check prefers-reduced-motion
   useEffect(() => {
@@ -30,10 +30,25 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
     }
   }, []);
 
-  // Parallax on scroll
+  // Butter-smooth hardware-accelerated parallax on scroll (zero React re-renders)
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY || window.pageYOffset || 0);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const sy = window.scrollY || window.pageYOffset || 0;
+          if (videoWrapperRef.current) {
+            const parallaxOffset = sy * 0.22;
+            videoWrapperRef.current.style.transform = `translate3d(0, ${parallaxOffset}px, 0) scale(1.04)`;
+          }
+          if (containerRef.current) {
+            const fadeOpacity = Math.max(0, 1 - sy / 900);
+            containerRef.current.style.opacity = fadeOpacity;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -55,12 +70,10 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
   }, [isPlaying, reducedMotion]);
 
   const baseUrl = import.meta.env.BASE_URL || '/';
-  const videoSrc = `${baseUrl}assets/videos/hero-background.mp4`.replace(/\/\//g, '/');
-  const posterSrc = `${baseUrl}assets/videos/hero-background.jpg`.replace(/\/\//g, '/');
-
-  // Parallax transform calculation: subtle downward drift as user scrolls
-  const parallaxOffset = scrollY * 0.22;
-  const fadeOpacity = Math.max(0, 1 - scrollY / 900);
+  const webmSrc = `${baseUrl}assets/hero-bg.webm`.replace(/\/\//g, '/');
+  const mp4Src = `${baseUrl}assets/hero-bg.mp4`.replace(/\/\//g, '/');
+  const fallbackMp4Src = `${baseUrl}assets/videos/hero-background.mp4`.replace(/\/\//g, '/');
+  const posterSrc = `${baseUrl}assets/hero-bg-poster.png`.replace(/\/\//g, '/');
 
   const isDark = mode === 'dark';
 
@@ -68,7 +81,7 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
     <div
       ref={containerRef}
       className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0"
-      style={{ opacity: fadeOpacity }}
+      style={{ opacity: 1, willChange: 'opacity' }}
       aria-hidden="true"
     >
       {/* Base Ground */}
@@ -80,10 +93,10 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
 
       {/* 1. Underlying Video Container with Parallax Transform */}
       <div
+        ref={videoWrapperRef}
         className="w-full h-full relative will-change-transform"
         style={{
-          transform: `translate3d(0, ${parallaxOffset}px, 0) scale(1.04)`,
-          transition: 'transform 0.1s linear',
+          transform: 'translate3d(0, 0, 0) scale(1.04)',
         }}
       >
         <video
@@ -92,9 +105,10 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={posterSrc}
           onLoadedData={() => setIsLoaded(true)}
+          onCanPlay={() => setIsLoaded(true)}
           className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
             isLoaded
               ? isDark ? 'opacity-65' : 'opacity-25'
@@ -106,7 +120,9 @@ export default function HeroVideoBackground({ mode = 'dark' }) {
               : 'contrast(1.05) brightness(1.05) saturate(0.9)',
           }}
         >
-          <source src={videoSrc} type="video/mp4" />
+          <source src={webmSrc} type="video/webm" />
+          <source src={mp4Src} type="video/mp4" />
+          <source src={fallbackMp4Src} type="video/mp4" />
         </video>
       </div>
 

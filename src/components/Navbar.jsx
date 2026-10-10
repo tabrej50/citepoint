@@ -32,6 +32,22 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prefetch route chunks on hover for instant smooth navigation
+  const prefetchRoute = (route) => {
+    const routeLoaders = {
+      services: () => import('../pages/ServicesPage'),
+      'how-it-works': () => import('../pages/HowItWorksPage'),
+      pricing: () => import('../pages/PricingPage'),
+      'case-studies': () => import('../pages/CaseStudiesPage'),
+      insights: () => import('../pages/InsightsPage'),
+      about: () => import('../pages/AboutPage'),
+      audit: () => import('../pages/AuditPage'),
+    };
+    if (routeLoaders[route]) {
+      try { routeLoaders[route](); } catch (_) {}
+    }
+  };
+
   const navLinks = [
     { name: 'Services', route: 'services', hasDropdown: true },
     { name: 'How It Works', route: 'how-it-works' },
@@ -153,6 +169,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                 src={`${import.meta.env.BASE_URL}assets/brand/logo-dark-transparent.png`}
                 alt="Citepoint — Get Cited. Get Chosen."
                 className="h-7 lg:h-8 w-auto object-contain"
+                fetchPriority="high"
+                decoding="async"
               />
             </button>
 
@@ -192,6 +210,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       className="relative"
                       onMouseEnter={() => {
                         setHoveredRoute(link.route);
+                        prefetchRoute(link.route);
                         handleDropdownEnter();
                       }}
                       onMouseLeave={handleDropdownLeave}
@@ -261,7 +280,10 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       if (el) navItemRefs.current[link.route] = el;
                     }}
                     onClick={() => handleNavClick(link.route)}
-                    onMouseEnter={() => setHoveredRoute(link.route)}
+                    onMouseEnter={() => {
+                      setHoveredRoute(link.route);
+                      prefetchRoute(link.route);
+                    }}
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
                         ? 'text-white font-semibold'
@@ -278,6 +300,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
+                onMouseEnter={() => prefetchRoute('audit')}
                 className="btn-v2-white btn-white btn-outline-white btn-liquid-glass inline-flex items-center gap-2 rounded-full font-sans font-medium text-[13px] px-5 py-2 whitespace-nowrap cursor-pointer min-h-[44px]"
               >
                 <span>Get AI Visibility Audit</span>

@@ -32,10 +32,51 @@
     <meta property="twitter:description" content="Citepoint helps B2B companies become visible, citable, trusted, and recommended across ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews." />
     <meta property="twitter:image" content="https://citepoint.xyz/assets/brand/og-image.png" />
 
+    <!-- Critical Above-The-Fold Preloads (Instant LCP & zero pop-in) -->
+    <link rel="preload" as="image" href="./assets/brand/logo-dark-transparent.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="./assets/hero-bg-poster.png" fetchpriority="high" />
+    <link rel="preload" as="video" href="./assets/hero-bg.mp4" type="video/mp4" />
+
     <!-- Google Fonts: Bricolage Grotesque (Primary), IBM Plex Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS & Smooth Page Reveal (Instant dark canvas, no white flash, no FOUT) -->
+    <style>
+      html, body {
+        background-color: #000000;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      html.page-loading #root {
+        opacity: 0.9;
+      }
+      #root {
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      html.fonts-ready #root {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      (function() {
+        document.documentElement.classList.add('page-loading');
+        if ('fonts' in document) {
+          document.fonts.ready.then(function() {
+            document.documentElement.classList.remove('page-loading');
+            document.documentElement.classList.add('fonts-ready');
+          });
+        }
+        setTimeout(function() {
+          document.documentElement.classList.remove('page-loading');
+          document.documentElement.classList.add('fonts-ready');
+        }, 1200);
+      })();
+    </script>
 
     <!-- Structured Data: Organization & ProfessionalService -->
     <script type="application/ld+json">

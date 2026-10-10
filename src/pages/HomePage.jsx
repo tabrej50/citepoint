@@ -846,7 +846,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           RESULTS / CASE STUDIES (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="case-studies" ref={caseStudiesRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
+      <section id="case-studies" ref={caseStudiesRef} className="site-section section-deferred bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Layered Diagnostic Depth Scene */}
         <CaseStudiesParallaxBackdrop sectionRef={caseStudiesRef} />
 
@@ -977,7 +977,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           WHY CITEPOINT (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section ref={whyUsRef} className="site-section bg-[#F5F5F7] border-y border-[#111111]/10 text-[#111111] relative overflow-hidden">
+      <section ref={whyUsRef} className="site-section section-deferred bg-[#F5F5F7] border-y border-[#111111]/10 text-[#111111] relative overflow-hidden">
         {/* Parallax Subtle Glass Bubbles & Refraction Rings */}
         <WhyUsParallaxBackdrop sectionRef={whyUsRef} />
 
@@ -1036,7 +1036,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           FAQ SECTION (APPLE MINIMAL MONOCHROME)
           ============================================================ */}
-      <section id="faq" ref={faqRef} className="site-section bg-white text-[#111111] relative overflow-hidden">
+      <section id="faq" ref={faqRef} className="site-section section-deferred bg-white text-[#111111] relative overflow-hidden">
         {/* Parallax Subtle Liquid Shape & Gold Citation Point */}
         <FaqParallaxBackdrop sectionRef={faqRef} />
 

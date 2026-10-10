@@ -317,8 +317,28 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
             {/* Supporting Paragraph */}
             <SlideReveal direction="up" delay={0.16}>
-              <p className="intro-text mt-4 mx-auto text-center max-w-[680px] text-white/70">
-                Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across ChatGPT, Gemini, Perplexity, Claude, and Google AI Overviews.
+              <p className="intro-text mt-4 mx-auto text-center max-w-[760px] text-white/80 leading-[1.7]">
+                Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across{' '}
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
+                  <AiEngineIcon id="chatgpt" size={15} customColor="#F3C753" />
+                  <span>ChatGPT</span>
+                </span>,{' '}
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
+                  <AiEngineIcon id="gemini" size={15} customColor="#F3C753" />
+                  <span>Gemini</span>
+                </span>,{' '}
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
+                  <AiEngineIcon id="perplexity" size={15} customColor="#F3C753" />
+                  <span>Perplexity</span>
+                </span>,{' '}
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
+                  <AiEngineIcon id="claude" size={15} customColor="#F3C753" />
+                  <span>Claude</span>
+                </span>, and{' '}
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 mx-0.5 rounded-full bg-white/10 border border-white/15 text-white font-medium text-sm sm:text-base align-middle whitespace-nowrap backdrop-blur-sm shadow-sm transition-all hover:bg-white/15 hover:border-white/25">
+                  <AiEngineIcon id="google-ai-overviews" size={15} customColor="#F3C753" />
+                  <span>Google AI Overviews</span>
+                </span>.
               </p>
             </SlideReveal>
 

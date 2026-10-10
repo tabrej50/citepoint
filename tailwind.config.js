@@ -7,33 +7,38 @@ export default {
   theme: {
     screens: {
       xs: '375px',
-      sm: '640px',
+      sm: '640px',    // Large mobile / small tablet (640px to 767px)
       md: '768px',    // Tablet: 768px to 1023px
       lg: '1024px',   // Desktop: 1024px to 1279px
-      xl: '1280px',   // Desktop: 1280px to 1439px
-      '2xl': '1440px',// Large desktop: 1440px and above
+      xl: '1280px',   // Wide desktop: 1280px to 1535px
+      '2xl': '1536px',// Ultra-wide desktop: 1536px and above
     },
     container: {
       center: true,
       padding: {
-        DEFAULT: '20px',
-        md: '40px',
-        lg: '24px',
-        xl: '0px',
+        DEFAULT: '16px',
+        xs: '20px',
+        sm: '24px',
+        md: '32px',
+        lg: '48px',
+        xl: '64px',
+        '2xl': '64px',
       },
       screens: {
         DEFAULT: '100%',
         md: '100%',
-        lg: '1200px',
-        xl: '1200px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
       },
     },
     extend: {
       maxWidth: {
-        'desktop': '1200px',
-        'large-desktop': '1200px',
-        '7xl': '1200px',
-        'content': '1200px',
+        'desktop': '1280px',
+        'wide-desktop': '1280px',
+        'ultrawide': '1440px',
+        '7xl': '1280px',
+        'content': '1280px',
       },
       colors: {
         // 60-30-10 Design Tokens

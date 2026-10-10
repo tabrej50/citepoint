@@ -76,7 +76,7 @@ export default function HeroAnimatedHeadline() {
     >
 
       {/* 3. Main Headline Container */}
-      <h1 className="relative z-10 text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-sans font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-center">
+      <h1 className="relative z-10 text-[clamp(32px,8vw,40px)] sm:text-5xl md:text-6xl lg:text-[72px] font-sans font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-center">
         {/* Line 1: "Be the brand AI" */}
         <span className="block">
           {PREFIX_WORDS.map((word, idx) => (

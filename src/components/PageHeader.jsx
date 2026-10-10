@@ -26,7 +26,7 @@ export default function PageHeader({
       <div className="site-container relative z-10">
         <div className="max-w-[900px] text-left">
           <SlideReveal direction="down" distance={15} duration={0.5}>
-            <h1 className="page-title text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-left m-0">
+            <h1 className="page-title text-[clamp(32px,8vw,40px)] sm:text-5xl md:text-6xl lg:text-[72px] font-semibold text-[var(--color-text-primary)] leading-[1.08] tracking-[-0.03em] [text-wrap:balance] text-left m-0">
               {title}
             </h1>
           </SlideReveal>

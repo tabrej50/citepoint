@@ -479,8 +479,8 @@
   outline-offset: 2px;
 }
 
-/* Mobile: full width and stacked buttons */
-@media (max-width: 639px) {
+/* Mobile & Tablet Portrait (<768px): full width and stacked CTA buttons */
+@media (max-width: 767px) {
   .btn-group,
   .hero-buttons-container {
     display: flex !important;
@@ -1008,13 +1008,15 @@ footer.footer-dark button:hover {
 
 /* ============================================================
    MOBILE-FIRST FLUID RESPONSIVE CONTAINER SYSTEM
-   - Mobile (<768px): 100% width, 16–20px horizontal page padding
-   - Tablet (768px to 1023px): 100% width, 32–48px horizontal page padding
-   - Desktop (1024px to 1439px): 100% width, 64–96px horizontal page padding
-   - Large Desktop (1440px+): max-width 1200px centered (120px+ external auto margin)
+   - Small Mobile (<375px): 16px horizontal page padding
+   - Larger Mobile (375px to 767px): 20–24px horizontal page padding
+   - Tablet (768px to 1023px): 32px horizontal page padding
+   - Desktop (1024px to 1279px): 48px horizontal page padding, max-width 1280px
+   - Wide Desktop (1280px to 1535px): 64px horizontal page padding, max-width 1280px
+   - Ultra-Wide Desktop (1536px and above): 64px horizontal page padding, max-width 1440px
    ============================================================ */
 
-/* 1. Mobile First Container: 16–20px horizontal page padding */
+/* 1. Small Mobile (<375px): 16px horizontal page padding */
 .site-container,
 .site-nav-container,
 .layout-container,
@@ -1024,12 +1026,24 @@ footer.footer-dark button:hover {
   max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: clamp(16px, 4.5vw, 20px) !important;
-  padding-right: clamp(16px, 4.5vw, 20px) !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   box-sizing: border-box !important;
 }
 
-/* 2. Tablet (768px to 1023px): 32–48px horizontal page padding */
+/* 2. Larger Mobile (375px to 767px): 20–24px horizontal page padding */
+@media (min-width: 375px) {
+  .site-container,
+  .site-nav-container,
+  .layout-container,
+  .max-w-7xl.mx-auto,
+  .max-w-6xl.mx-auto {
+    padding-left: clamp(20px, 4.5vw, 24px) !important;
+    padding-right: clamp(20px, 4.5vw, 24px) !important;
+  }
+}
+
+/* 3. Tablet (768px to 1023px): 32px horizontal page padding */
 @media (min-width: 768px) {
   .site-container,
   .site-nav-container,
@@ -1038,12 +1052,12 @@ footer.footer-dark button:hover {
   .max-w-6xl.mx-auto {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: clamp(32px, 4.5vw, 48px) !important;
-    padding-right: clamp(32px, 4.5vw, 48px) !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
   }
 }
 
-/* 3. Desktop (1024px to 1439px): 64–96px horizontal page padding */
+/* 4. Desktop (1024px to 1279px): 48px horizontal page padding, max-width 1280px */
 @media (min-width: 1024px) {
   .site-container,
   .site-nav-container,
@@ -1051,22 +1065,35 @@ footer.footer-dark button:hover {
   .max-w-7xl.mx-auto,
   .max-w-6xl.mx-auto {
     width: 100% !important;
-    max-width: 1200px !important;
-    padding-left: clamp(48px, 5.5vw, 64px) !important;
-    padding-right: clamp(48px, 5.5vw, 64px) !important;
+    max-width: 1280px !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
   }
 }
 
-/* 4. Large Desktop (1440px and up): 1200px max centered */
-@media (min-width: 1440px) {
+/* 5. Wide Desktop (1280px to 1535px): 64px horizontal page padding, max-width 1280px */
+@media (min-width: 1280px) {
   .site-container,
   .site-nav-container,
   .layout-container,
   .max-w-7xl.mx-auto,
   .max-w-6xl.mx-auto {
-    max-width: 1200px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: 1280px !important;
+    padding-left: 64px !important;
+    padding-right: 64px !important;
+  }
+}
+
+/* 6. Ultra-Wide Desktop (1536px and above): 64px horizontal page padding, max-width 1440px */
+@media (min-width: 1536px) {
+  .site-container,
+  .site-nav-container,
+  .layout-container,
+  .max-w-7xl.mx-auto,
+  .max-w-6xl.mx-auto {
+    max-width: 1440px !important;
+    padding-left: 64px !important;
+    padding-right: 64px !important;
   }
 }
 

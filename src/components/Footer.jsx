@@ -71,8 +71,8 @@ export default function Footer({ setCurrentRoute }) {
           </div>
         </div>
 
-        {/* 4 Main Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-5 lg:gap-6 pb-12 border-b border-white/10">
+        {/* 4 Main Columns (Stacked 1-col on mobile, 2-col on small tablet, 4-col on tablet/desktop) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-5 lg:gap-6 pb-12 border-b border-white/10">
           
           {/* Column 1: Services */}
           <div>

@@ -440,7 +440,7 @@ export default function Modern3DBackground() {
         radius * 1.45
       );
       shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0.7)');
-      shadowGrad.addColorStop(0.6, 'rgba(230, 0, 35, 0.15)');
+      shadowGrad.addColorStop(0.6, 'rgba(255, 255, 255, 0.05)');
       shadowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       ctx.fillStyle = shadowGrad;
@@ -474,7 +474,7 @@ export default function Modern3DBackground() {
       ctx.arc(x, y, radius, 0, Math.PI * 2);
       ctx.fill();
 
-      // 3. Rim bounce reflection (Formium Crimson light catch from bottom-right)
+      // 3. Rim bounce reflection (Titanium Platinum specular catch from bottom-right)
       const rimGrad = ctx.createRadialGradient(
         x + radius * 0.4,
         y + radius * 0.4,
@@ -483,9 +483,9 @@ export default function Modern3DBackground() {
         y,
         radius
       );
-      rimGrad.addColorStop(0, 'rgba(230, 0, 35, 0)');
-      rimGrad.addColorStop(0.8, 'rgba(230, 0, 35, 0.35)');
-      rimGrad.addColorStop(1, 'rgba(230, 0, 35, 0.65)');
+      rimGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      rimGrad.addColorStop(0.8, 'rgba(255, 255, 255, 0.20)');
+      rimGrad.addColorStop(1, 'rgba(255, 255, 255, 0.45)');
 
       ctx.fillStyle = rimGrad;
       ctx.beginPath();
@@ -534,7 +534,7 @@ export default function Modern3DBackground() {
       ctx.save();
       ctx.beginPath();
       ctx.arc(x, y, outerR, 0, Math.PI * 2);
-      ctx.strokeStyle = '#e60023';
+      ctx.strokeStyle = '#ffffff';
       ctx.lineWidth = outerR - innerR;
       ctx.stroke();
 
@@ -562,7 +562,7 @@ export default function Modern3DBackground() {
           ctx.beginPath();
           ctx.arc(px, py, 1.7, 0, Math.PI * 2);
           ctx.fillStyle = pulseAlpha > 0.08
-            ? `rgba(230, 0, 35, ${0.45 + pulseAlpha * 0.55})`
+            ? `rgba(255, 255, 255, ${0.45 + pulseAlpha * 0.55})`
             : 'rgba(255, 255, 255, 0.18)';
           ctx.fill();
         }
@@ -579,8 +579,8 @@ export default function Modern3DBackground() {
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
         ctx.strokeStyle = idx % 2 === 0
-          ? 'rgba(230, 0, 35, 0.22)'
-          : 'rgba(255, 255, 255, 0.12)';
+          ? 'rgba(255, 255, 255, 0.22)'
+          : 'rgba(255, 255, 255, 0.10)';
         ctx.lineWidth = 1;
         if (idx === 2) ctx.setLineDash([4, 8]);
         else ctx.setLineDash([]);
@@ -596,8 +596,8 @@ export default function Modern3DBackground() {
       ctx.closePath();
 
       const sweepGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, sweepR);
-      sweepGrad.addColorStop(0, 'rgba(230, 0, 35, 0.18)');
-      sweepGrad.addColorStop(0.7, 'rgba(230, 0, 35, 0.04)');
+      sweepGrad.addColorStop(0, 'rgba(255, 255, 255, 0.16)');
+      sweepGrad.addColorStop(0.7, 'rgba(255, 255, 255, 0.03)');
       sweepGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = sweepGrad;
       ctx.fill();
@@ -659,9 +659,9 @@ export default function Modern3DBackground() {
       ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, width, height);
 
-      // Subtle ambient crimson radial glow in the peripheral wings
+      // Subtle ambient titanium radial glow in the peripheral wings
       const leftAmbient = ctx.createRadialGradient(0, height * 0.7, 0, 0, height * 0.7, width * 0.4);
-      leftAmbient.addColorStop(0, 'rgba(230, 0, 35, 0.08)');
+      leftAmbient.addColorStop(0, 'rgba(255, 255, 255, 0.04)');
       leftAmbient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = leftAmbient;
       ctx.fillRect(0, 0, width, height);
@@ -673,7 +673,7 @@ export default function Modern3DBackground() {
       ctx.fillRect(0, 0, width, height);
 
       // ------------------------------------------------------------
-      // 2. INTERACTIVE CURSOR FORMIUM CRIMSON SPOTLIGHT
+      // 2. INTERACTIVE CURSOR TITANIUM SPECULAR SPOTLIGHT
       // ------------------------------------------------------------
       if (mouse.active && !isReducedMotion) {
         const spotRadius = 260;
@@ -685,8 +685,8 @@ export default function Modern3DBackground() {
           mouse.y,
           spotRadius
         );
-        spotGrad.addColorStop(0, 'rgba(230, 0, 35, 0.14)');
-        spotGrad.addColorStop(0.5, 'rgba(230, 0, 35, 0.04)');
+        spotGrad.addColorStop(0, 'rgba(255, 255, 255, 0.10)');
+        spotGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.03)');
         spotGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
         ctx.fillStyle = spotGrad;
@@ -727,9 +727,9 @@ export default function Modern3DBackground() {
             else ctx.lineTo(pt.x, pt.y);
           }
 
-          // Traces glow with extra crimson voltage on scroll surge
+          // Traces glow with extra titanium voltage on scroll surge
           ctx.strokeStyle = pulseSurge > 0.1
-            ? `rgba(230, 0, 35, ${0.7 + pulseSurge * 0.3})`
+            ? `rgba(255, 255, 255, ${0.6 + pulseSurge * 0.4})`
             : 'rgba(255, 255, 255, 0.12)';
           ctx.lineWidth = 1.5;
           ctx.stroke();
@@ -797,32 +797,32 @@ export default function Modern3DBackground() {
           const metric = tiersPrepared[tierDataIdx].preparedPaths[pulse.pathIdx];
           if (!metric) continue;
 
-          // Draw tapered crimson comet trail
+          // Draw tapered titanium comet trail
           const trailSteps = 6;
           for (let s = trailSteps; s >= 1; s--) {
             const trailT = pulse.t - (s / trailSteps) * pulse.length;
             const normPt = getPointAlongPath(metric, trailT);
             const screenPt = toScreen(normPt.x, normPt.y, tIdx, 1.0);
 
-            const trailAlpha = (1 - s / trailSteps) * 0.65;
+            const trailAlpha = (1 - s / trailSteps) * 0.55;
             const trailRadius = pulse.size * (1 - (s / trailSteps) * 0.6);
 
             ctx.beginPath();
             ctx.arc(screenPt.x, screenPt.y, trailRadius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(230, 0, 35, ${trailAlpha})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${trailAlpha})`;
             ctx.fill();
           }
 
-          // Pulse Head: Radiant Formium Crimson with pure white core
+          // Pulse Head: Radiant Pure White with subtle specular glow
           const headNorm = getPointAlongPath(metric, pulse.t);
           const headPt = toScreen(headNorm.x, headNorm.y, tIdx, 1.0);
 
           ctx.save();
-          ctx.shadowColor = '#e60023';
+          ctx.shadowColor = '#ffffff';
           ctx.shadowBlur = 8 + pulseSurge * 8;
           ctx.beginPath();
           ctx.arc(headPt.x, headPt.y, pulse.size + pulseSurge * 1.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#e60023';
+          ctx.fillStyle = '#ffffff';
           ctx.fill();
 
           ctx.beginPath();
@@ -850,7 +850,7 @@ export default function Modern3DBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y - (smoothScrollY * 0.15) % height, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(230, 0, 35, ${Math.max(0.04, pulseAlpha * 0.6)})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.max(0.04, pulseAlpha * 0.5)})`;
         ctx.fill();
       });
 

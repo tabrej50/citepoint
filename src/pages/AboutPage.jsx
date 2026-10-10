@@ -80,8 +80,8 @@ export default function AboutPage({ setCurrentRoute }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-[720px] text-left">
             <SlideReveal direction="down" distance={30} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#e60023] font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span>// ABOUT CITEPOINT</span>
               </div>
               <h1 className="type-h1 text-white mb-[24px]">
@@ -93,10 +93,10 @@ export default function AboutPage({ setCurrentRoute }) {
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-aurora h-[52px] px-8 rounded-full text-[15px] leading-[20px] font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                  className="btn-aurora h-[52px] px-8 rounded-full text-[15px] leading-[20px] font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-black" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}
@@ -116,7 +116,7 @@ export default function AboutPage({ setCurrentRoute }) {
       <section className="py-[80px] border-b border-white/10 bg-transparent">
         <div className="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <SlideReveal direction="up" distance={32} duration={0.7}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#e60023] font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
               <span>// THE SHIFT TO SYNTHESIS</span>
             </div>
             
@@ -135,13 +135,13 @@ export default function AboutPage({ setCurrentRoute }) {
 
               {/* Callout Quote Card */}
               <div className="surface-card p-6 sm:p-8 my-[32px] rounded-[24px] border border-white/10 group">
-                <Quote className="w-8 h-8 text-[#e60023] mb-3 transition-transform duration-200 group-hover:scale-105" />
+                <Quote className="w-8 h-8 text-white mb-3 transition-transform duration-200 group-hover:scale-105" />
                 <blockquote className="type-h3 leading-normal text-white mb-4">
                   “In the answer economy, the winner isn’t who pays the most for clicks—it’s who earns the synthetic consensus of AI discovery.”
                 </blockquote>
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between type-eyebrow text-[#71717a]">
                   <span>Citepoint Strategic Philosophy</span>
-                  <span className="text-[#e60023] font-semibold">Canonical Reference</span>
+                  <span className="text-white font-semibold">Canonical Reference</span>
                 </div>
               </div>
 
@@ -161,7 +161,7 @@ export default function AboutPage({ setCurrentRoute }) {
           
           <SlideReveal direction="down" distance={30} duration={0.65}>
             <div className="max-w-[720px] text-left mb-[48px]">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#e60023] font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-xs">
                 <span>// CORE VALUES & PRINCIPLES</span>
               </div>
               <h2 className="type-h2 text-white mb-[24px]">
@@ -185,14 +185,14 @@ export default function AboutPage({ setCurrentRoute }) {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="type-eyebrow text-[#e60023] font-mono font-semibold">
+                      <span className="type-eyebrow text-white/80 font-mono font-semibold">
                         // {v.num}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-200 group-hover:scale-110 group-hover:border-[#e60023]">
+                      <div className="w-8 h-8 rounded-full bg-[#16171d] border border-white/12 text-white flex items-center justify-center transition-transform duration-200 group-hover:scale-110 group-hover:border-white/40 group-hover:shadow-[0_0_12px_rgba(255,255,255,0.2)]">
                         <IconC className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="type-h4 text-white group-hover:text-[#e60023] transition-colors duration-200">
+                    <h3 className="type-h4 text-white group-hover:text-zinc-200 transition-colors duration-200">
                       {v.title}
                     </h3>
                   </div>
@@ -214,8 +214,8 @@ export default function AboutPage({ setCurrentRoute }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SlideReveal direction="up" distance={32} duration={0.75}>
             <div className="surface-card text-center p-8 sm:p-12 md:p-16 max-w-4xl mx-auto rounded-[24px] border border-white/10 shadow-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#e60023] font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-2xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.12em] mb-[16px] shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span>// STRATEGIC ENGAGEMENT</span>
               </div>
               <h2 className="type-h2 text-white mb-[24px]">
@@ -227,10 +227,10 @@ export default function AboutPage({ setCurrentRoute }) {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-aurora h-[52px] px-8 rounded-full text-[15px] leading-[20px] font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                  className="btn-aurora h-[52px] px-8 rounded-full text-[15px] leading-[20px] font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-black" />
                 </button>
                 <button
                   onClick={() => handleNav('contact')}

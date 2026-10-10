@@ -144,8 +144,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#000000] text-[#fff0f0] font-sans selection:bg-[#e60023]/35 selection:text-[#ffffff] relative">
-      {/* Modern 3D Champagne Gold Waves & Floating Geometry Background */}
+    <div className="min-h-screen flex flex-col bg-[#0a0b0d] text-white font-sans selection:bg-white/20 selection:text-white relative">
+      {/* Apple Titanium Space Black Procedural 3D Canvas Background */}
       <Modern3DBackground />
       <LiquidGlassFilter />
 

@@ -3,12 +3,12 @@ import { Mail, CheckCircle2, ArrowRight, Sparkles, Globe2, ShieldCheck } from 'l
 import { SlideReveal } from '../components/SlideReveal';
 
 /**
- * Formium Alliance ContactPage
- * - Base Canvas: Pure Pitch Black (#000000)
- * - Accent: Formium Crimson (#e60023)
- * - Cards: Obsidian Glass Cards (#111113, rounded-[24px], border-white/10)
- * - Inputs: Obsidian dark inputs (#18181b, rounded-[16px], focus crimson ring)
- * - Typography: Bricolage Grotesque, high contrast white headers & crimson badges
+ * Citepoint ContactPage
+ * - Base Canvas: Titanium Space Black (#0a0b0d)
+ * - Accent: Pure White & Specular Quartz
+ * - Cards: Frosted Glass Cards (#16171d, rounded-[24px], border-white/10)
+ * - Inputs: Obsidian dark inputs (#18181b, rounded-[16px], focus white ring)
+ * - Typography: Bricolage Grotesque, high contrast white headers & badges
  */
 export default function ContactPage({ setCurrentRoute }) {
   const [formData, setFormData] = useState({
@@ -60,17 +60,17 @@ export default function ContactPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="w-full bg-black text-[#fff0f0] font-sans selection:bg-[#e60023] selection:text-white">
+    <div className="w-full bg-[#0a0b0d] text-[#fff0f0] font-sans selection:bg-white selection:text-black">
       
       {/* --------------------------------------------------
-          SECTION 1, HEADER (Formium Obsidian & Punch Crimson)
+          SECTION 1, HEADER (Titanium Space Black & Monochrome)
       -------------------------------------------------- */}
       <section className="pt-[72px] pb-[48px] md:pt-[96px] md:pb-[64px] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-[720px] text-left">
             <SlideReveal direction="down" distance={30} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-[#e60023] font-semibold text-xs uppercase tracking-[0.14em] mb-[16px]">
-                <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs uppercase tracking-[0.14em] mb-[16px]">
+                <Sparkles className="w-3.5 h-3.5 text-white" />
                 <span>// ADVISORY & AUDIT INQUIRIES</span>
               </div>
               <h1 className="type-h1 text-white mb-[24px]">
@@ -95,14 +95,14 @@ export default function ContactPage({ setCurrentRoute }) {
             {/* Form Area: Columns 1-7 (max-width 640px) */}
             <div className="order-1 lg:col-span-7 w-full max-w-[640px]">
               <SlideReveal direction="left" distance={36} duration={0.7}>
-                <div className="surface-card p-6 sm:p-8 md:p-10 rounded-[24px] border border-white/10 bg-[#111113]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
+                <div className="surface-card p-6 sm:p-8 md:p-10 rounded-[24px] border border-white/10 bg-[#16171d]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
                   {/* Top Specular Hairline */}
-                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e60023]/40 to-transparent pointer-events-none" />
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
                   
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
-                      <div className="w-16 h-16 rounded-full bg-[#e60023]/10 border border-[#e60023]/30 text-[#e60023] flex items-center justify-center mx-auto mb-4 shadow-[0_0_24px_rgba(230,0,35,0.25)]">
-                        <CheckCircle2 className="w-8 h-8 stroke-[2] text-[#e60023]" />
+                      <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center mx-auto mb-4 shadow-[0_0_24px_rgba(255,255,255,0.15)]">
+                        <CheckCircle2 className="w-8 h-8 stroke-[2] text-white" />
                       </div>
                       <h3 className="type-h3 text-white">
                         Briefing Request Received
@@ -141,11 +141,11 @@ export default function ContactPage({ setCurrentRoute }) {
                           placeholder="e.g. Sarah Jenkins"
                           value={formData.fullName}
                           onChange={handleChange}
-                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors ${
-                            errors.fullName ? 'border-[#ff4d6d]' : 'border-white/10'
+                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors ${
+                            errors.fullName ? 'border-rose-400' : 'border-white/10'
                           }`}
                         />
-                        {errors.fullName && <p className="text-xs text-[#ff4d6d] mt-1">{errors.fullName}</p>}
+                        {errors.fullName && <p className="text-xs text-rose-400 mt-1">{errors.fullName}</p>}
                       </div>
 
                       {/* Work Email */}
@@ -159,11 +159,11 @@ export default function ContactPage({ setCurrentRoute }) {
                           placeholder="sarah@company.com"
                           value={formData.workEmail}
                           onChange={handleChange}
-                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors ${
-                            errors.workEmail ? 'border-[#ff4d6d]' : 'border-white/10'
+                          className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors ${
+                            errors.workEmail ? 'border-rose-400' : 'border-white/10'
                           }`}
                         />
-                        {errors.workEmail && <p className="text-xs text-[#ff4d6d] mt-1">{errors.workEmail}</p>}
+                        {errors.workEmail && <p className="text-xs text-rose-400 mt-1">{errors.workEmail}</p>}
                       </div>
 
                       {/* Company Name & Website in 2-column or stacked */}
@@ -178,11 +178,11 @@ export default function ContactPage({ setCurrentRoute }) {
                             placeholder="e.g. Acme Enterprise"
                             value={formData.company}
                             onChange={handleChange}
-                            className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors ${
-                              errors.company ? 'border-[#ff4d6d]' : 'border-white/10'
+                            className={`w-full h-[52px] px-4 rounded-[16px] border bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors ${
+                              errors.company ? 'border-rose-400' : 'border-white/10'
                             }`}
                           />
-                          {errors.company && <p className="text-xs text-[#ff4d6d] mt-1">{errors.company}</p>}
+                          {errors.company && <p className="text-xs text-rose-400 mt-1">{errors.company}</p>}
                         </div>
 
                         <div>
@@ -195,7 +195,7 @@ export default function ContactPage({ setCurrentRoute }) {
                             placeholder="https://acme.com"
                             value={formData.websiteUrl}
                             onChange={handleChange}
-                            className="w-full h-[52px] px-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors"
+                            className="w-full h-[52px] px-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white placeholder-[#71717a] text-[15px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
                           />
                         </div>
                       </div>
@@ -209,7 +209,7 @@ export default function ContactPage({ setCurrentRoute }) {
                           name="objective"
                           value={formData.objective}
                           onChange={handleChange}
-                          className="w-full h-[52px] px-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white text-[15px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors cursor-pointer"
+                          className="w-full h-[52px] px-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white text-[15px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors cursor-pointer"
                         >
                           <option value="AI Visibility Diagnostic Assessment" className="bg-[#18181b] text-white">
                             AI Visibility Diagnostic Assessment
@@ -239,7 +239,7 @@ export default function ContactPage({ setCurrentRoute }) {
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="Provide any priority competitor comparisons, target buyer prompts, or specific timeline requirements..."
-                          className="w-full h-[160px] p-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white placeholder-[#71717a] text-[15px] leading-[24px] focus:outline-none focus:border-[#e60023] focus:ring-1 focus:ring-[#e60023] transition-colors resize-none"
+                          className="w-full h-[160px] p-4 rounded-[16px] border border-white/10 bg-[#18181b] text-white placeholder-[#71717a] text-[15px] leading-[24px] focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none"
                         />
                       </div>
 
@@ -247,15 +247,15 @@ export default function ContactPage({ setCurrentRoute }) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn-primary w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_20px_rgba(230,0,35,0.35)] transition-all"
+                        className="btn-primary w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_20px_rgba(255,255,255,0.18)] transition-all"
                       >
                         <span>{isSubmitting ? 'Transmitting Request...' : 'Send Briefing Request'}</span>
-                        <ArrowRight className="w-4 h-4 text-white" />
+                        <ArrowRight className="w-4 h-4 text-black" />
                       </button>
 
                       <div className="pt-2 flex items-center justify-between text-[#71717a] type-small">
                         <span className="flex items-center gap-1.5">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#e60023]" />
+                          <ShieldCheck className="w-3.5 h-3.5 text-white/60" />
                           Strict NDA governance
                         </span>
                         <span>SLA: 24 business hours</span>
@@ -274,16 +274,16 @@ export default function ContactPage({ setCurrentRoute }) {
                 <div className="flex flex-col space-y-[24px]">
                   
                   {/* Block 1 */}
-                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#111113]/80 flex flex-col justify-center transition-all duration-200 hover:border-[#e60023]/60 group relative overflow-hidden">
+                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#16171d]/80 flex flex-col justify-center transition-all duration-200 hover:border-white/40 group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Mail className="w-4 h-4 text-[#e60023]" />
-                      <span className="type-eyebrow text-[#e60023] font-semibold">
+                      <Mail className="w-4 h-4 text-white" />
+                      <span className="type-eyebrow text-white font-semibold">
                         // GENERAL ADVISORY
                       </span>
                     </div>
                     <a
                       href="mailto:hello@citepoint.io"
-                      className="type-h4 text-white group-hover:text-[#ff4d6d] transition-colors duration-200"
+                      className="type-h4 text-white group-hover:text-zinc-200 transition-colors duration-200"
                     >
                       hello@citepoint.io
                     </a>
@@ -293,16 +293,16 @@ export default function ContactPage({ setCurrentRoute }) {
                   </div>
 
                   {/* Block 2 */}
-                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#111113]/80 flex flex-col justify-center transition-all duration-200 hover:border-[#e60023]/60 group relative overflow-hidden">
+                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#16171d]/80 flex flex-col justify-center transition-all duration-200 hover:border-white/40 group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Sparkles className="w-4 h-4 text-[#e60023]" />
-                      <span className="type-eyebrow text-[#e60023] font-semibold">
+                      <Sparkles className="w-4 h-4 text-white" />
+                      <span className="type-eyebrow text-white font-semibold">
                         // STRATEGIC ACCOUNTS
                       </span>
                     </div>
                     <a
                       href="mailto:advisory@citepoint.io"
-                      className="type-h4 text-white group-hover:text-[#ff4d6d] transition-colors duration-200"
+                      className="type-h4 text-white group-hover:text-zinc-200 transition-colors duration-200"
                     >
                       advisory@citepoint.io
                     </a>
@@ -312,10 +312,10 @@ export default function ContactPage({ setCurrentRoute }) {
                   </div>
 
                   {/* Block 3 */}
-                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#111113]/80 flex flex-col justify-center transition-all duration-200 hover:border-[#e60023]/60 group relative overflow-hidden">
+                  <div className="surface-card min-h-[96px] p-6 rounded-[24px] border border-white/10 bg-[#16171d]/80 flex flex-col justify-center transition-all duration-200 hover:border-white/40 group relative overflow-hidden">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Globe2 className="w-4 h-4 text-[#e60023]" />
-                      <span className="type-eyebrow text-[#e60023] font-semibold">
+                      <Globe2 className="w-4 h-4 text-white" />
+                      <span className="type-eyebrow text-white font-semibold">
                         // GLOBAL DELIVERY
                       </span>
                     </div>

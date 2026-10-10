@@ -3,61 +3,62 @@
 @tailwind utilities;
 
 /* ============================================================
-   FORMIUM ALLIANCE DESIGN SYSTEM
-   Structured, accessible, implementation-first:
-   - Base Surface: Pure Pitch Black (#000000)
-   - Primary Accent: Formium Crimson Red (#E60023)
-   - Light Surfaces: Pure White (#FFFFFF) & Raised Gray (#F4F5F8)
-   - Typography: Bricolage Grotesque across all displays, headings, and body
-   - Geometry: 999px Pills & 24px Curved Surface Cards
+   TITANIUM SPACE BLACK & APPLE MONOCHROME DESIGN SYSTEM
+   Apple WWDC Keynote Aesthetic:
+   - Base Surface: Space Black (#0A0B0D)
+   - Primary Accent: Crisp Apple Keynote Pure White (#FFFFFF) with Space Black (#0A0B0D) text
+   - Secondary Surfaces: Titanium Raised (#16171D) & Titanium Glass (#111216)
+   - Hairlines: Icy Quartz Silver (rgba(255, 255, 255, 0.14) - rgba(255, 255, 255, 0.35))
+   - Typography: Bricolage Grotesque display & clean optical hierarchy
+   - Geometry: 999px Apple Fluid Pills & 24px Titanium Chamfered Cards
    ============================================================ */
 
 :root {
   /* Surfaces */
-  --color-canvas: #000000;
-  --color-surface-base: #000000;
-  --color-surface-raised: #f4f5f8;
-  --color-surface-muted: #ffffff;
-  --color-surface-strong: #e60023;
-  --color-surface-1: #111113;
-  --color-surface-2: #18181b;
-  --color-surface-3: #27272a;
-  --color-surface-4: #3f3f46;
+  --color-canvas: #0a0b0d;
+  --color-surface-base: #0a0b0d;
+  --color-surface-raised: #16171d;
+  --color-surface-muted: #111216;
+  --color-surface-strong: #ffffff;
+  --color-surface-1: #111216;
+  --color-surface-2: #16171d;
+  --color-surface-3: #22232a;
+  --color-surface-4: #2e303a;
   --color-hairline: rgba(255, 255, 255, 0.12);
-  --color-hairline-strong: rgba(255, 255, 255, 0.22);
+  --color-hairline-strong: rgba(255, 255, 255, 0.24);
   --color-hairline-tertiary: rgba(255, 255, 255, 0.08);
 
-  /* Typography & Neutrals (WCAG 2.2 AA / AAA Compliant) */
-  --color-ink: #fff0f0;
-  --color-ink-muted: #d4d4d8;
+  /* Typography & Neutrals (WCAG 2.2 AAA Compliant) */
+  --color-ink: #ffffff;
+  --color-ink-muted: #e4e4e7;
   --color-ink-subtle: #a1a1aa;
   --color-ink-tertiary: #71717a;
-  --color-text-secondary: #1a1a1c;
-  --color-text-tertiary: #fff0f0;
-  --color-text-inverse: #222222;
+  --color-text-secondary: #0a0b0d;
+  --color-text-tertiary: #ffffff;
+  --color-text-inverse: #0a0b0d;
 
-  /* Primary Accent: Formium Crimson */
-  --color-primary: #e60023;
-  --color-primary-hover: #cc001f;
-  --color-primary-focus: #b3001b;
-  --color-on-primary: #ffffff;
-  --color-brand-secure: #e60023;
-  --color-semantic-success: #1E8E3E;
+  /* Primary Accent: Apple Keynote Pure White */
+  --color-primary: #ffffff;
+  --color-primary-hover: #f0f1f5;
+  --color-primary-focus: #e4e4e7;
+  --color-on-primary: #0a0b0d;
+  --color-brand-secure: #ffffff;
+  --color-semantic-success: #34c759;
 
   /* Backward Compatibility Aliases */
-  --color-liquid-abyss: #000000;
-  --color-liquid-deep: #111113;
-  --color-liquid-kelp: #1a1a1d;
+  --color-liquid-abyss: #0a0b0d;
+  --color-liquid-deep: #111216;
+  --color-liquid-kelp: #16171d;
   --color-slate-deep: rgba(255, 255, 255, 0.12);
   --color-platinum: #ffffff;
   --color-silver-mist: #a1a1aa;
   --color-ash: #d4d4d8;
-  --color-liquid-mist: #fff0f0;
-  --color-lavender-phosphor: #e60023;
-  --color-bioluminescent-gradient: #e60023;
-  --gradient-bioluminescent-gradient: linear-gradient(135deg, #e60023 0%, #cc001f 100%);
-  --color-aurora-gradient: #e60023;
-  --gradient-aurora-gradient: linear-gradient(135deg, #e60023 0%, #cc001f 100%);
+  --color-liquid-mist: #ffffff;
+  --color-lavender-phosphor: #ffffff;
+  --color-bioluminescent-gradient: #ffffff;
+  --gradient-bioluminescent-gradient: linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%);
+  --color-aurora-gradient: #ffffff;
+  --gradient-aurora-gradient: linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%);
 
   /* Font Families: Bricolage Grotesque Universal */
   --font-matter: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -68,16 +69,16 @@
   --font-inter-tight: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Spacing & Radii (Formium Standard: 24px cards, 999px pills) */
+  /* Spacing & Radii (Apple Standard: 24px cards, 999px pills) */
   --radius-cards: 24px;
   --radius-buttons: 999px;
   --radius-small: 12px;
 
   /* Header & Navigation */
-  --lg-header-bg: rgba(0, 0, 0, 0.85);
-  --lg-header-highlight: rgba(230, 0, 35, 0.25);
-  --lg-btn-bg: #111113;
-  --lg-btn-highlight: rgba(230, 0, 35, 0.2);
+  --lg-header-bg: rgba(10, 11, 13, 0.85);
+  --lg-header-highlight: rgba(255, 255, 255, 0.25);
+  --lg-btn-bg: #ffffff;
+  --lg-btn-highlight: rgba(255, 255, 255, 0.2);
 }
 
 @layer base {
@@ -277,17 +278,17 @@
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #e60023;
+    background: #ffffff;
   }
 }
 
 /* ------------------------------------------------------------
-   FORMIUM ALLIANCE BUTTON SYSTEM
-   Primary: Signature Formium Crimson (#e60023) Pill with pure white text
-   Secondary: Frosted dark surface with clean white hairline border
+   APPLE MONOCHROME BUTTON SYSTEM
+   Primary: Apple Keynote Pure White (#ffffff) Pill with Space Black text (#0a0b0d)
+   Secondary: Frosted Titanium Dark Surface with Icy Quartz Hairline Border
    ------------------------------------------------------------ */
 
-/* Primary CTA: Formium Crimson Pill Button */
+/* Primary CTA: Apple Keynote Pure White Pill Button */
 .btn-aurora,
 .btn-primary,
 .btn-liquid-primary,
@@ -303,11 +304,11 @@
   line-height: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #ffffff !important;
-  background-color: #e60023;
+  color: #0a0b0d !important;
+  background-color: #ffffff;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(230, 0, 35, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.16);
   transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   user-select: none;
@@ -319,9 +320,9 @@
 .btn-primary:hover,
 .btn-liquid-primary:hover,
 .btn-terminal:hover {
-  background-color: #cc001f;
+  background-color: #f0f1f5;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(230, 0, 35, 0.5);
+  box-shadow: 0 6px 26px rgba(255, 255, 255, 0.28);
 }
 
 .btn-aurora:active,
@@ -329,8 +330,8 @@
 .btn-liquid-primary:active,
 .btn-terminal:active {
   transform: scale(0.97) !important;
-  background-color: #b3001b;
-  box-shadow: 0 2px 8px rgba(230, 0, 35, 0.3);
+  background-color: #e4e4e7;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
   transition: transform 80ms cubic-bezier(0.2, 0, 0, 1), background-color 80ms ease !important;
 }
 
@@ -338,7 +339,7 @@
 .btn-primary:focus-visible,
 .btn-liquid-primary:focus-visible,
 .btn-terminal:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #38bdf8;
   outline-offset: 2px;
 }
 
@@ -358,10 +359,10 @@
   line-height: 20px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: #fff0f0 !important;
+  color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -393,7 +394,7 @@
 .btn-secondary:focus-visible,
 .btn-liquid-secondary:focus-visible,
 .btn-terminal-muted:focus-visible {
-  outline: 2px solid #e60023;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -407,7 +408,7 @@
   font-family: var(--font-bricolage);
   font-size: 13.5px;
   font-weight: 500;
-  color: #fff0f0 !important;
+  color: #ffffff !important;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px) saturate(180%);
   -webkit-backdrop-filter: blur(14px) saturate(180%);
@@ -420,7 +421,7 @@
 
 .btn-glass:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: #e60023;
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff !important;
   transform: translateY(-1px);
 }
@@ -461,22 +462,22 @@
   min-width: 36px;
   min-height: 36px;
   border-radius: 999px;
-  background: #111113;
+  background: #111216;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #e60023;
+  color: #ffffff;
   flex-shrink: 0;
   transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .arrow-icon-btn:hover {
-  background: #e60023;
-  border-color: #e60023;
-  color: #ffffff;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0a0b0d;
   transform: translate(1px, -1px);
 }
 
@@ -485,11 +486,11 @@
 }
 
 /* ------------------------------------------------------------
-   CINEMATIC GLASS PANELS & CARDS (Formium Obsidian Glass & Crimson Depth)
-   - Background: rgba(17, 17, 19, 0.85)
+   CINEMATIC GLASS PANELS & CARDS (Titanium Space Black & Icy Quartz Depth)
+   - Background: rgba(18, 19, 24, 0.85)
    - Backdrop blur: 20px saturate(180%)
    - Border: 1px solid rgba(255, 255, 255, 0.12)
-   - Specular top highlight: 1px crimson directional gradient
+   - Specular top highlight: 1px directional quartz gradient
    ------------------------------------------------------------ */
 
 .surface-card,
@@ -502,7 +503,7 @@
 .card-selectable,
 .bento-card,
 .glass-panel {
-  background: rgba(17, 17, 19, 0.85) !important;
+  background: rgba(18, 19, 24, 0.85) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -524,7 +525,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(230, 0, 35, 0.45) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -535,9 +536,9 @@
 .card-selectable:hover,
 .bento-card:hover,
 .glass-panel:hover {
-  background: rgba(24, 24, 28, 0.95) !important;
-  border-color: rgba(230, 0, 35, 0.4) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(230, 0, 35, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  background: rgba(22, 23, 29, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
   transform: translateY(-2px);
 }
 
@@ -548,16 +549,16 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(230, 0, 35, 0.35) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
 
 .card-selectable-active,
 .pricing-card-featured {
-  background: rgba(24, 24, 28, 0.95) !important;
-  border: 1.5px solid #e60023 !important;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 0, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  background: rgba(22, 23, 29, 0.95) !important;
+  border: 1.5px solid #ffffff !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 255, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
 .liquid-glass-refract {
@@ -610,9 +611,9 @@
 }
 
 .fa-stat-card:hover {
-  background: rgba(24, 24, 28, 0.95);
-  border-color: rgba(230, 0, 35, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(230, 0, 35, 0.18);
+  background: rgba(22, 23, 29, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
@@ -632,7 +633,7 @@
   font-size: 0.5em;
   font-weight: 700;
   opacity: 0.95;
-  color: #e60023;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -711,7 +712,7 @@
    ------------------------------------------------------------ */
 
 .text-shimmer {
-  background: linear-gradient(135deg, #ffffff 20%, #e60023 60%, #ff4d6d 85%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #e4e4e7 65%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -734,8 +735,8 @@
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #e60023;
+  letter-spacing: 0.12em;
+  color: #ffffff;
 }
 
 /* Statistic Counter */
@@ -756,22 +757,22 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #e60023;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
 /* ------------------------------------------------------------
    TOP NAVIGATION BAR (.header-six)
-   Formium style: pitch black surface, hairline border rgba(255,255,255,0.12), backdrop blur
+   Titanium style: space black surface, hairline border rgba(255,255,255,0.14), backdrop blur
    ------------------------------------------------------------ */
 
 .header-six {
   position: relative;
   isolation: isolate;
-  background: rgba(0, 0, 0, 0.88) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(10, 11, 13, 0.88) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8) !important;
   border-radius: 9999px;
 }
@@ -783,7 +784,7 @@ select:focus-visible {
   left: 20px;
   right: 20px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(230, 0, 35, 0.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   pointer-events: none;
 }
 
@@ -845,32 +846,32 @@ select:focus-visible {
 .lg-dropdown a:hover,
 .lg-dropdown button:hover {
   background: rgba(255, 255, 255, 0.08) !important;
-  color: #e60023 !important;
+  color: #ffffff !important;
 }
 
 /* Mobile Off-canvas Drawer */
 .mobile-offcanvas,
 .glass-mobile-drawer {
-  background: #111113 !important;
+  background: #111216 !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 24px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95) !important;
-  color: #fff0f0 !important;
+  color: #ffffff !important;
 }
 
 .mobile-offcanvas nav button,
 .mobile-offcanvas nav a,
 .glass-mobile-drawer nav button,
 .glass-mobile-drawer nav a {
-  color: #fff0f0 !important;
+  color: #ffffff !important;
 }
 
 .mobile-offcanvas nav button:hover,
 .glass-mobile-drawer nav button:hover {
   background: rgba(255, 255, 255, 0.08) !important;
-  color: #e60023 !important;
+  color: #ffffff !important;
 }
 
 /* ------------------------------------------------------------
@@ -951,15 +952,15 @@ select:focus-visible {
 @keyframes pulse-radar {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(230, 0, 35, 0.45);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.45);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(230, 0, 35, 0);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(230, 0, 35, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 

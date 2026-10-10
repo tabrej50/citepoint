@@ -7,56 +7,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Formium Alliance Design System Tokens
+        // Titanium Space Black & Apple Monochrome Theme Tokens
         primary: {
-          DEFAULT: '#e60023',
-          hover: '#cc001f',
-          focus: '#b3001b',
-          on: '#ffffff',
+          DEFAULT: '#ffffff',
+          hover: '#f0f1f5',
+          focus: '#e4e4e7',
+          on: '#0a0b0d',
         },
         ink: {
-          DEFAULT: '#fff0f0',
-          muted: '#d4d4d8',
+          DEFAULT: '#ffffff',
+          muted: '#e4e4e7',
           subtle: '#a1a1aa',
           tertiary: '#71717a',
         },
         canvas: {
-          DEFAULT: '#000000',
+          DEFAULT: '#0a0b0d',
           inverse: '#ffffff',
         },
         surface: {
-          base: '#000000',
-          raised: '#f4f5f8',
-          muted: '#ffffff',
-          strong: '#e60023',
-          1: '#111113',
-          2: '#18181b',
-          3: '#27272a',
-          4: '#3f3f46',
+          base: '#0a0b0d',
+          raised: '#16171d',
+          muted: '#111216',
+          strong: '#ffffff',
+          1: '#111216',
+          2: '#16171d',
+          3: '#22232a',
+          4: '#2e303a',
         },
         hairline: {
           DEFAULT: 'rgba(255, 255, 255, 0.12)',
-          strong: 'rgba(255, 255, 255, 0.22)',
-          red: 'rgba(230, 0, 35, 0.45)',
+          strong: 'rgba(255, 255, 255, 0.24)',
+          quartz: 'rgba(255, 255, 255, 0.35)',
           tertiary: 'rgba(255, 255, 255, 0.08)',
         },
-        'brand-secure': '#e60023',
-        'semantic-success': '#1E8E3E',
-        'semantic-overlay': 'rgba(0, 0, 0, 0.75)',
-
-        // Formium Alliance Semantic Tokens
-        formium: {
-          base: '#000000',
-          red: '#e60023',
-          redHover: '#cc001f',
-          raised: '#f4f5f8',
-          white: '#ffffff',
-          dark: '#111113',
-          darkBorder: '#232326',
-          textSecondary: '#1a1a1c',
-          textTertiary: '#fff0f0',
-          textInverse: '#222222',
-        },
+        'brand-secure': '#ffffff',
+        'semantic-success': '#34c759',
+        'semantic-overlay': 'rgba(10, 11, 13, 0.85)',
 
         // Backward compatibility mappings to Formium Alliance
         'liquid-abyss': '#000000',

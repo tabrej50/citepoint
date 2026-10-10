@@ -108,7 +108,7 @@ export default function PricingPage({ setCurrentRoute }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-[720px] mx-auto text-center">
             <SlideReveal direction="down">
-              <div className="type-eyebrow text-[#e60023] mb-4 font-semibold tracking-[0.12em]">
+              <div className="type-eyebrow text-white mb-4 font-semibold tracking-[0.12em]">
                 // TRANSPARENT SCOPE & ENGAGEMENT MODELS
               </div>
               <h1 className="type-display text-white mb-6">
@@ -147,8 +147,8 @@ export default function PricingPage({ setCurrentRoute }) {
                 </div>
 
                 <div className="flex items-center gap-[8px] w-full">
-                  <div className={`flex-1 h-[4px] rounded-full transition-colors duration-300 ${step >= 1 ? 'bg-[#e60023]' : 'bg-white/10'}`} />
-                  <div className={`flex-1 h-[4px] rounded-full transition-colors duration-300 ${step >= 2 ? 'bg-[#e60023]' : 'bg-white/10'}`} />
+                  <div className={`flex-1 h-[4px] rounded-full transition-colors duration-300 ${step >= 1 ? 'bg-white' : 'bg-white/10'}`} />
+                  <div className={`flex-1 h-[4px] rounded-full transition-colors duration-300 ${step >= 2 ? 'bg-white' : 'bg-white/10'}`} />
                 </div>
               </div>
 
@@ -164,17 +164,17 @@ export default function PricingPage({ setCurrentRoute }) {
                           onClick={() => setSelectedPlanId(plan.id)}
                           className={`surface-card min-h-[340px] md:min-h-[260px] p-[20px] sm:p-[28px] rounded-[24px] transition-all cursor-pointer flex flex-col justify-between ${
                             isSelected
-                              ? '!border-[#e60023] !shadow-[0_8px_32px_rgba(230,0,35,0.3)] -translate-y-0.5'
-                              : 'hover:border-[#e60023]/60'
+                              ? '!border-white !shadow-[0_8px_32px_rgba(255,255,255,0.15)] -translate-y-0.5'
+                              : 'hover:border-white/40'
                           }`}
                         >
                           <div>
                             <div className="flex items-center justify-between mb-4">
-                              <span className="text-[11px] font-mono uppercase tracking-wider text-[#e60023] font-semibold">
+                              <span className="text-[11px] font-mono uppercase tracking-wider text-white font-semibold">
                                 {plan.label}
                               </span>
-                              <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#e60023] bg-[#e60023]' : 'border-white/20'}`}>
-                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                              <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-white bg-white' : 'border-white/20'}`}>
+                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-black" />}
                               </div>
                             </div>
 
@@ -199,7 +199,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           <div className="space-y-2 pt-4 border-t border-white/10">
                             {plan.features.slice(0, 3).map((feat, fIdx) => (
                               <div key={fIdx} className="flex items-center gap-2 text-xs text-[#d4d4d8]">
-                                <Check className="w-3.5 h-3.5 text-[#e60023] shrink-0" />
+                                <Check className="w-3.5 h-3.5 text-white shrink-0" />
                                 <span className="truncate">{feat}</span>
                               </div>
                             ))}
@@ -214,10 +214,10 @@ export default function PricingPage({ setCurrentRoute }) {
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="btn-primary h-[52px] px-8 rounded-full text-base font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                      className="btn-primary h-[52px] px-8 rounded-full text-base font-semibold inline-flex items-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                     >
                       <span>Continue to Project Details</span>
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowRight className="w-4 h-4 text-black" />
                     </button>
                   </div>
                 </SlideReveal>
@@ -248,7 +248,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.firstName}
                           onChange={handleInputChange}
                           placeholder="Jane"
-                          className="h-[52px] w-full rounded-[16px] bg-[#111113] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[16px] bg-[#16171d] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
@@ -262,7 +262,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.lastName}
                           onChange={handleInputChange}
                           placeholder="Doe"
-                          className="h-[52px] w-full rounded-[16px] bg-[#111113] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[16px] bg-[#16171d] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -278,7 +278,7 @@ export default function PricingPage({ setCurrentRoute }) {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="jane@company.com"
-                        className="h-[52px] w-full rounded-[16px] bg-[#111113] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none transition-colors"
+                        className="h-[52px] w-full rounded-[16px] bg-[#16171d] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -294,7 +294,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.company}
                           onChange={handleInputChange}
                           placeholder="Acme Corp"
-                          className="h-[52px] w-full rounded-[16px] bg-[#111113] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[16px] bg-[#16171d] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
@@ -308,7 +308,7 @@ export default function PricingPage({ setCurrentRoute }) {
                           value={formData.website}
                           onChange={handleInputChange}
                           placeholder="https://acme.com"
-                          className="h-[52px] w-full rounded-[16px] bg-[#111113] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none transition-colors"
+                          className="h-[52px] w-full rounded-[16px] bg-[#16171d] border border-white/15 px-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -323,7 +323,7 @@ export default function PricingPage({ setCurrentRoute }) {
                         value={formData.notes}
                         onChange={handleInputChange}
                         placeholder="Which competitors dominate buyer prompts in your category? Any specific prompt queries to benchmark?"
-                        className="h-[140px] w-full rounded-[16px] bg-[#111113] border border-white/15 p-4 text-white placeholder-[#71717a] focus:border-[#e60023] focus:outline-none resize-none transition-colors"
+                        className="h-[140px] w-full rounded-[16px] bg-[#16171d] border border-white/15 p-4 text-white placeholder-[#71717a] focus:border-white focus:outline-none resize-none transition-colors"
                       />
                     </div>
 
@@ -339,10 +339,10 @@ export default function PricingPage({ setCurrentRoute }) {
 
                       <button
                         type="submit"
-                        className="btn-primary h-[52px] flex-1 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                        className="btn-primary h-[52px] flex-1 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                       >
                         <span>Submit Project Scope Request</span>
-                        <ArrowRight className="w-4 h-4 text-white" />
+                        <ArrowRight className="w-4 h-4 text-black" />
                       </button>
                     </div>
                   </form>
@@ -352,14 +352,14 @@ export default function PricingPage({ setCurrentRoute }) {
               {/* Submitted State */}
               {step === 2 && submitted && (
                 <div className="surface-card p-8 rounded-[24px] max-w-[560px] space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-[#161619] border border-white/15 flex items-center justify-center text-[#e60023]">
-                    <FileCheck2 className="w-6 h-6 text-[#e60023]" />
+                  <div className="w-12 h-12 rounded-full bg-[#16171d] border border-white/15 flex items-center justify-center text-white">
+                    <FileCheck2 className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="type-h3 text-white">
                     Scope Request Received
                   </h3>
                   <p className="type-body text-[#a1a1aa] leading-relaxed">
-                    Thank you, {formData.firstName}. Our strategic analysis team will run a preliminary visibility check on <span className="text-[#e60023] font-semibold">{formData.website}</span> and respond within one business day.
+                    Thank you, {formData.firstName}. Our strategic analysis team will run a preliminary visibility check on <span className="text-white font-semibold">{formData.website}</span> and respond within one business day.
                   </p>
                   <button
                     type="button"
@@ -384,7 +384,7 @@ export default function PricingPage({ setCurrentRoute }) {
                     <span className="type-eyebrow text-white font-semibold">
                       Engagement Summary
                     </span>
-                    <span className="text-xs font-mono text-[#e60023] font-semibold">
+                    <span className="text-xs font-mono text-white font-semibold">
                       Step {step} of 2
                     </span>
                   </div>
@@ -405,12 +405,12 @@ export default function PricingPage({ setCurrentRoute }) {
                   </div>
 
                   <div className="py-4 space-y-2">
-                    <span className="text-[11px] uppercase tracking-wider text-[#e60023] font-semibold block">
+                    <span className="text-[11px] uppercase tracking-wider text-white font-semibold block">
                       Scope Inclusions
                     </span>
                     {selectedPlan.features.slice(0, 3).map((item, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-xs text-[#d4d4d8]">
-                        <Check className="w-3.5 h-3.5 text-[#e60023] shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-white shrink-0" />
                         <span className="truncate">{item}</span>
                       </div>
                     ))}
@@ -432,7 +432,7 @@ export default function PricingPage({ setCurrentRoute }) {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-start gap-2 text-[11px] text-[#71717a] leading-relaxed">
-                  <ShieldCheck className="w-4 h-4 text-[#e60023] shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-white shrink-0 mt-0.5" />
                   <span>Transparent scoping. No arbitrary lock-ins or unverified ranking guarantees.</span>
                 </div>
               </div>

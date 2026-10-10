@@ -5,7 +5,7 @@ import { Mail, ArrowRight } from 'lucide-react';
  * Formium Alliance Technical Footer
  * - Pitch black canvas surface: #000000
  * - Hairline divider: rgba(255, 255, 255, 0.1)
- * - Brand crimson accent: #e60023
+ * - Titanium white accent: #ffffff
  * - High-contrast typography: #ffffff headers, #a1a1aa body
  */
 export default function Footer({ setCurrentRoute }) {
@@ -30,9 +30,9 @@ export default function Footer({ setCurrentRoute }) {
   };
 
   return (
-    <footer className="bg-[#000000] border-t border-white/10 text-[#a1a1aa] pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden font-sans">
-      {/* Specular hairline top crimson highlight */}
-      <div className="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-[#e60023]/40 to-transparent pointer-events-none" />
+    <footer className="bg-[#0a0b0d] border-t border-white/10 text-[#a1a1aa] pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden font-sans">
+      {/* Specular hairline top titanium quartz highlight */}
+      <div className="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Brand Identity & Positioning Header */}
@@ -57,16 +57,16 @@ export default function Footer({ setCurrentRoute }) {
               <span className="text-white/20">•</span>
               <a
                 href="mailto:hello@citepoint.io"
-                className="hover:text-[#e60023] transition-colors flex items-center gap-1.5 whitespace-nowrap"
+                className="hover:text-white transition-colors flex items-center gap-1.5 whitespace-nowrap"
               >
-                <Mail className="w-3.5 h-3.5 text-[#e60023]" />
+                <Mail className="w-3.5 h-3.5 text-white" />
                 <span>hello@citepoint.io</span>
               </a>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#111113] border border-white/15 px-4 py-2 rounded-full shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e60023] animate-pulse" />
+          <div className="flex items-center gap-2 bg-[#16171d] border border-white/15 px-4 py-2 rounded-full shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="text-[12px] uppercase tracking-[0.08em] text-white font-semibold whitespace-nowrap">
               AI Search Visibility Infrastructure
             </span>
@@ -83,27 +83,27 @@ export default function Footer({ setCurrentRoute }) {
             </h4>
             <ul className="space-y-2.5 text-[13px] text-[#a1a1aa]">
               <li>
-                <button onClick={() => handleNav('audit')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('audit')} className="hover:text-white transition-colors text-left cursor-pointer">
                   AI Visibility Audit
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('pricing')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('pricing')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Pricing & Engagements
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Generative Engine Optimization
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Citation Engineering
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Knowledge Graph Alignment
                 </button>
               </li>
@@ -117,27 +117,27 @@ export default function Footer({ setCurrentRoute }) {
             </h4>
             <ul className="space-y-2.5 text-[13px] text-[#a1a1aa]">
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-white transition-colors text-left cursor-pointer">
                   4-Phase Operating System
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Discovery & Audit
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Diagnostic & Gap Analysis
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Foundation Building
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Longitudinal Monitoring
                 </button>
               </li>
@@ -151,27 +151,27 @@ export default function Footer({ setCurrentRoute }) {
             </h4>
             <ul className="space-y-2.5 text-[13px] text-[#a1a1aa]">
               <li>
-                <button onClick={() => handleNav('case-studies')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('case-studies')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Case Studies & Proof
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Insights & Research
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-white transition-colors text-left cursor-pointer">
                   GEO vs. Traditional SEO
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-white transition-colors text-left cursor-pointer">
                   AI Shortlist Anatomy
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('insights')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('insights')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Glossary of Terms
                 </button>
               </li>
@@ -185,27 +185,27 @@ export default function Footer({ setCurrentRoute }) {
             </h4>
             <ul className="space-y-2.5 text-[13px] text-[#a1a1aa]">
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('about')} className="hover:text-white transition-colors text-left cursor-pointer">
                   About Citepoint
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('about')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Operating Principles
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('contact')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('contact')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Contact & Briefing
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('privacy')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('privacy')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('terms')} className="hover:text-[#e60023] transition-colors text-left cursor-pointer">
+                <button onClick={() => handleNav('terms')} className="hover:text-white transition-colors text-left cursor-pointer">
                   Terms of Service
                 </button>
               </li>

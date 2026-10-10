@@ -53,11 +53,11 @@ export default function AuditPage({ setCurrentRoute }) {
   return (
     <div className="w-full bg-transparent text-[#fff0f0] font-sans">
       
-      {/* Hero Header (Formium Obsidian & Crimson) */}
+      {/* Hero Header (Titanium Space Black & Apple Monochrome) */}
       <section className="bg-transparent text-white pt-128 sm:pt-144 lg:pt-160 pb-64 sm:pb-80 lg:pb-96 relative overflow-hidden border-b border-white/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SlideReveal direction="down" distance={38} duration={0.65}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-4 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white mb-4 shadow-xs">
               // DIAGNOSTIC ASSESSMENT
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
@@ -74,7 +74,7 @@ export default function AuditPage({ setCurrentRoute }) {
               {AI_ENGINES.map((engine) => (
                 <div
                   key={engine.id}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111113] border border-white/15 text-white text-xs font-sans font-medium shadow-xs hover:border-[#e60023] transition-colors"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111113] border border-white/15 text-white text-xs font-sans font-medium shadow-xs hover:border-white/40 transition-colors"
                 >
                   <AiEngineIcon id={engine.id} size={15} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
                   <span>{engine.name}</span>
@@ -91,7 +91,7 @@ export default function AuditPage({ setCurrentRoute }) {
           
           <SlideReveal direction="left" distance={36} duration={0.65}>
             <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+              <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
                 // AUDIT SPECIFICATIONS
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-3">
@@ -113,10 +113,10 @@ export default function AuditPage({ setCurrentRoute }) {
                   className="surface-card p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default"
                 >
                   <div>
-                    <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.4)]">
+                    <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/12 text-white flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:border-white/40 group-hover:shadow-[0_0_12px_rgba(255,255,255,0.2)]">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                    <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                       {item.title}
                     </h3>
                     <p className="text-xs text-[#a1a1aa] leading-[1.6]">

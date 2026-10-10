@@ -2,12 +2,12 @@ import React from 'react';
 import { ShieldCheck, AlertCircle, ArrowRight } from 'lucide-react';
 
 /**
- * Formium Alliance TermsPage
- * - Base Canvas: Pure Pitch Black (#000000)
- * - Accent: Formium Crimson (#e60023)
- * - Cards: Obsidian Glass Cards (#111113, rounded-[24px], border-white/10)
+ * Citepoint TermsPage
+ * - Base Canvas: Titanium Space Black (#0a0b0d)
+ * - Accent: Pure White & Specular Quartz
+ * - Cards: Frosted Glass Cards (#16171d, rounded-[24px], border-white/10)
  * - Callouts: Dark Obsidian (#18181b, rounded-[16px], border-white/10)
- * - Typography: Bricolage Grotesque, high contrast pure white & punch crimson
+ * - Typography: Bricolage Grotesque, high contrast pure white & neutral zinc
  */
 export default function TermsPage({ setCurrentRoute }) {
   const handleNav = (route) => {
@@ -16,13 +16,13 @@ export default function TermsPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="w-full bg-black text-[#fff0f0] font-sans selection:bg-[#e60023] selection:text-white">
+    <div className="w-full bg-[#0a0b0d] text-[#fff0f0] font-sans selection:bg-white selection:text-black">
       {/* --------------------------------------------------
-          PAGE HERO (Formium Obsidian & Punch Crimson)
+          PAGE HERO (Titanium Space Black & Apple Monochrome)
       -------------------------------------------------- */}
       <section className="bg-transparent text-white pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 relative overflow-hidden border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-mono uppercase tracking-[0.14em] text-[#e60023] font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-xs font-mono uppercase tracking-[0.14em] text-white font-semibold mb-4">
             // TERMS OF ENGAGEMENT
           </div>
           <h1 className="text-4xl sm:text-5xl font-heading font-medium text-white tracking-tight leading-[1.1] mb-4">
@@ -35,20 +35,20 @@ export default function TermsPage({ setCurrentRoute }) {
       </section>
 
       {/* --------------------------------------------------
-          TERMS CONTENT (Formium Obsidian Surface Card)
+          TERMS CONTENT (Titanium Surface Card)
       -------------------------------------------------- */}
       <section className="py-16 lg:py-24 bg-transparent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="surface-card p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.6] text-[#a1a1aa] rounded-[24px] border border-white/10 bg-[#111113]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
+          <div className="surface-card p-6 lg:p-8 sm:p-12 space-y-10 text-sm leading-[1.6] text-[#a1a1aa] rounded-[24px] border border-white/10 bg-[#16171d]/90 backdrop-blur-md relative overflow-hidden shadow-2xl">
             {/* Top Specular Hairline */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e60023]/40 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
             
             <div>
               <h2 className="text-xl font-heading font-medium text-white mb-3 leading-[1.2]">
                 01. Acceptance of Terms
               </h2>
               <p>
-                By accessing this website (<code className="text-[#e60023] font-mono font-semibold">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-white">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
+                By accessing this website (<code className="text-white font-mono font-semibold">citepoint.io</code>) or engaging Citepoint (operated by <strong className="text-white">Citepoint Technologies Pvt. Ltd.</strong>) for advisory, diagnostic auditing, or Generative Engine Optimization (GEO) services, you agree to comply with and be bound by these Terms of Service.
               </p>
             </div>
 
@@ -69,7 +69,7 @@ export default function TermsPage({ setCurrentRoute }) {
                 Third-party generative AI models (including ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews) are operated by autonomous third parties. Their model weights, training corpora, retrieval algorithms, and output filters evolve unpredictably.
               </p>
               <div className="p-5 rounded-[16px] bg-[#18181b] border border-white/10 text-xs text-[#a1a1aa] font-mono leading-relaxed">
-                <strong className="text-[#e60023] block mb-1 font-semibold">Explicit Agency Disclaimer:</strong>
+                <strong className="text-white block mb-1 font-semibold">Explicit Agency Disclaimer:</strong>
                 Citepoint does not warrant or guarantee fixed rankings, guaranteed #1 recommendations, or permanent inclusion in any third-party synthetic response. All services focus on controllable variables: data integrity, citation authority, structured schemas, and empirical measurement.
               </div>
             </div>

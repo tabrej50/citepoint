@@ -118,9 +118,9 @@ export function CitationDot({
 }) {
   const colorMap = {
     crimson: {
-      core: '#e60023',
-      halo: 'rgba(230, 0, 35, 0.25)',
-      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
+      core: '#ffffff',
+      halo: 'rgba(255, 255, 255, 0.25)',
+      shadow: '0 0 10px rgba(255, 255, 255, 0.45)',
     },
     white: {
       core: '#ffffff',
@@ -128,19 +128,19 @@ export function CitationDot({
       shadow: '0 0 10px rgba(255, 255, 255, 0.4)',
     },
     gold: {
-      core: '#e60023',
-      halo: 'rgba(230, 0, 35, 0.25)',
-      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
+      core: '#e4e4e7',
+      halo: 'rgba(255, 255, 255, 0.25)',
+      shadow: '0 0 10px rgba(255, 255, 255, 0.45)',
     },
     cyan: {
-      core: '#e60023',
-      halo: 'rgba(230, 0, 35, 0.25)',
-      shadow: '0 0 10px rgba(230, 0, 35, 0.45)',
+      core: '#ffffff',
+      halo: 'rgba(255, 255, 255, 0.25)',
+      shadow: '0 0 10px rgba(255, 255, 255, 0.45)',
     },
     lavender: {
-      core: '#cc001f',
-      halo: 'rgba(204, 0, 31, 0.25)',
-      shadow: '0 0 10px rgba(204, 0, 31, 0.45)',
+      core: '#d4d4d8',
+      halo: 'rgba(255, 255, 255, 0.25)',
+      shadow: '0 0 10px rgba(255, 255, 255, 0.45)',
     },
   };
 
@@ -185,7 +185,7 @@ export function OrbitalRing({
   opacity = 0.25,
   className = '',
 }) {
-  const strokeColor = color === 'crimson' || color === 'gold' ? 'rgba(230, 0, 35, 0.35)' : 'rgba(255, 255, 255, 0.15)';
+  const strokeColor = color === 'crimson' || color === 'gold' ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.15)';
 
   return (
     <svg
@@ -264,7 +264,7 @@ export function NetworkLines({
   opacity = 0.18,
   className = '',
 }) {
-  const strokeColor = 'rgba(230, 0, 35, 0.35)';
+  const strokeColor = 'rgba(255, 255, 255, 0.25)';
 
   return (
     <svg
@@ -287,11 +287,11 @@ export function NetworkLines({
         opacity="0.7"
       />
       {/* Node Vertices */}
-      <circle cx="50" cy="180" r="3" fill="#e60023" />
-      <circle cx="380" cy="120" r="2.5" fill="#e60023" />
-      <circle cx="560" cy="70" r="3" fill="#e60023" />
-      <circle cx="280" cy="160" r="2" fill="#e60023" />
-      <circle cx="450" cy="220" r="2.5" fill="#e60023" />
+      <circle cx="50" cy="180" r="3" fill="#ffffff" />
+      <circle cx="380" cy="120" r="2.5" fill="#ffffff" />
+      <circle cx="560" cy="70" r="3" fill="#ffffff" />
+      <circle cx="280" cy="160" r="2" fill="#ffffff" />
+      <circle cx="450" cy="220" r="2.5" fill="#ffffff" />
     </svg>
   );
 }
@@ -307,7 +307,7 @@ export function GlassBubble({
 }) {
   return (
     <div
-      className={`rounded-full pointer-events-none border border-white/15 bg-white/5 backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),0_4px_12px_rgba(230,0,35,0.12)] ${className}`}
+      className={`rounded-full pointer-events-none border border-white/15 bg-white/5 backdrop-blur-[2px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),0_4px_12px_rgba(255,255,255,0.08)] ${className}`}
       style={{
         width: size,
         height: size,

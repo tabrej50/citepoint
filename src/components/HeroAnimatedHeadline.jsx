@@ -107,7 +107,7 @@ export default function HeroAnimatedHeadline() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d6d] via-[#e60023] to-[#cc001f] drop-shadow-[0_0_24px_rgba(230,0,35,0.45)]"
+                  className="inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 drop-shadow-[0_0_24px_rgba(255,255,255,0.25)]"
                 >
                   {DYNAMIC_VERBS[verbIndex]}
                 </motion.span>
@@ -127,8 +127,8 @@ export default function HeroAnimatedHeadline() {
                 className="absolute -right-2.5 top-1 pointer-events-none"
                 aria-hidden="true"
               >
-                <span className="absolute -inset-1 rounded-full bg-[#e60023] animate-ping opacity-35" />
-                <span className="relative block w-1.5 h-1.5 rounded-full bg-[#ff4d6d] shadow-[0_0_8px_#e60023] animate-starlight-dot" />
+                <span className="absolute -inset-1 rounded-full bg-white animate-ping opacity-40" />
+                <span className="relative block w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] animate-starlight-dot" />
               </span>
             </motion.span>
           </span>

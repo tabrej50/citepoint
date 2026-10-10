@@ -146,8 +146,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             backdropFilter: isScrolled ? 'blur(24px) saturate(180%)' : 'blur(16px)',
           }}
         >
-          {/* Subtle top hairline crimson specular highlight */}
-          <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-[#e60023]/40 to-transparent pointer-events-none" />
+          {/* Subtle top hairline titanium specular highlight */}
+          <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
 
           <div className="flex items-center justify-between gap-4 relative z-10">
             
@@ -155,7 +155,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <button
               type="button"
               onClick={() => handleNavClick('home')}
-              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60023] rounded-full transition-opacity duration-150 hover:opacity-90 min-h-[44px] py-1"
+              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full transition-opacity duration-150 hover:opacity-90 min-h-[44px] py-1"
               aria-label="Citepoint Home"
             >
               <img
@@ -218,14 +218,14 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                         className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                           isHighlighted
                             ? 'text-white font-semibold'
-                            : 'text-[#fff0f0]/75 hover:text-white font-medium'
+                            : 'text-zinc-300 hover:text-white font-medium'
                         }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
 
-                      {/* Obsidian Crimson Dropdown with Apple Spring Physics */}
+                      {/* Titanium Monochrome Dropdown with Apple Spring Physics */}
                       <AnimatePresence>
                         {servicesDropdownOpen && (
                           <motion.div
@@ -238,7 +238,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                             onMouseEnter={handleDropdownEnter}
                             onMouseLeave={handleDropdownLeave}
                           >
-                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#e60023] px-3.5 py-1.5 border-b border-white/10 mb-1">
+                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-white px-3.5 py-1.5 border-b border-white/10 mb-1">
                               Enterprise AI Capabilities
                             </div>
                             {serviceItems.map((item) => (
@@ -250,10 +250,10 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                                 }}
                                 className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-white/5 transition-colors cursor-pointer active:scale-[0.98]"
                               >
-                                <div className="text-[13px] font-medium text-white group-hover:text-[#e60023] transition-colors">
+                                <div className="text-[13px] font-medium text-white group-hover:text-zinc-200 transition-colors">
                                   {item.title}
                                 </div>
-                                <div className="text-[12px] text-[#a1a1aa] group-hover:text-[#d4d4d8] leading-snug">
+                                <div className="text-[12px] text-[#a1a1aa] group-hover:text-white leading-snug">
                                   {item.desc}
                                 </div>
                               </button>
@@ -276,7 +276,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
                         ? 'text-white font-semibold'
-                        : 'text-[#fff0f0]/75 hover:text-white font-medium'
+                        : 'text-zinc-300 hover:text-white font-medium'
                     }`}
                   >
                     {link.name}
@@ -285,11 +285,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               })}
             </nav>
 
-            {/* Right Action: Formium Crimson Pill CTA Button */}
+            {/* Right Action: Apple Keynote Pure White Pill CTA Button */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
-                className="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans font-semibold text-[13px] whitespace-nowrap cursor-pointer shadow-[0_4px_16px_rgba(230,0,35,0.35)]"
+                className="btn-primary inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans font-semibold text-[13px] whitespace-nowrap cursor-pointer shadow-[0_4px_18px_rgba(255,255,255,0.18)]"
               >
                 <span>Get AI Visibility Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -300,7 +300,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-11 h-11 flex items-center justify-center text-white hover:text-white rounded-full bg-[#111113] border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60023] cursor-pointer shadow-sm"
+                className="w-11 h-11 flex items-center justify-center text-white hover:text-white rounded-full bg-[#16171d] border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer shadow-sm"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
@@ -319,11 +319,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ type: 'spring', damping: 26, stiffness: 280, mass: 0.9 }}
               style={{ transformOrigin: 'top center' }}
-              className="lg:hidden mt-2 p-5 rounded-[24px] bg-[#111113]/95 backdrop-blur-2xl border border-white/15 shadow-2xl pointer-events-auto"
+              className="lg:hidden mt-2 p-5 rounded-[24px] bg-[#16171d]/95 backdrop-blur-2xl border border-white/15 shadow-2xl pointer-events-auto"
             >
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[12px] text-[#a1a1aa]">
                 <span className="uppercase tracking-wider font-medium text-white">Navigation</span>
-                <span className="uppercase tracking-wider text-[11px] font-mono text-[#e60023]">Citepoint</span>
+                <span className="uppercase tracking-wider text-[11px] font-mono text-white">Citepoint</span>
               </div>
 
               <nav className="flex flex-col gap-1.5">
@@ -336,7 +336,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       className={`text-left text-[13px] py-2.5 px-4 rounded-full transition-colors cursor-pointer active:scale-[0.98] ${
                         isActive
                           ? 'bg-white/10 text-white font-semibold border border-white/15'
-                          : 'text-[#fff0f0]/75 hover:text-white hover:bg-white/5'
+                          : 'text-zinc-300 hover:text-white hover:bg-white/5'
                       }`}
                     >
                       {link.name}

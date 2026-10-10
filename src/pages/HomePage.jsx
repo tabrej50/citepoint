@@ -318,35 +318,35 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <SlideReveal direction="down" delay={0.08}>
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-sm mx-auto backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e60023] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e60023]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </span>
-                <span className="text-[12px] font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023]">
+                <span className="text-[12px] font-sans font-semibold uppercase tracking-[0.12em] text-white">
                   AI SEARCH VISIBILITY / GEO / AEO
                 </span>
               </div>
             </SlideReveal>
 
-            {/* Main Animated Headline with Formium Crimson Glow & 3D Verb Morph */}
+            {/* Main Animated Headline with Titanium White Glow & 3D Verb Morph */}
             <HeroAnimatedHeadline />
 
             {/* Supporting Paragraph (Centered, clean line-height) */}
             <SlideReveal direction="up" delay={0.16}>
               <p className="animate-hero-paragraph text-base sm:text-lg text-[#a1a1aa] max-w-3xl mx-auto font-normal leading-[1.6]">
                 Citepoint helps ambitious B2B brands become more visible, credible, and recommendable across{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="chatgpt" size={15} /> ChatGPT
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="gemini" size={15} /> Gemini
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="perplexity" size={15} /> Perplexity
                 </span>,{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="claude" size={15} /> Claude
                 </span>, and{' '}
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-white font-medium text-sm align-middle whitespace-nowrap shadow-sm">
                   <AiEngineIcon id="google-ai-overviews" size={15} variant="multicolor" /> Google AI Overviews
                 </span>.
               </p>
@@ -357,10 +357,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 mx-auto w-full sm:w-auto">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-aurora w-full sm:w-auto rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                  className="btn-aurora w-full sm:w-auto rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-black" />
                 </button>
 
                 <button
@@ -375,7 +375,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             {/* Trust Line (Centered) */}
             <SlideReveal direction="up" delay={0.3}>
               <div className="pt-1 flex items-center justify-center gap-2.5 text-xs text-[#a1a1aa] font-sans mx-auto">
-                <ShieldCheck className="w-4 h-4 text-[#e60023] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-white shrink-0" />
                 <span>Built for B2B SaaS, enterprise technology, and high-consideration brands.</span>
               </div>
             </SlideReveal>
@@ -389,7 +389,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
               <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#a1a1aa] mb-1 group-hover:text-white transition-colors">
                 // SCROLL TO EXPLORE
               </span>
-              <ChevronDown className="w-4 h-4 text-[#e60023] animate-bounce" />
+              <ChevronDown className="w-4 h-4 text-white/60 animate-bounce" />
             </div>
 
           </div>
@@ -399,7 +399,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           RECESSED STRIP: CONTINUOUS SINGLE-LINE TICKER (AI ENGINES & TARGET SECTORS)
           ============================================================ */}
-      <section className="py-4 bg-[#09090b]/90 backdrop-blur-md border-y border-white/10 text-white relative z-20 overflow-hidden shadow-sm">
+      <section className="py-4 bg-[#111216]/90 backdrop-blur-md border-y border-white/10 text-white relative z-20 overflow-hidden shadow-sm">
         <div className="w-full overflow-hidden ticker-fade-mask select-none">
           <div className="animate-ticker-marquee flex items-center whitespace-nowrap">
             {[0, 1, 2, 3].map((setIndex) => (
@@ -407,7 +407,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 {/* AI Platform Logos */}
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="flex items-center gap-1.5 shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#e60023] animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     <span className="text-xs font-sans uppercase tracking-[0.14em] text-white font-semibold shrink-0">
                       AI Engines Audited:
                     </span>
@@ -416,7 +416,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     {AI_ENGINES.map((engine) => (
                       <div
                         key={`set-${setIndex}-${engine.id}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111113] border border-white/15 text-xs font-sans font-medium text-white shrink-0 hover:border-[#e60023] hover:bg-white/5 transition-all cursor-default"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-xs font-sans font-medium text-white shrink-0 hover:border-white/40 hover:bg-white/5 transition-all cursor-default"
                       >
                         <AiEngineIcon id={engine.id} size={14} variant={engine.isGoogleMulti ? 'multicolor' : 'brand'} />
                         <span className="text-white">{engine.name}</span>
@@ -427,21 +427,21 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-1 h-1 rounded-full bg-white" />
                   <div className="w-6 h-[1px] bg-white/20" />
-                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-1 h-1 rounded-full bg-white" />
                 </div>
 
                 {/* Target B2B Sectors */}
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-sans uppercase tracking-[0.14em] text-[#e60023] font-semibold shrink-0">
+                  <span className="text-xs font-sans uppercase tracking-[0.14em] text-white font-semibold shrink-0">
                     Target Sectors:
                   </span>
                   <div className="flex items-center gap-2 shrink-0">
                     {trustBadges.map((badge, bIdx) => (
                       <span
                         key={`set-${setIndex}-badge-${bIdx}`}
-                        className="px-3 py-1 rounded-full text-xs font-sans uppercase tracking-[0.08em] bg-[#111113] border border-white/15 text-[#d4d4d8] font-medium shrink-0 hover:border-[#e60023] hover:bg-white/5 transition-all cursor-default"
+                        className="px-3 py-1 rounded-full text-xs font-sans uppercase tracking-[0.08em] bg-[#16171d] border border-white/15 text-[#d4d4d8] font-medium shrink-0 hover:border-white/40 hover:bg-white/5 transition-all cursor-default"
                       >
                         {badge}
                       </span>
@@ -451,9 +451,9 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                 {/* Subtle Geometric Separator between loops */}
                 <div className="flex items-center gap-1 shrink-0 opacity-60">
-                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-1 h-1 rounded-full bg-white" />
                   <div className="w-6 h-[1px] bg-white/20" />
-                  <div className="w-1 h-1 rounded-full bg-[#e60023]" />
+                  <div className="w-1 h-1 rounded-full bg-white" />
                 </div>
               </div>
             ))}
@@ -472,7 +472,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // THE SEARCH SHIFT
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -489,7 +489,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
             <SlideReveal direction="left" delay={0.12} className="lg:col-span-5 flex flex-col">
               <div className="surface-card p-6 lg:p-8 flex flex-col justify-between space-y-6 group h-full">
                 <div>
-                  <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold block mb-4">
+                  <span className="text-xs font-sans uppercase tracking-[0.12em] text-white font-semibold block mb-4">
                     // CORE REALITY
                   </span>
                   <blockquote className="text-2xl sm:text-3xl font-heading font-medium text-white leading-tight">
@@ -500,13 +500,13 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   </p>
                 </div>
                 
-                <div className="p-4 rounded-[16px] bg-[#09090b] border border-white/10 space-y-2 group-hover:border-[#e60023]/40 transition-all duration-300">
+                <div className="p-4 rounded-[16px] bg-[#16171d] border border-white/10 space-y-2 group-hover:border-white/30 transition-all duration-300">
                   <div className="flex items-center gap-2 text-xs font-sans text-[#a1a1aa]">
-                    <HelpCircle className="w-3.5 h-3.5 text-[#e60023]" />
+                    <HelpCircle className="w-3.5 h-3.5 text-white" />
                     <span>Buyer Prompt: "Top enterprise platforms for..."</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-sans text-white font-semibold pl-5 border-l-2 border-[#e60023]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
+                  <div className="flex items-center gap-2 text-xs font-sans text-white font-semibold pl-5 border-l-2 border-white">
+                    <Sparkles className="w-3.5 h-3.5 text-white" />
                     <span>AI Synthesis: Highlights Citepoint-verified brands</span>
                   </div>
                 </div>
@@ -521,14 +521,14 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
+                      <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-white/40">
                         <Eye className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-white font-semibold">
                           RISK 01
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-zinc-200">
                           Invisible
                         </h3>
                       </div>
@@ -545,14 +545,14 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
+                      <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-white/40">
                         <AlertTriangle className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-white font-semibold">
                           RISK 02
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-zinc-200">
                           Misrepresented
                         </h3>
                       </div>
@@ -569,14 +569,14 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 <div className="surface-card p-6 lg:p-8 group cursor-default">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-[#e60023]">
+                      <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:border-white/40">
                         <TrendingUp className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-white font-semibold">
                           RISK 03
                         </span>
-                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
+                        <h3 className="text-lg font-heading font-medium text-white transition-colors duration-200 group-hover:text-zinc-200">
                           Outranked
                         </h3>
                       </div>
@@ -605,7 +605,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="down" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // WHAT WE DO
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -636,15 +636,15 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:bg-[#e60023] group-hover:text-white group-hover:shadow-[0_0_16px_rgba(230,0,35,0.4)]">
+                        <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 group-hover:border-white group-hover:bg-white group-hover:text-black group-hover:shadow-[0_0_16px_rgba(255,255,255,0.25)]">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <span className="font-sans text-xs text-[#e60023] font-semibold tracking-[0.12em] transition-colors duration-200 group-hover:text-white">
+                        <span className="font-sans text-xs text-white/70 font-semibold tracking-[0.12em] transition-colors duration-200 group-hover:text-white">
                           // {s.num}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-zinc-200">
                         {s.title}
                       </h3>
 
@@ -653,13 +653,13 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </p>
 
                       <div className="space-y-2 pt-4 border-t border-white/10">
-                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] block font-semibold">
+                        <span className="text-[10px] font-sans uppercase tracking-[0.12em] text-white block font-semibold">
                           DELIVERABLES:
                         </span>
                         <ul className="text-xs text-[#d4d4d8] space-y-1.5 font-sans">
                           {s.deliverables.map((item, i) => (
                             <li key={i} className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#e60023] shrink-0" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -667,7 +667,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
 
                         {s.num === '01' && (
                           <div className="pt-3 border-t border-white/10 mt-3">
-                            <span className="text-[10px] font-sans text-[#e60023] block mb-1.5 uppercase tracking-[0.12em] font-medium">
+                            <span className="text-[10px] font-sans text-white block mb-1.5 uppercase tracking-[0.12em] font-medium">
                               Engines Audited:
                             </span>
                             <div className="flex items-center gap-1.5">
@@ -675,7 +675,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                                 <div
                                  key={e.id}
                                  title={e.name}
-                                 className="w-6 h-6 rounded-[6px] bg-[#09090b] border border-white/10 flex items-center justify-center shadow-xs"
+                                 className="w-6 h-6 rounded-[6px] bg-[#16171d] border border-white/10 flex items-center justify-center shadow-xs"
                                >
                                  <AiEngineIcon id={e.id} size={13} variant={e.isGoogleMulti ? 'multicolor' : 'brand'} />
                                </div>
@@ -687,7 +687,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     </div>
 
                     <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between min-h-[44px]">
-                      <span className="text-xs font-sans uppercase tracking-[0.12em] text-[#e60023] group-hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                      <span className="text-xs font-sans uppercase tracking-[0.12em] text-white group-hover:text-zinc-200 transition-colors flex items-center gap-1.5 font-semibold">
                         Explore service
                       </span>
                       <div
@@ -716,7 +716,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // METHODOLOGY IN ACTION
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -743,17 +743,17 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                   <div className="surface-card p-6 flex flex-col justify-between h-full group cursor-default">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="w-7 h-7 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center font-sans text-xs font-semibold text-[#e60023] transition-all duration-300 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.3)]">
+                        <span className="w-7 h-7 rounded-full bg-[#16171d] border border-white/15 flex items-center justify-center font-sans text-xs font-semibold text-white transition-all duration-300 group-hover:border-white group-hover:shadow-[0_0_12px_rgba(255,255,255,0.2)]">
                           {item.step}
                         </span>
-                        <span className="w-2 h-2 rounded-full bg-[#e60023] transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_8px_#e60023]" />
+                        <span className="w-2 h-2 rounded-full bg-white transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                       </div>
 
-                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center mb-4 text-[#e60023] transition-transform duration-300 group-hover:scale-110 group-hover:text-white group-hover:bg-[#e60023] group-hover:border-[#e60023]">
+                      <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 flex items-center justify-center mb-4 text-white transition-transform duration-300 group-hover:scale-110 group-hover:text-black group-hover:bg-white group-hover:border-white">
                         <Icon className="w-4 h-4" />
                       </div>
 
-                      <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                      <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                         {item.label}
                       </h3>
 
@@ -767,7 +767,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                             <div
                               key={e.id}
                               title={e.name}
-                              className="w-5 h-5 rounded-[4px] bg-[#09090b] border border-white/10 flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-xs"
+                              className="w-5 h-5 rounded-[4px] bg-[#16171d] border border-white/10 flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-xs"
                             >
                               <AiEngineIcon id={e.id} size={11} variant={e.isGoogleMulti ? 'multicolor' : 'brand'} />
                             </div>
@@ -776,7 +776,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       )}
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-white/10 text-[10px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
+                    <div className="mt-4 pt-3 border-t border-white/10 text-[10px] font-sans uppercase tracking-[0.12em] text-white font-semibold">
                       Stage {item.step}
                     </div>
                   </div>
@@ -788,10 +788,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           <SlideReveal direction="up" delay={0.2} className="text-center">
             <button
               onClick={() => handleNav('audit')}
-              className="btn-aurora rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+              className="btn-aurora rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
             >
               <span>Request Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-4 h-4 text-black" />
             </button>
           </SlideReveal>
 
@@ -805,7 +805,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SlideReveal direction="up" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // IMPLEMENTATION ROADMAP
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -825,23 +825,23 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     onClick={() => setActiveStep(idx)}
                     className={`surface-card p-6 lg:p-8 cursor-pointer flex flex-col justify-between h-full group ${
                       isActive
-                        ? '!border-[#e60023] !shadow-[0_8px_32px_rgba(230,0,35,0.25)] -translate-y-1'
+                        ? '!border-white !shadow-[0_8px_32px_rgba(255,255,255,0.15)] -translate-y-1'
                         : ''
                     }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.12em] text-[#e60023]">
+                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.12em] text-white">
                           // {step.step}
                         </span>
                         <span
                           className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                            isActive ? 'bg-[#e60023] shadow-[0_0_8px_#e60023]' : 'bg-white/20 group-hover:bg-[#e60023]/60'
+                            isActive ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'bg-white/20 group-hover:bg-white/60'
                           }`}
                         />
                       </div>
 
-                      <h3 className={`text-xl font-heading font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-[#e60023]' : 'text-white group-hover:text-[#e60023]'}`}>
+                      <h3 className={`text-xl font-heading font-medium mb-3 transition-colors duration-200 ${isActive ? 'text-white' : 'text-white group-hover:text-zinc-200'}`}>
                         {step.title}
                       </h3>
 
@@ -850,7 +850,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                       </p>
                     </div>
 
-                    <div className={`mt-8 pt-4 border-t border-white/10 text-xs font-sans transition-colors duration-200 ${isActive ? 'text-[#e60023] font-semibold' : 'text-[#71717a] group-hover:text-white'}`}>
+                    <div className={`mt-8 pt-4 border-t border-white/10 text-xs font-sans transition-colors duration-200 ${isActive ? 'text-white font-semibold' : 'text-[#71717a] group-hover:text-white'}`}>
                       {isActive ? '● Selected Phase' : '○ Click to inspect'}
                     </div>
                   </div>
@@ -872,7 +872,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="left" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // MEASURABLE OUTCOMES
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -960,16 +960,16 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 >
                   <div className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-[#e60023] font-semibold">
+                      <span className="text-[11px] font-sans uppercase tracking-[0.12em] text-white font-semibold">
                         {cs.category}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-[#161619] text-[#d4d4d8] border border-white/12 text-[10px] font-sans uppercase tracking-[0.12em] transition-colors duration-200 group-hover:border-[#e60023]">
+                      <span className="px-3 py-1 rounded-full bg-[#16171d] text-[#d4d4d8] border border-white/12 text-[10px] font-sans uppercase tracking-[0.12em] transition-colors duration-200 group-hover:border-white/40">
                         {cs.status}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
+                      <h3 className="text-xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-zinc-200">
                         {cs.title}
                       </h3>
 
@@ -981,7 +981,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     <div className="pt-4 border-t border-white/10">
                       <div className="flex items-center justify-between text-xs font-sans">
                         <span className="text-[#71717a]">{cs.metricLabel}:</span>
-                        <span className="stat-counter text-base font-semibold text-[#e60023] transition-transform duration-300 group-hover:scale-105 inline-block">{cs.metricValue}</span>
+                        <span className="stat-counter text-base font-semibold text-white transition-transform duration-300 group-hover:scale-105 inline-block">{cs.metricValue}</span>
                       </div>
                     </div>
                   </div>
@@ -1003,7 +1003,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="right" className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // DIFFERENTIATION
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -1026,11 +1026,11 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                 >
                   <div className="surface-card p-6 lg:p-8 flex flex-col justify-between h-full group cursor-default">
                     <div>
-                      <span className="font-sans text-xs text-[#e60023] font-semibold tracking-[0.12em] block mb-4 transition-transform duration-300 group-hover:translate-x-0.5">
+                      <span className="font-sans text-xs text-white font-semibold tracking-[0.12em] block mb-4 transition-transform duration-300 group-hover:translate-x-0.5">
                         // {d.num}
                       </span>
 
-                      <h3 className="text-2xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-[#e60023]">
+                      <h3 className="text-2xl font-heading font-medium text-white mb-3 transition-colors duration-200 group-hover:text-zinc-200">
                         {d.title}
                       </h3>
 
@@ -1040,7 +1040,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
                     </div>
 
                     <div className="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-sans text-white">
-                      <CheckCircle2 className="w-4 h-4 text-[#e60023] transition-transform duration-300 group-hover:scale-110" />
+                      <CheckCircle2 className="w-4 h-4 text-white transition-transform duration-300 group-hover:scale-110" />
                       <span>Strategic Commitment</span>
                     </div>
                   </div>
@@ -1062,7 +1062,7 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SlideReveal direction="up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] block mb-2">
+            <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white block mb-2">
               // FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white leading-none tracking-tight mb-4">
@@ -1083,12 +1083,12 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
       {/* ============================================================
           FINAL CTA BAND (FORMIUM ALLIANCE OBSIDIAN & CRIMSON)
           ============================================================ */}
-      <section ref={finalCtaRef} className="py-48 lg:py-64 bg-black/85 backdrop-blur-md text-white relative overflow-hidden border-t border-white/10">
+      <section ref={finalCtaRef} className="py-48 lg:py-64 bg-[#0a0b0d]/90 backdrop-blur-md text-white relative overflow-hidden border-t border-white/10">
         {/* Parallax Second-Strongest Scene */}
         <FinalCtaParallaxBackdrop sectionRef={finalCtaRef} />
 
         <SlideReveal direction="scale-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] px-4 py-1.5 rounded-full bg-white/10 border border-white/15 shadow-xs inline-block">
+          <span className="text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white px-4 py-1.5 rounded-full bg-white/10 border border-white/15 shadow-xs inline-block">
             GET CITED. GET CHOSEN.
           </span>
 
@@ -1103,10 +1103,10 @@ export default function HomePage({ setCurrentRoute, initialSection }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={() => handleNav('audit')}
-              className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+              className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
             >
               <span>Get Your AI Visibility Audit</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-4 h-4 text-black" />
             </button>
 
             <button

@@ -115,11 +115,11 @@ export default function HeroVideoBackground() {
         }}
       />
 
-      {/* Subtle Formium crimson luminous sheen accent */}
+      {/* Subtle Titanium white luminous sheen accent */}
       <div
-        className="absolute inset-0 pointer-events-none mix-blend-screen opacity-25"
+        className="absolute inset-0 pointer-events-none mix-blend-screen opacity-20"
         style={{
-          background: 'linear-gradient(135deg, rgba(230, 0, 35, 0.3) 0%, transparent 60%, rgba(230, 0, 35, 0.15) 100%)',
+          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%, rgba(255, 255, 255, 0.05) 100%)',
         }}
       />
     </div>

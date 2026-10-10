@@ -23,7 +23,7 @@ import { SlideReveal, SlideStaggerContainer, SlideStaggerItem } from '../compone
  * - Cards: surface-card with 24px radius, obsidian borders
  * - Headings: font-heading weight 600, Pure White (#ffffff)
  * - Body: High readability ink (#a1a1aa)
- * - Accents: Formium Punch Crimson (#e60023)
+ * - Accents: Titanium White (#ffffff)
  */
 export default function HowItWorksPage({ setCurrentRoute }) {
   const handleNav = (route) => {
@@ -138,7 +138,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
   ];
 
   return (
-    <div className="w-full bg-transparent text-[#fff0f0] font-sans">
+    <div className="w-full bg-transparent text-white font-sans">
       
       {/* --------------------------------------------------
           PAGE HERO (Formium Obsidian & Crimson)
@@ -147,7 +147,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <SlideReveal direction="left" distance={45} duration={0.65}>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-4 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white mb-4 shadow-xs">
                 // METHODOLOGY & ARCHITECTURE
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white tracking-tightest leading-[1.08] mb-6 [text-wrap:balance]">
@@ -161,10 +161,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => handleNav('audit')}
-                  className="btn-aurora rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                  className="btn-aurora rounded-full px-7 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
                 >
                   <span>Get Your AI Visibility Audit</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-black" />
                 </button>
                 <button
                   onClick={() => handleNav('services')}
@@ -186,7 +186,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           
           <SlideReveal direction="down" distance={36} duration={0.65}>
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white mb-3 shadow-xs">
                 SIGNATURE CITATION FLOW
               </div>
               <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
@@ -210,14 +210,14 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="font-sans text-xs font-semibold text-[#e60023] transition-colors duration-200 group-hover:text-white">
+                      <span className="font-sans text-xs font-semibold text-white/70 transition-colors duration-200 group-hover:text-white">
                         // {step.num}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.4)]">
+                      <div className="w-8 h-8 rounded-full bg-[#16171d] border border-white/15 text-white flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-white group-hover:shadow-[0_0_12px_rgba(255,255,255,0.2)]">
                         <IconC className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                    <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                       {step.title}
                     </h3>
                     <p className="text-xs text-[#a1a1aa] leading-[1.6] mb-3">
@@ -251,7 +251,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           
           <SlideReveal direction="up" distance={36} duration={0.65}>
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white mb-3 shadow-xs">
                 THE 4-STEP FRAMEWORK
               </div>
               <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
@@ -281,22 +281,22 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     className="lg:col-span-5 space-y-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-9 h-9 rounded-full bg-[#161619] text-[#e60023] font-sans text-xs font-semibold flex items-center justify-center border border-white/12 transition-transform duration-300 group-hover:scale-105 group-hover:border-[#e60023]">
+                      <span className="w-9 h-9 rounded-full bg-[#16171d] text-white font-sans text-xs font-semibold flex items-center justify-center border border-white/15 transition-transform duration-300 group-hover:scale-105 group-hover:border-white">
                         {phase.step}
                       </span>
-                      <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] transition-colors duration-200 group-hover:text-white group-hover:bg-[#e60023]">
+                      <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/15 flex items-center justify-center text-white transition-colors duration-200 group-hover:text-black group-hover:bg-white">
                         <IconC className="w-4 h-4" />
                       </div>
-                      <span className="px-3 py-1 rounded-full bg-[#161619] border border-white/12 text-xs font-sans text-[#a1a1aa] font-medium">
+                      <span className="px-3 py-1 rounded-full bg-[#16171d] border border-white/15 text-xs font-sans text-[#a1a1aa] font-medium">
                         {phase.cadence}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white transition-colors duration-200 group-hover:text-[#e60023]">
+                    <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white transition-colors duration-200 group-hover:text-zinc-200">
                       {phase.title}
                     </h3>
 
-                    <p className="text-xs uppercase tracking-[0.12em] font-sans font-semibold text-[#e60023]">
+                    <p className="text-xs uppercase tracking-[0.12em] font-sans font-semibold text-white">
                       // {phase.subtitle}
                     </p>
 
@@ -304,7 +304,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                       {phase.desc}
                     </p>
 
-                    <div className="p-4 rounded-[16px] bg-[#09090b] border border-white/10 text-xs text-[#a1a1aa] leading-[1.6]">
+                    <div className="p-4 rounded-[16px] bg-[#16171d] border border-white/10 text-xs text-[#a1a1aa] leading-[1.6]">
                       <strong className="text-white block mb-1 font-semibold">Strategic Context:</strong>
                       {phase.detail}
                     </div>
@@ -316,16 +316,16 @@ export default function HowItWorksPage({ setCurrentRoute }) {
                     distance={40}
                     duration={0.65}
                     delay={0.1}
-                    className="lg:col-span-7 rounded-[20px] bg-[#09090b] border border-white/10 p-6 lg:p-8 shadow-xl"
+                    className="lg:col-span-7 rounded-[20px] bg-[#16171d] border border-white/10 p-6 lg:p-8 shadow-xl"
                   >
-                    <h4 className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-4">
+                    <h4 className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-white mb-4">
                       // CORE PHASE DELIVERABLES
                     </h4>
                     <ul className="space-y-3.5">
                       {phase.deliverables.map((item, dIdx) => (
                         <li key={dIdx} className="flex items-start gap-3 text-xs sm:text-sm text-[#d4d4d8]">
-                          <div className="w-4 h-4 rounded-full bg-[#161619] text-[#e60023] flex items-center justify-center shrink-0 mt-0.5 border border-white/12">
-                            <Check className="w-2.5 h-2.5 text-[#e60023]" />
+                          <div className="w-4 h-4 rounded-full bg-[#16171d] text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/15">
+                            <Check className="w-2.5 h-2.5 text-white" />
                           </div>
                           <span className="leading-snug">{item}</span>
                         </li>
@@ -334,7 +334,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
 
                     <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-[#71717a] font-sans">
                       <span>Verifiable milestone audit</span>
-                      <span className="text-[#e60023] font-semibold">Documented & Delivered</span>
+                      <span className="text-white font-semibold">Documented & Delivered</span>
                     </div>
                   </SlideReveal>
                 </div>
@@ -353,7 +353,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           
           <SlideReveal direction="left" distance={36} duration={0.65}>
             <div className="max-w-3xl mb-12 lg:mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] mb-3 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white mb-3 shadow-xs">
                 CLIENT COLLABORATION MODEL
               </div>
               <h2 className="text-3xl sm:text-4xl font-heading font-medium text-white tracking-tight mb-4">
@@ -368,10 +368,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
           <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.4)]">
+                <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/12 flex items-center justify-center text-white mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-white/40 group-hover:shadow-[0_0_16px_rgba(255,255,255,0.2)]">
                   <Users className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                   Executive & Marketing Alignment
                 </h3>
                 <p className="text-xs sm:text-sm text-[#a1a1aa] leading-[1.6]">
@@ -382,10 +382,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
 
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.4)]">
+                <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/12 flex items-center justify-center text-white mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-white/40 group-hover:shadow-[0_0_16px_rgba(255,255,255,0.2)]">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                   Asynchronous Sprint Rhythm
                 </h3>
                 <p className="text-xs sm:text-sm text-[#a1a1aa] leading-[1.6]">
@@ -396,10 +396,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
 
             <SlideStaggerItem direction="scale-up" className="surface-card p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default">
               <div>
-                <div className="w-9 h-9 rounded-full bg-[#161619] border border-white/12 flex items-center justify-center text-[#e60023] mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-[#e60023] group-hover:shadow-[0_0_12px_rgba(230,0,35,0.4)]">
+                <div className="w-9 h-9 rounded-full bg-[#16171d] border border-white/12 flex items-center justify-center text-white mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-white/40 group-hover:shadow-[0_0_16px_rgba(255,255,255,0.2)]">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
-                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-[#e60023]">
+                <h3 className="text-base font-heading font-medium text-white mb-2 transition-colors duration-200 group-hover:text-zinc-200">
                   Strict NDA & Governance
                 </h3>
                 <p className="text-xs sm:text-sm text-[#a1a1aa] leading-[1.6]">
@@ -413,12 +413,12 @@ export default function HowItWorksPage({ setCurrentRoute }) {
       </section>
 
       {/* --------------------------------------------------
-          FINAL ACTION SECTION (Formium Obsidian & Crimson)
+          FINAL ACTION SECTION (Titanium Space Black & Apple Monochrome)
       -------------------------------------------------- */}
       <section className="bg-black/85 backdrop-blur-md text-white py-48 lg:py-64 relative overflow-hidden border-t border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
           <SlideReveal direction="up" distance={40} duration={0.8}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-[#e60023] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-white shadow-xs">
               PHASE 01 DISCOVERY
             </div>
             <h2 className="text-3xl sm:text-5xl font-heading font-medium text-white tracking-tightest leading-none mt-4">
@@ -430,10 +430,10 @@ export default function HowItWorksPage({ setCurrentRoute }) {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
               <button
                 onClick={() => handleNav('audit')}
-                className="btn-aurora rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+                className="btn-aurora rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
               >
                 <span>Request Phase 01 Audit</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+                <ArrowRight className="w-4 h-4 text-black" />
               </button>
               <button
                 onClick={() => handleNav('contact')}

@@ -5,8 +5,8 @@ import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
  * AuditContactForm
  * Formium Alliance Obsidian & Crimson design:
  * - surface-card container with obsidian border and soft dark shadow
- * - Dark input fields with subtle border and Formium crimson focus ring (#e60023)
- * - btn-primary CTA button (#e60023 with #ffffff text)
+ * - Dark input fields with subtle border and titanium white focus ring (#ffffff)
+ * - btn-primary CTA button (#ffffff with #0a0b0d text)
  * - Pure White (#ffffff) headings and legible body text (#a1a1aa)
  */
 export default function AuditContactForm({ className = '' }) {
@@ -97,8 +97,8 @@ export default function AuditContactForm({ className = '' }) {
   if (submitted) {
     return (
       <div className={`surface-card rounded-[24px] p-8 sm:p-14 text-center max-w-2xl mx-auto font-sans shadow-2xl ${className}`}>
-        <div className="w-14 h-14 rounded-full bg-[#161619] border border-white/12 text-[#e60023] flex items-center justify-center mx-auto mb-6 shadow-xs">
-          <CheckCircle2 className="w-7 h-7 stroke-[2] text-[#e60023]" />
+        <div className="w-14 h-14 rounded-full bg-[#16171d] border border-white/20 text-white flex items-center justify-center mx-auto mb-6 shadow-xs">
+          <CheckCircle2 className="w-7 h-7 stroke-[2] text-white" />
         </div>
         <h3 className="text-2xl sm:text-3xl font-heading font-medium text-white mb-3">
           Request Received
@@ -106,11 +106,11 @@ export default function AuditContactForm({ className = '' }) {
         <p className="text-base text-[#a1a1aa] leading-relaxed mb-6 max-w-lg mx-auto">
           Thank you. We received your diagnostic request and will review your parameters before delivering your confidential assessment.
         </p>
-        <div className="p-5 rounded-[16px] bg-[#09090b] border border-white/10 text-left max-w-md mx-auto text-xs space-y-2">
+        <div className="p-5 rounded-[16px] bg-[#16171d] border border-white/10 text-left max-w-md mx-auto text-xs space-y-2">
           <div className="text-white font-semibold">Submission Details:</div>
           <div className="text-[#a1a1aa]">Company: <span className="text-white font-medium">{formData.company}</span></div>
           <div className="text-[#a1a1aa]">Contact: <span className="text-white font-medium">{formData.workEmail}</span></div>
-          <div className="text-[#a1a1aa]">Focus: <span className="text-[#e60023] font-semibold">{formData.mainGoal}</span></div>
+          <div className="text-[#a1a1aa]">Focus: <span className="text-white font-semibold">{formData.mainGoal}</span></div>
         </div>
       </div>
     );
@@ -121,8 +121,8 @@ export default function AuditContactForm({ className = '' }) {
       
       {/* Header */}
       <div className="mb-8 pb-6 border-b border-white/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#e60023] text-xs font-sans uppercase tracking-[0.12em] font-semibold mb-3 shadow-2xs">
-          <Sparkles className="w-3.5 h-3.5 text-[#e60023]" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-white text-xs font-sans uppercase tracking-[0.12em] font-semibold mb-3 shadow-2xs">
+          <Sparkles className="w-3.5 h-3.5 text-white" />
           // AUDIT CONSULTATION
         </div>
         <h2 className="text-2xl sm:text-3xl font-heading font-medium text-white tracking-tight">
@@ -158,7 +158,7 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. Sarah Jenkins"
               value={formData.fullName}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs ${
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
                 errors.fullName ? 'border-rose-400' : 'border-white/15'
               }`}
             />
@@ -175,7 +175,7 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="sarah@company.com"
               value={formData.workEmail}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs ${
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
                 errors.workEmail ? 'border-rose-400' : 'border-white/15'
               }`}
             />
@@ -195,7 +195,7 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. Acme Cloud Systems"
               value={formData.company}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs ${
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
                 errors.company ? 'border-rose-400' : 'border-white/15'
               }`}
             />
@@ -212,7 +212,7 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="https://acmecloud.com"
               value={formData.websiteUrl}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs ${
+              className={`w-full px-4 py-3 rounded-[16px] border bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs ${
                 errors.websiteUrl ? 'border-rose-400' : 'border-white/15'
               }`}
             />
@@ -232,7 +232,7 @@ export default function AuditContactForm({ className = '' }) {
               placeholder="e.g. VP Marketing / Founder"
               value={formData.jobTitle}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs"
+              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
             />
           </div>
 
@@ -244,7 +244,7 @@ export default function AuditContactForm({ className = '' }) {
               name="industry"
               value={formData.industry}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs"
+              className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
             >
               <option value="" className="bg-[#111113] text-[#71717a]">Select industry sector...</option>
               {industryOptions.map((ind) => (
@@ -265,7 +265,7 @@ export default function AuditContactForm({ className = '' }) {
             name="mainGoal"
             value={formData.mainGoal}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs"
+            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
           >
             {goalOptions.map((goal) => (
               <option key={goal} value={goal} className="bg-[#111113] text-white">
@@ -286,7 +286,7 @@ export default function AuditContactForm({ className = '' }) {
             placeholder="e.g. When buyers ask ChatGPT 'best alternative to Competitor X' or evaluate our category, we want our brand recommended."
             value={formData.promptContext}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-[#e60023] focus:border-[#e60023] transition-all shadow-2xs"
+            className="w-full px-4 py-3 rounded-[16px] border border-white/15 bg-[#111113] text-white placeholder-[#71717a] text-sm focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all shadow-2xs"
           />
         </div>
 
@@ -298,7 +298,7 @@ export default function AuditContactForm({ className = '' }) {
               name="consent"
               checked={formData.consent}
               onChange={handleChange}
-              className="mt-0.5 rounded-[4px] border-white/20 text-[#e60023] focus:ring-[#e60023] accent-[#e60023]"
+              className="mt-0.5 rounded-[4px] border-white/20 text-white focus:ring-white accent-white"
             />
             <span>
               I understand Citepoint provides empirical AI visibility assessments and that third-party model weights cannot be guaranteed. *
@@ -312,14 +312,14 @@ export default function AuditContactForm({ className = '' }) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(230,0,35,0.4)]"
+            className="btn-aurora w-full sm:w-auto rounded-full px-8 py-3.5 shadow-[0_4px_24px_rgba(255,255,255,0.18)]"
           >
             <span>{isSubmitting ? 'Analyzing Parameters...' : 'Request Confidential Audit'}</span>
-            <ArrowRight className="w-4 h-4 text-white" />
+            <ArrowRight className="w-4 h-4 text-black" />
           </button>
 
           <div className="flex items-center gap-2 text-xs text-[#71717a]">
-            <ShieldCheck className="w-4 h-4 text-[#e60023]" />
+            <ShieldCheck className="w-4 h-4 text-white" />
             <span className="whitespace-nowrap">Strict NDA governance. Never shared.</span>
           </div>
         </div>

@@ -60,6 +60,13 @@
   --color-accent-text: #ffffff;
   --color-gold-underline: var(--color-accent-red);
 
+  /* --- Liquid Glass Navigation & CTA Tokens --- */
+  --lg-header-bg: rgba(10, 10, 10, 0.35);
+  --lg-header-highlight: rgba(255, 255, 255, 0.45);
+  --lg-btn-bg: rgba(10, 10, 10, 0.35);
+  --lg-btn-highlight: rgba(255, 255, 255, 0.45);
+  --lg-elastic: cubic-bezier(0.175, 0.885, 0.32, 2.2);
+
   /* --- Nav CTA: Formium Red #E60023 --- */
   --color-nav-cta-bg: #e60023;
   --color-nav-cta-text: #ffffff;
@@ -607,8 +614,7 @@
 .feature-card::before,
 .bento-card::before,
 .glass-panel::before,
-.surface-card-static::before,
-.header-six::after {
+.surface-card-static::before {
   display: none !important;
 }
 
@@ -763,51 +769,220 @@ select:focus-visible {
 }
 
 /* ------------------------------------------------------------
-   NAVIGATION BAR & DROPDOWNS
-   - Frosted Glass #FFFFFF with 10% opacity border
+   PREMIUM LIQUID-GLASS NAVIGATION HEADER (.header-six)
+   - Fixed/sticky curved floating bar
+   - Layer 1 (::before): backdrop-filter + filter: url(#lg-dist)
+   - Layer 2 (::after): translucent dark tint, 1px white border,
+     specular highlight, inner glow, outer shadow
+   - Real content stays crisp & unaffected with positive z-index
    ------------------------------------------------------------ */
 
 .header-six {
-  position: relative;
-  isolation: isolate;
-  background: var(--nav-bg) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid var(--color-border-light) !important;
+  position: relative !important;
+  isolation: isolate !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
   box-shadow: none !important;
-  border-radius: 9999px;
+  border-radius: 9999px !important;
+  overflow: visible !important;
 }
 
-.nav-highlight-pill {
+/* Layer 1: Backdrop distortion */
+.header-six::before {
+  content: '';
   position: absolute;
+  inset: 0;
+  border-radius: inherit;
   pointer-events: none;
-  border-radius: 9999px;
-  background: var(--color-dominant-alt) !important;
-  border: 1px solid var(--color-border-light) !important;
-  box-shadow: none !important;
-  transition:
-    left 180ms cubic-bezier(0.16, 1, 0.3, 1),
-    width 180ms cubic-bezier(0.16, 1, 0.3, 1),
-    top 180ms cubic-bezier(0.16, 1, 0.3, 1),
-    height 180ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 150ms ease-out;
-  z-index: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  filter: url(#lg-dist);
+  isolation: isolate;
+  z-index: -2;
 }
+
+/* Layer 2: Visual dark glass surface tint, thin white border, highlight & shadow */
+.header-six::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  background: var(--lg-header-bg, rgba(10, 10, 10, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 1px 1px 0 var(--lg-header-highlight, rgba(255, 255, 255, 0.45)),
+    inset 0 0 8px rgba(255, 255, 255, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-six.is-scrolled::after {
+  background: rgba(10, 10, 10, 0.48);
+  box-shadow:
+    inset 1px 1px 0 var(--lg-header-highlight, rgba(255, 255, 255, 0.45)),
+    inset 0 0 10px rgba(255, 255, 255, 0.18),
+    0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* Ensure real header content sits above pseudo-layers */
+.header-six > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Navigation items contrast & readability on dark liquid glass */
+.header-six .nav-link,
+.header-six nav button:not(.btn-liquid-glass):not(.btn-v2-white):not(.btn-white) {
+  color: rgba(255, 255, 255, 0.72) !important;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.header-six .nav-link:hover,
+.header-six nav button:not(.btn-liquid-glass):not(.btn-v2-white):not(.btn-white):hover {
+  color: #ffffff !important;
+}
+
+.header-six .nav-link.is-active,
+.header-six nav button.is-active {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* ------------------------------------------------------------
+   PREMIUM LIQUID-GLASS CTA BUTTONS
+   - .btn-v2-white, .btn-white, .btn-outline-white, .btn-liquid-glass
+   - Layer 1 (::before): backdrop-filter + filter: url(#lg-dist-btn)
+   - Layer 2 (::after): translucent dark tint, specular highlight & glow
+   - Elastic 1.06 scale hover with cubic-bezier transition
+   ------------------------------------------------------------ */
+
+.btn-v2-white,
+.btn-white,
+.btn-outline-white,
+.btn-liquid-glass {
+  position: relative !important;
+  isolation: isolate !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  transform-origin: center center;
+  transition: transform 0.4s var(--lg-elastic, cubic-bezier(0.175, 0.885, 0.32, 2.2)), color 0.2s ease !important;
+  overflow: visible !important;
+}
+
+.btn-v2-white span,
+.btn-white span,
+.btn-outline-white span,
+.btn-liquid-glass span {
+  color: #ffffff !important;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-v2-white svg,
+.btn-white svg,
+.btn-outline-white svg,
+.btn-liquid-glass svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button Layer 1: Background distortion */
+.btn-v2-white::before,
+.btn-white::before,
+.btn-outline-white::before,
+.btn-liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  filter: url(#lg-dist-btn);
+  isolation: isolate;
+  z-index: -2;
+}
+
+/* Button Layer 2: Dark glass tint, thin white border, highlight & glow */
+.btn-v2-white::after,
+.btn-white::after,
+.btn-outline-white::after,
+.btn-liquid-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  background: var(--lg-btn-bg, rgba(10, 10, 10, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 1px 1px 0 var(--lg-btn-highlight, rgba(255, 255, 255, 0.45)),
+    inset 0 0 6px rgba(255, 255, 255, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover: scale 1.06 with elastic cubic-bezier, increased internal white glow */
+.btn-v2-white:hover,
+.btn-white:hover,
+.btn-outline-white:hover,
+.btn-liquid-glass:hover {
+  transform: scale(1.06);
+}
+
+.btn-v2-white:hover::after,
+.btn-white:hover::after,
+.btn-outline-white:hover::after,
+.btn-liquid-glass:hover::after {
+  background: rgba(20, 20, 20, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 0 12px rgba(255, 255, 255, 0.30),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Active */
+.btn-v2-white:active,
+.btn-white:active,
+.btn-outline-white:active,
+.btn-liquid-glass:active {
+  transform: scale(0.98);
+}
+
+/* ------------------------------------------------------------
+   FROSTED GLASS DROPDOWN & MOBILE SIDEBAR
+   - Light frosted-glass surface so dark text remains readable
+   ------------------------------------------------------------ */
 
 .header-dropdown,
 .lg-dropdown {
   position: absolute;
   top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 280px;
-  background: var(--color-dominant-bg) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid var(--color-border-light) !important;
-  border-radius: 18px;
-  box-shadow: none !important;
-  padding: 8px;
+  left: 0;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.55) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 8px rgba(255, 255, 255, 0.3),
+    0 16px 40px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 10px;
   z-index: 50;
 }
 
@@ -820,7 +995,7 @@ select:focus-visible {
   text-align: left;
   padding: 10px 14px;
   border-radius: 12px;
-  color: var(--color-text-primary) !important;
+  color: #111111 !important;
   font-size: 14px;
   font-weight: 500;
   transition: background-color 150ms ease;
@@ -833,33 +1008,82 @@ select:focus-visible {
 .header-dropdown button:hover,
 .lg-dropdown a:hover,
 .lg-dropdown button:hover {
-  background: var(--color-dominant-alt) !important;
-  color: var(--color-text-primary) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  color: #000000 !important;
 }
 
 /* Mobile Off-canvas Drawer */
 .mobile-offcanvas,
-.glass-mobile-drawer {
-  background: var(--color-dominant-bg) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border: 1px solid var(--color-border-light) !important;
-  border-radius: 20px;
-  box-shadow: none !important;
-  color: var(--color-text-primary) !important;
+.glass-mobile-drawer,
+.header-mobile-drawer {
+  background: rgba(255, 255, 255, 0.5) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 10px rgba(255, 255, 255, 0.25),
+    0 20px 48px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 20px !important;
+  color: #111111 !important;
 }
 
 .mobile-offcanvas nav button,
 .mobile-offcanvas nav a,
 .glass-mobile-drawer nav button,
-.glass-mobile-drawer nav a {
-  color: var(--color-text-primary) !important;
+.glass-mobile-drawer nav a,
+.header-mobile-drawer nav button,
+.header-mobile-drawer nav a {
+  color: #111111 !important;
 }
 
 .mobile-offcanvas nav button:hover,
-.glass-mobile-drawer nav button:hover {
-  background: var(--color-dominant-alt) !important;
-  color: var(--color-text-primary) !important;
+.glass-mobile-drawer nav button:hover,
+.header-mobile-drawer nav button:hover {
+  background: rgba(255, 255, 255, 0.6) !important;
+  color: #000000 !important;
+}
+
+/* ------------------------------------------------------------
+   ROBUSTNESS: FALLBACKS & REDUCED MOTION
+   ------------------------------------------------------------ */
+
+@supports not (backdrop-filter: blur(1px)) {
+  .header-six::after {
+    background: rgba(10, 10, 10, 0.55) !important;
+  }
+  .btn-v2-white::after,
+  .btn-white::after,
+  .btn-outline-white::after,
+  .btn-liquid-glass::after {
+    background: rgba(20, 20, 20, 0.55) !important;
+  }
+  .header-dropdown,
+  .lg-dropdown {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  .mobile-offcanvas,
+  .glass-mobile-drawer,
+  .header-mobile-drawer {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-v2-white,
+  .btn-white,
+  .btn-outline-white,
+  .btn-liquid-glass {
+    transition: none !important;
+    transform: none !important;
+  }
+  .btn-v2-white:hover,
+  .btn-white:hover,
+  .btn-outline-white:hover,
+  .btn-liquid-glass:hover {
+    transform: none !important;
+  }
 }
 
 /* Accordion */

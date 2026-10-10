@@ -136,13 +136,9 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
       <div className="site-container pointer-events-auto">
         
         <header
-          className={`relative rounded-full transition-all duration-300 h-[56px] lg:h-[64px] px-4 sm:px-6 flex items-center border border-[#111111]/10 ${
-            isScrolled ? 'bg-white/95' : 'bg-white/85'
+          className={`header-six relative rounded-full transition-all duration-300 h-[56px] lg:h-[64px] px-4 sm:px-6 flex items-center ${
+            isScrolled ? 'is-scrolled' : ''
           }`}
-          style={{
-            WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'blur(16px)',
-            backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'blur(16px)',
-          }}
         >
           <div className="flex items-center justify-between w-full relative z-10">
             
@@ -150,11 +146,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <button
               type="button"
               onClick={() => handleNavClick('home')}
-              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] rounded-full transition-opacity duration-150 hover:opacity-85 py-1 min-h-[44px]"
+              className="flex items-center shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-full transition-opacity duration-150 hover:opacity-85 py-1 min-h-[44px]"
               aria-label="Citepoint Home"
             >
               <img
-                src={`${import.meta.env.BASE_URL}assets/brand/logo-light-transparent.png`}
+                src={`${import.meta.env.BASE_URL}assets/brand/logo-dark-transparent.png`}
                 alt="Citepoint — Get Cited. Get Chosen."
                 className="h-7 lg:h-8 w-auto object-contain"
               />
@@ -172,7 +168,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             >
               {/* Sliding Active/Hover Highlight Pill */}
               <div
-                className="absolute pointer-events-none rounded-full bg-[#f5f5f7] border border-[#111111]/10 transition-all duration-150"
+                className="absolute pointer-events-none rounded-full bg-white/10 border border-white/15 transition-all duration-150"
                 style={{
                   left: `${pillStyle.left}px`,
                   top: `${pillStyle.top}px`,
@@ -210,12 +206,12 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                         }}
                         className={`relative z-10 inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                           isHighlighted
-                            ? 'text-[#111111] font-semibold'
-                            : 'text-[#111111]/60 hover:text-[#111111] font-medium'
+                            ? 'text-white font-semibold'
+                            : 'text-white/70 hover:text-white font-medium'
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-3.5 h-3.5 text-white/70 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180 text-white' : ''}`} />
                       </button>
 
                       {/* Clean Dropdown */}
@@ -268,8 +264,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                     onMouseEnter={() => setHoveredRoute(link.route)}
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
-                        ? 'text-[#111111] font-semibold'
-                        : 'text-[#111111]/60 hover:text-[#111111] font-medium'
+                        ? 'text-white font-semibold'
+                        : 'text-white/70 hover:text-white font-medium'
                     }`}
                   >
                     {link.name}
@@ -278,11 +274,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               })}
             </nav>
 
-            {/* Right Action: Nav CTA Solid Black #111111 Button with White Text */}
+            {/* Right Action: Liquid Glass CTA Button */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
-                className="btn-primary btn-nav inline-flex items-center gap-2 rounded-full font-sans font-semibold text-[13px] whitespace-nowrap cursor-pointer min-h-[44px]"
+                className="btn-v2-white btn-white btn-outline-white btn-liquid-glass inline-flex items-center gap-2 rounded-full font-sans font-medium text-[13px] px-5 py-2 whitespace-nowrap cursor-pointer min-h-[44px]"
               >
                 <span>Get AI Visibility Audit</span>
                 <ArrowRight className="w-3.5 h-3.5 text-white" />
@@ -293,11 +289,11 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="flex lg:hidden items-center gap-2 shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#111111] rounded-full bg-[#f5f5f7] border border-[#111111]/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-white rounded-full bg-white/10 hover:bg-white/15 border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 cursor-pointer transition-colors"
                 aria-label="Toggle Navigation Menu"
                 aria-expanded={mobileMenuOpen}
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-[#111111]" /> : <Menu className="w-5 h-5 text-[#111111]" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
               </button>
             </div>
 
@@ -313,7 +309,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ type: 'spring', damping: 26, stiffness: 280, mass: 0.9 }}
               style={{ transformOrigin: 'top center' }}
-              className="lg:hidden mt-2 p-5 rounded-[20px] bg-white border border-[#111111]/10 pointer-events-auto max-h-[calc(100vh-96px)] overflow-y-auto overscroll-contain shadow-none"
+              className="lg:hidden mt-2 p-5 rounded-[20px] header-mobile-drawer pointer-events-auto max-h-[calc(100vh-96px)] overflow-y-auto overscroll-contain shadow-none"
             >
               <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#111111]/10 text-[12px] text-[#111111]/60">
                 <span className="uppercase tracking-wider font-semibold text-[#111111]">Navigation</span>
@@ -329,8 +325,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       onClick={() => handleNavClick(link.route)}
                       className={`text-left text-[14px] min-h-[44px] py-2.5 px-4 rounded-full transition-colors cursor-pointer active:scale-[0.98] flex items-center ${
                         isActive
-                          ? 'bg-[#f5f5f7] text-[#111111] font-semibold border border-[#111111]/10'
-                          : 'text-[#111111]/60 hover:text-[#111111] hover:bg-[#f5f5f7]'
+                          ? 'bg-black/10 text-[#111111] font-semibold border border-black/10'
+                          : 'text-[#111111]/70 hover:text-[#111111] hover:bg-black/5'
                       }`}
                     >
                       {link.name}
@@ -342,7 +338,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
               <div className="pt-4 mt-3 border-t border-[#111111]/10">
                 <button
                   onClick={() => handleNavClick('audit')}
-                  className="btn-primary w-full min-h-[48px] py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[14px] font-sans font-semibold cursor-pointer active:scale-[0.97]"
+                  className="btn-v2-white btn-white btn-outline-white btn-liquid-glass w-full min-h-[48px] py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[14px] font-sans font-medium cursor-pointer active:scale-[0.97]"
                 >
                   <span>Get Your AI Visibility Audit</span>
                   <ArrowRight className="w-3.5 h-3.5 text-white" />

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept",
+          "value": "(.*text/markdown.*)"
+        }
+      ],
+      "destination": "/api/handler?path=$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept",
+          "value": "(.*text/x-markdown.*)"
+        }
+      ],
+      "destination": "/api/handler?path=$1"
+    }
+  ]
+}

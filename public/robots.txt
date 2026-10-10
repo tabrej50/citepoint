@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# LLM & Agent Knowledge Files
+# llms.txt: https://citepoint.xyz/llms.txt
+# llms-full.txt: https://citepoint.xyz/llms-full.txt
+
 # LLM Retrieval Crawlers
 User-agent: GPTBot
 Allow: /
@@ -17,4 +21,13 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://citepoint.io/sitemap.xml
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://citepoint.xyz/sitemap.xml

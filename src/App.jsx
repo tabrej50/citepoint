@@ -27,9 +27,10 @@ const APPLE_PAGE_TRANSITION = {
 
 
 export default function App() {
-  // Sync with window.location.hash or fallback to 'home'
+  // Sync with window.location.pathname or hash or fallback to 'home'
   const getInitialRoute = () => {
-    const hash = window.location.hash.replace('#/', '').replace('#', '');
+    const rawPath = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '');
+    const rawHash = window.location.hash.replace('#/', '').replace('#', '');
     const validRoutes = [
       'home',
       'services',
@@ -43,7 +44,13 @@ export default function App() {
       'privacy',
       'terms'
     ];
-    return validRoutes.includes(hash) ? hash : 'home';
+    if (rawPath && rawPath !== 'index.html' && validRoutes.includes(rawPath)) {
+      return rawPath;
+    }
+    if (rawHash && validRoutes.includes(rawHash)) {
+      return rawHash;
+    }
+    return 'home';
   };
 
   const [currentRoute, setCurrentRoute] = useState(getInitialRoute);
@@ -81,13 +88,17 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleLocationChange = () => {
       const route = getInitialRoute();
       setCurrentRoute(route);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    window.addEventListener('popstate', handleLocationChange);
+    return () => {
+      window.removeEventListener('hashchange', handleLocationChange);
+      window.removeEventListener('popstate', handleLocationChange);
+    };
   }, []);
 
   // Scroll to top on route change
@@ -100,6 +111,11 @@ export default function App() {
   }, [currentRoute]);
 
   const navigateTo = (route) => {
+    if (route === 'home') {
+      window.history.pushState(null, '', '/');
+    } else {
+      window.history.pushState(null, '', `/${route}`);
+    }
     window.location.hash = `#/${route}`;
     setCurrentRoute(route);
     if (window.__lenis) {

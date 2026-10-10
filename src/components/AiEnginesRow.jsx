@@ -12,7 +12,7 @@ export const AI_ENGINES = [
     name: 'ChatGPT',
     provider: 'OpenAI',
     title: 'OpenAI ChatGPT',
-    color: '#111111',
+    color: '#10A37F',
     role: 'Conversational Shortlists & Vendor Summaries',
     tagline: 'Leading conversational engine for B2B buyer discovery',
     svgPath:
@@ -23,7 +23,7 @@ export const AI_ENGINES = [
     name: 'Gemini',
     provider: 'Google',
     title: 'Google Gemini',
-    color: '#111111',
+    color: '#4E82EE',
     role: 'Multimodal Knowledge Graph Integration',
     tagline: 'Google ecosystem integration with deep entity reasoning',
     svgPath:
@@ -34,7 +34,7 @@ export const AI_ENGINES = [
     name: 'Perplexity',
     provider: 'Perplexity AI',
     title: 'Perplexity',
-    color: '#111111',
+    color: '#20B2AA',
     role: 'Real-Time Web Citations & Direct References',
     tagline: 'Deep research engine citing authoritative third-party sources',
     svgPath:
@@ -45,7 +45,7 @@ export const AI_ENGINES = [
     name: 'Claude',
     provider: 'Anthropic',
     title: 'Anthropic Claude',
-    color: '#111111',
+    color: '#D97757',
     role: 'In-Depth Technical Synthesis & Enterprise Analysis',
     tagline: 'High-reasoning model for complex B2B vendor evaluation',
     svgPath:
@@ -58,7 +58,7 @@ export const AI_ENGINES = [
     shortName: 'AI Overviews',
     provider: 'Google',
     title: 'Google AI Overviews',
-    color: '#111111',
+    color: '#4285F4',
     role: 'Search-Engine Native Synthetic Answers',
     tagline: 'Mass-market search engine answers transforming blue links into summaries',
     svgPath:
@@ -68,6 +68,7 @@ export const AI_ENGINES = [
 
 /**
  * Individual Brand SVG icon component
+ * Renders authentic, official brand logos and colors for each major AI engine.
  */
 export function AiEngineIcon({
   id,
@@ -86,7 +87,77 @@ export function AiEngineIcon({
 
   if (!engine) return null;
 
-  const fillColor = customColor || 'currentColor';
+  // 1. Google AI Overviews / Google: Official 4-color Google "G" logo
+  if ((engine.id === 'google-ai-overviews' || norm === 'google') && !customColor) {
+    return (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        width={size}
+        height={size}
+        aria-hidden="true"
+        className={`shrink-0 transition-transform duration-200 ${className}`}
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          minWidth: `${size}px`,
+          minHeight: `${size}px`,
+        }}
+      >
+        <title>{engine.title}</title>
+        <path
+          fill="#4285F4"
+          d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+        />
+        <path
+          fill="#34A853"
+          d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"
+        />
+        <path
+          fill="#FBBC05"
+          d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
+        />
+        <path
+          fill="#EA4335"
+          d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+        />
+      </svg>
+    );
+  }
+
+  // 2. Google Gemini: Official 4-point star with signature gradient
+  if (engine.id === 'gemini' && !customColor) {
+    return (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        width={size}
+        height={size}
+        aria-hidden="true"
+        className={`shrink-0 transition-transform duration-200 ${className}`}
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          minWidth: `${size}px`,
+          minHeight: `${size}px`,
+        }}
+      >
+        <title>{engine.title}</title>
+        <defs>
+          <linearGradient id="gemini-brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1BA1E3" />
+            <stop offset="35%" stopColor="#5470FF" />
+            <stop offset="70%" stopColor="#9B72CB" />
+            <stop offset="100%" stopColor="#E879F9" />
+          </linearGradient>
+        </defs>
+        <path d={engine.svgPath} fill="url(#gemini-brand-gradient)" />
+      </svg>
+    );
+  }
+
+  // 3. ChatGPT, Perplexity, Claude & Custom Color overrides
+  const fillColor = customColor || engine.color || '#111111';
 
   return (
     <svg

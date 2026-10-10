@@ -21,6 +21,7 @@ const DYNAMIC_VERBS = ['mentions', 'cites', 'recommends', 'chooses'];
 
 export default function HeroAnimatedHeadline() {
   const containerRef = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000, active: false });
   const [reducedMotion, setReducedMotion] = useState(false);
   const [verbIndex, setVerbIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -44,11 +45,32 @@ export default function HeroAnimatedHeadline() {
     return () => clearInterval(timer);
   }, [reducedMotion, isHovered]);
 
+  // Track mouse over headline for spotlight and particle physics
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      active: true,
+    });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setMousePos((prev) => ({ ...prev, active: false }));
+  };
+
   return (
     <div
       ref={containerRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className="relative max-w-[900px] mx-auto select-none cursor-default"
       aria-label="Be the brand AI mentions first."
     >

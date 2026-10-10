@@ -41,24 +41,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
     { name: 'About', route: 'about' },
   ];
 
-  // Async Route Prefetching on Hover for Instant Zero-Delay Page Transitions
-  const routeImports = {
-    services: () => import('../pages/ServicesPage'),
-    'how-it-works': () => import('../pages/HowItWorksPage'),
-    pricing: () => import('../pages/PricingPage'),
-    'case-studies': () => import('../pages/CaseStudiesPage'),
-    about: () => import('../pages/AboutPage'),
-    insights: () => import('../pages/InsightsPage'),
-    audit: () => import('../pages/AuditPage'),
-    contact: () => import('../pages/ContactPage'),
-  };
-
-  const prefetchRoute = (route) => {
-    if (routeImports[route]) {
-      routeImports[route]().catch(() => {});
-    }
-  };
-
   const serviceItems = [
     { title: 'Generative Engine Optimization (GEO)', desc: 'AI visibility, entity grounding & citation ranking', route: 'services' },
     { title: 'AI Citation Engineering', desc: 'Acquisition & verification across LLM answer engines', route: 'services' },
@@ -210,7 +192,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       className="relative"
                       onMouseEnter={() => {
                         setHoveredRoute(link.route);
-                        prefetchRoute(link.route);
                         handleDropdownEnter();
                       }}
                       onMouseLeave={handleDropdownLeave}
@@ -280,10 +261,7 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                       if (el) navItemRefs.current[link.route] = el;
                     }}
                     onClick={() => handleNavClick(link.route)}
-                    onMouseEnter={() => {
-                      setHoveredRoute(link.route);
-                      prefetchRoute(link.route);
-                    }}
+                    onMouseEnter={() => setHoveredRoute(link.route)}
                     className={`relative z-10 px-3.5 py-1.5 rounded-full text-[13px] font-sans whitespace-nowrap transition-colors duration-150 cursor-pointer bg-transparent border-none select-none ${
                       isHighlighted
                         ? 'text-white font-semibold'
@@ -300,7 +278,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
             <div className="hidden lg:flex items-center gap-3 shrink-0">
               <button
                 onClick={() => handleNavClick('audit')}
-                onMouseEnter={() => prefetchRoute('audit')}
                 className="btn-v2-white btn-white btn-outline-white btn-liquid-glass inline-flex items-center gap-2 rounded-full font-sans font-medium text-[13px] px-5 py-2 whitespace-nowrap cursor-pointer min-h-[44px]"
               >
                 <span>Get AI Visibility Audit</span>

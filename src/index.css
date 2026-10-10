@@ -154,18 +154,11 @@
     font-family: var(--font-matter);
     color: var(--color-text-primary);
     background-color: var(--color-dominant-bg);
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     scroll-padding-top: 96px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-
-  #root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-dominant-bg);
   }
 
   /* Lenis Momentum Smooth Scroll Core */

@@ -45,8 +45,6 @@ export default function Footer({ setCurrentRoute }) {
                 src={`${import.meta.env.BASE_URL}assets/brand/logo-dark-transparent.png`}
                 alt="Citepoint — Get Cited. Get Chosen."
                 className="h-7 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
-                loading="lazy"
-                decoding="async"
               />
             </button>
             <p className="text-[13px] text-white/60 max-w-md leading-relaxed mb-3">

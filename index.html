@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=6" />
@@ -9,10 +9,6 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico?v=6" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=6" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Critical Asset Preloading for Instant Zero-Flash Render -->
-    <link rel="preload" as="image" href="./assets/videos/hero-background.jpg" fetchpriority="high" />
-    <link rel="preload" as="image" href="./assets/brand/logo-dark-transparent.png" fetchpriority="high" />
     
     <!-- Primary SEO Meta Tags -->
     <title>Citepoint — Get Cited. Get Chosen. | AI Search Visibility & GEO</title>
@@ -102,8 +98,24 @@
       ]
     }
     </script>
-  </head>
-  <body class="bg-[#000000] text-white font-sans antialiased selection:bg-[#E60023] selection:text-white">
+  <body class="bg-[#FFFFFF] text-[#111111] font-sans antialiased selection:bg-[#F3C753] selection:text-[#111111]">
+    <!-- Liquid Glass SVG Distortion Filter Definitions -->
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- #lg-dist for Header Liquid Glass Distortion -->
+        <filter id="lg-dist" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.015" numOctaves="3" result="noise" seed="42" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+
+        <!-- #lg-dist-btn for CTA Button Liquid Glass Distortion -->
+        <filter id="lg-dist-btn" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox">
+          <feTurbulence type="fractalNoise" baseFrequency="0.025 0.025" numOctaves="2" result="noise" seed="88" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
     <div id="root">
       <header>
         <nav aria-label="Main Navigation">

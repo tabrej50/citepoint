@@ -977,6 +977,15 @@ section.site-section {
 }
 
 /* 7. Marquee Strip (Home) */
+@keyframes ticker-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 .marquee-strip {
   height: 72px !important;
   min-height: 72px !important;
@@ -990,18 +999,33 @@ section.site-section {
   box-sizing: border-box !important;
 }
 
-.marquee-strip:hover .animate-ticker-marquee {
+.animate-ticker-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: ticker-marquee 36s linear infinite !important;
+  will-change: transform;
+}
+
+.marquee-strip:hover .animate-ticker-marquee,
+.animate-ticker-marquee:hover {
   animation-play-state: paused !important;
 }
 
 .marquee-fade-edges {
-  mask-image: linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent);
+  mask-image: linear-gradient(to right, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%);
+}
+
+@media (min-width: 640px) {
+  .marquee-fade-edges {
+    mask-image: linear-gradient(to right, transparent 0%, black 72px, black calc(100% - 72px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 72px, black calc(100% - 72px), transparent 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-ticker-marquee {
-    animation: none !important;
+    animation-duration: 60s !important;
   }
 }
 

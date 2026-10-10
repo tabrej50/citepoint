@@ -143,7 +143,7 @@ export default function InsightsPage({ setCurrentRoute }) {
           </SlideReveal>
 
           {/* Articles Grid */}
-          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16 lg:mb-24">
+          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6 mb-16 lg:mb-24">
             {filteredArticles.map((art, aIdx) => (
               <SlideStaggerItem
                 key={art.id}
@@ -203,7 +203,7 @@ export default function InsightsPage({ setCurrentRoute }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
               {/* Term list */}
               <div className="lg:col-span-5 space-y-2">
                 {glossary.map((item, idx) => (

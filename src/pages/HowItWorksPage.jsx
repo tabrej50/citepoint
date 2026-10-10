@@ -198,7 +198,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
             </div>
           </SlideReveal>
 
-          <SlideStaggerContainer staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 relative">
+          <SlideStaggerContainer staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 lg:gap-6 relative">
             {pipelineSteps.map((step) => {
               const IconC = step.icon;
               return (
@@ -271,7 +271,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
               return (
                 <div
                   key={phase.step}
-                  className="bg-[#F5F5F7] border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start group overflow-hidden"
+                  className="bg-[#F5F5F7] border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start group overflow-hidden"
                 >
                   {/* Column 1: Phase Info */}
                   <SlideReveal
@@ -365,7 +365,7 @@ export default function HowItWorksPage({ setCurrentRoute }) {
             </div>
           </SlideReveal>
 
-          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <SlideStaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
             <SlideStaggerItem direction="scale-up" className="bg-white border border-[#D2D2D7] p-6 lg:p-8 rounded-[24px] flex flex-col justify-between h-full group cursor-default hover:border-[#1D1D1F] transition-all">
               <div>
                 <div className="w-9 h-9 rounded-full bg-[#F5F5F7] border border-[#D2D2D7] flex items-center justify-center text-[#1D1D1F] mb-4">

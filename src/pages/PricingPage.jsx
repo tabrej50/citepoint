@@ -129,7 +129,7 @@ export default function PricingPage({ setCurrentRoute }) {
       <section className="pt-12 sm:pt-16 pb-[160px] overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-12 gap-[32px] items-start">
+          <div className="grid grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
             
             {/* LEFT FORM AREA: Columns 1-8 */}
             <div className="col-span-12 lg:col-span-8">

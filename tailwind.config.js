@@ -5,7 +5,33 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',    // Tablet: 768px to 1023px
+      lg: '1024px',   // Desktop: 1024px to 1439px
+      xl: '1440px',   // Large desktop: 1440px and up
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '20px',
+        md: '40px',
+        lg: '0px',
+        xl: '0px',
+      },
+      screens: {
+        DEFAULT: '100%',
+        md: '100%',
+        lg: '1080px',
+        xl: '1200px',
+      },
+    },
     extend: {
+      maxWidth: {
+        'desktop': '1080px',
+        'large-desktop': '1200px',
+        '7xl': '1200px',
+      },
       colors: {
         // Apple-style Minimal Monochrome Design Tokens
         primary: {

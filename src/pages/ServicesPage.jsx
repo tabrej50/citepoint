@@ -169,7 +169,7 @@ export default function ServicesPage({ setCurrentRoute }) {
           {serviceRows.map((svc) => (
             <SlideReveal key={svc.num} direction="up">
               <div className="bg-white border border-[#D2D2D7] p-8 sm:p-10 lg:p-12 rounded-[24px] relative overflow-hidden group">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
                   
                   {/* Left Column: Number, Eyebrow, Title, Tagline, Description, CTA */}
                   <div className="lg:col-span-6 flex flex-col justify-between h-full">
@@ -261,7 +261,7 @@ export default function ServicesPage({ setCurrentRoute }) {
           </SlideReveal>
 
           {/* 4 equal columns grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
             {processSteps.map((step, idx) => (
               <SlideReveal
                 key={step.step}

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Mail, ArrowRight } from 'lucide-react';
 
 /**
- * Apple Design Footer
- * - 80px top padding: pt-[80px] pb-12
- * - Light gray background (#F5F5F7) with 1px hairline border (#D2D2D7) at top
- * - Captions only: logo, a few links and captions
- * - Container: .apple-container
+ * Formium Alliance Technical Footer
+ * - Pitch black canvas surface: #000000
+ * - Hairline divider: rgba(255, 255, 255, 0.1)
+ * - Titanium white accent: #ffffff
+ * - High-contrast typography: #ffffff headers, #a1a1aa body
  */
 export default function Footer({ setCurrentRoute }) {
   const handleNav = (route) => {
@@ -13,7 +14,7 @@ export default function Footer({ setCurrentRoute }) {
       const el = document.querySelector(route);
       if (el) {
         if (window.__lenis) {
-          window.__lenis.scrollTo(el, { offset: -70, duration: 1.0 });
+          window.__lenis.scrollTo(el, { offset: -80, duration: 1.0 });
         } else {
           el.scrollIntoView({ behavior: 'smooth' });
         }
@@ -28,56 +29,202 @@ export default function Footer({ setCurrentRoute }) {
     }
   };
 
-  const footerLinks = [
-    { name: 'Services', route: 'services' },
-    { name: 'How It Works', route: 'how-it-works' },
-    { name: 'Pricing', route: 'pricing' },
-    { name: 'Results', route: 'case-studies' },
-    { name: 'About', route: 'about' },
-    { name: 'Contact', route: 'contact' },
-    { name: 'Privacy', route: 'privacy' },
-    { name: 'Terms', route: 'terms' },
-  ];
-
   return (
-    <footer className="pt-[80px] pb-12 bg-[#F5F5F7] border-t border-[#D2D2D7] text-[#6E6E73] font-sans">
-      <div className="apple-container">
+    <footer className="bg-[#F5F5F7] border-t border-[#D2D2D7] text-[#6E6E73] pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top: Brand Logo and Navigation Links */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-[#D2D2D7]">
-          <button
-            onClick={() => handleNav('home')}
-            className="cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] rounded-full transition-opacity hover:opacity-80"
-            aria-label="Citepoint Home"
-          >
-            <img
-              src={`${import.meta.env.BASE_URL}assets/brand/logo-light-transparent.png`}
-              alt="Citepoint — Get Cited. Get Chosen."
-              className="h-7 w-auto object-contain"
-            />
-          </button>
-
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2" aria-label="Footer Navigation">
-            {footerLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNav(link.route)}
-                className="text-[13px] text-[#6E6E73] hover:text-[#1D1D1F] transition-colors cursor-pointer bg-transparent border-none p-0"
+        {/* Top Brand Identity & Positioning Header */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-[#D2D2D7] mb-10 lg:mb-14">
+          <div>
+            <button
+              onClick={() => handleNav('home')}
+              className="inline-flex items-center text-left mb-3 group focus:outline-none cursor-pointer min-h-[44px] py-1"
+              aria-label="Citepoint Home"
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}assets/brand/logo-light-transparent.png`}
+                alt="Citepoint — Get Cited. Get Chosen."
+                className="h-7 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
+              />
+            </button>
+            <p className="text-[13px] text-[#6E6E73] max-w-md leading-relaxed mb-3">
+              AI search visibility and Generative Engine Optimization for B2B brands competing in the answer economy.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-[#6E6E73]">
+              <span className="text-[#1D1D1F] font-semibold whitespace-nowrap">Get Cited. Get Chosen.</span>
+              <span className="text-[#D2D2D7]">•</span>
+              <a
+                href="mailto:hello@citepoint.io"
+                className="hover:text-[#1D1D1F] transition-colors flex items-center gap-1.5 whitespace-nowrap"
               >
-                {link.name}
-              </button>
-            ))}
-          </nav>
+                <Mail className="w-3.5 h-3.5 text-[#1D1D1F]" />
+                <span>hello@citepoint.io</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 bg-[#FFFFFF] border border-[#D2D2D7] px-4 py-2 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F]" />
+            <span className="text-[12px] uppercase tracking-[0.08em] text-[#1D1D1F] font-semibold whitespace-nowrap">
+              AI Search Visibility Infrastructure
+            </span>
+          </div>
         </div>
 
-        {/* Bottom: Captions Only */}
-        <div className="pt-8 space-y-3 text-[12px] text-[#86868B] leading-relaxed">
-          <p>
-            Citepoint provides Generative Engine Optimization (GEO) and AI search authority infrastructure for enterprise B2B organizations. AI answer engines synthesize recommendations from authoritative third-party citation graphs and structured entities.
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 text-[11px] text-[#86868B]">
-            <span>© {new Date().getFullYear()} Citepoint Inc. All rights reserved.</span>
-            <span>San Francisco, CA • Built for high-consideration B2B brands.</span>
+        {/* 4 Main Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 lg:gap-6 pb-12 border-b border-[#D2D2D7]">
+          
+          {/* Column 1: Services */}
+          <div>
+            <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+              <li>
+                <button onClick={() => handleNav('audit')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  AI Visibility Audit
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('pricing')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Pricing & Engagements
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Generative Engine Optimization
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Citation Engineering
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('services')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Knowledge Graph Alignment
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: Process & Methodology */}
+          <div>
+            <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
+              Methodology
+            </h4>
+            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+              <li>
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  4-Phase Operating System
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Discovery & Audit
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Diagnostic & Gap Analysis
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Foundation Building
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('how-it-works')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Longitudinal Monitoring
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Evidence & Insights */}
+          <div>
+            <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
+              Evidence & Thinking
+            </h4>
+            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+              <li>
+                <button onClick={() => handleNav('case-studies')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Case Studies & Proof
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Insights & Research
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  GEO vs. Traditional SEO
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  AI Shortlist Anatomy
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('insights')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Glossary of Terms
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Firm & Verification */}
+          <div>
+            <h4 className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[#1D1D1F] mb-4">
+              About & Contact
+            </h4>
+            <ul className="space-y-2.5 text-[13px] text-[#6E6E73]">
+              <li>
+                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  About Citepoint
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('about')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Operating Principles
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('contact')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Contact & Briefing
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors text-left cursor-pointer">
+                  Terms of Service
+                </button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#6E6E73]">
+          <p>© {new Date().getFullYear()} Citepoint. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <button onClick={() => handleNav('privacy')} className="hover:text-[#1D1D1F] transition-colors">
+              Privacy
+            </button>
+            <button onClick={() => handleNav('terms')} className="hover:text-[#1D1D1F] transition-colors">
+              Terms
+            </button>
+            <a href="mailto:hello@citepoint.io" className="hover:text-[#1D1D1F] transition-colors">
+              Support
+            </a>
           </div>
         </div>
 

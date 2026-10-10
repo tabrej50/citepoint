@@ -87,12 +87,12 @@ export default function ContactPage({ setCurrentRoute }) {
       <section className="py-20 lg:py-28 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 gap-y-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
             
             {/* Form Area: Columns 1-7 */}
-            <div className="order-1 lg:col-span-7 w-full max-w-[560px]">
+            <div className="order-1 lg:col-span-7 w-full max-w-2xl">
               <SlideReveal direction="left" distance={36} duration={0.7}>
-                <div className="apple-card bg-[#F5F5F7] relative overflow-hidden">
+                <div className="p-6 sm:p-8 md:p-10 rounded-[24px] border border-[#d2d2d7] bg-[#f5f5f7] relative overflow-hidden">
                   
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
@@ -242,10 +242,10 @@ export default function ContactPage({ setCurrentRoute }) {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn-primary w-full"
+                        className="w-full h-[52px] rounded-full text-[15px] font-semibold flex items-center justify-center gap-2 cursor-pointer bg-[#1d1d1f] text-white hover:bg-black transition-all active:scale-[0.98]"
                       >
                         <span>{isSubmitting ? 'Transmitting Request...' : 'Send Briefing Request'}</span>
-                        <ArrowRight className="w-4 h-4 ml-2 text-white" />
+                        <ArrowRight className="w-4 h-4 text-white" />
                       </button>
 
                       <div className="pt-2 flex items-center justify-between text-[#6e6e73] text-xs">

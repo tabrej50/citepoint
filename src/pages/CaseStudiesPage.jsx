@@ -119,7 +119,7 @@ export default function CaseStudiesPage({ setCurrentRoute }) {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6 items-start">
                   
                   {/* Left Info */}
                   <div className="lg:col-span-5 space-y-4">

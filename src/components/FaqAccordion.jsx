@@ -64,7 +64,7 @@ export default function FaqAccordion() {
             <button
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
-              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60023] cursor-pointer"
+              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60023] cursor-pointer active:scale-[0.99] transition-transform duration-75 select-none"
             >
               <span className="font-heading font-semibold text-base text-white flex items-center gap-2.5 transition-colors duration-200 group-hover:text-[#e60023]">
                 {faq.isGuarantee && (
@@ -73,7 +73,7 @@ export default function FaqAccordion() {
                 {faq.q}
               </span>
               <span
-                className={`w-8 h-8 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300 shrink-0 group-hover:scale-105 ${
+                className={`w-8 h-8 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300 shrink-0 group-hover:scale-105 active:scale-90 ${
                   isOpen
                     ? 'bg-[#e60023] text-white rotate-180 border-[#e60023] shadow-[0_0_12px_rgba(230,0,35,0.5)]'
                     : 'bg-[#111113] text-[#a1a1aa]'

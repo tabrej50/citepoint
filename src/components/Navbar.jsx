@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 
 /**
@@ -224,35 +225,42 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-150 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
 
-                      {/* Obsidian Crimson Dropdown */}
-                      {servicesDropdownOpen && (
-                        <div
-                          className="header-dropdown animate-fadeIn"
-                          onMouseEnter={handleDropdownEnter}
-                          onMouseLeave={handleDropdownLeave}
-                        >
-                          <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#e60023] px-3.5 py-1.5 border-b border-white/10 mb-1">
-                            Enterprise AI Capabilities
-                          </div>
-                          {serviceItems.map((item) => (
-                            <button
-                              key={item.title}
-                              onClick={() => {
-                                handleNavClick(item.route);
-                                setServicesDropdownOpen(false);
-                              }}
-                              className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-white/5 transition-colors cursor-pointer"
-                            >
-                              <div className="text-[13px] font-medium text-white group-hover:text-[#e60023] transition-colors">
-                                {item.title}
-                              </div>
-                              <div className="text-[12px] text-[#a1a1aa] group-hover:text-[#d4d4d8] leading-snug">
-                                {item.desc}
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      )}
+                      {/* Obsidian Crimson Dropdown with Apple Spring Physics */}
+                      <AnimatePresence>
+                        {servicesDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -6 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.96, y: -4 }}
+                            transition={{ type: 'spring', damping: 28, stiffness: 340, mass: 0.8 }}
+                            style={{ transformOrigin: 'top center' }}
+                            className="header-dropdown"
+                            onMouseEnter={handleDropdownEnter}
+                            onMouseLeave={handleDropdownLeave}
+                          >
+                            <div className="text-[11px] uppercase tracking-[0.08em] font-bold text-[#e60023] px-3.5 py-1.5 border-b border-white/10 mb-1">
+                              Enterprise AI Capabilities
+                            </div>
+                            {serviceItems.map((item) => (
+                              <button
+                                key={item.title}
+                                onClick={() => {
+                                  handleNavClick(item.route);
+                                  setServicesDropdownOpen(false);
+                                }}
+                                className="group w-full text-left px-3.5 py-2.5 rounded-[12px] hover:bg-white/5 transition-colors cursor-pointer active:scale-[0.98]"
+                              >
+                                <div className="text-[13px] font-medium text-white group-hover:text-[#e60023] transition-colors">
+                                  {item.title}
+                                </div>
+                                <div className="text-[12px] text-[#a1a1aa] group-hover:text-[#d4d4d8] leading-snug">
+                                  {item.desc}
+                                </div>
+                              </button>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 }
@@ -302,44 +310,53 @@ export default function Navbar({ currentRoute, setCurrentRoute }) {
           </div>
         </header>
 
-        {/* Mobile / Tablet Navigation Drawer with Formium Obsidian & Crimson Styling */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden mt-2 p-5 rounded-[24px] bg-[#111113] border border-white/15 shadow-2xl animate-fadeIn pointer-events-auto">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[12px] text-[#a1a1aa]">
-              <span className="uppercase tracking-wider font-medium text-white">Navigation</span>
-              <span className="uppercase tracking-wider text-[11px] font-mono text-[#e60023]">Citepoint</span>
-            </div>
+        {/* Mobile / Tablet Navigation Drawer with Apple Sheet Spring Physics */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -14, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ type: 'spring', damping: 26, stiffness: 280, mass: 0.9 }}
+              style={{ transformOrigin: 'top center' }}
+              className="lg:hidden mt-2 p-5 rounded-[24px] bg-[#111113]/95 backdrop-blur-2xl border border-white/15 shadow-2xl pointer-events-auto"
+            >
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[12px] text-[#a1a1aa]">
+                <span className="uppercase tracking-wider font-medium text-white">Navigation</span>
+                <span className="uppercase tracking-wider text-[11px] font-mono text-[#e60023]">Citepoint</span>
+              </div>
 
-            <nav className="flex flex-col gap-1.5">
-              {navLinks.map((link) => {
-                const isActive = currentRoute === link.route;
-                return (
-                  <button
-                    key={link.name}
-                    onClick={() => handleNavClick(link.route)}
-                    className={`text-left text-[13px] py-2.5 px-4 rounded-full transition-colors cursor-pointer ${
-                      isActive
-                        ? 'bg-white/10 text-white font-semibold border border-white/15'
-                        : 'text-[#fff0f0]/75 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    {link.name}
-                  </button>
-                );
-              })}
-            </nav>
+              <nav className="flex flex-col gap-1.5">
+                {navLinks.map((link) => {
+                  const isActive = currentRoute === link.route;
+                  return (
+                    <button
+                      key={link.name}
+                      onClick={() => handleNavClick(link.route)}
+                      className={`text-left text-[13px] py-2.5 px-4 rounded-full transition-colors cursor-pointer active:scale-[0.98] ${
+                        isActive
+                          ? 'bg-white/10 text-white font-semibold border border-white/15'
+                          : 'text-[#fff0f0]/75 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      {link.name}
+                    </button>
+                  );
+                })}
+              </nav>
 
-            <div className="pt-4 mt-3 border-t border-white/10">
-              <button
-                onClick={() => handleNavClick('audit')}
-                className="btn-primary w-full py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[13px] font-sans font-semibold cursor-pointer"
-              >
-                <span>Get Your AI Visibility Audit</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        )}
+              <div className="pt-4 mt-3 border-t border-white/10">
+                <button
+                  onClick={() => handleNavClick('audit')}
+                  className="btn-primary w-full py-3 px-5 rounded-full inline-flex items-center justify-center gap-2 text-[13px] font-sans font-semibold cursor-pointer active:scale-[0.97]"
+                >
+                  <span>Get Your AI Visibility Audit</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </div>

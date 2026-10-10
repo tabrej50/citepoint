@@ -328,9 +328,10 @@
 .btn-primary:active,
 .btn-liquid-primary:active,
 .btn-terminal:active {
-  transform: scale(0.98);
+  transform: scale(0.97) !important;
   background-color: #b3001b;
   box-shadow: 0 2px 8px rgba(230, 0, 35, 0.3);
+  transition: transform 80ms cubic-bezier(0.2, 0, 0, 1), background-color 80ms ease !important;
 }
 
 .btn-aurora:focus-visible,
@@ -384,7 +385,8 @@
 .btn-secondary:active,
 .btn-liquid-secondary:active,
 .btn-terminal-muted:active {
-  transform: scale(0.98);
+  transform: scale(0.97) !important;
+  transition: transform 80ms cubic-bezier(0.2, 0, 0, 1) !important;
 }
 
 .btn-kelp:focus-visible,
@@ -949,18 +951,109 @@ select:focus-visible {
 @keyframes pulse-radar {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.5);
+    box-shadow: 0 0 0 0 rgba(230, 0, 35, 0.45);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(197, 160, 89, 0);
+    box-shadow: 0 0 0 8px rgba(230, 0, 35, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+    box-shadow: 0 0 0 0 rgba(230, 0, 35, 0);
   }
 }
 
 .animate-pulse-radar {
   animation: pulse-radar 2.4s ease-in-out infinite;
 }
+
+/* ============================================================
+   APPLE DESIGN SYSTEM: FLUID MOTION, TACTILE RESPONSE & ACCESSIBILITY
+   Based on Apple WWDC Guidelines & Foundations
+   ============================================================ */
+
+/* 1. Response: Kill Latency — Instant Tactile Press Feedback */
+button:active:not(:disabled),
+a.btn-aurora:active,
+a.btn-kelp:active,
+a.btn-primary:active,
+.btn-glass:active {
+  transform: scale(0.97) !important;
+  transition: transform 80ms cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+.card-selectable:active,
+.surface-card.cursor-pointer:active {
+  transform: scale(0.985) !important;
+  transition: transform 80ms cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+/* Touch hit-target ergonomic padding (Apple HIG min 44px) */
+@media (pointer: coarse) {
+  button, a, input, select {
+    min-height: 44px;
+  }
+}
+
+/* 2. Apple Accessibility: Reduced Motion (Non-vestibular fallback) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-ticker-marquee,
+  .animate-starlight-dot,
+  .animate-float-subtle,
+  .animate-pulse-radar {
+    animation: none !important;
+  }
+
+  /* Replace large mechanical slides with gentle non-vestibular cross-fades */
+  .motion-reduce-fade {
+    transition: opacity 150ms ease !important;
+    transform: none !important;
+  }
+}
+
+/* 3. Apple Accessibility: Reduced Transparency */
+@media (prefers-reduced-transparency: reduce) {
+  header,
+  .header-dropdown,
+  .lg-dropdown,
+  .mobile-offcanvas,
+  .glass-mobile-drawer,
+  .surface-card,
+  .btn-glass,
+  .btn-kelp {
+    background-color: #111113 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* 4. Apple Accessibility: High Contrast */
+@media (prefers-contrast: more) {
+  :root {
+    --color-hairline: rgba(255, 255, 255, 0.4);
+    --color-hairline-strong: rgba(255, 255, 255, 0.7);
+  }
+
+  .surface-card,
+  header,
+  .btn-kelp,
+  .btn-primary,
+  .btn-glass {
+    border-width: 2px !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .type-body, p, .type-body-lg {
+    color: #ffffff !important;
+  }
+}
+

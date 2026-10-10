@@ -17,64 +17,15 @@ import TermsPage from './pages/TermsPage';
 import Modern3DBackground from './components/Modern3DBackground';
 import LiquidGlassFilter from './components/LiquidGlassFilter';
 
-// Distinct sliding transitions tailored to each page type
-const PAGE_TRANSITIONS = {
-  home: {
-    initial: { opacity: 0, y: 28, filter: 'blur(4px)' },
-    animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, y: -24, filter: 'blur(4px)' },
-  },
-  services: {
-    initial: { opacity: 0, x: 48, filter: 'blur(4px)' },
-    animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, x: -40, filter: 'blur(4px)' },
-  },
-  'how-it-works': {
-    initial: { opacity: 0, x: -48, filter: 'blur(4px)' },
-    animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, x: 40, filter: 'blur(4px)' },
-  },
-  pricing: {
-    initial: { opacity: 0, y: 36, scale: 0.98 },
-    animate: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: -28, scale: 0.98 },
-  },
-  'case-studies': {
-    initial: { opacity: 0, x: 38, y: 22, filter: 'blur(4px)' },
-    animate: { opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, x: -35, y: -20, filter: 'blur(4px)' },
-  },
-  about: {
-    initial: { opacity: 0, x: -38, y: 20, filter: 'blur(4px)' },
-    animate: { opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, x: 35, y: -20, filter: 'blur(4px)' },
-  },
-  insights: {
-    initial: { opacity: 0, y: -26, filter: 'blur(4px)' },
-    animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, y: 24, filter: 'blur(4px)' },
-  },
-  audit: {
-    initial: { opacity: 0, y: 38, scale: 0.99 },
-    animate: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: -30, scale: 0.99 },
-  },
-  contact: {
-    initial: { opacity: 0, x: 38, filter: 'blur(4px)' },
-    animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
-    exit: { opacity: 0, x: -35, filter: 'blur(4px)' },
-  },
-  privacy: {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  },
-  terms: {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  },
+// Apple Fluid Interface: Unified elevated cross-fade with spatial continuity
+// Animates strictly GPU-compositor properties (opacity, scale, micro-y).
+// Eliminates expensive full-page raster blur filters.
+const APPLE_PAGE_TRANSITION = {
+  initial: { opacity: 0, scale: 0.992, y: 10 },
+  animate: { opacity: 1, scale: 1, y: 0 },
+  exit: { opacity: 0, scale: 0.996, y: -8 },
 };
+
 
 export default function App() {
   // Sync with window.location.hash or fallback to 'home'
@@ -206,10 +157,10 @@ export default function App() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentRoute}
-            initial={PAGE_TRANSITIONS[currentRoute]?.initial || PAGE_TRANSITIONS.home.initial}
-            animate={PAGE_TRANSITIONS[currentRoute]?.animate || PAGE_TRANSITIONS.home.animate}
-            exit={PAGE_TRANSITIONS[currentRoute]?.exit || PAGE_TRANSITIONS.home.exit}
-            transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+            initial={APPLE_PAGE_TRANSITION.initial}
+            animate={APPLE_PAGE_TRANSITION.animate}
+            exit={APPLE_PAGE_TRANSITION.exit}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
           >
             {renderCurrentPage()}
           </motion.div>

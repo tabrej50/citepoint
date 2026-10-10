@@ -1,50 +1,43 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 /**
- * SlideReveal
+ * SlideReveal — Apple Fluid Interface Scroll Engine
  * 
- * Reusable, high-performance scroll-triggered slide reveal animations
- * supporting multiple distinct directional choreographies:
- * 
- * Directions:
- * - 'up': Slide in upward from bottom (y: 45 -> 0)
- * - 'down': Slide in downward from top (y: -45 -> 0)
- * - 'left': Slide in from the left toward right (x: -55 -> 0)
- * - 'right': Slide in from the right toward left (x: 55 -> 0)
- * - 'diagonal-left': Slide in from bottom-left (x: -40, y: 35 -> 0, 0)
- * - 'diagonal-right': Slide in from bottom-right (x: 40, y: 35 -> 0, 0)
- * - 'scale-up': Slide and scale expand (y: 35, scale: 0.94 -> 0, 1)
+ * 1. Hardware Compositing: Animates strictly GPU-compositor properties (transform, opacity).
+ *    Zero expensive raster operations (no filter: blur during scroll).
+ * 2. Reduced Motion: Respects OS prefers-reduced-motion, falling back to gentle opacity fade.
+ * 3. Spatial Restraint: Micro-displacements (20-28px) with Apple spring / easing curve.
  */
 
 const VARIANT_MAP = {
   up: {
-    hidden: { opacity: 0, y: 45, filter: 'blur(4px)' },
-    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   },
   down: {
-    hidden: { opacity: 0, y: -45, filter: 'blur(4px)' },
-    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: -24 },
+    visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -55, filter: 'blur(4px)' },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: -28 },
+    visible: { opacity: 1, x: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 55, filter: 'blur(4px)' },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: 28 },
+    visible: { opacity: 1, x: 0 },
   },
   'diagonal-left': {
-    hidden: { opacity: 0, x: -40, y: 35, filter: 'blur(4px)' },
-    visible: { opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: -20, y: 20 },
+    visible: { opacity: 1, x: 0, y: 0 },
   },
   'diagonal-right': {
-    hidden: { opacity: 0, x: 40, y: 35, filter: 'blur(4px)' },
-    visible: { opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: 20, y: 20 },
+    visible: { opacity: 1, x: 0, y: 0 },
   },
   'scale-up': {
-    hidden: { opacity: 0, y: 35, scale: 0.94, filter: 'blur(4px)' },
-    visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: 16, scale: 0.97 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
 };
 
@@ -52,13 +45,17 @@ export function SlideReveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.65,
+  duration = 0.5,
   className = '',
   viewportMargin = '0px',
   once = true,
   ...props
 }) {
+  const shouldReduceMotion = useReducedMotion();
   const selectedVariant = VARIANT_MAP[direction] || VARIANT_MAP.up;
+
+  const hiddenState = shouldReduceMotion ? { opacity: 0 } : selectedVariant.hidden;
+  const visibleState = shouldReduceMotion ? { opacity: 1 } : selectedVariant.visible;
 
   return (
     <motion.div
@@ -66,14 +63,16 @@ export function SlideReveal({
       whileInView="visible"
       viewport={{ once, margin: viewportMargin }}
       variants={{
-        hidden: selectedVariant.hidden,
+        hidden: hiddenState,
         visible: {
-          ...selectedVariant.visible,
-          transition: {
-            duration,
-            delay,
-            ease: [0.16, 1, 0.3, 1], // Luxury Apple/Stripe curve
-          },
+          ...visibleState,
+          transition: shouldReduceMotion
+            ? { duration: 0.2, delay }
+            : {
+                duration,
+                delay,
+                ease: [0.16, 1, 0.3, 1], // Apple Standard Deceleration
+              },
         },
       }}
       className={className}
@@ -88,11 +87,11 @@ export default SlideReveal;
 
 /**
  * SlideStaggerContainer & SlideStaggerItem
- * For card grids where child cards slide up with progressive delay
+ * Progressive stagger with Apple fluid rhythm
  */
 export function SlideStaggerContainer({
   children,
-  staggerDelay = 0.1,
+  staggerDelay = 0.08,
   className = '',
   viewportMargin = '0px',
   once = true,
@@ -109,7 +108,7 @@ export function SlideStaggerContainer({
           opacity: 1,
           transition: {
             staggerChildren: staggerDelay,
-            delayChildren: 0.05,
+            delayChildren: 0.03,
           },
         },
       }}
@@ -125,21 +124,27 @@ export function SlideStaggerItem({
   children,
   direction = 'up',
   className = '',
-  duration = 0.6,
+  duration = 0.45,
   ...props
 }) {
+  const shouldReduceMotion = useReducedMotion();
   const selectedVariant = VARIANT_MAP[direction] || VARIANT_MAP.up;
+
+  const hiddenState = shouldReduceMotion ? { opacity: 0 } : selectedVariant.hidden;
+  const visibleState = shouldReduceMotion ? { opacity: 1 } : selectedVariant.visible;
 
   return (
     <motion.div
       variants={{
-        hidden: selectedVariant.hidden,
+        hidden: hiddenState,
         visible: {
-          ...selectedVariant.visible,
-          transition: {
-            duration,
-            ease: [0.16, 1, 0.3, 1],
-          },
+          ...visibleState,
+          transition: shouldReduceMotion
+            ? { duration: 0.2 }
+            : {
+                duration,
+                ease: [0.16, 1, 0.3, 1],
+              },
         },
       }}
       className={className}
